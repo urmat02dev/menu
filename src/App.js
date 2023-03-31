@@ -1,7 +1,7 @@
 import './App.scss';
 import {Route, Routes} from "react-router-dom";
 import Starts from "./components/starts/Starts";
-import Header from "./components/header/Header";
+import MainPage from "./components/main-page/MainPage";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
 
      <Routes>
        <Route path="/" element={<Starts/>}/>
+       <Route path="/main" element={<MainPage/>}/>
      </Routes>
    </>
   );
