@@ -1,0 +1,104 @@
+@media (max-width: 992px) {
+  #start{
+    background: #DFE2FF;
+   .start{
+     padding: 30px 0;
+     .slider{
+       margin: 20px auto;
+       .item{
+         position: relative;
+         width: 500px;
+         height: 700px;
+         img {
+           margin: 0 auto;
+           width: 500px;
+           height: 700px;
+         }
+         h1{
+           position: absolute;
+           left: 278px;
+           bottom:129px;
+           font-style: normal;
+           font-weight: 900;
+           font-size: 45px;
+           line-height: 58px;
+           letter-spacing: -0.02em;
+           color: #FFFFFF;
+         }
+         p{
+           position: absolute;
+           left: 336px;
+           bottom: 97px;
+           font-style: normal;
+           font-weight: 400;
+           font-size: 16px;
+           line-height: 22px;
+           color: #FFFFFF;
+         }
+
+       }
+       .slick-prev:before,
+       .slick-next:before{
+         display: none;
+       }
+     }
+
+     }
+     .btn{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+      button{
+        margin-top: 20px;
+        width: 380px;
+        height: 65px;
+        background: #004FC7;
+        border-radius: 20px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 23px;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+      }
+     }
+   }
+  }
+@media (max-width: 768px) {
+  #start{
+    background: #DFE2FF;
+    .start{
+      padding: 50px 0;
+      .slider{
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div{
+          img{
+            width: 500px;
+            height: 700px;
+          }
+        }
+      }
+      .btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+        button{
+          width: 400px;
+          height: 65px;
+          background: #004FC7;
+          border-radius: 20px;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 23px;
+          letter-spacing: -0.02em;
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+}
