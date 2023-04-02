@@ -6,6 +6,7 @@ import FoodsSlider from "./foods-slider/FoodsSlider";
 import Foods from "./foods/Foods";
 
 const MainPage = () => {
+
   return (
     <div>
       <Header/>
@@ -13,7 +14,6 @@ const MainPage = () => {
       <Category/>
       <FoodsSlider/>
       <Foods/>
-
     </div>
   );
 };
