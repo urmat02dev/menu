@@ -2,7 +2,13 @@ import React from 'react';
 import "./Header.scss"
 import logos from "../../assets/img/logos.svg"
 import {BiBasket} from "react-icons/bi";
+import {useTranslation} from "react-i18next";
 const Header = () => {
+  const lang = localStorage.getItem("i18nextLng")
+  const {i18n} = useTranslation()
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
   return (
     <div id='header'>
         <div className="container">
@@ -13,11 +19,11 @@ const Header = () => {
                       <BiBasket/>
                   </div>
                   <div className="header--end__two">
-                      <select>
-                          <option>РУС</option>
-                          <option>КЫР</option>
-                          <option>ENG</option>
-                      </select>
+                    <select onChange={(e) => changeLanguage(e.target.value)} defaultValue={lang}>
+                      <option value={"ru"}>РУС</option>
+                      <option value={"kg"}>КЫР</option>
+                      <option value={"en"}>ENG</option>
+                    </select>
                   </div>
               </div>
           </div>
