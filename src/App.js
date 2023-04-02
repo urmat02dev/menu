@@ -1,10 +1,7 @@
 import './App.scss';
 import {Route, Routes} from "react-router-dom";
 import Starts from "./components/starts/Starts";
-import Header from "./components/header/Header";
-import Search from "./components/main-page/search/Search";
-import Category from "./components/main-page/category/Category";
-import FoodsSlider from "./components/main-page/foods-slider/FoodsSlider";
+import MainPage from "./components/main-page/MainPage";
 
 function App() {
   return (
@@ -12,11 +9,8 @@ function App() {
 
      <Routes>
        <Route path="/" element={<Starts/>}/>
+       <Route path="/main" element={<MainPage/>}/>
      </Routes>
-       <Header/>
-       <Search/>
-       <Category/>
-       <FoodsSlider/>
    </>
   );
 }
