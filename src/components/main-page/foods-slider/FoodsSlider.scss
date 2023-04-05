@@ -1,18 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 992px) {
   #foods {
     h2 {
@@ -61,6 +47,11 @@
           }
         }
       }
+    }
+    .slick-prev:before,
+    .slick-next:before
+    {
+      display: none;
     }
   }
 }

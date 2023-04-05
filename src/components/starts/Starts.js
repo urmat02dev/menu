@@ -12,10 +12,10 @@ const Starts = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 800,
+    speed: 500,
     scroll:true,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
+    autoplaySpeed: 1300,
+    cssEase: "ease",
   };
   return (
     <div id={"start"} onClick={() => nav("/main")}>

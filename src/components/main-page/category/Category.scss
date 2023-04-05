@@ -81,6 +81,11 @@
         font-weight: 100;
       }
     }
+    .slick-prev:before,
+    .slick-next:before
+    {
+      display: none;
+    }
   }
 }
 @media (max-width: 768px) {
@@ -421,6 +426,7 @@
         font-weight: 100;
       }
     }
+
   }
 }
 @media (max-width: 400px) {
