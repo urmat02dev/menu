@@ -1,0 +1,70 @@
+#food {
+  background: #F4F3FF;
+
+  .food {
+    padding: 10px 0 20px 5px;
+
+    h1 {
+      font-family: 'Armin Grotesk,', sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      padding: 20px 0 20px 15px;
+    }
+
+    &--card {
+      background: #FFFFFF;
+      display: flex;
+      padding: 15px 20px;
+      margin: 10px;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 20px;
+
+      &__word {
+        padding: 0 0 0 30px;
+
+        h2 {
+          font-family: 'Armin Grotesk', sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          padding: 0 0 10px 0;
+        }
+
+        h3 {
+          font-family: 'Armin Grotesk', sans-serif;
+          font-weight: 200;
+          font-size: 11px;
+          line-height: 17px;
+          width: 90%;
+          padding: 0 0 5px 0;
+        }
+
+        &--tittle2 {
+          font-family: 'Armin Grotesk', sans-serif;
+          font-weight: 200;
+          font-size: 11px;
+          line-height: 17px;
+          width: 90%;
+          padding: 0 0 5px 0;
+        }
+
+        &--order {
+          display: flex;
+
+          &__icon {
+            background: #DFE2FF;
+            padding: 4px 15px;
+            border-radius: 15px;
+            color: #004FC7;
+            margin: 10px 0 0 0;
+          }
+
+          h3 {
+            padding: 15px 0 0 0;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
