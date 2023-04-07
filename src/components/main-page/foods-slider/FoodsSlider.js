@@ -77,6 +77,7 @@ const FoodsSlider = () => {
           <h2>Хит продаж</h2>
         <div className="foods">
             <Slider {...settings}>
+
                 <div className="foods--one">
                     <img src={logo} alt=""/>
                     <h3>Панкейк</h3>
