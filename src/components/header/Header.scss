@@ -34,19 +34,25 @@
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 864px) {
   #header {
     .header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 60px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
           font-size: 22px;
+          &--icon {
+            font-size: 30px;
+          }
         }
         &__two {
           select {
@@ -54,8 +60,45 @@
             background: transparent;
             outline: none;
             margin-bottom: 4px;
+            font-size: 17px;
             option {
-              font-size: 10px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  #header {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      img {
+        width: 50px;
+      }
+      &--end {
+        display: flex;
+        align-items: center;
+        &__one {
+          margin-right: 20px;
+          font-size: 22px;
+          &--icon {
+            font-size: 27px;
+          }
+        }
+        &__two {
+          select {
+            border: none;
+            background: transparent;
+            outline: none;
+            margin-bottom: 4px;
+            font-size: 15px;
+            option {
+              font-size: 12px;
             }
           }
         }
@@ -70,12 +113,18 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 50px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
           font-size: 22px;
+          &--icon {
+            font-size: 27px;
+          }
         }
         &__two {
           select {
@@ -83,8 +132,9 @@
             background: transparent;
             outline: none;
             margin-bottom: 4px;
+            font-size: 15px;
             option {
-              font-size: 10px;
+              font-size: 12px;
             }
           }
         }
@@ -92,19 +142,25 @@
     }
   }
 }
-@media (max-width: 451px) {
+@media (max-width: 450px) {
   #header {
     .header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 50px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
           font-size: 22px;
+          &--icon {
+            font-size: 27px;
+          }
         }
         &__two {
           select {
@@ -112,8 +168,45 @@
             background: transparent;
             outline: none;
             margin-bottom: 4px;
+            font-size: 15px;
             option {
-              font-size: 10px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  #header {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      img {
+        width: 50px;
+      }
+      &--end {
+        display: flex;
+        align-items: center;
+        &__one {
+          margin-right: 20px;
+          font-size: 22px;
+          &--icon {
+            font-size: 27px;
+          }
+        }
+        &__two {
+          select {
+            border: none;
+            background: transparent;
+            outline: none;
+            margin-bottom: 4px;
+            font-size: 15px;
+            option {
+              font-size: 12px;
             }
           }
         }
@@ -128,12 +221,17 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 45px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
-          font-size: 22px;
+          &--icon {
+            font-size: 25px;
+          }
         }
         &__two {
           select {
@@ -141,8 +239,44 @@
             background: transparent;
             outline: none;
             margin-bottom: 4px;
+            font-size: 14px;
             option {
-              font-size: 10px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 409px) {
+  #header {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      img {
+        width: 45px;
+      }
+      &--end {
+        display: flex;
+        align-items: center;
+        &__one {
+          margin-right: 20px;
+          &--icon {
+            font-size: 25px;
+          }
+        }
+        &__two {
+          select {
+            border: none;
+            background: transparent;
+            outline: none;
+            margin-bottom: 4px;
+            font-size: 14px;
+            option {
+              font-size: 12px;
             }
           }
         }
@@ -157,12 +291,17 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 45px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
-          font-size: 22px;
+          &--icon {
+            font-size: 25px;
+          }
         }
         &__two {
           select {
@@ -170,8 +309,44 @@
             background: transparent;
             outline: none;
             margin-bottom: 4px;
+            font-size: 14px;
             option {
-              font-size: 10px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 390px) {
+  #header {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      img {
+        width: 45px;
+      }
+      &--end {
+        display: flex;
+        align-items: center;
+        &__one {
+          margin-right: 20px;
+          &--icon {
+            font-size: 25px;
+          }
+        }
+        &__two {
+          select {
+            border: none;
+            background: transparent;
+            outline: none;
+            margin-bottom: 4px;
+            font-size: 14px;
+            option {
+              font-size: 12px;
             }
           }
         }
@@ -186,12 +361,17 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 45px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
-          font-size: 22px;
+          &--icon {
+            font-size: 25px;
+          }
         }
         &__two {
           select {
@@ -199,8 +379,9 @@
             background: transparent;
             outline: none;
             margin-bottom: 4px;
+            font-size: 14px;
             option {
-              font-size: 10px;
+              font-size: 12px;
             }
           }
         }
@@ -208,19 +389,24 @@
     }
   }
 }
-@media (max-width: 321px) {
+@media (max-width: 361px) {
   #header {
     .header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 42px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
-          font-size: 22px;
+          &--icon {
+            font-size: 25px;
+          }
         }
         &__two {
           select {
@@ -228,8 +414,44 @@
             background: transparent;
             outline: none;
             margin-bottom: 4px;
+            font-size: 13px;
             option {
-              font-size: 10px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  #header {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      img {
+        width: 40px;
+      }
+      &--end {
+        display: flex;
+        align-items: center;
+        &__one {
+          margin-right: 20px;
+          &--icon {
+            font-size: 23px;
+          }
+        }
+        &__two {
+          select {
+            border: none;
+            background: transparent;
+            outline: none;
+            margin-bottom: 4px;
+            font-size: 12px;
+            option {
+              font-size: 11px;
             }
           }
         }
