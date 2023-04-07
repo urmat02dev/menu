@@ -5,12 +5,18 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 70px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
           font-size: 22px;
+          &--icon {
+            font-size: 35px;
+          }
         }
         &__two {
           select {
@@ -18,8 +24,9 @@
             background: transparent;
             outline: none;
             margin-bottom: 4px;
+            font-size: 20px;
             option {
-              font-size: 10px;
+              font-size: 15px;
             }
           }
         }
