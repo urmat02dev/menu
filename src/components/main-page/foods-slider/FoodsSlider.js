@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./FoodsSlider.scss"
 import logo from '../../../assets/img/Rectangle 44.png'
 import {BiBasket} from "react-icons/bi";
 import Slider from "react-slick";
+import {data} from "../../fake-backend/backend";
 const FoodsSlider = () => {
     let settings = {
         infinite: false,
@@ -69,6 +70,7 @@ const FoodsSlider = () => {
             },
         ]
     };
+    
   return (
     <div id='foods'>
       <div className="container">
