@@ -11,5 +11,10 @@
     "6": "Bestseller",
     "7": "Bestseller",
     "8": "Bestseller"
+  "basket": {
+    "h1": "Basket",
+    "ups": "Oops... it's empty",
+    "p": "You haven't added anything yet",
+    "btn": "Open Menu"
   }
 }

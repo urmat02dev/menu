@@ -14,7 +14,7 @@ const Starts = () => {
     autoplay: true,
     speed: 500,
     scroll:true,
-    autoplaySpeed: 1300,
+    autoplaySpeed: 1000,
     cssEase: "ease",
   };
   return (
@@ -38,7 +38,7 @@ const Starts = () => {
                 <h1>Новые вкусы</h1>
                 <p>Попробуй прямо сейчас</p>
                 <div className={"lines"}>
-                  <div className="one"></div>
+                  <div className="one line"></div>
                   <div className="two line"></div>
                   <div className="three"></div>
               </div>
@@ -48,8 +48,8 @@ const Starts = () => {
                 <h1>Новые вкусы</h1>
                 <p>Попробуй прямо сейчас</p>
                 <div className={"lines"}>
-                  <div className="one"></div>
-                  <div className="two"></div>
+                  <div className="one line"></div>
+                  <div className="two line"></div>
                   <div className="three line"></div>
               </div>
               </div>
