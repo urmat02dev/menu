@@ -20,8 +20,8 @@ const Foods = () => {
                             <h2>Гранола</h2>
                             <h3>Греческий йогурт, свежие фрукты и ягоды</h3>
                             <div className="food--card__word--order">
-                                <h3>238с</h3>
-                                <div className="food--card__word--order__icon">
+                                <h4>238с</h4>
+                                <div className="food--card__word--order__icon1">
                                     <BsBasket/>
                                 </div>
 
@@ -32,10 +32,10 @@ const Foods = () => {
                         <img src={egg2} alt=""/>
                         <div className="food--card__word">
                             <h2>Клубный сэндвич с картофелем фри</h2>
-                            <h3 className="food--card__word--tittle2">Свежие помидоры,яичница</h3>
+                            <h3>Свежие помидоры,яичница</h3>
                             <div className="food--card__word--order">
-                                <h3>238с</h3>
-                                <div className="food--card__word--order__icon">
+                                <h4>238с</h4>
+                                <div className="food--card__word--order__icon2">
                                     <BsBasket/>
                                 </div>
 
@@ -48,8 +48,8 @@ const Foods = () => {
                             <h2>Круассан Филадельфия</h2>
                             <h3>Со слабосолёной сёмгой, крем-сыром филадельфия, огурцами</h3>
                             <div className="food--card__word--order">
-                                <h3>238с</h3>
-                                <div className="food--card__word--order__icon">
+                                <h4>238с</h4>
+                                <div className="food--card__word--order__icon3">
                                     <BsBasket/>
                                 </div>
 
@@ -62,8 +62,8 @@ const Foods = () => {
                             <h2>Сырники</h2>
                             <h3>Обжаренные лепёшки из творога, муки и яиц</h3>
                             <div className="food--card__word--order">
-                                <h3>238с</h3>
-                                <div className="food--card__word--order__icon">
+                                <h4>238с</h4>
+                                <div className="food--card__word--order__icon4">
                                     <BsBasket/>
                                 </div>
 
@@ -76,8 +76,8 @@ const Foods = () => {
                             <h2>Омлет с овощами,тостом</h2>
                             <h3>Омлет с овощами и тостом</h3>
                             <div className="food--card__word--order">
-                                <h3>238с</h3>
-                                <div className="food--card__word--order__icon">
+                                <h4>238с</h4>
+                                <div className="food--card__word--order__icon5">
                                     <BsBasket/>
                                 </div>
 
