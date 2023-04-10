@@ -5,6 +5,7 @@
   "category": {
     "1": "Bestseller",
     "2": "Breakfasts",
+
     "3": "Bestseller",
     "4": "Bestseller",
     "5": "Bestseller",
@@ -20,6 +21,19 @@
   },
   "foods": {
     "h1": "Breakfast"
+
+    "3": "Salads",
+    "4": "Dishes",
+    "5": "Pizza",
+    "6": "Dessert",
+    "7": "Beverages",
+    "8": "Hot"
+},
+  "basket": {
+    "h1": "Basket",
+    "ups": "Oops... it's empty",
+    "p": "You haven't added anything yet",
+    "btn": "Open Menu"
   }
 
 }

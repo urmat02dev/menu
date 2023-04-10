@@ -2,20 +2,19 @@
   #search {
     position: relative;
     .search {
-
       display: flex;
       align-items: center;
       justify-content: center;
       input {
-        width: 260px;
-        height: 40px;
+        width: 360px;
+        height: 45px;
         border-radius: 21px;
         background: #DFE2FF;
         border: none;
         outline: none;
         padding: 0 15px;
 
-        font-size: 15px;
+        font-size: 18px;
       }
       ::placeholder {
         color: rgba(40, 49, 255, 0.3);
@@ -23,9 +22,9 @@
       }
       .icon {
         position: absolute;
-        left: 38rem;
+        left: 41rem;
         right: 20px;
-        top: 10px;
+        top: 12px;
         bottom: 0;
         color: rgba(40, 49, 255, 0.3);
         font-size: 22px;
@@ -58,7 +57,7 @@
       }
       .icon {
         position: absolute;
-        left: 28rem;
+        left: 31rem;
         right: 20px;
         top: 10px;
         bottom: 0;
