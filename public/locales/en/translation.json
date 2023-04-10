@@ -1,5 +1,25 @@
 {
   "search": {
     "placeholder": "Search"
+  },
+  "category": {
+    "1": "Bestseller",
+    "2": "Breakfasts",
+    "3": "Bestseller",
+    "4": "Bestseller",
+    "5": "Bestseller",
+    "6": "Bestseller",
+    "7": "Bestseller",
+    "8": "Bestseller"
+    "basket": {
+      "h1": "Basket",
+      "ups": "Oops... it's empty",
+      "p": "You haven't added anything yet",
+      "btn": "Open Menu"
+    }
+  },
+  "foods": {
+    "h1": "Breakfast"
   }
+
 }
