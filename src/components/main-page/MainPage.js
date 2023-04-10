@@ -5,6 +5,7 @@ import Category from "./category/Category";
 import FoodsSlider from "./foods-slider/FoodsSlider";
 import Foods from "./foods/Foods";
 import {data} from "../fake-backend/backend";
+import Modal from "../modal/Modal";
 
 const MainPage = () => {
 
@@ -15,6 +16,7 @@ const MainPage = () => {
       <Category/>
       <FoodsSlider/>
       <Foods/>
+        <Modal/>
     </div>
   );
 };

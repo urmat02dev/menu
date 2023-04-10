@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import "./FoodsSlider.scss"
-import logo from '../../../assets/img/Rectangle 44.png'
 import {BiBasket} from "react-icons/bi";
 import Slider from "react-slick";
 import {data} from "../../fake-backend/backend";
+import {NavLink} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {GET_MODAL, MODAL} from "../../../redux/Reducer/ActionTypes";
 const FoodsSlider = () => {
     let settings = {
         infinite: false,
@@ -25,7 +27,7 @@ const FoodsSlider = () => {
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 3,
-                    infinite: true,
+                    infinite: false,
                 }
             },
             {
@@ -70,59 +72,32 @@ const FoodsSlider = () => {
             },
         ]
     };
-    
+    const dispatch = useDispatch()
+    const getModal = (el) => {
+        dispatch({type:GET_MODAL, payload:true})
+        dispatch({type:MODAL, payload:el})
+    }
   return (
     <div id='foods'>
       <div className="container">
           <h2>Хит продаж</h2>
         <div className="foods">
             <Slider {...settings}>
-
-                <div className="foods--one">
-                    <img src={logo} alt=""/>
-                    <h3>Панкейк</h3>
-                    <p>Мука, молоко, банан, сахарная пудра,смородина</p>
-                    <div className='foods--one__basket'>
-                        <h3>150c</h3>
-                        <BiBasket className='foods--one__basket--icon'/>
-                    </div>
-                </div>
-                <div className="foods--one">
-                    <img src={logo} alt=""/>
-                    <h3>Панкейк</h3>
-                    <p>Мука, молоко, банан, сахарная пудра,смородина</p>
-                    <div className='foods--one__basket'>
-                        <h3>150c</h3>
-                        <BiBasket className='foods--one__basket--icon'/>
-                    </div>
-                </div>
-                <div className="foods--one">
-                    <img src={logo} alt=""/>
-                    <h3>Панкейк</h3>
-                    <p>Мука, молоко, банан, сахарная пудра,смородина</p>
-                    <div className='foods--one__basket'>
-                        <h3>150c</h3>
-                        <BiBasket className='foods--one__basket--icon'/>
-                    </div>
-                </div>
-                <div className="foods--one">
-                    <img src={logo} alt=""/>
-                    <h3>Панкейк</h3>
-                    <p>Мука, молоко, банан, сахарная пудра,смородина</p>
-                    <div className='foods--one__basket'>
-                        <h3>150c</h3>
-                        <BiBasket className='foods--one__basket--icon'/>
-                    </div>
-                </div>
-                <div className="foods--one">
-                    <img src={logo} alt=""/>
-                    <h3>Панкейк</h3>
-                    <p>Мука, молоко, банан, сахарная пудра,смородина</p>
-                    <div className='foods--one__basket'>
-                        <h3>150c</h3>
-                        <BiBasket className='foods--one__basket--icon'/>
-                    </div>
-                </div>
+                {
+                    data[0].map((el) => {
+                        return <div className="foods--one" key={el.id}>
+                            <div onClick={() => getModal(el)}>
+                                <img src={el.image} alt=""/>
+                            </div>
+                            <h3>{el.title}</h3>
+                            <p>{el.desc}</p>
+                            <div className='foods--one__basket'>
+                                <h3>{el.price}</h3>
+                                <BiBasket className='foods--one__basket--icon'/>
+                            </div>
+                        </div>
+                    })
+                }
             </Slider>
         </div>
       </div>
