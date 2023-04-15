@@ -85,7 +85,8 @@ export const data = [
        mass: 240,
        top: true,
      },
-], [
+],
+    [
   {
     id: uniqid(),
     title: "Pancake",
@@ -120,7 +121,8 @@ export const data = [
     mass: 240,
     top: true,
   },
-], [
+],
+    [
     {
       id: uniqid(),
       title: "Pancake",
