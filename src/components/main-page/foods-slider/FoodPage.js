@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from "../../../assets/img/Rectangle 44.png";
 import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
 import {GET_MODAL, MODAL} from "../../../redux/Reducer/ActionTypes";

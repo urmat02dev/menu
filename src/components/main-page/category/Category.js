@@ -2,10 +2,7 @@ import React, {useState} from 'react';
 import "./Category.scss"
 import Slider from "react-slick";
 import {useTranslation} from "react-i18next";
-const Category = () => {
-    const [active1, setActive1] = useState(false)
-    const [active2, setActive2] = useState(false)
-    const [active, setActive] = useState(0)
+const Category = ({active,setActive}) => {
     console.log(active)
 
     const {t} = useTranslation()

@@ -1,7 +1,7 @@
 import uniqid from "uniqid"
 export const data = [
   [
-  {
+     {
     id: uniqid(),
     title: "Pancake",
     title_ru: "Панкейк",
@@ -172,6 +172,7 @@ export const data = [
     },
   ],
 
+],
 ]
 
 
