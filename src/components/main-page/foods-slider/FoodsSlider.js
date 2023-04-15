@@ -1,11 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./FoodsSlider.scss"
-import {BiBasket} from "react-icons/bi";
 import Slider from "react-slick";
 import {data} from "../../fake-backend/backend";
-import {NavLink} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {GET_MODAL, MODAL} from "../../../redux/Reducer/ActionTypes";
 import FoodPage from "./FoodPage";
 const FoodsSlider = ({modal,setModal}) => {
     let settings = {

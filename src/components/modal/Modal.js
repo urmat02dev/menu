@@ -35,44 +35,9 @@ const Modal = ({modal,setModal}) => {
     }
     console.log(modalDetail)
   return (
-    <div id={"modal"} style={{
-        backdropFilter:modal ? "blur(3px)" : "none",
-        background:modal ? "rgba(0, 0, 0, 0.42)" : "none"
-          }} >
-              <div className="container">
-                  <div className="modal" style={{
-                      left: modal ? "0" : "-1000px"
-                  }}
-                  >
-                      <div className="modal-close" onClick={() =>getClose()}>
-                          <AiOutlineClose className={"icon"} />
-                      </div>
-                      <div className="modal--items">
-                          {/*<img src={image} alt=""/>*/}
-                          {/*<div className={"modal--items--bottom"}>*/}
-                          {/*    <h1>{getTitle()}</h1>*/}
-                          {/*    <p>{getDesc()}</p>*/}
-                          {/*    <h5>{ mass }г</h5>*/}
-                          {/*    <h4>Цена: <span>{price}c</span></h4>*/}
-                          {/*    <div className="modal--items--bottom--btn">*/}
-                          {/*        <button>Добавить в*/}
-                          {/*        <div><BiBasket className={"icon"}/></div>*/}
-                          {/*        </button>*/}
-                          {/*        <div className={"modal--items--bottom--count"}>*/}
-                          {/*            <div>-</div>*/}
-                          {/*            <div className={"price"}>{quantity}</div>*/}
-                          {/*            <div>+</div>*/}
-                          {/*        </div>*/}
-                          {/*    </div>*/}
-                          {/*</div>*/}
-                      </div>
-
-                  </div>
-              </div>
-          </div>
-
-
-
+    <div>
+        
+    </div>
   );
 };
 

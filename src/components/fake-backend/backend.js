@@ -135,7 +135,4 @@ export const data = [
       },
 ],
 
-    ]
-
-
-
+]
