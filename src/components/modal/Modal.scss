@@ -522,7 +522,13 @@
 }
 
 @media (max-width: 428px) {
-
+  #modal .modal--content {
+    height: 470px;
+    border-radius: 30px;
+    width: 335px;
+    right: 26px;
+    position: relative;
+  }
 
 }
 
@@ -551,10 +557,11 @@
 
 @media (max-width: 400px) {
   #modal .modal--content {
-    right: 2px;
+    right: 23px;
+    height: 494px;
   }
   #modal .modal--content__none {
-    top: -27%;
+    top: -25%;
   }
   #modal .modal--content__card--btn__plusBtn {
     padding: 7px 18px;
@@ -566,13 +573,15 @@
 }
 
 @media (max-width: 393px) {
-
+  #modal .modal--content {
+    right: 27px;
+    height: 494px;
+  }
 }
-
 
 @media (max-width: 390px) {
   #modal .modal--content {
-    right: 22px;
+    right: 24px;
   }
   #modal .modal--content__none {
     top: -24%;
@@ -600,9 +609,20 @@
 }
 
 @media (max-width: 375px) {
-  #modal .modal {
-    height: 118vh;
-    width: 111vw;
+  #modal .modal--content {
+    right: 23px;
+  }
+}
+
+@media (max-width: 360px) {
+  #modal .modal--content {
+    right: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  #modal .modal--content {
+    right: 17px;
   }
 }
 
