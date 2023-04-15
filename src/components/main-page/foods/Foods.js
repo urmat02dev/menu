@@ -9,16 +9,16 @@ import egg5 from "../../../assets/img/menu/iPhone 13/image 15.png"
 import {useTranslation} from "react-i18next";
 
 
-const Foods = () => {
+const Foods = ({modalActive,setActive}) => {
     const {t} = useTranslation()
     return (
-        <div id="food">
+        <div id="food" >
             <div className="container">
                 <div className="food">
                     <h1>Завтраки</h1>
                     <center>
                         <div className="food--card">
-                            <img className="food--card__img1" src={egg} alt=""/>
+                                <img className="food--card__img1" src={egg} alt=""/>
                             <div className="food--card__word">
                                 <h2>Гранола</h2>
                                 <h3>Греческий йогурт, свежие фрукты и ягоды</h3>
