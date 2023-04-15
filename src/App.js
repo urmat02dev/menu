@@ -10,13 +10,13 @@ function App() {
 
   return (
    <>
-
-
      <Routes>
        <Route path="/" element={<Starts/>}/>
        <Route path="/main" element={<MainPage/>}/>
        <Route path="/basket" element={<Basket/>}/>
-       <Route path="/modal" element={<MODAL/>}/>
+       <Route path="/detail-page/:id" element={<Modal/>}/>
+       <Route path="/modal" element={<Modal/>}/>
+       <Route path="/detail-page/:id" element={<Modal/>}/>
      </Routes>
    </>
   );
