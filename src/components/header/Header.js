@@ -20,7 +20,7 @@ const Header = () => {
               </NavLink>
               <div className="header--end">
                   <div className="header--end__one" onClick={() => nav("/basket")}>
-                      <BiBasket/>
+                      <BiBasket className='header--end__one--icon'/>
                   </div>
                   <div className="header--end__two">
                     <select onChange={(e) => changeLanguage(e.target.value)} defaultValue={lang}>
