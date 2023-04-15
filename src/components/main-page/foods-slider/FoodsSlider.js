@@ -6,7 +6,8 @@ import {data} from "../../fake-backend/backend";
 import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {GET_MODAL, MODAL} from "../../../redux/Reducer/ActionTypes";
-const FoodsSlider = () => {
+import FoodPage from "./FoodPage";
+const FoodsSlider = ({modal,setModal}) => {
     let settings = {
         infinite: false,
         speed: 500,
@@ -35,7 +36,7 @@ const FoodsSlider = () => {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
-                    infinite: true,
+                    infinite: false,
                 }
             },
             {
@@ -72,11 +73,8 @@ const FoodsSlider = () => {
             },
         ]
     };
-    const dispatch = useDispatch()
-    const getModal = (el) => {
-        dispatch({type:GET_MODAL, payload:true})
-        dispatch({type:MODAL, payload:el})
-    }
+
+
   return (
     <div id='foods'>
       <div className="container">
@@ -85,17 +83,9 @@ const FoodsSlider = () => {
             <Slider {...settings}>
                 {
                     data[0].map((el) => {
-                        return <div className="foods--one" key={el.id}>
-                            <div onClick={() => getModal(el)}>
-                                <img src={el.image} alt=""/>
-                            </div>
-                            <h3>{el.title}</h3>
-                            <p>{el.desc}</p>
-                            <div className='foods--one__basket'>
-                                <h3>{el.price}</h3>
-                                <BiBasket className='foods--one__basket--icon'/>
-                            </div>
-                        </div>
+                        return <FoodPage el={el}
+                                         modal={modal}
+                                         setModal={setModal}/>
                     })
                 }
             </Slider>
