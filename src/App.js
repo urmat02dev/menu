@@ -19,6 +19,9 @@ const [modalActive,setActive] = useState(false)
        <Route path="/basket" element={<Basket/>}/>
     </Routes>
        <Modal active={modalActive} setActive={setActive}/>
+       <Route path="/detail-page/:id" element={<Modal/>}/>
+       <Route path="/modal" element={<Modal/>}/>
+     </Routes>
    </>
   );
 }

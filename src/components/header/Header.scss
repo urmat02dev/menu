@@ -5,12 +5,18 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 70px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
           font-size: 22px;
+          &--icon {
+            font-size: 35px;
+          }
         }
         &__two {
           select {
@@ -18,8 +24,9 @@
             background: transparent;
             outline: none;
             margin-bottom: 4px;
+            font-size: 20px;
             option {
-              font-size: 10px;
+              font-size: 15px;
             }
           }
         }
@@ -63,12 +70,18 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 60px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
           font-size: 22px;
+          &--icon {
+            width: 30px;
+          }
         }
         &__two {
           select {
@@ -76,6 +89,7 @@
             background: transparent;
             outline: none;
             margin-bottom: 4px;
+            font-size: 16px;
             option {
               font-size: 10px;
             }
@@ -92,12 +106,18 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 55px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
           font-size: 22px;
+          &--icon {
+            width: 27px;
+          }
         }
         &__two {
           select {
@@ -105,6 +125,7 @@
             background: transparent;
             outline: none;
             margin-bottom: 4px;
+            font-size: 15px;
             option {
               font-size: 10px;
             }
@@ -172,19 +193,93 @@
     }
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 391px) {
   #header {
     .header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 50px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
           font-size: 22px;
+          &--icon {
+            font-size: 25px;
+          }
+        }
+        &__two {
+          select {
+            border: none;
+            background: transparent;
+            outline: none;
+            margin-bottom: 4px;
+            font-size: 15px;
+            option {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 376px) {
+  #header {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      img {
+        width: 48px;
+      }
+      &--end {
+        display: flex;
+        align-items: center;
+        &__one {
+          margin-right: 20px;
+          font-size: 22px;
+        }
+        &__two {
+          select {
+            border: none;
+            background: transparent;
+            outline: none;
+            margin-bottom: 4px;
+            option {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 360px) {
+  #header {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      img {
+        width: 46px;
+      }
+      &--end {
+        display: flex;
+        align-items: center;
+        &__one {
+          margin-right: 20px;
+          font-size: 22px;
+          &--icon {
+            width: 25px;
+          }
         }
         &__two {
           select {
@@ -208,15 +303,22 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      img {
+        width: 50px;
+      }
       &--end {
         display: flex;
         align-items: center;
         &__one {
           margin-right: 20px;
           font-size: 22px;
+          &--icon {
+            width: 22px;
+          }
         }
         &__two {
           select {
+            font-size: 15px;
             border: none;
             background: transparent;
             outline: none;
