@@ -3,7 +3,7 @@ import "./FoodsSlider.scss"
 import Slider from "react-slick";
 import {data} from "../../fake-backend/backend";
 import FoodPage from "./FoodPage";
-const FoodsSlider = ({modal,setModal}) => {
+const FoodsSlider = ({modal,setModal,best,setBest}) => {
     let settings = {
         infinite: false,
         speed: 500,
@@ -72,7 +72,9 @@ const FoodsSlider = ({modal,setModal}) => {
 
 
   return (
-    <div id='foods'>
+    <div id='foods' style={{
+        display:best ? "flex" : "none"
+    }}>
       <div className="container">
           <h2>Хит продаж</h2>
         <div className="foods">
@@ -88,7 +90,7 @@ const FoodsSlider = ({modal,setModal}) => {
         </div>
       </div>
     </div>
-  );
+   );
 };
 
 export default FoodsSlider;
