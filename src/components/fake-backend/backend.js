@@ -192,7 +192,7 @@ export const data = [
             id: uniqid(),
             title: "Mix-salad",
             title_ru: "Микс-салат",
-            title_kg: "Аралашм салат",
+            title_kg: "Аралашма салат",
             desc: "Tomato,greenery,eggs,chicken,cucumber,corns",
             desc_ru: "Помидор, зелень, яйца, курица, огурец, кукуруза",
             desc_kg: "Помидор, жашылча, жумуртка, тоок эти, бадыраң, жүгөрү",
