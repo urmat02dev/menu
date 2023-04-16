@@ -5,15 +5,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
       input {
-        width: 360px;
+        width: 650px;
         height: 45px;
         border-radius: 21px;
         background: #DFE2FF;
         border: none;
         outline: none;
         padding: 0 15px;
-
         font-size: 18px;
       }
       ::placeholder {
@@ -21,13 +21,10 @@
         font-size: 16px;
       }
       .icon {
-        position: absolute;
-        left: 41rem;
-        right: 20px;
-        top: 12px;
-        bottom: 0;
+        position: relative;
+        right: 40px;
         color: rgba(40, 49, 255, 0.3);
-        font-size: 22px;
+        font-size: 24px;
       }
     }
   }
