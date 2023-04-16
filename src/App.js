@@ -3,14 +3,13 @@ import {Route, Routes} from "react-router-dom";
 import Starts from "./components/starts/Starts";
 import MainPage from "./components/main-page/MainPage";
 import Basket from "./components/basket/Basket";
-import Modal from "./components/modal/Modal";
 import React, {useState} from "react";
+import {MODAL} from "./redux/Reducer/ActionTypes";
 
 function App() {
 
   return (
    <>
-
      <Routes>
        <Route path="/" element={<Starts/>}/>
        <Route path="/main" element={<MainPage/>}/>
@@ -18,7 +17,6 @@ function App() {
        <Route path="/detail-page/:id" element={<Modal/>}/>
        <Route path="/modal" element={<Modal/>}/>
        <Route path="/detail-page/:id" element={<Modal/>}/>
-       <Route path="/modal" element={<Modal/>}/>
      </Routes>
    </>
   );
