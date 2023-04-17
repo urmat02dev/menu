@@ -3,9 +3,9 @@ import {BsBasket} from "react-icons/bs";
 import {useTranslation} from "react-i18next";
 import "./FoodCard.scss"
 import {useDispatch} from "react-redux";
-import {GET_BASKET} from "../../../redux/Reducer/ActionTypes";
+import {GET_BASKET, MODAL} from "../../../redux/Reducer/ActionTypes";
 
-const FoodCard = ({el}) => {
+const FoodCard = ({el,setModal,modal}) => {
   const {t } = useTranslation()
   const lang = localStorage.getItem("i18nextLng")
   const dispatch = useDispatch()
@@ -31,21 +31,21 @@ const FoodCard = ({el}) => {
       return el.desc_kg.slice(0,200)
     }
   }
-  function getBasket() {
-    dispatch({type:GET_BASKET,payload:el})
+  function getWindow() {
+    setModal(!modal)
+    dispatch({type:MODAL,payload:el})
   }
   return (
     <div className="food--card">
-      <img className="food--card__img" src={el.image} alt=""/>
+      <img className="food--card__img" src={el.image} alt="" onClick={() => getWindow()}/>
       <div className="food--card__word">
         <h2>{getTitle(el)}</h2>
         <p>{getDesc(el)}</p>
         <div className="food--card__word--order">
           <h4>{el.price}c.</h4>
-          <div className="food--card__word--order__icon1" onClick={() => getBasket()}>
+          <div className="food--card__word--order__icon1" >
             <BsBasket className="icon" />
           </div>
-
         </div>
       </div>
     </div>

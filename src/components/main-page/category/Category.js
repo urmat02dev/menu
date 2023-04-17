@@ -95,6 +95,11 @@ const Category = ({active,setActive,best,setBest}) => {
 
               <div className="category-one2" onClick={() => {
                   setActive(1)
+                  window.scrollTo({
+                      top: 900,
+                      left: 100,
+                      behavior: "smooth",
+                  });
               }}>
                   {
                       active === 1  ?
@@ -112,6 +117,11 @@ const Category = ({active,setActive,best,setBest}) => {
 
               <div className="category-one2" onClick={() => {
                   setActive(2)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
 
 
               }}>
@@ -127,7 +137,14 @@ const Category = ({active,setActive,best,setBest}) => {
                   <h3>{t('category.3')}</h3>
               </div>
 
-              <div className="category-one3" onClick={() => setActive(3)}>
+              <div className="category-one3" onClick={() => {
+                  setActive(3)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
+              }}>
                   {
                       active !== 3 ?
                       <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,7 +158,14 @@ const Category = ({active,setActive,best,setBest}) => {
                   <h3>{t('category.4')}</h3>
               </div>
 
-              <div className="category-one4" onClick={() => setActive(4)}>
+              <div className="category-one4" onClick={() => {
+                  setActive(4)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
+              }}>
                   {
                       active === 4 ?
                       <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,7 +179,14 @@ const Category = ({active,setActive,best,setBest}) => {
                 <h3>{t('category.5')}</h3>
               </div>
 
-              <div className="category-one2" onClick={() => setActive(5)}>
+              <div className="category-one2" onClick={() => {
+                  setActive(5)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
+              }}>
                   {
                       active === 5 ?
                       <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,7 +200,14 @@ const Category = ({active,setActive,best,setBest}) => {
                 <h3>{t('category.6')}</h3>
               </div>
 
-              <div className="category-one5" onClick={() => setActive(6)}>
+              <div className="category-one5" onClick={() => {
+                  setActive(6)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
+              }}>
                   {
                       active === 6 ?
                       <svg width="22" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -182,7 +220,14 @@ const Category = ({active,setActive,best,setBest}) => {
                 <h3>{t('category.7')}</h3>
               </div>
 
-              <div className="category-one6" onClick={() => setActive(7)}>
+              <div className="category-one6" onClick={() => {
+                  setActive(7)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
+              }}>
                   {
                       active === 7 ?
                           <svg width="36" height="30" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg">
