@@ -1,6 +1,7 @@
 import React from 'react';
 import {BsBasket} from "react-icons/bs";
 import {useTranslation} from "react-i18next";
+import "./FoodCard.scss"
 import {useDispatch} from "react-redux";
 import {GET_BASKET} from "../../../redux/Reducer/ActionTypes";
 

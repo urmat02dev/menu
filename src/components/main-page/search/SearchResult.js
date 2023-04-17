@@ -20,13 +20,15 @@ const SearchResult = () => {
     <>
       <Header/>
       <Search/>
-      {
-        res.map(el => el.map(el => {
-          return <div>
-            <FoodCard el={el}/>
-          </div>
-        }))
-      }
+        <div className="container">
+            {
+                res.map(el => el.map(el => {
+                    return <FoodCard el={el}/>
+
+                }))
+            }
+        </div>
+
     </>
 
   );
