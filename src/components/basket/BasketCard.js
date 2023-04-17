@@ -29,10 +29,10 @@ const BasketCard = ({el}) => {
       return el.desc_kg.slice(0,200)
     }
   }
-  function getMinus() {
+  function getMinus(el) {
     dispatch({type:MINUS,payload:el})
   }
-  function getPlus() {
+  function getPlus(el) {
     dispatch({type:PLUS, payload:el})
 
 

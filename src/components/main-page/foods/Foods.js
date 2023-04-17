@@ -5,9 +5,8 @@ import {data} from "../../fake-backend/backend";
 import FoodCard from "./FoodCard";
 
 
-const Foods = ({active,setActive}) => {
+const Foods = ({active,setActive,modal,setModal}) => {
   const {t} = useTranslation()
-  console.log(active)
   const getTitle = () => {
   if (active === 0 || active === 1){
     return t('category.2')
@@ -41,50 +40,72 @@ const Foods = ({active,setActive}) => {
             {
               active === 0 || active === 1 ?
               data[1].map(el => {
-                return <FoodCard el={el}/>
+                return <FoodCard el={el}
+                                 modal={modal}
+                                 setModal={setModal}
+                />
               })
                 : ""
             }
           {
             active === 2 ?
               data[2].map(el => {
-                return <FoodCard el={el}/>
+                return <FoodCard el={el}
+                                 modal={modal}
+                                 setModal={setModal}
+                />
               }) : ''
           }
           {
             active === 3 ?
               data[3].map(el => {
-                return <FoodCard el={el}/>
+                return <FoodCard el={el}
+                                 modal={modal}
+                                 setModal={setModal}
+                />
               }) : ''
           }
           {
             active === 4 ?
               data[4].map(el => {
-                return <FoodCard el={el}/>
+                return <FoodCard el={el}
+                                 modal={modal}
+                                 setModal={setModal}
+                />
               }) : ''
           }
           {
             active === 5 ?
               data[5].map(el => {
-                return <FoodCard el={el}/>
+                return <FoodCard el={el}
+                                 modal={modal}
+                                 setModal={setModal}
+                />
               }) : ''
           }
           {
             active === 6 ?
               data[6].map(el => {
-                return <FoodCard el={el}/>
+                return <FoodCard el={el}
+                                 modal={modal}
+                                 setModal={setModal}
+                />
               }) : ''
           }
           {
             active === 7 ?
               data[7].map(el => {
-                return <FoodCard el={el}/>
+                return <FoodCard el={el}
+                                 modal={modal}
+                                 setModal={setModal}/>
               }) : ''
           }
           {
             active === 8 ?
               data[8].map(el => {
-                return <FoodCard el={el}/>
+                return <FoodCard el={el}
+                                 modal={modal}
+                                 setModal={setModal}/>
               }) : ''
           }
 

@@ -1,0 +1,57 @@
+.foods--one {
+  padding: 0 10px;
+  z-index: 99;
+  img {
+    width: 240px;
+    height: 220px;
+    border-radius: 20px;
+  }
+  h3 {
+    font-weight: 500;
+    padding: 5px 0 10px 0;
+    font-size: 23px;
+    color: black;
+  }
+  p {
+    font-family: 'Armin Grotesk',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    width: 240px;
+    height: 50px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  &__basket {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    height: 50px;
+    background: #fff;
+    border-radius: 25px;
+    margin-top: 20px;
+    width: 200px;
+    &--icon {
+      color: #004FC7;
+      width: 70px;
+      background: #DFE2FF;
+      height: 45px;
+      border-radius: 20px;
+      font-size: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icon{
+        font-size: 28px;
+      }
+    }
+    h3 {
+      font-size: 20px;
+      padding-bottom: 3px;
+      font-style: italic;
+      color: #000000;
+      font-weight: 600;
+    }
+  }
+}
