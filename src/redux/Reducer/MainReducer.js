@@ -1,19 +1,37 @@
-import {GET_BASKET, MODAL, SEARCH} from "./ActionTypes";
-import Search from "../../components/main-page/search/Search";
+import {GET_BASKET, MINUS, MODAL, PLUS, SEARCH} from "./ActionTypes";
 
 
 const initialState ={
   foods:[],
-  basket:[],
+  basket:JSON.parse(localStorage.getItem("basketP")) || [],
   modal:{},
   search:"",
 }
 export const MainReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_BASKET : {
-      return {...state, basket: action.payload}
+      const foundProduct = state.basket.find(el => el.id === action.payload.id)
+      if (foundProduct) {
+        return{...state, basket: state.basket.map(el => el.id === foundProduct.id ?
+            {...el, quantity: el.quantity + 1} : el)}
+      } else {
+        return {...state, basket: [...state.basket, {...action.payload, quantity: 1 }]}
+      }
     }
-
+    case PLUS : {
+      return{...state, basket: state.basket.map(el => el.id === action.payload ?
+          {...el,quantity:el.quantity+1} : el)}
+    }
+    case MINUS : {
+      return{...state, basket: state.basket.map(el => {
+          if (el.id === action.payload.id) {
+            if (el.quantity > 1) {
+              return {...el, quantity: el.quantity - 1}
+            } else return el
+          } else return el
+        })
+      }
+    }
     case MODAL : {
       return {...state,
       modal: action.payload}
