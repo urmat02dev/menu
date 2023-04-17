@@ -13,7 +13,8 @@ const MainPage = () => {
   return (
     <div>
       <Header/>
-      <Search/>
+        <Search/>
+        <Modal/>
       <Category active={active}
       setActive={setActive}
       best={best}
@@ -26,12 +27,11 @@ const MainPage = () => {
           setBest={setBest}
       />
       <Foods
-        active={active}
-      setActive={setActive}/>
-      <Modal
           modal={modal}
           setModal={setModal}
-      />
+        active={active}
+      setActive={setActive}/>
+
     </div>
   );
 };

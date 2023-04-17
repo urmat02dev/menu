@@ -3,27 +3,21 @@ import "./FoodsSlider.scss"
 import Slider from "react-slick";
 import {data} from "../../fake-backend/backend";
 import FoodPage from "./FoodPage";
+import {useTranslation} from "react-i18next";
 const FoodsSlider = ({modal,setModal,best,setBest}) => {
+    const {t} = useTranslation()
     let settings = {
         infinite: false,
         speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 4,
+        slidesToShow: 3,
+        slidesToScroll: 2,
         initialSlide: 0,
         responsive: [
             {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 3,
-                    infinite: true,
-                }
-            },
-            {
                 breakpoint: 992,
                 settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 3,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
                     infinite: false,
                 }
             },
@@ -76,7 +70,7 @@ const FoodsSlider = ({modal,setModal,best,setBest}) => {
         display:best ? "flex" : "none"
     }}>
       <div className="container">
-          <h2>Хит продаж</h2>
+          <h2>{t('category.1')}</h2>
         <div className="foods">
             <Slider {...settings}>
                 {

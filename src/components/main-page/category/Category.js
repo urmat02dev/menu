@@ -3,8 +3,6 @@ import "./Category.scss"
 import Slider from "react-slick";
 import {useTranslation} from "react-i18next";
 const Category = ({active,setActive,best,setBest}) => {
-    console.log(active)
-  console.log(best)
     const {t} = useTranslation()
   let settings = {
     infinite: false,
