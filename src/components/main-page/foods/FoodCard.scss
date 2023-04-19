@@ -2,12 +2,12 @@
   .food--card {
     background: #FFFFFF;
     display: flex;
-    width: 850px;
+    width: 845px;
     height: 250px;
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-    margin: 50px 0 50px 20px;
+    margin: 50px 0 50px 10px;
 
     &__img {
       width: 240px;
@@ -20,12 +20,14 @@
       width: 500px;
       height: 250px;
       text-align: left;
+
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 27px;
         width: 500px;
       }
+
       p {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 400;
@@ -34,11 +36,13 @@
         width: 450px;
         margin: 20px 0;
       }
+
       &--order {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 420px;
+        margin: 50px 0 0 0;
 
         h4 {
           font-family: 'Armin Grotesk', sans-serif;
@@ -68,12 +72,92 @@
     }
   }
 }
-@media (max-width: 834px) {
+
+@media (max-width: 992px) {
+  .food--card {
+    background: #FFFFFF;
+    display: flex;
+    width: 845px;
+    height: 250px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+    margin: 50px 0 50px 10px;
+
+    &__img {
+      width: 240px;
+      height: 200px;
+      border-radius: 30px;
+    }
+
+    &__word {
+      margin-top: 50px;
+      width: 500px;
+      height: 250px;
+      text-align: left;
+
+      h2 {
+        font-family: 'Armin Grotesk', sans-serif;
+        font-weight: 600;
+        font-size: 27px;
+        width: 500px;
+      }
+
+      p {
+        font-family: 'Armin Grotesk', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        width: 450px;
+        margin: 20px 0;
+      }
+
+      &--order {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 420px;
+        margin: 50px 0 0 0;
+
+        h4 {
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: 22px;
+          line-height: 19px;
+          color: #000000;
+        }
+
+        &__icon1 {
+          background: #DFE2FF;
+          border-radius: 15px;
+          width: 70px;
+          height: 35px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .icon {
+            font-size: 30px;
+            color: #0256d3;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@media (max-width: 884px) {
+  h1 {
+    font-size: 41px;
+    margin: 10px 0 0 60px;
+  }
   .food--card {
     background: #FFFFFF;
     display: flex;
     position: relative;
-    width:700px;
+    width: 700px;
     height: 300px;
     right: 10px;
     align-items: center;
@@ -97,12 +181,14 @@
       left: 30px;
       height: 250px;
       text-align: left;
+
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 27px;
         width: 200px;
       }
+
       p {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 400;
@@ -111,11 +197,11 @@
         width: 300px;
         margin: 20px 0;
       }
+
       &--order {
         display: flex;
         align-items: center;
-        position: relative;
-        top: 27px;
+
         width: 420px;
 
         h4 {
@@ -149,24 +235,21 @@
   }
 
 }
+
 @media (max-width: 800px) {
   .food--card {
     background: #FFFFFF;
     display: flex;
-    position: relative;
-    width:700px;
+    width: 700px;
     height: 300px;
-    right: 10px;
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-    margin: 50px 0 50px 18px;
+    margin: 50px 0 50px 20px;
 
     &__img {
       width: 210px;
       height: 190px;
-      position: relative;
-      left: -5px;
       margin: 20px 0 20px 50px;
       border-radius: 30px;
     }
@@ -174,16 +257,16 @@
     &__word {
       margin-top: 50px;
       width: 449px;
-      position: relative;
-      left: 30px;
       height: 250px;
       text-align: left;
+
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 27px;
         width: 200px;
       }
+
       p {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 400;
@@ -192,11 +275,10 @@
         width: 300px;
         margin: 20px 0;
       }
+
       &--order {
         display: flex;
         align-items: center;
-        position: relative;
-        top: 27px;
         width: 420px;
 
         h4 {
@@ -213,8 +295,6 @@
           border-radius: 15px;
           width: 70px;
           height: 35px;
-          right: 101px;
-          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -230,6 +310,7 @@
   }
 
 }
+
 @media (max-width: 768px) {
   .food--card {
     background: #FFFFFF;
@@ -240,12 +321,11 @@
     justify-content: space-around;
     border-radius: 20px;
     margin: 50px 0 50px 30px;
+
     &__img {
-      width: 215px;
-      height: 199px;
-      position: relative;
-      left: 15px;
-      margin: 20px 0 20px 20px;
+      width: 200px;
+      height: 190px;
+      margin: 20px 0 20px 50px;
       border-radius: 30px;
     }
 
@@ -254,12 +334,14 @@
       margin: 40px 0 0 20px;
       height: 250px;
       text-align: left;
+
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 27px;
         width: 300px;
       }
+
       p {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 400;
@@ -268,11 +350,10 @@
         width: 270px;
         margin: 20px 0;
       }
+
       &--order {
         display: flex;
         align-items: center;
-        position: relative;
-        top: 27px;
         width: 420px;
 
         h4 {
@@ -289,8 +370,6 @@
           border-radius: 15px;
           width: 70px;
           height: 35px;
-          right: 130px;
-          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -306,7 +385,12 @@
   }
 
 }
+
 @media (max-width: 576px) {
+  h1 {
+    margin: 0 0 43px 40px;
+    font-size: 29px;
+  }
   .food--card {
     background: #FFFFFF;
     display: flex;
@@ -315,7 +399,8 @@
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-    margin: 20px 0 20px 40px;
+    margin: 20px 0 20px 25px;
+
     &__img {
       width: 150px;
       height: 143px;
@@ -327,28 +412,30 @@
 
     &__word {
       width: 449px;
-      margin: 60px 0 0 70px;
+      margin: 80px 0 0 70px;
       height: 250px;
       text-align: left;
+
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 20px;
         width: 205px;
       }
+
       p {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 15px;
         line-height: 22px;
-        width: 186px;
+        width: 200px;
         margin: 20px 0;
       }
+
       &--order {
         display: flex;
         align-items: center;
-        position: relative;
-        top: 2px;
+        margin: 0 0 20px 0;
         width: 200px;
 
         h4 {
@@ -363,17 +450,16 @@
         &__icon1 {
           background: #DFE2FF;
           border-radius: 11px;
-          width: 45px;
-          height: 34px;
           font-size: 10px;
-          right: 30px;
-          position: relative;
+      margin: 0 0 0 200px;
           display: flex;
           align-items: center;
           justify-content: center;
 
           .icon {
-            font-size: 30px;
+            font-size: 20px;
+            width: 40px;
+            height: 20px;
             color: #0256d3;
           }
         }
@@ -383,6 +469,7 @@
   }
 
 }
+
 @media (max-width: 450px) {
   .food--card {
     background: #FFFFFF;
@@ -392,39 +479,39 @@
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
+
     &__img {
       width: 100px;
       height: 100px;
-      position: relative;
-      left: 60px;
       margin: 20px 0 20px -56px;
       border-radius: 30px;
     }
 
     &__word {
-      width:224px;
-      margin: 100px 0 0 40px;
+      width: 224px;
+      margin: 90px 0 0 40px;
       height: 250px;
       text-align: left;
+
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 16px;
         width: 175px;
       }
+
       p {
         font-family: "Armin Grotesk", sans-serif;
         font-weight: 400;
         font-size: 12px;
         line-height: 20px;
-        width: 150px;
+        width: 170px;
         margin: 20px 0;
       }
+
       &--order {
         display: flex;
         align-items: center;
-        position: relative;
-        top: -10px;
         width: 130px;
 
         h4 {
@@ -440,10 +527,8 @@
           background: #DFE2FF;
           border-radius: 11px;
           width: 33px;
-          height: 27px;
-          font-size: 10px;
-          right: 20px;
-          position: relative;
+          height: 25px;
+          font-size: 1px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -459,48 +544,49 @@
   }
 
 }
+
 @media (max-width: 428px) {
+  h1{
+    font-size: 24px;
+    margin-top: -92px;
+  }
   .food--card {
     background: #FFFFFF;
     display: flex;
     width: 335px;
-    height: 180px;
+    height: 160px;
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
+
     &__img {
       width: 90px;
       height: 90px;
-      position: relative;
-      left: 55px;
-      top: -10px;
       margin: 20px 0 20px -54px;
       border-radius: 30px;
     }
 
     &__word {
-      width:224px;
-      position: relative;
-      left: 45px;
-      top: -5px;
-      height: 250px;
+      width: 224px;
+      height: 230px;
       text-align: left;
+
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 16px;
         width: 175px;
-        position: relative;
-        top: 10px;
       }
+
       p {
         font-family: "Armin Grotesk", sans-serif;
         font-weight: 400;
         font-size: 12px;
         line-height: 15px;
-        width: 150px;
+        width: 170px;
         margin: 20px 0;
       }
+
       &--order {
         display: flex;
         align-items: center;
@@ -523,8 +609,6 @@
           width: 33px;
           height: 27px;
           font-size: 10px;
-          right: 40px;
-          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -540,40 +624,37 @@
   }
 
 }
+
 @media (max-width: 414px) {
   .food--card {
     background: #FFFFFF;
     display: flex;
     width: 330px;
     height: 160px;
-    right: 13px;
-    position: relative;
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
+
     &__img {
       width: 90px;
       height: 90px;
-      position: relative;
-      left: 66px;
-      top: 2px;
       margin: 20px 0 20px -54px;
       border-radius: 30px;
     }
 
     &__word {
-      width:224px;
+      width: 224px;
       height: 250px;
-      margin: 120px 0 0 20px;
+      margin: 120px 0 0 40px;
       text-align: left;
+
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 14px;
         width: 150px;
-        position: relative;
-        top: 10px;
       }
+
       p {
         font-family: "Armin Grotesk", sans-serif;
         font-weight: 400;
@@ -581,11 +662,10 @@
         line-height: 15px;
         width: 60%;
       }
+
       &--order {
         display: flex;
         align-items: center;
-        position: relative;
-        top: -2px;
         width: 150px;
 
         h4 {
@@ -601,16 +681,13 @@
           background: #DFE2FF;
           border-radius: 11px;
           width: 33px;
-          height: 27px;
-          font-size: 10px;
-          right: 40px;
-          position: relative;
+          height: 25px;
           display: flex;
           align-items: center;
           justify-content: center;
 
           .icon {
-            font-size: 15px;
+            font-size: 10px;
             color: #0256d3;
           }
         }
@@ -620,52 +697,61 @@
   }
 
 }
+
 @media (max-width: 390px) {
+  #food .food h1 {
+    font-family: "Armin Grotesk,", sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    margin: 0 0 20px 10px;
+  }
   .food--card {
     background: #FFFFFF;
     display: flex;
-    width: 310px;
-    height: 170px;
-    right: 13px;
-    position: relative;
+    width: 355px;
+    height: 150px;
+    margin: 15px auto 15px 12px;
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-    &__img {
-      width: 80px;
-      height: 85px;
-      position: relative;
-      left: 60px;
-      top: 2px;
-      margin: 20px 0 20px -44px;
-      border-radius: 20px;
+
+    .img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &__img {
+        width: 90px;
+        height: 85px;
+        border-radius: 20px;
+      }
     }
 
+
     &__word {
-      width:280px;
-      height: 250px;
-      margin: 120px 0 0 50px;
-      text-align: left;
+      margin: 140px 0 0 35px;
+
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 14px;
-        width: 155px;
-        position: relative;
-        top: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        width: 170px;
       }
+
       p {
         font-family: "Armin Grotesk", sans-serif;
         font-weight: 400;
+        line-height: 17px;
         font-size: 10px;
-        width: 140px;
+        width: 190px;
+        margin: 15px 0 10px 0;
       }
+
       &--order {
         display: flex;
         align-items: center;
-        position: relative;
-        top: 2px;
-        width: 130px;
+        width: 200px;
+        margin: 15px 0 0 0;
 
         h4 {
           font-family: 'Armin Grotesk', sans-serif;
@@ -679,11 +765,9 @@
         &__icon1 {
           background: #DFE2FF;
           border-radius: 11px;
-          width: 30px;
+          width: 36px;
           height: 25px;
           font-size: 10px;
-          right: 45px;
-          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -699,7 +783,13 @@
   }
 
 }
+
 @media (max-width: 360px) {
+  #food {
+    padding-top: 92px;
+    padding-left: 10px;
+
+  }
   #food .food h1 {
     font-family: "Armin Grotesk,", sans-serif;
     font-weight: 600;
@@ -709,31 +799,31 @@
   .food--card {
     background: #FFFFFF;
     display: flex;
-    width:280px;
-    height: 220px;
-    flex-direction: column;
+    width: 320px;
+    height: 170px;
     align-items: center;
     border-radius: 20px;
+    margin: 10px 0 10px 10px;
+
     &__img {
       width: 90px;
       height: 80px;
       border-radius: 20px;
-      margin: 20px 0 20px -120px ;
     }
 
     &__word {
-      width:224px;
-      margin: -5px 0 0 -30px;
+      width: 224px;
+      margin: 120px 0 0 50px;
       height: 250px;
       text-align: left;
+
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 16px;
-        width:200px;
-        position: relative;
-        top: 10px;
+        width: 170px;
       }
+
       p {
         font-family: "Armin Grotesk", sans-serif;
         font-weight: 400;
@@ -742,11 +832,10 @@
         width: 190px;
         margin: 20px 0;
       }
+
       &--order {
         display: flex;
         align-items: center;
-        position: relative;
-        top: -5px;
         width: 140px;
 
         h4 {
@@ -762,16 +851,14 @@
           background: #DFE2FF;
           border-radius: 11px;
           width: 30px;
-          height: 23px;
+          height: 20px;
           font-size: 10px;
-          right: 40px;
-          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
 
           .icon {
-            font-size: 13px;
+            font-size: 10px;
             color: #0256d3;
           }
         }
@@ -781,6 +868,7 @@
   }
 
 }
+
 @media (max-width: 320px) {
   #food .food h1 {
     font-family: "Armin Grotesk,", sans-serif;
@@ -788,49 +876,49 @@
     margin: 0 0 30px 42px;
     font-size: 24px;
   }
+  #food .food {
+;
+
+  }
   .food--card {
     background: #FFFFFF;
     display: flex;
-    width:240px;
-    height: 220px;
-    flex-direction: column;
+    width: 280px;
+    height: 160px;
     align-items: center;
     border-radius: 20px;
+
     &__img {
-      width: 90px;
+      width: 80px;
       height: 80px;
       border-radius: 20px;
-      margin: 20px 0 20px -120px ;
     }
 
     &__word {
-      width:224px;
-      margin: -5px 0 0 -30px;
+      width: 224px;
+      margin: 110px 0 0 50px;
       height: 250px;
       text-align: left;
+
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 16px;
-        width:200px;
-        position: relative;
-        top: 10px;
+        width: 170px;
       }
+
       p {
         font-family: "Armin Grotesk", sans-serif;
         font-weight: 400;
-        font-size: 13px;
+        font-size: 11px;
         line-height: 15px;
-        width: 190px;
+        width: 170px;
         margin: 20px 0;
       }
+
       &--order {
         display: flex;
         align-items: center;
-        position: relative;
-        top: -5px;
-        width: 140px;
-
         h4 {
           font-family: 'Armin Grotesk', sans-serif;
           font-style: italic;
@@ -848,6 +936,7 @@
           font-size: 10px;
           display: flex;
           align-items: center;
+
           justify-content: center;
 
           .icon {

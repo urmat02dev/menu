@@ -9,24 +9,28 @@ import Modal from "../modal/Modal";
 const MainPage = () => {
     const [modal , setModal] = useState(false)
   const [active, setActive] = useState(0)
+  const [best , setBest ] = useState(true)
   return (
     <div>
       <Header/>
-      <Search/>
+        <Search/>
       <Category active={active}
-      setActive={setActive}/>
+      setActive={setActive}
+      best={best}
+      setBest={setBest}
+      />
       <FoodsSlider
           modal={modal}
           setModal={setModal}
-
+          best={best}
+          setBest={setBest}
       />
       <Foods
-        active={active}
-      setActive={setActive}/>
-      <Modal
           modal={modal}
           setModal={setModal}
-      />
+        active={active}
+      setActive={setActive}/>
+
     </div>
   );
 };

@@ -29,20 +29,26 @@ const FoodCard = ({el}) => {
     }
   }
   return (
-    <div className="food--card">
+<center>
+  <div className="food--card">
+    <div className={"img"}>
       <img className="food--card__img" src={el.image} alt=""/>
-      <div className="food--card__word">
-        <h2>{getTitle(el)}</h2>
-        <p>{getDesc(el)}</p>
-        <div className="food--card__word--order">
-          <h4>{el.price}c.</h4>
-          <div className="food--card__word--order__icon1">
-            <BsBasket className="icon"/>
-          </div>
 
+    </div>
+    <div className="food--card__word">
+      <h2>{getTitle(el)}</h2>
+      <p>{getDesc(el)}</p>
+      <div className="food--card__word--order">
+        <h4>{el.price}c.</h4>
+        <div className="food--card__word--order__icon1">
+          <BsBasket className="icon"/>
         </div>
+
       </div>
     </div>
+  </div>
+</center>
+
   );
 };
 
