@@ -3,27 +3,21 @@ import "./FoodsSlider.scss"
 import Slider from "react-slick";
 import {data} from "../../fake-backend/backend";
 import FoodPage from "./FoodPage";
-const FoodsSlider = ({modal,setModal}) => {
+import {useTranslation} from "react-i18next";
+const FoodsSlider = ({modal,setModal,best,setBest}) => {
+    const {t} = useTranslation()
     let settings = {
         infinite: false,
         speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 4,
+        slidesToShow: 3,
+        slidesToScroll: 2,
         initialSlide: 0,
         responsive: [
             {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 3,
-                    infinite: true,
-                }
-            },
-            {
                 breakpoint: 992,
                 settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 3,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
                     infinite: false,
                 }
             },
@@ -72,9 +66,11 @@ const FoodsSlider = ({modal,setModal}) => {
 
 
   return (
-    <div id='foods'>
+    <div id='foods' style={{
+        display:best ? "flex" : "none"
+    }}>
       <div className="container">
-          <h2>Хит продаж</h2>
+          <h2>{t('category.1')}</h2>
         <div className="foods">
             <Slider {...settings}>
                 {
@@ -88,7 +84,7 @@ const FoodsSlider = ({modal,setModal}) => {
         </div>
       </div>
     </div>
-  );
+   );
 };
 
 export default FoodsSlider;
