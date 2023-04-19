@@ -36,6 +36,21 @@ const FoodCard = ({el,setModal,modal}) => {
     dispatch({type:MODAL,payload:el})
   }
   return (
+
+<center>
+  <div className="food--card">
+    <div className={"img"}>
+      <img className="food--card__img" src={el.image} alt=""/>
+
+    </div>
+    <div className="food--card__word">
+      <h2>{getTitle(el)}</h2>
+      <p>{getDesc(el)}</p>
+      <div className="food--card__word--order">
+        <h4>{el.price}c.</h4>
+        <div className="food--card__word--order__icon1">
+          <BsBasket className="icon"/>
+
     <div className="food--card">
       <img className="food--card__img" src={el.image} alt="" onClick={() => getWindow()}/>
       <div className="food--card__word">
@@ -47,8 +62,12 @@ const FoodCard = ({el,setModal,modal}) => {
             <BsBasket className="icon" />
           </div>
         </div>
+
       </div>
     </div>
+  </div>
+</center>
+
   );
 };
 
