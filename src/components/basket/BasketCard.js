@@ -3,7 +3,7 @@ import "./Basket.scss"
 import {IoMdClose} from "react-icons/io";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {useDispatch} from "react-redux";
-import {MINUS, PLUS} from "../../redux/Reducer/ActionTypes";
+import {GET_BASKET, MINUS, PLUS} from "../../redux/Reducer/ActionTypes";
 const BasketCard = ({el}) => {
   const lang = localStorage.getItem("i18nextLng")
   const dispatch = useDispatch()
@@ -29,12 +29,8 @@ const BasketCard = ({el}) => {
       return el.desc_kg.slice(0,200)
     }
   }
-  function getMinus(el) {
-    dispatch({type:MINUS,payload:el})
-  }
-  function getPlus(el) {
-    dispatch({type:PLUS, payload:el})
-
+  const  addPlus = () => {
+    dispatch({type:GET_BASKET, payload: el})
 
   }
 
@@ -51,12 +47,12 @@ const BasketCard = ({el}) => {
         <p>{el.mass}г.</p>
         <div className="basket--card__word--order">
           <div className={"price"}>
-            <h4>{el.price}c.</h4>
+            <h4>{el.price * el.quantity}c.</h4>
           </div>
           <div className={"count"}>
-            <span onClick={() => getMinus()}><AiOutlineMinus/></span>
+            <span onClick={() => dispatch({type: MINUS,payload:el})}><AiOutlineMinus/></span>
             <p>{el.quantity}</p>
-            <span onClick={() => getPlus()}> <AiOutlinePlus/></span>
+            <span onClick={() => addPlus(el)}> <AiOutlinePlus/></span>
           </div>
         </div>
       </div>

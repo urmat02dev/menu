@@ -4,16 +4,13 @@ import Header from "../header/Header";
 import {useNavigate} from "react-router-dom";
 import group from "../../assets/img/Group.svg"
 import {useTranslation} from "react-i18next";
-import {useSelector} from "react-redux";
-import FoodCard from "../main-page/foods/FoodCard";
 import BasketCard from "./BasketCard";
+import {useSelector} from "react-redux";
 const Basket = () => {
-  const [basket , setBasket] = useState(false)
   const nav = useNavigate()
   const {t} = useTranslation()
-  const basketP = useSelector(s => s.basket)
-  console.log(basketP)
-  return basketP.length ? (
+  const {basket} = useSelector(s => s)
+  return basket.length ? (
     <>
       <Header/>
       <div id={"basket"}>
@@ -21,12 +18,11 @@ const Basket = () => {
           <h2 className={"title"}>{t("basket.h1")}</h2>
           <div className="basket">
             {
-              basketP.map(el => <BasketCard el={el}/>)
+              basket.map(el => <BasketCard el={el}/>)
             }
           </div>
         </div>
       </div>
-      true
     </>
   )
     : (
