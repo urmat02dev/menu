@@ -2,9 +2,7 @@ import React, {useState} from 'react';
 import "./Category.scss"
 import Slider from "react-slick";
 import {useTranslation} from "react-i18next";
-const Category = ({active,setActive}) => {
-    console.log(active)
-
+const Category = ({active,setActive,best,setBest}) => {
     const {t} = useTranslation()
   let settings = {
     infinite: false,
@@ -83,18 +81,25 @@ const Category = ({active,setActive}) => {
     <div id='category'>
         <div className="container">
           <Slider {...settings} >
-              <div className="category-one1">
+              <div className="category-one1" onClick={() => setBest(!best)}>
                   {
-                      <svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path fillRule="evenodd" clipRule="evenodd" d="M10.2108 0L11.9451 1.0172C14.145 2.28793 15.8349 4.25513 16.7349 6.59298C17.0404 5.92023 17.4038 5.26766 17.741 4.60836L19.0912 5.9283C22.122 8.89111 25 13.3313 25 17.6436C25 23.4266 21.3526 27.0931 15.5168 27.7269L13.6036 27.9341L14.022 26.0975C14.3482 24.6605 14.4074 23.7213 14.3386 23.0633C14.256 22.2358 13.8541 21.586 13.3531 20.9401C12.8741 20.3212 12.3993 19.7009 12.0194 19.016C10.4572 20.223 9.8516 21.3128 9.65754 22.2103C9.40979 23.3593 9.76076 24.534 10.4022 25.788L11.5335 28L9.02027 27.7269C5.47473 27.342 1.98149 25.0264 0.605111 21.6479C-0.833202 18.1132 0.18394 13.8358 4.83059 9.89889C7.91367 7.28727 9.54605 3.90062 10.2108 0ZM12.0442 4.44017C10.9954 7.31956 8.98174 9.9433 6.63226 11.9333C2.62563 15.328 2.2664 18.4509 3.16379 20.6522C3.83134 22.2937 5.2724 23.6432 6.98048 24.4088C6.77973 23.5023 6.7741 22.5648 6.96397 21.6559C7.41267 19.5758 8.9432 17.6261 11.8831 15.8299L13.3655 14.9244L13.9188 16.5457C14.4033 17.9666 15.408 18.9716 16.1939 20.2189C17.0583 21.5913 17.2235 23.1656 17.0473 24.7371C20.6534 23.8558 22.2472 21.1823 22.2472 17.6436C22.2472 14.6539 20.4029 11.7207 18.5723 9.42797C17.8181 11.0802 16.2284 11.6615 14.6772 12.4204V10.2433C14.6772 8.40135 13.9105 6.15569 12.0442 4.44152V4.44017Z" strokeOpacity="0.5" fill="#004FC7"/>
-                      </svg>
-
+                      best ? <svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M10.2108 0L11.9451 1.0172C14.145 2.28793 15.8349 4.25513 16.7349 6.59298C17.0404 5.92023 17.4038 5.26766 17.741 4.60836L19.0912 5.9283C22.122 8.89111 25 13.3313 25 17.6436C25 23.4266 21.3526 27.0931 15.5168 27.7269L13.6036 27.9341L14.022 26.0975C14.3482 24.6605 14.4074 23.7213 14.3386 23.0633C14.256 22.2358 13.8541 21.586 13.3531 20.9401C12.8741 20.3212 12.3993 19.7009 12.0194 19.016C10.4572 20.223 9.8516 21.3128 9.65754 22.2103C9.40979 23.3593 9.76076 24.534 10.4022 25.788L11.5335 28L9.02027 27.7269C5.47473 27.342 1.98149 25.0264 0.605111 21.6479C-0.833202 18.1132 0.18394 13.8358 4.83059 9.89889C7.91367 7.28727 9.54605 3.90062 10.2108 0ZM12.0442 4.44017C10.9954 7.31956 8.98174 9.9433 6.63226 11.9333C2.62563 15.328 2.2664 18.4509 3.16379 20.6522C3.83134 22.2937 5.2724 23.6432 6.98048 24.4088C6.77973 23.5023 6.7741 22.5648 6.96397 21.6559C7.41267 19.5758 8.9432 17.6261 11.8831 15.8299L13.3655 14.9244L13.9188 16.5457C14.4033 17.9666 15.408 18.9716 16.1939 20.2189C17.0583 21.5913 17.2235 23.1656 17.0473 24.7371C20.6534 23.8558 22.2472 21.1823 22.2472 17.6436C22.2472 14.6539 20.4029 11.7207 18.5723 9.42797C17.8181 11.0802 16.2284 11.6615 14.6772 12.4204V10.2433C14.6772 8.40135 13.9105 6.15569 12.0442 4.44152V4.44017Z" strokeOpacity="0.5" fill="#004FC7" fillOpacity="1"/>
+                      </svg> :
+                        <svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fillRule="evenodd" clipRule="evenodd" d="M10.2108 0L11.9451 1.0172C14.145 2.28793 15.8349 4.25513 16.7349 6.59298C17.0404 5.92023 17.4038 5.26766 17.741 4.60836L19.0912 5.9283C22.122 8.89111 25 13.3313 25 17.6436C25 23.4266 21.3526 27.0931 15.5168 27.7269L13.6036 27.9341L14.022 26.0975C14.3482 24.6605 14.4074 23.7213 14.3386 23.0633C14.256 22.2358 13.8541 21.586 13.3531 20.9401C12.8741 20.3212 12.3993 19.7009 12.0194 19.016C10.4572 20.223 9.8516 21.3128 9.65754 22.2103C9.40979 23.3593 9.76076 24.534 10.4022 25.788L11.5335 28L9.02027 27.7269C5.47473 27.342 1.98149 25.0264 0.605111 21.6479C-0.833202 18.1132 0.18394 13.8358 4.83059 9.89889C7.91367 7.28727 9.54605 3.90062 10.2108 0ZM12.0442 4.44017C10.9954 7.31956 8.98174 9.9433 6.63226 11.9333C2.62563 15.328 2.2664 18.4509 3.16379 20.6522C3.83134 22.2937 5.2724 23.6432 6.98048 24.4088C6.77973 23.5023 6.7741 22.5648 6.96397 21.6559C7.41267 19.5758 8.9432 17.6261 11.8831 15.8299L13.3655 14.9244L13.9188 16.5457C14.4033 17.9666 15.408 18.9716 16.1939 20.2189C17.0583 21.5913 17.2235 23.1656 17.0473 24.7371C20.6534 23.8558 22.2472 21.1823 22.2472 17.6436C22.2472 14.6539 20.4029 11.7207 18.5723 9.42797C17.8181 11.0802 16.2284 11.6615 14.6772 12.4204V10.2433C14.6772 8.40135 13.9105 6.15569 12.0442 4.44152V4.44017Z" strokeOpacity="1" fill="#004FC7" fillOpacity="0.5"/>
+                        </svg>
                   }
                   <h3>{t('category.1')}</h3>
               </div>
 
               <div className="category-one2" onClick={() => {
                   setActive(1)
+                  window.scrollTo({
+                      top: 900,
+                      left: 100,
+                      behavior: "smooth",
+                  });
               }}>
                   {
                       active === 1  ?
@@ -112,6 +117,11 @@ const Category = ({active,setActive}) => {
 
               <div className="category-one2" onClick={() => {
                   setActive(2)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
 
 
               }}>
@@ -127,7 +137,14 @@ const Category = ({active,setActive}) => {
                   <h3>{t('category.3')}</h3>
               </div>
 
-              <div className="category-one3" onClick={() => setActive(3)}>
+              <div className="category-one3" onClick={() => {
+                  setActive(3)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
+              }}>
                   {
                       active !== 3 ?
                       <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,7 +158,14 @@ const Category = ({active,setActive}) => {
                   <h3>{t('category.4')}</h3>
               </div>
 
-              <div className="category-one4" onClick={() => setActive(4)}>
+              <div className="category-one4" onClick={() => {
+                  setActive(4)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
+              }}>
                   {
                       active === 4 ?
                       <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,7 +179,14 @@ const Category = ({active,setActive}) => {
                 <h3>{t('category.5')}</h3>
               </div>
 
-              <div className="category-one2" onClick={() => setActive(5)}>
+              <div className="category-one2" onClick={() => {
+                  setActive(5)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
+              }}>
                   {
                       active === 5 ?
                       <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,7 +200,14 @@ const Category = ({active,setActive}) => {
                 <h3>{t('category.6')}</h3>
               </div>
 
-              <div className="category-one5" onClick={() => setActive(6)}>
+              <div className="category-one5" onClick={() => {
+                  setActive(6)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
+              }}>
                   {
                       active === 6 ?
                       <svg width="22" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -182,7 +220,14 @@ const Category = ({active,setActive}) => {
                 <h3>{t('category.7')}</h3>
               </div>
 
-              <div className="category-one6" onClick={() => setActive(7)}>
+              <div className="category-one6" onClick={() => {
+                  setActive(7)
+                  window.scrollTo({
+                      top:900,
+                      left:100,
+                      behavior: "smooth"
+                  })
+              }}>
                   {
                       active === 7 ?
                           <svg width="36" height="30" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg">

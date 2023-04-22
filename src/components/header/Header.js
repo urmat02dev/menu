@@ -4,9 +4,11 @@ import logos from "../../assets/img/logos.svg"
 import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
 import {NavLink, useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
 const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
   const {i18n} = useTranslation()
+  const {basket} = useSelector(state => state)
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
@@ -20,6 +22,12 @@ const Header = () => {
               </NavLink>
               <div className="header--end">
                   <div className="header--end__one" onClick={() => nav("/basket")}>
+                    <div className={"sup"}
+                         style={{
+                           display:basket.length ? "flex" : "none"
+                         }}
+                    >
+                      <sup>{basket.length !== 0 ? basket.length : ""}</sup></div>
                       <BiBasket className='header--end__one--icon'/>
                   </div>
                   <div className="header--end__two">

@@ -11,11 +11,7 @@ import Search from "./Search";
 
 const SearchResult = () => {
   const {search} = useSelector(s => s)
-  const res = data.map(el => el.filter(el => (el.title === search) | (el.title_ru === search) | (el.title_kg === search)))
-  const ress = data.map(el => el)
-  console.log(res)
-  console.log(ress)
-
+  const res = data.map(el => el.filter(el => el.title === search || el.title_ru === search || el.title_kg === search ))
   return (
     <>
       <Header/>

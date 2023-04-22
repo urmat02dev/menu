@@ -1,10 +1,13 @@
-import {AiOutlineClose} from "react-icons/ai";
+import {AiOutlineClose, AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {useNavigate } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {BiBasket} from "react-icons/bi";
 import {GET_MODAL} from "../../redux/Reducer/ActionTypes";
+import {BsBasket} from "react-icons/bs";
+import {IoMdClose} from "react-icons/io";
+import React from "react";
 const Modal = ({modal,setModal}) => {
-    const {modalDetail} = useSelector(state => state)
+    const modalDetail = useSelector(state => state.modal)
     // const {title,title_ru,title_kg,desc,desc_kg,desc_ru,mass,price,quantity} = modalDetail
     const lang = localStorage.getItem("i18nextLng")
     // function getTitle () {
@@ -33,11 +36,46 @@ const Modal = ({modal,setModal}) => {
     const getClose = () => {
         setModal(!modal)
     }
-    console.log(modalDetail)
+
   return (
-    <div>
-        
-    </div>
+      <>
+          <div id={"modal"} style={{
+              // display:modal ? 'flex' : '',
+              transform:modal ? 'scale(2)' : 'scale(1)'
+          }}>
+              <div className="container">
+                  <div className="modal" style={{
+
+                  }}>
+                      <div className={"modal--img"}>
+                          <img src={modalDetail.image} alt=""/>
+                          <div className="close">
+                              <IoMdClose className={"icon"}/>
+                          </div>
+                      </div>
+                      <div className="modal--desc">
+                          <h2>{modalDetail.title}</h2>
+                          <h3>{modalDetail.desc}</h3>
+                          <h4>{modalDetail.mass}</h4>
+                          <h5>Цена:{modalDetail.price}</h5>
+
+                      </div>
+                      <div className="modal--basket">
+                          <div className="basket">
+                              Добавить в <BsBasket/>
+                          </div>
+                          <div className={"count"}>
+                              <span ><AiOutlineMinus/></span>
+                              <p>{modalDetail.quantity}</p>
+                              <span > <AiOutlinePlus/></span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </>
+
   );
 };
 

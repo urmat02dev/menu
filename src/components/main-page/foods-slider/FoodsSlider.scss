@@ -3,56 +3,11 @@
     h2 {
       color: #004FC7;
       margin-left: 2px;
+      font-size: 30px;
     }
     .foods {
       height: 300px;
-      padding-top: 20px;
-      &--one {
-        padding: 0 10px;
-        z-index: 99;
-        img {
-          width: 190px;
-          height: 180px;
-          border-radius: 20px;
-        }
-        h3 {
-          font-weight: 500;
-          padding-top: 2px;
-          font-size: 22px;
-          color: black;
-        }
-        p {
-          font-family: 'Armin Grotesk',sans-serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 17px;
-          line-height: 17px;
-          color: rgba(0, 0, 0, 0.7);
-        }
-        &__basket {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 15px;
-          height: 30px;
-          background: #fff;
-          border-radius: 20px;
-          margin-top: 20px;
-          width: 175px;
-          &--icon {
-            color: #004FC7;
-            width: 40px;
-            background: #DFE2FF;
-            height: 20px;
-            border-radius: 20px;
-          }
-          h3 {
-            font-size: 17px;
-            padding-bottom: 3px;
-            font-style: italic;
-          }
-        }
-      }
+      padding: 40px 0 50px 0;
     }
     .slick-prev:before,
     .slick-next:before

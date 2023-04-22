@@ -30,7 +30,6 @@ const Search = () => {
       }
 
   }
-  console.log(value)
   return (
       <div id='search'>
         <div className="container">
