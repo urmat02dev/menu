@@ -27,8 +27,8 @@
           select {
             border-radius: 5px;
             border: none;
-            background: rgba(0, 79, 199, 0.5);
-            padding: 4px 2px 5px 2px;
+            background: royalblue;
+            padding: 9px 8px 8px 8px;
             color: #FFFFFF;
 
             option {
@@ -68,7 +68,7 @@
 
             option {
               font-size: 10px;
-              background:steelblue;
+              background: steelblue;
             }
           }
         }
@@ -104,17 +104,19 @@
 
         &__two {
           select {
-          border: none;
-          outline: none;
-          margin-bottom: 4px;
-          background: #0256d3;
+            border: none;
+            outline: none;
+            margin-bottom: 4px;
+            width: 59px;
+            height: 30px;
+            background: #0256d3;
             font-size: 10px;
 
-          option {
-            font-size: 10px;
-            background:steelblue;
+            option {
+              font-size: 10px;
+              background: steelblue;
+            }
           }
-        }
 
         }
       }
@@ -149,48 +151,16 @@
 
         &__two {
           select {
-          border: none;
-          outline: none;
-          margin-bottom: 4px;
-          background: #0256d3;
-
-          option {
-            font-size: 10px;
-            background:steelblue;
-          }
-        }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 415px) {
-  #header {
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 0;
-
-      &--end {
-        display: flex;
-        align-items: center;
-
-        &__one {
-          margin-right: 20px;
-          font-size: 22px;
-        }
-
-        &__two {
-          select {
             border: none;
-            background: transparent;
             outline: none;
             margin-bottom: 4px;
+            background: #0256d3;
+            font-size: 10px;
+            padding: 2px 0 0 7px;
 
             option {
               font-size: 10px;
+              background: steelblue;
             }
           }
         }
@@ -260,7 +230,7 @@
 
             option {
               font-size: 10px;
-              background:steelblue;
+              background: steelblue;
             }
           }
         }
@@ -303,7 +273,7 @@
 
             option {
               font-size: 10px;
-              background:steelblue;
+              background: steelblue;
             }
           }
         }
@@ -337,13 +307,16 @@
           select {
             border: none;
             outline: none;
-            margin-right: -20px;
+            border-radius: 10px;
+            margin-right: -2px;
             margin-bottom: 4px;
             background: #0256d3;
+            height: 25px;
+            width: 50px;
 
             option {
               font-size: 10px;
-              background:steelblue;
+              background: steelblue;
             }
           }
         }
@@ -360,7 +333,7 @@
       justify-content: space-between;
       padding: 20px 0;
 
-      img {
+      &__img{
         width: 46px;
       }
 
@@ -387,7 +360,7 @@
 
             option {
               font-size: 10px;
-              background:steelblue;
+              background: steelblue;
             }
           }
         }
@@ -404,8 +377,8 @@
       justify-content: space-between;
       padding: 20px 0;
 
-      img {
-        width: 50px;
+      &__img{
+
       }
 
       &--end {
@@ -427,12 +400,12 @@
             outline: none;
             margin-bottom: 4px;
             height: 20px;
-            margin-right: -10px;
+            margin-right: -6px;
             background: #0256d3;
 
             option {
               font-size: 10px;
-              background:steelblue;
+              background: steelblue;
             }
           }
         }
