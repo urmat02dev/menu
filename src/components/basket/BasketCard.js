@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./Basket.scss"
 import {IoMdClose} from "react-icons/io";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
-import {useDispatch} from "react-redux";
-import {GET_BASKET, MINUS, PLUS} from "../../redux/Reducer/ActionTypes";
+import {useDispatch, useSelector} from "react-redux";
+import {DELETE, GET_BASKET, MINUS, PLUS} from "../../redux/Reducer/ActionTypes";
 const BasketCard = ({el}) => {
   const lang = localStorage.getItem("i18nextLng")
+  // const basket = JSON.parse(localStorage.getItem("basket"))
+  const basket = useSelector(state => state.basket)
   const dispatch = useDispatch()
   const getTitle = (el) => {
     if (lang === "en"){
@@ -29,19 +31,32 @@ const BasketCard = ({el}) => {
       return el.desc_kg.slice(0,200)
     }
   }
+
   const  addPlus = () => {
     dispatch({type:GET_BASKET, payload: el})
 
   }
+  const [del, setDel] = useState(false)
+  const getDelete = () => {
+    dispatch({type: DELETE, payload: el})
+    setDel(!del)
+  }
+  console.log("Del", del)
+
+
+
+
 
   return (
-    <div className="basket--card">
+    <div className="basket--card" style={{
+      left:del ? "-2000px" : "0"
+    }}>
       <img className="basket--card__img" src={el.image} alt=""/>
       <div className="basket--card__word">
         <div className={"desc"}>
           <h2>{getTitle(el)}</h2>
           <div className="close">
-            <IoMdClose className={"icon"}/>
+            <IoMdClose onClick={() => getDelete()} className={"icon"}/>
           </div>
         </div>
         <p>{el.mass}г.</p>
@@ -55,6 +70,7 @@ const BasketCard = ({el}) => {
             <span onClick={() => addPlus(el)}> <AiOutlinePlus/></span>
           </div>
         </div>
+
       </div>
     </div>
   );
