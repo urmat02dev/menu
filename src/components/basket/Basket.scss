@@ -71,6 +71,33 @@
       }
     }
     .basket{
+      &--total{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        width: 95%;
+        height: 77px;
+        background: #DFE2FF;
+        border-radius: 15px;
+        h2{
+          font-weight: 600;
+          font-size: 26px;
+          line-height: 23px;
+          color: #004FC7;
+        }
+        h1{
+          padding-top: 10px;
+          width: 105px;
+          height: 36px;
+          text-align: center;
+          background: #FFFFFF;
+          border-radius: 15px;
+          font-weight: 600;
+          font-size: 20px;
+          color: #004FC7;
+        }
+      }
       .basket--card {
         background: #FFFFFF;
         display: flex;
@@ -80,6 +107,7 @@
         justify-content: space-between;
         border-radius: 20px;
         margin: 20px 0;
+        transition: .6s ease all;
         &__img {
           width: 250px;
           height: 220px;

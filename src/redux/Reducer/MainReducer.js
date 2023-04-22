@@ -1,4 +1,4 @@
-import {GET_BASKET, MINUS, MODAL, PLUS, SEARCH} from "./ActionTypes";
+import {DELETE, GET_BASKET, MINUS, MODAL, PLUS, SEARCH} from "./ActionTypes";
 import basket from "../../components/basket/Basket";
 
 
@@ -42,6 +42,9 @@ export const MainReducer = (state = initialState, action) => {
     case SEARCH : {
       return {...state,
         search: action.payload}
+    }
+    case DELETE : {
+      return {...state, basket: state.basket.filter(el => el.id !== action.payload.id)}
     }
     default :
       return state

@@ -10,6 +10,9 @@ const Basket = () => {
   const nav = useNavigate()
   const {t} = useTranslation()
   const {basket} = useSelector(s => s)
+  const total = basket.reduce((acc,e) => {
+    return acc + e.price * e.quantity
+  },0)
   return basket.length ? (
     <>
       <Header/>
@@ -18,8 +21,16 @@ const Basket = () => {
           <h2 className={"title"}>{t("basket.h1")}</h2>
           <div className="basket">
             {
-              basket.map(el => <BasketCard el={el}/>)
+              basket.map(el => <BasketCard el={el} />)
             }
+            <div>
+              <div className="basket--total">
+                <h2>Сумма заказа:</h2>
+                <h1>{total}c</h1>
+              </div>
+            </div>
+
+
           </div>
         </div>
       </div>
