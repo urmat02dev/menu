@@ -48,6 +48,7 @@ const FoodCard = ({el, setModal, modal}) => {
         localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:GET_BASKET,payload:el})
     }
+    
     const foundProduct = basket.some(e => e.id === el.id)
     console.log(foundProduct)
     return (
@@ -75,6 +76,7 @@ const FoodCard = ({el, setModal, modal}) => {
         </div>
 
     );
+
 };
 
 export default FoodCard;

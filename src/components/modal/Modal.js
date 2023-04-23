@@ -6,6 +6,7 @@ import {GET_MODAL} from "../../redux/Reducer/ActionTypes";
 import {BsBasket} from "react-icons/bs";
 import {IoMdClose} from "react-icons/io";
 import React from "react";
+import "./Modal.scss"
 const Modal = ({modal,setModal}) => {
     const modalDetail = useSelector(state => state.modal)
     // const {title,title_ru,title_kg,desc,desc_kg,desc_ru,mass,price,quantity} = modalDetail
@@ -35,45 +36,48 @@ const Modal = ({modal,setModal}) => {
 
     const getClose = () => {
         setModal(!modal)
-    }
 
+    }
+    console.log(modal)
   return (
       <>
-          <div id={"modal"} style={{
-              // display:modal ? 'flex' : '',
-              transform:modal ? 'scale(2)' : 'scale(1)'
-          }}>
-              <div className="container">
-                  <div className="modal" style={{
+          <div id={"modal"} hidden={!modal} onClick={() => getClose()}/>
+          <div className="container">
+              <div className="modal" hidden={!modal} style={{
+                  bottom:modal ? "0" : "-200%"
+              }}>
 
-                  }}>
-                      <div className={"modal--img"}>
-                          <img src={modalDetail.image} alt=""/>
-                          <div className="close">
+                      <div className="modals">
+                          <div className="close" onClick={() => getClose()}>
                               <IoMdClose className={"icon"}/>
                           </div>
-                      </div>
-                      <div className="modal--desc">
-                          <h2>{modalDetail.title}</h2>
-                          <h3>{modalDetail.desc}</h3>
-                          <h4>{modalDetail.mass}</h4>
-                          <h5>Цена:{modalDetail.price}</h5>
-
-                      </div>
-                      <div className="modal--basket">
-                          <div className="basket">
-                              Добавить в <BsBasket/>
+                          <div className={"modals--img"}>
+                              <img src={modalDetail.image} alt=""/>
                           </div>
-                          <div className={"count"}>
-                              <span ><AiOutlineMinus/></span>
-                              <p>{modalDetail.quantity}</p>
-                              <span > <AiOutlinePlus/></span>
+                          <div className="modals--desc">
+                              <h2>{modalDetail.title}</h2>
+                              <h3>{modalDetail.desc}</h3>
+                              <h4>{modalDetail.mass}г.</h4>
+                              <h5>Цена:<span>{modalDetail.price}c</span></h5>
+
+                          </div>
+                          <div className="modals--basket">
+                              <div className="basket">
+                                  Добавить в
+                                  <div className="icon-block">
+                                      <BsBasket className={"icon"}/>
+                                  </div>
+                              </div>
+                              <div className={"count"}>
+                                  <span ><AiOutlineMinus/></span>
+                                  <p>{modalDetail.quantity}</p>
+                                  <span > <AiOutlinePlus/></span>
+                              </div>
                           </div>
                       </div>
                   </div>
               </div>
 
-          </div>
       </>
 
   );

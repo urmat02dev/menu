@@ -49,7 +49,7 @@ const FoodPage = ({el,modal,setModal}) => {
 
     return (
         <div className="foods--one">
-            <img src={el.image} alt="" onClick={() =>  getWindow(modal) }/>
+            <img src={el.image} alt="" onClick={() =>  getWindow() }/>
             <h3>{getTitle(el)}</h3>
             <p>{getDesc(el)}</p>
             <div className='foods--one__basket'>

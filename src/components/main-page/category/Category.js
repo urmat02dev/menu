@@ -96,7 +96,7 @@ const Category = ({active,setActive,best,setBest}) => {
               <div className="category-one2" onClick={() => {
                   setActive(1)
                   window.scrollTo({
-                      top: 900,
+                      top: 700,
                       left: 100,
                       behavior: "smooth",
                   });
@@ -118,7 +118,7 @@ const Category = ({active,setActive,best,setBest}) => {
               <div className="category-one2" onClick={() => {
                   setActive(2)
                   window.scrollTo({
-                      top:900,
+                      top:700,
                       left:100,
                       behavior: "smooth"
                   })
@@ -140,7 +140,7 @@ const Category = ({active,setActive,best,setBest}) => {
               <div className="category-one3" onClick={() => {
                   setActive(3)
                   window.scrollTo({
-                      top:900,
+                      top:700,
                       left:100,
                       behavior: "smooth"
                   })
@@ -161,7 +161,7 @@ const Category = ({active,setActive,best,setBest}) => {
               <div className="category-one4" onClick={() => {
                   setActive(4)
                   window.scrollTo({
-                      top:900,
+                      top:700,
                       left:100,
                       behavior: "smooth"
                   })
@@ -182,7 +182,7 @@ const Category = ({active,setActive,best,setBest}) => {
               <div className="category-one2" onClick={() => {
                   setActive(5)
                   window.scrollTo({
-                      top:900,
+                      top:700,
                       left:100,
                       behavior: "smooth"
                   })
@@ -203,7 +203,7 @@ const Category = ({active,setActive,best,setBest}) => {
               <div className="category-one5" onClick={() => {
                   setActive(6)
                   window.scrollTo({
-                      top:900,
+                      top:700,
                       left:100,
                       behavior: "smooth"
                   })
@@ -223,7 +223,7 @@ const Category = ({active,setActive,best,setBest}) => {
               <div className="category-one6" onClick={() => {
                   setActive(7)
                   window.scrollTo({
-                      top:900,
+                      top:750,
                       left:100,
                       behavior: "smooth"
                   })

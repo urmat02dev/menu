@@ -14,9 +14,8 @@ const MainPage = () => {
     <div>
       <Header/>
         <Search/>
-
-        <Modal/>
-
+      <Modal modal={modal}
+      setModal={setModal}/>
       <Category active={active}
       setActive={setActive}
       best={best}

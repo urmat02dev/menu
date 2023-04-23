@@ -11,7 +11,8 @@ import Search from "./Search";
 
 const SearchResult = () => {
   const {search} = useSelector(s => s)
-  const res = data.map(el => el.filter(el => el.title === search || el.title_ru === search || el.title_kg === search ))
+  const res = data.map(el =>
+    el.filter(el => el.title.toLowerCase() === search.toLowerCase() || el.title_ru.toLowerCase() === search.toLowerCase() || el.title_kg.toLowerCase() === search.toLowerCase() ))
   return (
     <>
       <Header/>
