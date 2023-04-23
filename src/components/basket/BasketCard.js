@@ -49,7 +49,7 @@ const BasketCard = ({el}) => {
 
   return (
     <div className="basket--card" style={{
-      left:del ? "-2000px" : "0"
+      translateY: del ? '-400px' : ''
     }}>
       <img className="basket--card__img" src={el.image} alt=""/>
       <div className="basket--card__word">
@@ -65,7 +65,7 @@ const BasketCard = ({el}) => {
             <h4>{el.price * el.quantity}c.</h4>
           </div>
           <div className={"count"}>
-            <span onClick={() => dispatch({type: MINUS,payload:el})}><AiOutlineMinus/></span>
+            <span style={{color:`${el.quantity > 1 ? "" : " rgba(255, 255, 255, 0.11)" }`}} onClick={() => dispatch({type: MINUS,payload:el})}><AiOutlineMinus/></span>
             <p>{el.quantity}</p>
             <span onClick={() => addPlus(el)}> <AiOutlinePlus/></span>
           </div>
