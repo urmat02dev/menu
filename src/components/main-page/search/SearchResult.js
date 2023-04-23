@@ -21,7 +21,6 @@ const SearchResult = () => {
             {
                 res.map(el => el.map(el => {
                     return <FoodCard el={el}/>
-
                 }))
             }
         </div>
