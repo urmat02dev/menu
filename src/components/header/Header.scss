@@ -19,9 +19,9 @@
           font-size: 22px;
 
 
-
           position: relative;
-          .sup{
+
+          .sup {
             position: absolute;
             right: 23px;
             bottom: 18px;
@@ -32,7 +32,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            sup{
+
+            sup {
               color: white;
               font-size: 18px;
             }
@@ -141,6 +142,19 @@
         }
       }
     }
+  }
+  #header .header--end__one .sup {
+    position: absolute;
+    right: 23px;
+    bottom: 18px;
+    width: 21px;
+    font-size: -9px;
+    height: 19px;
+    border-radius: 50%;
+    background: #004FC7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -266,6 +280,9 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      .header--end__one .sup sup {
+        font-size: 13px;
+      }
 
       img {
         width: 50px;
@@ -290,6 +307,8 @@
             outline: none;
             margin-bottom: 4px;
             background: #0256d3;
+            width: 52px;
+            height: 23px;
 
             option {
               font-size: 10px;
@@ -300,6 +319,7 @@
       }
     }
   }
+
 }
 
 @media (max-width: 376px) {
@@ -321,6 +341,11 @@
         &__one {
           margin-right: 20px;
           font-size: 22px;
+          .sup{
+            position: absolute;
+            right: 21px;
+            bottom: 14px;
+          }
         }
 
         &__two {
@@ -353,7 +378,7 @@
       justify-content: space-between;
       padding: 20px 0;
 
-      &__img{
+      &__img {
         width: 46px;
       }
 
@@ -364,6 +389,13 @@
         &__one {
           margin-right: 20px;
           font-size: 22px;
+          .sup{
+            position: absolute;
+            right: 21px;
+            bottom: 14px;
+            height: 15px;
+            width: 15px;
+          }
 
           &--icon {
             width: 25px;
@@ -397,7 +429,7 @@
       justify-content: space-between;
       padding: 20px 0;
 
-      &__img{
+      &__img {
 
       }
 
@@ -408,7 +440,13 @@
         &__one {
           margin-right: 20px;
           font-size: 22px;
-
+          .sup{
+            position: absolute;
+            right: 21px;
+            bottom: 14px;
+            height: 15px;
+            width: 15px;
+          }
           &--icon {
             width: 22px;
           }

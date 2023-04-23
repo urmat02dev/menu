@@ -207,6 +207,43 @@
   }
 }
 @media (max-width: 834px) {
+  #basket .basket .basket--card {
+    height: 268px;
+  }
+  #basket .basket .basket--card__word--order .count {
+    width: 192px;
+    height: 43px;
+  }
+  #basket .basket--total h2 {
+    margin-left: 33px;
+  }
+  #basket .basket--total {
+    margin: 0 0 60px 0;
+  }
+  #basket .basket .basket--card__word--order {
+    width: 423px;
+    height: 60px;
+  }
+  #basket .basket .basket--card__word .desc h2 {
+    width: 378px;
+  }
+  #basket .basket .basket--card__img {
+    width: 228px;
+    height: 204px;
+    margin: 10px 0 20px 36px;
+    border-radius: 30px;
+  }
+  #basket .title {
+    line-height: 121px;
+  }
+}
+@media (max-width: 800px) {
+  #basket .basket .basket--card__img {
+    width: 211px;
+    height: 204px;
+    margin: 9px 0 20px 26px;
+  }
+
 }
 @media (max-width: 768px) {
   #basket{
@@ -217,83 +254,193 @@
       margin: 40px auto 20px auto;
     }
   }
+  #basket .basket .basket--card {
+    height: 250px;
+  }
+  #basket .basket .basket--card__word .desc h2 {
+    width: 309px;
+    font-size: 27px;
+  }
+  #basket .basket .basket--card__word--order {
+    width: 388px;
+    height: 48px;
+  }
+  #basket .basket .basket--card__word--order .count {
+    width: 156px;
+    height: 39px;
+  }
+  #basket .basket .basket--card__word .desc {
+    width: 82%;
+  }
+  #basket .basket .basket--card__img {
+    width: 214px;
+    height: 192px;
+    margin: 10px 0 20px 29px;
+  }
+  #basket .basket .basket--card__word{
+  margin: 0 0 0 30px;
+  }
 }
 @media (max-width: 576px) {
-  #basket{
-    .no-basket{
-      margin: 90px auto 20px auto;
-      width: 400px;
-      height: 600px;
-    }
-    .btn{
-      button{
-        width: 400px;
-        height: 65px;
-        border-radius: 19px;
-      }
-    }
+  #basket .basket .basket--card__img {
+    width: 172px;
+    height: 166px;
+    margin: 10px 0 20px 18px;
+  }
+  #basket .basket .basket--card__word .desc h2 {
+    width: 250px;
+    font-size: 21px;
+  }
+  #basket .basket .basket--card {
+    height: 215px;
+  }
+  #basket .basket .basket--card__word .desc {
+    width: 90%;
+  }
+  #basket .basket .basket--card__word .desc h2 {
+    width: 250px;
+    font-size: 21px;
+    position: relative;
+    left:-6px;
+  }
+  #basket .basket .basket--card__word--order {
+    width: 289px;
+    height: 40px;
+    position: relative;
+    left: -9px;
+    top: -7px;
+  }
+  #basket .basket .basket--card__word--order {
+    width: 289px;
+    height: 40px;
+  }
+  #basket .basket .basket--card__word--order .count {
+    width: 157px;
+    height: 35px;
+  }
+  #basket .title {
+    font-size: 26px;
+    margin: -30px 0 -21px 19px;
+  }
+  #basket .basket .basket--card__word {
+    margin: 0 0 0 -108px;
+  }
+  #basket .basket .basket--card__word p {
+    width: 298px;
+  }
+  #basket .basket--total {
+    width: 91%;
+    height: 69px;
+  }
+  #basket .basket .basket--card__word--order .count {
+    width: 157px;
+    height: 30px;
+    margin-right: 6px;
   }
 }
 @media (max-width: 450px) {
-  #basket{
-    .title{
-      font-size: 29px;
-    }
-    .no-basket{
-      margin: 90px auto 20px auto;
-      width: 350px;
-      height: 450px;
-      .block{
-        img{
-          width: 200px;
-          height: 200px;
-        }
-        h1{
-          font-size: 28px;
-        }
-        p{
-          font-size: 18px;
-        }
-
-      }
-    }
-    .btn{
-      button{
-        width: 350px;
-        height: 65px;
-        font-size: 21px;
-      }
-    }
+  #basket .basket .basket--card__word .desc .close .icon {
+    font-size: 18px;
+    color: white;
+  }
+  #basket .basket .basket--card__word--order .price h4 {
+    font-size: 19px;
+  }
+  #basket .basket--total h2 {
+    font-size: 20px;
+  }
+  #basket .basket .basket--card__word .desc .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(40, 49, 255, 0.3);
+    width: 21px;
+    position: relative;
+    height: 21px;
+    right: 1px;
+    top: -12px;
+  }
+  #basket .basket .basket--card__word .desc h2 {
+    width: 176px;
+    font-size: 17px;
+    position: relative;
+    left: 2px;
+  }
+  #basket .basket .basket--card__word .desc {
+    width: 96%;
+  }
+  #basket .basket .basket--card__img {
+    width: 144px;
+    height: 148px;
+    margin: 10px 0 20px 12px;
+  }
+  #basket .basket .basket--card {
+    height: 198px;
+  }
+  #basket .basket .basket--card__word--order {
+    width: 221px;
+    position: relative;
+    height: 40px;
+    top: -8px;
+    left: -5px;
+  }
+  #basket .basket .basket--card__word--order .count p {
+    color: white;
+    font-size: 20px;
+    width: 20px;
+    margin: 0 4px;
+  }
+  #basket .basket .basket--card__word p {
+    width: 183px;
+    font-size: 17px;
   }
 }
 @media (max-width: 428px) {
-  #basket{
-    .no-basket{
-      margin: 50px auto 20px auto;
-      width: 320px;
-      height: 400px;
-      .block{
-        img{
-          width: 200px;
-          height: 200px;
-        }
-        h1{
-          font-size: 28px;
-        }
-        p{
-          font-size: 17px;
-        }
+  #basket .basket--total h1 {
+    top: 46px;
+    position: relative;
+  }
+  #basket .basket .basket--card__word .desc {
+    width: 96%;
+    padding: 13px 0 0 0;
+  }
+  #basket .basket .basket--card__img {
+    width: 135px;
+    height: 136px;
+    margin: 10px 0 20px 12px;
+  }
+  #basket .basket .basket--card {
+    height: 179px;
+  }
+  #basket .basket .basket--card__word--order {
 
-      }
-    }
-    .btn {
-      button{
-        width: 320px;
-        font-size: 19px;
-      }
+    height: 34px;
+    top: -8px;
+    left: -10px;
+  }
 
-    }
-
+  #basket .basket .basket--card__word--order {
+    height: 34px;
+    top: -8px;
+    width: 202px;
+    left: -8px;
+  }
+  #basket .basket--total {
+    width: 89%;
+    height: 50px;
+  }
+  #basket .basket--total h1 {
+    top: 46px;
+    height: 30px;
+    left: 10px;
+    position: relative;
+  }
+  #basket .basket .basket--card__word .desc h2 {
+    width: 150px;
+    font-size: 17px;
+    position: relative;
+    left: 2px;
   }
 }
 @media (max-width: 414px) {
@@ -344,124 +491,24 @@
   }
 }
 @media (max-width: 400px) {
-  #basket{
-    .title{
-      font-size: 24px;
-    }
-    .no-basket{
-      margin: 90px auto 10px auto;
-      width: 300px;
-      height: 330px;
-      .block{
-        h1{
-          margin-top: 10px;
-          margin-bottom: 2px;
-          text-align: center;
-          width: 240px;
-          font-family: 'Armin Grotesk',sans-serif;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 24px;
-          line-height: 34px;
-          color: #004FC7;
-        }
-        p{
-          width: 180px;
-          font-family: 'Armin Grotesk',sans-serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 22px;
-          text-align: center;
-          color: rgba(0, 79, 199, 0.5);
-        }
-        img{
-          width: 150px;
-          height: 150px;
-        }
-      }
-    }
-    .btn{
-      button{
-        width: 250px;
-        height: 59px;
-        font-size: 17px;
-      }
-    }
+  #basket .basket .basket--card__word--order {
+    height: 34px;
+    top: -22px;
+    width: 194px;
+    left: -8px;
+  }
+  #basket .basket .basket--card__word--order {
+    height: 34px;
+    top: -22px;
+    width: 184px;
+    left: -8px;
   }
 }
 @media (max-width: 390px) {
-  #basket{
-    .title{
-      font-family: 'Armin Grotesk',sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 34px;
-      color: #121212;
-    }
-    .no-basket{
-      margin: 90px auto 10px auto;
-      width: 260px;
-      height: 275px;
-      border-radius: 20px;
-      background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .block{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        h1{
-          margin-top: 10px;
-          margin-bottom: 2px;
-          text-align: center;
-          width: 240px;
-          font-family: 'Armin Grotesk',sans-serif;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 24px;
-          line-height: 34px;
-          color: #004FC7;
-        }
-        p{
-          width: 180px;
-          font-family: 'Armin Grotesk',sans-serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 22px;
-          text-align: center;
-          color: rgba(0, 79, 199, 0.5);
-        }
-        img{
-          width: 150px;
-          height: 150px;
-        }
-      }
-    }
-    .btn{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      button{
-        width: 250px;
-        height: 59px;
-        left: 70px;
-        top: 560px;
-        background: #004FC7;
-        border-radius: 20px;
-        border: none;
-        font-family: 'Armin Grotesk',sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 23px;
-        letter-spacing: -0.02em;
-        color: #FFFFFF;
-      }
-    }
+  #basket .basket .basket--card__img {
+    width: 128px;
+    height: 129px;
+    margin: 10px 0 20px 12px;
   }
 }
 @media (max-width: 376px) {
@@ -470,31 +517,99 @@
       margin: 70px auto 10px auto;
     }
   }
+  #basket .basket .basket--card__word .desc .close {
+    width: 18px;
+    position: relative;
+    height: 18px;
+    right: 1px;
+    top: -8px;
+  }
+  #basket .basket .basket--card__word--order .price h4 {
+    font-size: 15px;
+  }
+
 }
 @media (max-width: 360px) {
-  #basket{
-    .btn{
-      button{
-        margin-top: 5px;
-        width: 250px;
-        height: 55px;
-      }
-    }
+  #basket .basket .basket--card__img {
+    width: 114px;
+    height: 114px;
+    margin: 10px 0 20px 12px;
+  }
+  #basket .basket .basket--card__word--order {
+    height: 34px;
+    top: -33px;
+    width: 184px;
+    left: -8px;
+  }
+  #basket .basket .basket--card__word .desc h2 {
+    width: 150px;
+    font-size: 15px;
+    position: relative;
+    left: 2px;
+  }
+  #basket .basket .basket--card__word--order .count p {
+    color: white;
+    font-size: 16px;
+    width: 20px;
+    margin: -4px -8px 0 4px;
+  }
+  #basket .basket .basket--card__word--order {
+    height: 34px;
+    top: -33px;
+    width: 174px;
+    left: 0px;
+  }
+  #basket .basket .basket--card {
+    height: 165px;
+  }
+  #basket .basket--total h2 {
+    font-size: 15px;
+    width: 133px;
+  }
+  #basket .basket--total h1 {
+    top: 46px;
+    height: 26px;
+    font-size: 17px;
   }
 }
 @media (max-width: 320px) {
-  #basket{
-    .no-basket{
-      margin: 30px auto 10px auto;
-      width: 240px;
-      height: 285px;
-    }
-    .btn{
-      button{
-        width: 240px;
-        height: 50px;
-        margin-bottom: 10px;
-      }
-    }
+  #basket .basket .basket--card__img {
+    width: 101px;
+    height: 99px;
+    margin: 10px 0 20px 12px;
+  }
+  #basket .basket .basket--card__word .desc h2 {
+    width: 150px;
+    font-size: 13px;
+    position: relative;
+    left: -2px;
+  }
+  #basket .basket .basket--card__word .desc {
+    width: 96%;
+    padding: 29px 0 0 0;
+  }
+  #basket .basket .basket--card {
+    height: 149px;
+  }
+  #basket .basket .basket--card__word--order {
+    height: 34px;
+    top: -33px;
+    width: 160px;
+    left: -5px;
+  }
+  #basket .basket .basket--card__word {
+    margin: 4px 0 0 8px;
+  }
+  #basket .basket .basket--card__word .desc {
+    width: 81%;
+    padding: 29px 0 0 0;
+  }
+  #basket .basket .basket--card__img {
+    width: 91px;
+    height: 99px;
+    margin: 10px 0 20px 12px;
+  }
+  #basket .basket .basket--card__word {
+    margin: 4px 0 0 15px;
   }
 }
