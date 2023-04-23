@@ -16,7 +16,16 @@
       "h1": "Basket",
       "ups": "Oops... it's empty",
       "p": "You haven't added anything yet",
-      "btn": "Open Menu"
+      "btn": "Open Menu",
+      "status": "Order status",
+      "s": "s",
+      "here": "Here",
+      "with": "With myself",
+      "pay": "Payment",
+      "cash": "Cash",
+      "term": "Terminal",
+      "cont": "Confirm",
+      "sum" : "Order price"
     },
   "foods": {
     "h1": "Breakfast",
@@ -26,6 +35,6 @@
     "6": "Dessert",
     "7": "Beverages",
     "8": "Hot"
-},
+}
 
 }

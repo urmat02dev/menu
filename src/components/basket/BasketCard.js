@@ -4,11 +4,14 @@ import {IoMdClose} from "react-icons/io";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {useDispatch, useSelector} from "react-redux";
 import {DELETE, GET_BASKET, MINUS, PLUS} from "../../redux/Reducer/ActionTypes";
+import {useTranslation} from "react-i18next";
 const BasketCard = ({el}) => {
   const lang = localStorage.getItem("i18nextLng")
   // const basket = JSON.parse(localStorage.getItem("basket"))
   const basket = useSelector(state => state.basket)
   const dispatch = useDispatch()
+  const {t} = useTranslation()
+
   const getTitle = (el) => {
     if (lang === "en"){
       return el.title
@@ -62,7 +65,7 @@ const BasketCard = ({el}) => {
         <p>{el.mass}г.</p>
         <div className="basket--card__word--order">
           <div className={"price"}>
-            <h4>{el.price * el.quantity}c.</h4>
+            <h4>{el.price * el.quantity}{t("basket.s")}.</h4>
           </div>
           <div className={"count"}>
             <span style={{color:`${el.quantity > 1 ? "" : " rgba(255, 255, 255, 0.11)" }`}} onClick={() => dispatch({type: MINUS,payload:el})}><AiOutlineMinus/></span>
@@ -70,7 +73,6 @@ const BasketCard = ({el}) => {
             <span onClick={() => addPlus(el)}> <AiOutlinePlus/></span>
           </div>
         </div>
-
       </div>
     </div>
   );
