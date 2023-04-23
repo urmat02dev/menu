@@ -367,7 +367,7 @@
     }
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 360px) {
   #foods {
     h2 {
       color: #004FC7;
@@ -384,13 +384,12 @@
         h3 {
           font-weight: 400;
           padding-top: 2px;
-          font-size: 16px;
         }
         p {
           color: rgba(0, 0, 0, 0.7);
           margin: 10px 0;
-          font-size: 13px;
-          width: 140px;
+          font-size: 15px;
+          width: 120px;
         }
         &__basket {
           display: flex;
@@ -401,7 +400,7 @@
           background: #fff;
           border-radius: 20px;
           margin-top: 20px;
-          width: 110px;
+          width: 125px;
           &--icon {
             color: #004FC7;
             width: 40px;
@@ -418,4 +417,6 @@
       }
     }
   }
+}
+@media (max-width: 320px) {
 }

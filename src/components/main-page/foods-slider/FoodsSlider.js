@@ -30,11 +30,18 @@ const FoodsSlider = ({modal,setModal,best,setBest}) => {
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 576,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 2,
                     initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 400,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
                 }
             },
             {
@@ -45,10 +52,10 @@ const FoodsSlider = ({modal,setModal,best,setBest}) => {
                 }
             },
             {
-                breakpoint: 375,
+                breakpoint: 376,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 3,
+                    slidesToScroll: 1,
                     infinite: true,
                 }
             },
@@ -56,7 +63,7 @@ const FoodsSlider = ({modal,setModal,best,setBest}) => {
                 breakpoint: 320,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 3,
+                    slidesToScroll: 2,
                     infinite: false,
                     dots: false
                 }
