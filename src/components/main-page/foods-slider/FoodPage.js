@@ -55,7 +55,7 @@ const FoodPage = ({el,modal,setModal}) => {
             <div className='foods--one__basket'>
                 <h3>{el.price}c</h3>
                 {
-                    foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/><AiOutlineArrowRight className='next'/></div>   :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
+                    foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>   :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
                         <BiBasket className='icon'/></div>
                 }
 

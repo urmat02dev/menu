@@ -64,7 +64,7 @@ const FoodCard = ({el, setModal, modal}) => {
                 <div className="food--card__word--order">
                     <h4>{el.price}c.</h4>
                     {
-                        foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/><AiOutlineArrowRight className='next'/></div>
+                        foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
                     :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
                             <BiBasket className='icon'/></div>
                     }
