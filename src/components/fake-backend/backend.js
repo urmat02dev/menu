@@ -32,8 +32,8 @@ export const data = [
         {
             id: uniqid(),
             title: "Lazy Tongues Lettuce",
-            title_ru: "Ленивые язычки салат",
-            title_kg: "Ленивые язычки салат",
+            title_ru: "Ленивые язычки ",
+            title_kg: "Ленивые язычки ",
             desc: "Eggplant, tomato, garlic, greens. Filled with mayonnaise",
             desc_ru: "Баклажаны, помидоры, чеснок, зелень. Заправлен майонезом",
             desc_kg: "Баклажан, помидор, сарымсак, чөптөр. майонез менен татытылгандай",
@@ -97,8 +97,8 @@ export const data = [
         {
             id: uniqid(),
             title: "Lazy Tongues Lettuce",
-            title_ru: "Ленивые язычки салат",
-            title_kg: "Ленивые язычки салат",
+            title_ru: "Ленивые язычки ",
+            title_kg: "Ленивые язычки ",
             desc: "Eggplant, tomato, garlic, greens. Filled with mayonnaise",
             desc_ru: "Баклажаны, помидоры, чеснок, зелень. Заправлен майонезом",
             desc_kg: "Баклажан, помидор, сарымсак, чөптөр. майонез менен татытылгандай",
