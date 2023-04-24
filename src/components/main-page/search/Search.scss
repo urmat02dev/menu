@@ -45,7 +45,6 @@
         border: none;
         outline: none;
         padding: 0 15px;
-
         font-size: 15px;
       }
       ::placeholder {
@@ -201,6 +200,8 @@
         outline: none;
         padding: 0 15px;
         font-size: 15px;
+        position: relative;
+        left: 6px;
       }
       ::placeholder {
         color: rgba(40, 49, 255, 0.3);
@@ -223,14 +224,15 @@
     .search {
       position: relative;
       input {
-        width: 260px;
-        height: 40px;
+        width: 250px;
+        height: 37px;
         border-radius: 21px;
         background: #DFE2FF;
         border: none;
         outline: none;
         padding: 0 15px;
-
+        position: relative;
+        left: 10px;
         font-size: 15px;
       }
       ::placeholder {

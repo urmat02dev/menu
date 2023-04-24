@@ -271,6 +271,19 @@
       }
     }
   }
+  #header .header--end__one .sup sup {
+    color: white;
+    font-size: 13px;
+  }
+  #header .header--end__two select {
+    border: none;
+    outline: none;
+    margin-bottom: 6px;
+    width: 52px;
+    height: 23px;
+    background: #0256d3;
+    font-size: 9px;
+  }
 }
 
 @media (max-width: 391px) {
@@ -418,6 +431,15 @@
         }
       }
     }
+  }
+  #header .header--end__two select {
+    border: none;
+    outline: none;
+    margin-bottom: 6px;
+    width: 50px;
+    height: 21px;
+    background: #0256d3;
+    font-size: 9px;
   }
 }
 
