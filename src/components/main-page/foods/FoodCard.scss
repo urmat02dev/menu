@@ -94,7 +94,7 @@
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-    margin: 50px 0 50px 30px;
+    margin: 50px 0 50px 55px;
 
     &__img {
       width: 210px;
@@ -117,7 +117,7 @@
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 27px;
-        width: 200px;
+        width: 265px;
       }
 
       p {
@@ -132,8 +132,94 @@
       &--order {
         display: flex;
         align-items: center;
+        width: 350px;
 
-        width: 420px;
+        h4 {
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: italic;
+          font-weight: 400;
+          font-size: 22px;
+          line-height: 19px;
+          color: #000000;
+        }
+
+        &__icon1 {
+          background: #DFE2FF;
+          border-radius: 15px;
+          width: 70px;
+          height: 35px;
+          right: 101px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .icon {
+            font-size: 30px;
+            color: #0256d3;
+          }
+        }
+
+      }
+    }
+  }
+
+}
+
+@media (max-width: 834px) {
+  h1 {
+    font-size: 41px;
+    margin: 10px 0 0 60px;
+  }
+  .food--card {
+    background: #FFFFFF;
+    display: flex;
+    position: relative;
+    width: 670px;
+    height: 270px;
+    right: 10px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+    margin: 50px 0 50px 50px;
+
+    &__img {
+      width: 210px;
+      height: 190px;
+      position: relative;
+      right: 15px;
+      margin: 20px 0 20px 50px;
+      border-radius: 30px;
+    }
+
+    &__word {
+      margin-top: 50px;
+      width: 449px;
+      position: relative;
+      left: 30px;
+      height: 250px;
+      text-align: left;
+
+      h2 {
+        font-family: 'Armin Grotesk', sans-serif;
+        font-weight: 600;
+        font-size: 27px;
+        width: 265px;
+      }
+
+      p {
+        font-family: 'Armin Grotesk', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 22px;
+        width: 290px;
+        margin: 20px 0;
+      }
+
+      &--order {
+        display: flex;
+        align-items: center;
+        width: 350px;
 
         h4 {
           font-family: 'Armin Grotesk', sans-serif;
@@ -172,7 +258,7 @@
     background: #FFFFFF;
     display: flex;
     width: 700px;
-    height: 300px;
+    height: 280px;
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
@@ -195,7 +281,7 @@
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 27px;
-        width: 200px;
+        width: 270px;
       }
 
       p {
@@ -210,7 +296,7 @@
       &--order {
         display: flex;
         align-items: center;
-        width: 420px;
+        width: 365px;
 
         h4 {
           font-family: 'Armin Grotesk', sans-serif;
@@ -247,22 +333,22 @@
     background: #FFFFFF;
     display: flex;
     width: 640px;
-    height: 300px;
+    height: 280px;
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-    margin: 50px 0 50px 30px;
+    margin: 50px 0 50px 35px;
 
     &__img {
       width: 200px;
       height: 190px;
-      margin: 20px 0 20px 50px;
+      margin: 20px 0 20px 20px;
       border-radius: 30px;
     }
 
     &__word {
       width: 449px;
-      margin: 40px 0 0 20px;
+      margin: 45px 0 0 4px;
       height: 250px;
       text-align: left;
 
@@ -277,15 +363,15 @@
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 400;
         font-size: 20px;
-        line-height: 22px;
-        width: 270px;
+        line-height: 27px;
+        width: 300px;
         margin: 20px 0;
       }
 
       &--order {
         display: flex;
         align-items: center;
-        width: 420px;
+        width: 300px;
 
         h4 {
           font-family: 'Armin Grotesk', sans-serif;
@@ -327,12 +413,12 @@
   .food--card {
     background: #FFFFFF;
     display: flex;
-    width: 460px;
-    height: 200px;
+    width: 482px;
+    height: 190px;
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-    margin: 20px 0 20px 25px;
+    margin: 20px 0 20px 30px;
 
     &__img {
       width: 150px;
@@ -359,7 +445,7 @@
       p {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 400;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 22px;
         width: 240px;
         margin: 10px 0;
@@ -368,8 +454,8 @@
       &--order {
         display: flex;
         align-items: center;
-        margin: 0 0 20px 0;
-        width: 200px;
+        margin: 20px 0 20px 0;
+        width: 250px;
 
         h4 {
           font-family: 'Armin Grotesk', sans-serif;
@@ -396,7 +482,20 @@
             color: #0256d3;
           }
         }
-
+        .foods--one__basket--icon {
+          color: #004FC7;
+          width: 44px;
+          background: #DFE2FF;
+          height: 29px;
+          border-radius: 20px;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .foods--one__basket--icon .icon {
+          font-size: 19px;
+        }
       }
     }
   }
@@ -404,6 +503,9 @@
 }
 
 @media (max-width: 450px) {
+  #food .food h1 {
+    font-size: 24px;
+  }
   .food--card {
     background: #FFFFFF;
     display: flex;
@@ -412,40 +514,40 @@
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-
+    margin: 20px 0 20px 40px;
     &__img {
       width: 100px;
       height: 100px;
-      margin: 20px 0 20px -56px;
+      margin: 20px 0 20px -80px;
       border-radius: 30px;
     }
 
     &__word {
       width: 224px;
-      margin: 140px 0 0 40px;
+      margin: 150px 0 0 15px;
       height: 250px;
       text-align: left;
 
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
-        font-size: 16px;
-        width: 175px;
+        font-size: 15px;
+        width: 190px;
       }
 
       p {
         font-family: "Armin Grotesk", sans-serif;
         font-weight: 400;
-        font-size: 13px;
+        font-size: 12px;
         line-height: 15px;
-        width: 170px;
+        width: 180px;
         margin: 10px 0;
       }
 
       &--order {
         display: flex;
         align-items: center;
-        width: 130px;
+        width: 170px;
 
         h4 {
           font-family: 'Armin Grotesk', sans-serif;
@@ -475,7 +577,13 @@
       }
     }
   }
-
+  .food--card__word--order .foods--one__basket--icon .icon {
+    font-size: 15px;
+  }
+  .food--card__word--order .foods--one__basket--icon {
+    width: 35px;
+    height: 23px;
+  }
 }
 
 @media (max-width: 428px) {
@@ -491,11 +599,11 @@
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-
+    margin: 20px 0 20px 38px;
     &__img {
       width: 90px;
       height: 90px;
-      margin: 20px 0 20px -54px;
+      margin: 20px 0 20px -80px;
       border-radius: 30px;
     }
 
@@ -508,7 +616,7 @@
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
         font-size: 16px;
-        width: 185px;
+        width: 195px;
       }
 
       p {
@@ -641,9 +749,9 @@
   .food--card {
     background: #FFFFFF;
     display: flex;
-    width: 352px;
+    width: 350px;
     height: 140px;
-    margin: 15px auto 15px 12px;
+    margin: 15px auto 15px 14px;
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
@@ -662,7 +770,7 @@
 
 
     &__word {
-      margin: 140px 0 0 35px;
+      margin: 140px 0 0 25px;
 
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
@@ -683,7 +791,7 @@
       &--order {
         display: flex;
         align-items: center;
-        width: 200px;
+        width: 180px;
         margin: 15px 0 0 0;
 
         h4 {
@@ -736,24 +844,25 @@
     height: 125px;
     align-items: center;
     border-radius: 20px;
-    margin: 20px 0 10px 10px;
+    margin: 20px 0 10px 7px;
 
     &__img {
-      width: 85px;
-      height: 90px;
+      width: 80px;
+      height: 80px;
       border-radius: 20px;
+      margin: 0 0 0 -85px;
     }
 
     &__word {
       width: 224px;
-      margin: 160px 0 0 50px;
+      margin: 160px 0 0 20px;
       height: 250px;
       text-align: left;
 
       h2 {
         font-family: 'Armin Grotesk', sans-serif;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 14px;
         width: 190px;
       }
 
@@ -769,7 +878,7 @@
       &--order {
         display: flex;
         align-items: center;
-        width: 140px;
+        width: 170px;
 
         h4 {
           font-family: 'Armin Grotesk', sans-serif;
@@ -815,20 +924,22 @@
     display: flex;
     width: 275px;
     position: relative;
-    right: 5px;
-    height: 130px;
+  left: -2px;
+    height: 120px;
     align-items: center;
     border-radius: 20px;
 
     &__img {
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
       border-radius: 20px;
+      position: relative;
+      left: 85px;
     }
 
     &__word {
       width: 220px;
-      margin: 160px 0 0 55px;
+      margin: 160px 0 0 65px;
       height: 250px;
       text-align: left;
 
@@ -841,7 +952,7 @@
       p {
         font-family: "Armin Grotesk", sans-serif;
         font-weight: 400;
-        font-size: 10px;
+        font-size: 9px;
         line-height: 15px;
         width: 150px;
         margin: 5px 0;
