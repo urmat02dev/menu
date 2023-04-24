@@ -828,8 +828,6 @@
 @media (max-width: 360px) {
   #food {
     padding-top: 92px;
-    padding-left: 10px;
-
   }
   #food .food h1 {
     font-family: "Armin Grotesk,", sans-serif;
@@ -924,7 +922,7 @@
     display: flex;
     width: 275px;
     position: relative;
-  left: -2px;
+    left: -2px;
     height: 120px;
     align-items: center;
     border-radius: 20px;
