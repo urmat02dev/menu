@@ -52,29 +52,29 @@ const FoodCard = ({el, setModal, modal}) => {
     const foundProduct = basket.some(e => e.id === el.id)
     console.log(foundProduct)
     return (
-
-        <div className="food--card">
-            <div className={"img"}>
-                <img className="food--card__img" src={el.image} alt=""  onClick={() =>  getWindow(modal)}/>
-
-            </div>
-            <div className="food--card__word">
-                <h2>{getTitle(el)}</h2>
-                <p>{getDesc(el)}</p>
-                <div className="food--card__word--order">
-                    <h4>{el.price}c.</h4>
-                    {
-                        foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
-                    :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
-                            <BiBasket className='icon'/></div>
-                    }
+        <div id='food'>
+            <div className="food--card" onClick={() =>  getWindow(modal)}>
+                <div className={"img"}>
+                    <img className="food--card__img" src={el.image} alt=""  />
 
                 </div>
-                <div>
+                <div className="food--card__word">
+                    <h2>{getTitle(el)}</h2>
+                    <p>{getDesc(el)}</p>
+                    <div className="food--card__word--order">
+                        <h4>{el.price}c.</h4>
+                        {
+                            foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
+                                :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
+                                    <BiBasket className='icon'/></div>
+                        }
+
+                    </div>
+                    <div>
+                    </div>
                 </div>
             </div>
         </div>
-
     );
 
 };
