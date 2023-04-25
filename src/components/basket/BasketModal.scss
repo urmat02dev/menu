@@ -1,50 +1,60 @@
 
 @media (max-width: 992px) {
   #modalBasket{
-    margin-top: 20%;
-    margin-left: 32%;
-    backdrop-filter: blur(5px);
+    height: 100vh;
+    background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover;
     .modalBasket{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 23%;
       animation: sad 1s ease-out ;
       @keyframes sad {
         0%{
           transform: translateX(-400px);
         }
+        30%{
+          transform: rotateY(200deg);
+        }
       }
-      width: 342px;
-      height: 337px;
-      background: #DFE2FF;
-      border-radius: 20px;
-      //backdrop-filter: blur(10px);
       &--block{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        img{
-          margin-top: 20%;
-        }
-        h1{
-          margin: 10px 0;
-          font-weight: 600;
-          font-size: 24px;
-          line-height: 34px;
-          color: #004FC7;
-        }
-        &__close{
-          margin: 10px 0;
+        width: 342px;
+        height: 337px;
+        background: #DFE2FF;
+        border-radius: 20px;
+        &__ich{
+          position: relative;
           display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: center;
-          background: rgba(40, 49, 255, 0.3);
-          position: absolute;
-          left: 49%;
-          font-size: 40px;
-          border-radius: 50%;
-          height: 30px;
-          width: 30px;
-          p{
-            font-size: 30px;
-            color: #FFFFFF;
+          img{
+            margin-top: 20%;
+          }
+          h1{
+            margin: 15px 0;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 34px;
+            color: #004FC7;
+          }
+          &--close{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 10px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(40, 49, 255, 0.3);
+            font-size: 40px;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            p{
+              font-size: 30px;
+              color: #FFFFFF;
+            }
           }
         }
       }
@@ -58,6 +68,66 @@
 
 }
 @media (max-width: 576px) {
+  #modalBasket{
+    height: 100vh;
+    background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover;
+    .modalBasket{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 32%;
+      animation: sad 1s ease-out ;
+      @keyframes sad {
+        0%{
+          transform: translateX(-400px);
+        }
+        30%{
+          transform: rotateY(200deg);
+        }
+      }
+      &--block{
+        width: 342px;
+        height: 337px;
+        background: #DFE2FF;
+        border-radius: 20px;
+        &__ich{
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          img{
+            margin-top: 20%;
+          }
+          h1{
+            margin: 15px 0;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 34px;
+            color: #004FC7;
+          }
+          &--close{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 10px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(40, 49, 255, 0.3);
+            font-size: 40px;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            p{
+              font-size: 30px;
+              color: #FFFFFF;
+            }
+          }
+        }
+      }
+    }
+  }
 
 }
 @media (max-width: 450px) {
@@ -65,9 +135,72 @@
 }
 @media (max-width: 428px) {
 
+
 }
 @media (max-width: 376px) {
 
+}
+@media (max-width: 320px) {
+  #modalBasket{
+    height: 100vh;
+    background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover;
+    .modalBasket{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 39%;
+      animation: sad 1s ease-out ;
+      @keyframes sad {
+        0%{
+          transform: translateX(-400px);
+        }
+        30%{
+          transform: rotateY(200deg);
+        }
+      }
+      &--block{
+        width: 330px;
+        height: 317px;
+        background: #DFE2FF;
+        border-radius: 20px;
+        &__ich{
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          img{
+            margin-top: 20%;
+          }
+          h1{
+            margin: 15px 0;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 34px;
+            color: #004FC7;
+          }
+          &--close{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 10px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(40, 49, 255, 0.3);
+            font-size: 40px;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            p{
+              font-size: 30px;
+              color: #FFFFFF;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 @media (max-width: 320px) {
 
