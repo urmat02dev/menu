@@ -1559,4 +1559,24 @@
   #basket .basket--pay__block .active {
     width: 206px;
   }
+  #basket .basket--status__general--with h2 {
+    font-size: 15px;
+  }
+  #basket .basket--status__general--here h2{
+    font-size: 15px;
+  }
+  #basket .basket--pay__block--cash h2{
+    padding-left: 15px;
+    font-size: 15px;
+  }
+  #basket .basket--pay__block--terminal h2{
+    padding-left: 15px;
+    font-size: 15px;
+  }
+  #basket .basket--pay__block--terminal input{
+    height: 15px;
+  }
+  #basket .basket--pay__block--cash input{
+    height: 15px;
+  }
 }
