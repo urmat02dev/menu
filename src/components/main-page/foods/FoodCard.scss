@@ -5,75 +5,80 @@
     font-size: 41px;
     margin: 0 0 0 36px;
   }
-  .food--card {
-    background: #FFFFFF;
+  #food {
     display: flex;
-    width: 845px;
-    height: 250px;
     align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
-    margin: 50px 0 50px 10px;
-
-    &__img {
-      width: 240px;
-      height: 200px;
-      border-radius: 30px;
-    }
-
-    &__word {
-      margin-top: 50px;
-      width: 500px;
+    justify-content: center;
+    .food--card {
+      background: #FFFFFF;
+      display: flex;
+      width: 845px;
       height: 250px;
-      text-align: left;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 20px;
+      margin: 20px 0 50px 10px;
 
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 27px;
+      &__img {
+        width: 240px;
+        height: 200px;
+        border-radius: 30px;
+      }
+
+      &__word {
+        margin-top: 50px;
         width: 500px;
-      }
+        height: 250px;
+        text-align: left;
 
-      p {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 25px;
-        width: 450px;
-        margin: 20px 0;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 420px;
-        margin: 50px 0 0 0;
-
-        h4 {
+        h2 {
           font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 22px;
-          line-height: 19px;
-          color: #000000;
+          font-weight: 600;
+          font-size: 27px;
+          width: 500px;
         }
 
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 15px;
-          width: 70px;
-          height: 35px;
+        p {
+          font-family: 'Armin Grotesk', sans-serif;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 25px;
+          width: 450px;
+          margin: 20px 0;
+        }
+
+        &--order {
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: space-between;
+          width: 420px;
+          margin: 50px 0 0 0;
 
-          .icon {
-            font-size: 30px;
-            color: #0256d3;
+          h4 {
+            font-family: 'Armin Grotesk', sans-serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 19px;
+            color: #000000;
           }
-        }
 
+          &__icon1 {
+            background: #DFE2FF;
+            border-radius: 15px;
+            width: 70px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+              font-size: 30px;
+              color: #0256d3;
+            }
+          }
+
+        }
       }
     }
   }
