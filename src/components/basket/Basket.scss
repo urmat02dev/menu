@@ -818,6 +818,25 @@
     color: #FFFFFF;
     border: none;
   }
+  #basket .no-basket {
+    margin: 40px auto 20px auto;
+    width: 417px;
+    height: 411px;
+  }
+  #basket .no-basket .block img {
+    width: 158px;
+    height: 250px;
+  }
+  #basket .no-basket .block h1 {
+    font-weight: 600;
+    font-size: 25px;
+    text-align: start;
+  }
+  #basket .btn button {
+    width: 382px;
+    margin: 0 0 20px 0;
+    height: 52px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1206,6 +1225,32 @@
   #basket .basket--pay__block--terminal h2 {
     font-size: 18px;
   }
+  #basket .no-basket {
+    margin: 40px auto 20px auto;
+    width: 304px;
+    height: 320px;
+  }
+  #basket .no-basket .block h1 {
+    font-weight: 600;
+    font-size: 17px;
+   position: relative;
+    left: 40px;
+    bottom: 50px;
+  }
+  #basket .no-basket .block p {
+    width: 160px;
+    font-size: 11px;
+    line-height: 16px;
+    position: relative;
+    bottom: 57px;
+  }
+  #basket .btn button {
+    width: 200px;
+    margin: 0 0 20px 0;
+    height: 36px;
+    font-size: 15px;
+  }
+
 }
 
 @media (max-width: 428px) {
@@ -1355,7 +1400,28 @@
     height: 54px;
     color: #FFFFFF;
   }
+  #basket .no-basket .block h1 {
+    margin-top: 52px;
+    font-size: 20px;
+  }
+  #basket .no-basket .block h1 {
+    margin-top: 52px;
+    font-size: 20px;
+    margin-left: -68px;
+  }
+  #basket .no-basket .block p {
+    font-size: 13px;
+    line-height: 12px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  #basket .btn button {
+    width: 206px;
+    height: 42px;
+    font-size: 17px;
+  }
 }
+
 
 @media (max-width: 400px) {
   #basket .basket .basket--card__word--order {
@@ -1401,12 +1467,17 @@
     width: 143px;
     height: 35px;
   }
+  #basket .no-basket {
+    margin: 30px auto 10px auto;
+    width: 300px;
+    height: 330px;
+  }
 }
 
 @media (max-width: 376px) {
   #basket {
     .no-basket {
-      margin: 70px auto 10px auto;
+      margin: 50px auto 10px auto;
     }
   }
   #basket .basket .basket--card__word .desc .close {
@@ -1559,6 +1630,10 @@
   #basket .basket--pay__block .active {
     width: 206px;
   }
+  #basket .no-basket {
+    margin: 50px auto 10px auto;
+    width: 235px;
+    height: 292px;
   #basket .basket--status__general--with h2 {
     font-size: 15px;
   }
