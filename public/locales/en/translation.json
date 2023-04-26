@@ -35,6 +35,9 @@
     "6": "Dessert",
     "7": "Beverages",
     "8": "Hot"
-}
+},
+  "order":{
+    "zak": "Your order has been accepted!"
+  }
 
 }

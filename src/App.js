@@ -5,8 +5,8 @@ import MainPage from "./components/main-page/MainPage";
 import Basket from "./components/basket/Basket";
 import React, {useState} from "react";
 import Modal from "./components/modal/Modal";
-import Search from "./components/main-page/search/Search";
 import SearchResult from "./components/main-page/search/SearchResult";
+import BasketModal from "./components/basket/BasketModal";
 
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
        <Route path="/search" element={<SearchResult/>}/>
        <Route path="/modal" element={<Modal/>}/>
        <Route path="/detail-page/:id" element={<Modal/>}/>
+       <Route path="/main/print" element={<BasketModal/>}/>
      </Routes>
    </>
   );
