@@ -5,7 +5,7 @@ import {useTranslation} from "react-i18next";
 import {useDispatch} from "react-redux";
 import {SEARCH} from "../../../redux/Reducer/ActionTypes";
 import {useNavigate} from "react-router-dom";
-const Search = () => {
+const Search = ({setModal,modal}) => {
   const {t} = useTranslation()
   const dispatch = useDispatch()
   const nav = useNavigate()
@@ -28,7 +28,6 @@ const Search = () => {
         dispatch({type: SEARCH, payload: value})
         nav("/search")
       }
-
   }
   return (
       <div id='search'>

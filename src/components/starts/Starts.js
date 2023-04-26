@@ -11,7 +11,7 @@ const Starts = () => {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 500,
     scroll:true,
     autoplaySpeed: 1000,

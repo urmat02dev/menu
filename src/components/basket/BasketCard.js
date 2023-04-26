@@ -37,7 +37,6 @@ const BasketCard = ({el}) => {
 
   const  addPlus = () => {
     dispatch({type:GET_BASKET, payload: el})
-
   }
   const [del, setDel] = useState(false)
   const getDelete = () => {
