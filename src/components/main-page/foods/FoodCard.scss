@@ -172,828 +172,251 @@
 }
 
 @media (max-width: 834px) {
-  h1 {
-    font-size: 41px;
-    margin: 10px 0 0 60px;
+  #food .food h1 {
+    margin: -130px 0 20px 36px;
   }
-  .food--card {
+  #food .food--card {
     background: #FFFFFF;
     display: flex;
-    position: relative;
-    width: 670px;
-    height: 270px;
-    right: 10px;
+    width: 790px;
+    height: 250px;
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-    margin: 50px 0 50px 50px;
-
-    &__img {
-      width: 210px;
-      height: 190px;
-      position: relative;
-      right: 15px;
-      margin: 20px 0 20px 50px;
-      border-radius: 30px;
-    }
-
-    &__word {
-      margin-top: 50px;
-      width: 449px;
-      position: relative;
-      left: 30px;
-      height: 250px;
-      text-align: left;
-
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 27px;
-        width: 265px;
-      }
-
-      p {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 22px;
-        width: 290px;
-        margin: 20px 0;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-        width: 350px;
-
-        h4 {
-          font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 22px;
-          line-height: 19px;
-          color: #000000;
-        }
-
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 15px;
-          width: 70px;
-          height: 35px;
-          right: 101px;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .icon {
-            font-size: 30px;
-            color: #0256d3;
-          }
-        }
-
-      }
-    }
+    margin: -105px 0 20px 20px;
   }
-
+  #food .food--card__img {
+    width: 210px;
+  }
+  #food .food--card__word h2 {
+    width: 427px;
+  }
 }
 
 @media (max-width: 800px) {
-  .food--card {
-    background: #FFFFFF;
-    display: flex;
-    width: 700px;
-    height: 280px;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
-    margin: 50px 0 50px 20px;
-
-    &__img {
-      width: 210px;
-      height: 190px;
-      margin: 20px 0 20px 50px;
-      border-radius: 30px;
-    }
-
-    &__word {
-      margin-top: 50px;
-      width: 449px;
-      height: 250px;
-      text-align: left;
-
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 27px;
-        width: 270px;
-      }
-
-      p {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 22px;
-        width: 300px;
-        margin: 20px 0;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-        width: 365px;
-
-        h4 {
-          font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 22px;
-          line-height: 19px;
-          color: #000000;
-        }
-
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 15px;
-          width: 70px;
-          height: 35px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .icon {
-            font-size: 30px;
-            color: #0256d3;
-          }
-        }
-
-      }
-    }
+  #food .food--card__word h2 {
+    width: 326px;
   }
-
+  #food .food--card {
+    margin: -116px 0 20px 18x;
+    width: 680px;
+    height: 250px;
+  }
+  #food .food--card__img {
+    width: 197px;
+    height: 175px;
+    margin: 0 0 0 30px;
+  }
+  #food .food--card__word p {
+    width: 373px;
+  }
+  #food .food--card__word--order {
+    width: 381px;
+    margin: 25px 0 0 0;
+  }
+  #food .food--card__word {
+    margin-top: 48px;
+  }
 }
 
 @media (max-width: 768px) {
-  .food--card {
-    background: #FFFFFF;
-    display: flex;
-    width: 640px;
-    height: 280px;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
-    margin: 50px 0 50px 35px;
-
-    &__img {
-      width: 200px;
-      height: 190px;
-      margin: 20px 0 20px 20px;
-      border-radius: 30px;
-    }
-
-    &__word {
-      width: 449px;
-      margin: 45px 0 0 4px;
-      height: 250px;
-      text-align: left;
-
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 27px;
-        width: 300px;
-      }
-
-      p {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 27px;
-        width: 300px;
-        margin: 20px 0;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-        width: 300px;
-
-        h4 {
-          font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 22px;
-          line-height: 19px;
-          color: #000000;
-        }
-
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 15px;
-          width: 70px;
-          height: 35px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .icon {
-            font-size: 30px;
-            color: #0256d3;
-          }
-        }
-
-      }
-    }
-  }
 
 }
 
 @media (max-width: 576px) {
+  #food .food--card {
+    width: 520px;
+    height: 200px;
+    margin-top: -140px;
+  }
+  #food .food--card__img {
+    width: 154px;
+    height: 157px;
+  }
+  #food .food--card__word h2 {
+    width: 308px;
+    font-size: 22px;
+  }
+  #food .food--card__word p {
+    width: 266px;
+    font-size: 16px;
+  }
+  #food .food--card__word--order {
+    width: 269px;
+    margin: 20px 0 0 0;
+  }
+  .foods--one__basket--icon .icon {
+    font-size: 18px;
+  }
+  .foods--one__basket--icon {
+    width: 43px;
+    height: 32px;
+    #food .food--card__word {
+      margin-top: 55px;
+      height: 229px;
+    }
+  }
+  #food .food--card__word {
+    margin-top: 85px;
+  }
   #food .food h1 {
-    font-family: "Armin Grotesk,", sans-serif;
-    font-weight: 600;
+    margin: -115px 0 20px 36px;
     font-size: 30px;
-    margin: 0 0 40px 40px;
   }
-  .food--card {
-    background: #FFFFFF;
-    display: flex;
-    width: 482px;
-    height: 190px;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
-    margin: 20px 0 20px 30px;
-
-    &__img {
-      width: 150px;
-      height: 143px;
-      position: relative;
-      left: 70px;
-      margin: 20px 0 20px -54px;
-      border-radius: 30px;
-    }
-
-    &__word {
-      width: 449px;
-      margin: 100px 0 0 70px;
-      height: 250px;
-      text-align: left;
-
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 20px;
-        width: 205px;
-      }
-
-      p {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 22px;
-        width: 240px;
-        margin: 10px 0;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-        margin: 20px 0 20px 0;
-        width: 250px;
-
-        h4 {
-          font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 20px;
-          line-height: 19px;
-          color: #000000;
-        }
-
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 11px;
-          font-size: 10px;
-          margin: 0 0 0 200px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .icon {
-            font-size: 20px;
-            width: 40px;
-            height: 20px;
-            color: #0256d3;
-          }
-        }
-        .foods--one__basket--icon {
-          color: #004FC7;
-          width: 44px;
-          background: #DFE2FF;
-          height: 29px;
-          border-radius: 20px;
-          font-size: 18px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .foods--one__basket--icon .icon {
-          font-size: 19px;
-        }
-      }
-    }
-  }
-
 }
 
 @media (max-width: 450px) {
-  #food .food h1 {
-    font-size: 24px;
+  #food .food--card__img {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    left: 10px;
   }
-  .food--card {
-    background: #FFFFFF;
-    display: flex;
-    width: 350px;
+  #food .food--card {
+    width: 400px;
     height: 160px;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
-    margin: 20px 0 20px 40px;
-    &__img {
-      width: 100px;
-      height: 100px;
-      margin: 20px 0 20px -80px;
-      border-radius: 30px;
-    }
-
-    &__word {
-      width: 224px;
-      margin: 150px 0 0 15px;
-      height: 250px;
-      text-align: left;
-
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 15px;
-        width: 190px;
-      }
-
-      p {
-        font-family: "Armin Grotesk", sans-serif;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-        width: 180px;
-        margin: 10px 0;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-        width: 170px;
-
-        h4 {
-          font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 15px;
-          line-height: 19px;
-          color: #000000;
-        }
-
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 11px;
-          width: 33px;
-          height: 25px;
-          font-size: 1px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .icon {
-            font-size: 15px;
-            color: #0256d3;
-          }
-        }
-
-      }
-    }
   }
-  .food--card__word--order .foods--one__basket--icon .icon {
-    font-size: 15px;
+  #food .food--card__word h2 {
+    width: 272px;
+    font-size: 18px;
+    margin: -10px 0;
   }
-  .food--card__word--order .foods--one__basket--icon {
-    width: 35px;
-    height: 23px;
+  #food .food--card__word p {
+    width: 220px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  #food .food--card__word--order {
+    width: 221px;
+    height: 4px;
+  }
+  #food .food h1 {
+    margin: -87px 0 20px 36px;
+    font-size: 25px;
+  }
+  #food .food--card__word {
+    margin: 140px 30px 0 2px;
+  }
+  #food .food--card__word--order h4 {
+    font-size: 16px;
   }
 }
 
 @media (max-width: 428px) {
-  h1 {
-    font-size: 20px;
-    margin-top: -92px;
+  #food .food--card__word h2 {
+    width: 239px;
+    font-size: 16px;
   }
-  .food--card {
-    background: #FFFFFF;
-    display: flex;
-    width: 335px;
-    height: 150px;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
-    margin: 20px 0 20px 38px;
-    &__img {
-      width: 90px;
-      height: 90px;
-      margin: 20px 0 20px -80px;
-      border-radius: 30px;
-    }
-
-    &__word {
-      width: 224px;
-      height: 250px;
-      text-align: left;
-
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-        width: 195px;
-      }
-
-      p {
-        font-family: "Armin Grotesk", sans-serif;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-        width: 170px;
-        margin: 10px 0;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-        position: relative;
-        top: -2px;
-        width: 160px;
-
-        h4 {
-          font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 15px;
-          line-height: 19px;
-          color: #000000;
-        }
-
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 11px;
-          width: 33px;
-          height: 27px;
-          font-size: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .icon {
-            font-size: 15px;
-            color: #0256d3;
-          }
-        }
-
-      }
-    }
+  #food .food--card__word p {
+    width: 220px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  #food .food--card__word--order {
+    width: 189px;
+    margin: 30px 0 0 0;
+  }
+  #food .food--card__word {
+    margin: 146px 26px 0 2px;
   }
 
 }
 
 @media (max-width: 414px) {
-  .food--card {
-    background: #FFFFFF;
-    display: flex;
-    width: 330px;
-    height: 140px;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
-
-    &__img {
-      width: 90px;
-      height: 90px;
-      margin: 20px 0 20px -54px;
-      border-radius: 30px;
-    }
-
-    &__word {
-      width: 224px;
-      height: 250px;
-      margin: 150px 0 0 40px;
-      text-align: left;
-
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 15px;
-        width: 170px;
-      }
-
-      p {
-        font-family: "Armin Grotesk", sans-serif;
-        font-weight: 400;
-        font-size: 11px;
-        line-height: 15px;
-        width: 80%;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-        width: 150px;
-
-        h4 {
-          font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 15px;
-          line-height: 19px;
-          color: #000000;
-        }
-
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 11px;
-          width: 33px;
-          height: 25px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .icon {
-            font-size: 10px;
-            color: #0256d3;
-          }
-        }
-
-      }
-    }
+  #food .food--card__word h2 {
+    width: 207px;
+    font-size: 15px;
   }
-
+  #food .food--card__word p {
+    width: 195px;
+  }
+  #food .food--card__word {
+    margin: 139px 76px 0 2px;
+  }
+  #food .food--card {
+    width: 373px;
+  }
 }
 
-@media (max-width: 390px) {
-  #food .food h1 {
-    font-family: "Armin Grotesk,", sans-serif;
-    font-weight: 600;
-    font-size: 25px;
-    margin: 0 0 30px 10px;
+@media (max-width: 414px) {
+  #food .food--card__word h2 {
+    width: 207px;
+    font-size: 15px;
   }
-  .food--card {
-    background: #FFFFFF;
-    display: flex;
-    width: 350px;
-    height: 140px;
-    margin: 15px auto 15px 14px;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
-
-    .img {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &__img {
-        width: 90px;
-        height: 85px;
-        border-radius: 20px;
-      }
-    }
-
-
-    &__word {
-      margin: 140px 0 0 25px;
-
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        width: 180px;
-      }
-
-      p {
-        font-family: "Armin Grotesk", sans-serif;
-        font-weight: 400;
-        line-height: 17px;
-        font-size: 12px;
-        width: 190px;
-        margin: 10px 0 10px 0;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-        width: 180px;
-        margin: 15px 0 0 0;
-
-        h4 {
-          font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 15px;
-          line-height: 19px;
-          color: #000000;
-        }
-
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 11px;
-          width: 36px;
-          height: 25px;
-          font-size: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .icon {
-            font-size: 14px;
-            color: #0256d3;
-          }
-        }
-
-      }
-    }
+  #food .food--card__word p {
+    width: 195px;
   }
-
+  #food .food--card__word {
+    margin: 139px 76px 0 2px;
+  }
+  #food .food--card {
+    width: 373px;
+  }
 }
+
+@media (max-width: 400px) {
+  #food .food--card__img {
+    width: 101px;
+    height: 101px;
+    position: relative;
+    left: 15px;
+  }
+  #food .food--card {
+    width: 357px;
+    margin: -130px 0 10px 25px;
+  }
+  #food .food--card__word {
+    margin: 158px 67px 0 0;
+  }}
 
 @media (max-width: 360px) {
-  #food {
-    padding-top: 92px;
+  #food .food--card__word p {
+    width: 195px;
+    font-size: 12px;
+    line-height: 15px;
   }
-  #food .food h1 {
-    font-family: "Armin Grotesk,", sans-serif;
-    font-weight: 600;
-    margin: 0 0 30px 20px;
-    font-size: 24px;
+  .foods--one__basket--icon {
+    width: 37px;
+    height: 26px;
   }
-  .food--card {
-    background: #FFFFFF;
-    display: flex;
-    width: 320px;
-    height: 125px;
-    align-items: center;
-    border-radius: 20px;
-    margin: 20px 0 10px 7px;
-
-    &__img {
-      width: 80px;
-      height: 80px;
-      border-radius: 20px;
-      margin: 0 0 0 -85px;
-    }
-
-    &__word {
-      width: 224px;
-      margin: 160px 0 0 20px;
-      height: 250px;
-      text-align: left;
-
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 14px;
-        width: 190px;
-      }
-
-      p {
-        font-family: "Armin Grotesk", sans-serif;
-        font-weight: 400;
-        font-size: 11px;
-        line-height: 15px;
-        width: 190px;
-        margin: 5px 0;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-        width: 170px;
-
-        h4 {
-          font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 15px;
-          line-height: 19px;
-          color: #000000;
-        }
-
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 11px;
-          width: 30px;
-          height: 20px;
-          font-size: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .icon {
-            font-size: 10px;
-            color: #0256d3;
-          }
-        }
-
-      }
-    }
+  #food .food--card {
+    width: 330px;
+    margin: -144px 0 10px 27px;
   }
-
+  #food .food--card__img {
+    width: 95px;
+    height: 92px;
+  }
 }
 
 @media (max-width: 320px) {
+  #food .food--card__img {
+    width: 86px;
+    height: 86px;
+  }
+  #food .food--card__word h2 {
+    width: 203px;
+    font-size: 13px;
+    line-height: 15px;
+  }
+  #food .food--card__word p {
+    width: 176px;
+    font-size: 11px;
+    line-height: 15px;
+  }
+  #food .food--card__word {
+    margin: 166px 60px 0 0;
+  }
+  #food .food--card__word--order {
+    width: 166px;
+  }
+  #food .food--card {
+    width: 305px;
+    height: 132px;
+    margin: -144px 0 10px 38px;
+  }
   #food .food h1 {
-    font-family: "Armin Grotesk,", sans-serif;
-    font-weight: 600;
-    margin: 0 0 30px 20px;
-    font-size: 24px;
+    margin: -160px 0 20px 17px;
+    font-size: 23px;
   }
-
-  .food--card {
-    background: #FFFFFF;
-    display: flex;
-    width: 275px;
-    position: relative;
-    left: -2px;
-    height: 120px;
-    align-items: center;
-    border-radius: 20px;
-
-    &__img {
-      width: 70px;
-      height: 70px;
-      border-radius: 20px;
-      position: relative;
-      left: 85px;
-    }
-
-    &__word {
-      width: 220px;
-      margin: 160px 0 0 65px;
-      height: 250px;
-      text-align: left;
-
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 13px;
-        width: 170px;
-      }
-      p {
-        font-family: "Armin Grotesk", sans-serif;
-        font-weight: 400;
-        font-size: 9px;
-        line-height: 15px;
-        width: 150px;
-        margin: 5px 0;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-
-        h4 {
-          font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 15px;
-          line-height: 19px;
-          color: #000000;
-        }
-
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 11px;
-          width: 30px;
-          height: 23px;
-          font-size: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          right: 130px;
-
-          .icon {
-            font-size: 10px;
-            color: #0256d3;
-          }
-        }
-
-      }
-    }
-  }
-
 }
