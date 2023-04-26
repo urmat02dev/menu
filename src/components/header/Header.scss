@@ -201,6 +201,14 @@
       }
     }
   }
+  #header .header--end__one .sup {
+    width: 24px;
+    height: 24px;
+  }
+  #header .header--end__one .sup sup {
+    color: white;
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 415px) {
@@ -332,7 +340,13 @@
       }
     }
   }
-
+  #header .header--end__one .sup {
+    width: 21px;
+    height: 21px;
+  }
+  #header .header .header--end__one .sup sup {
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 376px) {
@@ -440,6 +454,9 @@
     height: 21px;
     background: #0256d3;
     font-size: 9px;
+  }
+  #header .header .header--end__one .sup sup {
+    font-size: 10px;
   }
 }
 
