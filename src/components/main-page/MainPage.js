@@ -13,7 +13,8 @@ const MainPage = () => {
   return (
     <div>
       <Header/>
-        <Search/>
+        <Search modal={modal}
+        setModal={setModal}/>
       <Modal modal={modal}
       setModal={setModal}/>
       <Category active={active}
