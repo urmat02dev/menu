@@ -118,6 +118,12 @@
           margin-right: 20px;
           font-size: 22px;
 
+          .sup {
+            sup {
+              font-size: 11px;
+            }
+          }
+
           &--icon {
             width: 30px;
           }
@@ -301,6 +307,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+
       .header--end__one .sup sup {
         font-size: 13px;
       }
@@ -368,7 +375,8 @@
         &__one {
           margin-right: 20px;
           font-size: 22px;
-          .sup{
+
+          .sup {
             position: absolute;
             right: 21px;
             bottom: 14px;
@@ -394,7 +402,9 @@
         }
       }
     }
+
   }
+
 }
 
 @media (max-width: 360px) {
@@ -416,7 +426,8 @@
         &__one {
           margin-right: 20px;
           font-size: 22px;
-          .sup{
+
+          .sup {
             position: absolute;
             right: 21px;
             bottom: 14px;
@@ -479,13 +490,15 @@
         &__one {
           margin-right: 20px;
           font-size: 22px;
-          .sup{
+
+          .sup {
             position: absolute;
             right: 21px;
             bottom: 14px;
             height: 15px;
             width: 15px;
           }
+
           &--icon {
             width: 22px;
           }
