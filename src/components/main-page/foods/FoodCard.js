@@ -51,8 +51,7 @@ const FoodCard = ({el, setModal, modal}) => {
         <div id='food'>
             <div className="food--card" onClick={() =>  getWindow(modal)}>
                 <div className={"img"}>
-                    <img className="food--card__img" src={el.image} alt=""  />
-
+                    <img className="food--card__img" src={el.image} alt="img"/>
                 </div>
                 <div className="food--card__word">
                     <h2>{getTitle(el)}</h2>
