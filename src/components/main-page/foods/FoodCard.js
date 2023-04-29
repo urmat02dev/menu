@@ -51,8 +51,7 @@ const FoodCard = ({el, setModal, modal}) => {
         <div id='food'>
             <div className="food--card" onClick={() =>  getWindow(modal)}>
                 <div className={"img"}>
-                    <img className="food--card__img" src={el.image} alt=""  />
-
+                    <img className="food--card__img" src={el.image} alt="img"/>
                 </div>
                 <div className="food--card__word">
                     <h2>{getTitle(el)}</h2>
@@ -60,7 +59,7 @@ const FoodCard = ({el, setModal, modal}) => {
                     <div className="food--card__word--order">
                         <h4>{el.price}c.</h4>
                         {
-                            foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
+                            foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill className='icon'/></div>
                                 :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
                                     <BiBasket className='icon'/></div>
                         }

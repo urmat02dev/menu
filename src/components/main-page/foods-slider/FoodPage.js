@@ -42,6 +42,9 @@ const FoodPage = ({el,modal,setModal}) => {
             dispatch({type:MODAL,payload:el})
         }
     function getBasket(el) {
+        let basket = JSON.parse(localStorage.getItem("basket")) || []
+        basket = [...basket, {...el}]
+        localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:GET_BASKET,payload:el})
     }
     const foundProduct = basket.some(e => e.id === el.id)
