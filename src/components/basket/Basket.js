@@ -16,7 +16,6 @@ const Basket = () => {
   const [cash,setCash] = useState(false)
   const [tern,setTern] = useState(false)
   const [btn,setBtn] = useState(false)
-  console.log("BTN",btn ? here || s && cash || tern ? "blue" : "red" : "blue")
   const getModal = () => {
     if (btn){
       if (here || s || cash || tern){
