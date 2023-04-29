@@ -30,6 +30,7 @@ const Search = ({setModal,modal}) => {
         dispatch({type: SEARCH, payload: value})
         nav("/search")
       }
+
   }
 
 

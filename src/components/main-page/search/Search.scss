@@ -40,12 +40,11 @@
   #search {
     position: relative;
     .search {
-
       display: flex;
       align-items: center;
       justify-content: center;
       input{
-        width: 360px;
+        width: 510px;
         height: 40px;
         border-radius: 21px;
         background: #DFE2FF;
@@ -60,7 +59,7 @@
       }
       .icon {
         position: absolute;
-        left: 31.5rem;
+        left: 35rem;
         right: 20px;
         top: 10px;
         bottom: 0;
@@ -75,7 +74,7 @@
     .search {
       position: relative;
       input {
-        width: 260px;
+        width: 325px;
         height: 40px;
         border-radius: 21px;
         background: #DFE2FF;
@@ -91,7 +90,7 @@
       }
       .icon {
         position: absolute;
-        left: 22.60rem;
+        left: 25rem;
         right: 20px;
         top: 10px;
         bottom: 0;
@@ -232,7 +231,7 @@
       position: relative;
       left: 5px;
       input {
-        width: 100%;
+        width: 85%;
         height: 37px;
         border-radius: 21px;
         background: #DFE2FF;
@@ -240,7 +239,6 @@
         outline: none;
         padding: 0 15px;
         position: relative;
-        //left: 10px;
         font-size: 15px;
       }
       ::placeholder {
@@ -249,7 +247,7 @@
       }
       .icon {
         position: absolute;
-        left: 16.5rem;
+        left: 15.5rem;
         right: 20px;
         top: 8px;
         bottom: 0;

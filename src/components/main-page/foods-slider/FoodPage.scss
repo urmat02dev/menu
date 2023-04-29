@@ -229,7 +229,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 15px;
-      height: 45px;
+      height: 40px;
       background: #fff;
       border-radius: 25px;
       margin-top: 5px;
@@ -264,6 +264,10 @@
       }
     }
   }
+  #foods .foods--one img {
+    width: 205px;
+    height: 200px;
+  }
 }
 @media (max-width: 576px) {
   #foods {
@@ -278,7 +282,7 @@
         padding: 0 10px;
         img {
           width: 160px;
-          height: 160px;
+          height: 150px;
         }
         h3 {
           font-weight: 400;
@@ -297,17 +301,18 @@
           align-items: center;
           justify-content: space-between;
           padding: 0 15px;
-          height: 30px;
+          height: 40px;
           background: #fff;
           border-radius: 20px;
           margin-top: 10px;
           width: 130px;
           &--icon {
             color: #004FC7;
-            width: 40px;
+            width: 30px;
             background: #DFE2FF;
-            height: 20px;
+            height: 30px;
             border-radius: 20px;
+            font-size: 17px;
           }
           h3 {
             font-size: 17px;
@@ -334,6 +339,7 @@
         padding: 0 10px;
         img {
           width: 100%;
+          height: 140px;
         }
         h3 {
           font-weight: 400;
@@ -501,8 +507,8 @@
     padding: 7px 8px;
   }
   #foods .foods--one__basket--icon {
-    width: 36px;
-    height: 23px;
+    width: 56px;
+    height: 30px;
   }
   #foods .foods--one h3 {
     font-size: 15px;
@@ -527,6 +533,10 @@
   }
   #foods .foods--one__basket {
     width: 116px;
+  }
+  #foods .foods--one h3 {
+    font-size: 14px;
+    width: 153px;
   }
 }
 @media (max-width: 360px) {
@@ -584,9 +594,12 @@
   #foods .foods--one__basket--icon {
     height: 23px;
     width: 56px;
-    font-size: 16px;
+    font-size: 15px;
   }
   .foods--one__basket--icon .icon {
-    font-size: 18px;
+    font-size: 20px;
+  }
+  #foods .foods--one__basket .foods--one__basket--icon .icon {
+    font-size: 19px;
   }
 }
