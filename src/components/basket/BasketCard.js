@@ -5,6 +5,7 @@ import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {useDispatch, useSelector} from "react-redux";
 import {DELETE, GET_BASKET, MINUS, PLUS} from "../../redux/Reducer/ActionTypes";
 import {useTranslation} from "react-i18next";
+import basket from "./Basket";
 const BasketCard = ({el}) => {
   const lang = localStorage.getItem("i18nextLng")
   // const basket = JSON.parse(localStorage.getItem("basket"))
@@ -36,15 +37,36 @@ const BasketCard = ({el}) => {
   }
 
   const  addPlus = () => {
+    let basket = JSON.parse(localStorage.getItem("basket")) || []
+    let foundProduct = basket.find(e => e.id === el.id )
+    if (foundProduct){
+      basket = basket.map(e => e.id === el.id ? {...e, quantity: e.quantity + 1}: e)
+    }else {
+      basket = [...basket, {...el, quantity: 1}]
+    }
+    localStorage.setItem("basket",JSON.stringify(basket))
     dispatch({type:GET_BASKET, payload: el})
-
   }
   const [del, setDel] = useState(false)
   const getDelete = () => {
+    let basket = JSON.parse(localStorage.getItem("basket")) || []
+    basket = basket.filter(e => e.id !== el.id)
     dispatch({type: DELETE, payload: el})
     setDel(!del)
+    localStorage.setItem("basket",JSON.stringify(basket))
+  }
+  const minusDelete = () =>{
+    let basket = JSON.parse(localStorage.getItem("basket")) || []
+    basket = basket.map(e => {
+      if (e.quantity > 1) {
+        return {...e, quantity: e.quantity - 1}
+      }else return e
+    })
+    localStorage.setItem("basket",JSON.stringify(basket))
+    dispatch({type: MINUS, payload: el})
   }
   console.log("Del", del)
+  console.log("Local" , JSON.parse(localStorage.getItem("basket")))
 
 
 
@@ -64,14 +86,17 @@ const BasketCard = ({el}) => {
         </div>
         <p>{el.mass}г.</p>
         <div className="basket--card__word--order">
+
           <div className={"price"}>
             <h4>{el.price * el.quantity}{t("basket.s")}.</h4>
           </div>
+
           <div className={"count"}>
-            <span style={{color:`${el.quantity > 1 ? "" : " rgba(255, 255, 255, 0.11)" }`}} onClick={() => dispatch({type: MINUS,payload:el})}><AiOutlineMinus/></span>
+            <span style={{color:`${el.quantity > 1 ? "" : "#FFFFFF80" }`}} onClick={() => minusDelete()}><AiOutlineMinus/></span>
             <p>{el.quantity}</p>
             <span onClick={() => addPlus(el)}> <AiOutlinePlus/></span>
           </div>
+
         </div>
       </div>
     </div>

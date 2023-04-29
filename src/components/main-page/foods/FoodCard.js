@@ -1,5 +1,5 @@
 import React from 'react';
-import {BsBasket, BsBasket3Fill} from "react-icons/bs";
+import {BsBasket3Fill} from "react-icons/bs";
 import {useTranslation} from "react-i18next";
 import "./FoodCard.scss"
 import {useDispatch, useSelector} from "react-redux";
@@ -36,10 +36,6 @@ const FoodCard = ({el, setModal, modal}) => {
 
     function getWindow() {
         setModal(!modal)
-        dispatch({type: MODAL, payload: el})
-    }
-    function getWindow() {
-        setModal(!modal)
         dispatch({type:MODAL,payload:el})
     }
     function getBasket(el) {
@@ -50,13 +46,12 @@ const FoodCard = ({el, setModal, modal}) => {
     }
     
     const foundProduct = basket.some(e => e.id === el.id)
-    console.log(foundProduct)
+    console.log(modal)
     return (
         <div id='food'>
             <div className="food--card" onClick={() =>  getWindow(modal)}>
                 <div className={"img"}>
-                    <img className="food--card__img" src={el.image} alt=""  />
-
+                    <img className="food--card__img" src={el.image} alt="img"/>
                 </div>
                 <div className="food--card__word">
                     <h2>{getTitle(el)}</h2>

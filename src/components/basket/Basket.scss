@@ -197,13 +197,14 @@
             }
 
             .count {
-              width: 200px;
-              height: 55px;
+              //width: 35%;
+              //height: 55px;
+              padding: 10px 2%;
               background: #004FC7;
               border-radius: 40px;
               display: flex;
               align-items: center;
-              justify-content: center;
+              //justify-content: center;
 
               p {
                 color: white;
@@ -216,7 +217,8 @@
                 font-weight: 700;
                 margin: 0 5px;
                 color: white;
-                font-size: 20px;
+                font-size: 22px;
+                text-align: center;
               }
             }
 
@@ -1351,7 +1353,11 @@
     font-size: 20px;
   }
   #basket .basket--status__general--here {
+    width: 80px;
     font-size: 14px;
+  }
+  #basket .basket--status__general {
+    padding: 0 10px;
   }
   #basket .basket--pay__block--cash h2 {
     font-size: 16px;
@@ -1368,6 +1374,10 @@
   }
   #basket .basket--pay__block--terminal {
     width: 200px;
+    width: 263px;
+  }
+    #basket .basket--pay__block--terminal {
+    width: 261px;
   }
   #basket .basket--btn button {
     width: 165px;

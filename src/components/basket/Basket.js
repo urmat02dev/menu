@@ -16,12 +16,11 @@ const Basket = () => {
   const [cash,setCash] = useState(false)
   const [tern,setTern] = useState(false)
   const [btn,setBtn] = useState(false)
-  console.log("BTN",btn ? here || s && cash || tern ? "blue" : "red" : "blue")
   const getModal = () => {
     if (btn){
       if (here || s || cash || tern){
-        return  <BasketModal/> && nav("/main/print") && basket === !
-        setBtn(false)
+        return  <BasketModal/> && nav("/main/print")
+        setBtn(true)
         }
       else return setBtn(false)
       }
@@ -51,8 +50,8 @@ const Basket = () => {
               <div className='basket--status__title'>
                 <h1>{t("basket.status")}</h1>
               </div>
-              <div className='basket--status__general'>
-                <div onClick={() => setHere(!here) || setS(false)}  className={ here ? "basket--status__general--here active" :"basket--status__general--here"}>
+              <div  className='basket--status__general'>
+                <div style={{background: btn === true ? "red" : ""}} onClick={() => setHere(!here) || setS(false)}  className={ here ? "basket--status__general--here active" :"basket--status__general--here"}>
                   <h2>{t("basket.here")}</h2>
                 </div>
                 <div onClick={() => setS(!s) || setHere(false)}  className={ s ? "basket--status__general--with active" :"basket--status__general--with"}>
@@ -75,16 +74,9 @@ const Basket = () => {
                 </div>
               </div>
             </div>
-            <div className='basket--btn' onClick={() => getModal()} style={{
-
-            }}>
-                <button onClick={() => setBtn(true)} style={{
-                  background:btn ? here || s || cash || tern ? "blue" : "red" : "blue"
-                }}>{t("basket.cont")}</button>
+            <div className='basket--btn' onClick={() => getModal()}>
+                <button onClick={() => setBtn(true)}>{t("basket.cont")}</button>
             </div>
-            {
-              getModal()
-            }
           </div>
         </div>
       </div>
