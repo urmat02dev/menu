@@ -6,4 +6,5 @@ export const MODAL = "MODAL"
 export const MODAL_PLUS = "MODAL_PLUS"
 export const MODAL_MINUS = "MODAL_MINUS"
 export const SEARCH = "SEARCH"
+export const PODCAST = "PODCAST"
 

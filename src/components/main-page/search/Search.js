@@ -2,13 +2,15 @@ import React, {useState} from 'react';
 import './Search.scss'
 import {AiOutlineSearch} from "react-icons/ai";
 import {useTranslation} from "react-i18next";
-import {useDispatch} from "react-redux";
-import {SEARCH} from "../../../redux/Reducer/ActionTypes";
+import {useDispatch, useSelector} from "react-redux";
+import {PODCAST, SEARCH} from "../../../redux/Reducer/ActionTypes";
 import {useNavigate} from "react-router-dom";
+import {data} from "../../fake-backend/backend";
 const Search = ({setModal,modal}) => {
   const {t} = useTranslation()
   const dispatch = useDispatch()
   const nav = useNavigate()
+  const {search} = useSelector(s => s)
   const [value , setValue] = useState("")
   function getSearch (e) {
     setValue(e.target.value)
@@ -30,6 +32,12 @@ const Search = ({setModal,modal}) => {
       }
 
   }
+
+
+  const res = data.filter(el =>
+      el => el.title.toLowerCase() === search.toLowerCase() || el.title_ru.toLowerCase() === search.toLowerCase() || el.title_kg.toLowerCase() === search.toLowerCase() )
+  console.log(res.map(el => el.title))
+
   return (
       <div id='search'>
         <div className="container">
@@ -38,6 +46,12 @@ const Search = ({setModal,modal}) => {
                    onKeyDown={(e) => getSearch(e)}
                    placeholder={t("search.placeholder")}/>
             <AiOutlineSearch className='icon' onClick={() => getSearchClick()}/>
+            <ul className={"ul"}>
+              {
+                <li></li>
+              }
+
+            </ul>
           </div>
         </div>
       </div>

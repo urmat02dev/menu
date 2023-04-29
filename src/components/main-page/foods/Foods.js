@@ -31,6 +31,14 @@ const Foods = ({active,setActive,modal,setModal}) => {
   }
 
   }
+  const breakfast = data.filter(el => el.type === "breakfast")
+  const salad = data.filter(el => el.type === "salad")
+  const foods = data.filter(el => el.type === "foods")
+  const pizza = data.filter(el => el.type === "pizza")
+  const desert = data.filter(el => el.type === "desert")
+  const juice = data.filter(el => el.type === "juice")
+  const drink = data.filter(el => el.type === "drink")
+
   return (
     <div id="food">
       <div className="container">
@@ -39,7 +47,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
 
             {
               active === 0 || active === 1 ?
-              data[1].map(el => {
+              breakfast.map(el =>{
                 return <FoodCard el={el}
                                  modal={modal}
                                  setModal={setModal}
@@ -49,7 +57,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
             }
           {
             active === 2 ?
-              data[2].map(el => {
+              salad.map(el => {
                 return <FoodCard el={el}
                                  modal={modal}
                                  setModal={setModal}
@@ -58,7 +66,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
           }
           {
             active === 3 ?
-              data[3].map(el => {
+              foods.map(el => {
                 return <FoodCard el={el}
                                  modal={modal}
                                  setModal={setModal}
@@ -67,7 +75,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
           }
           {
             active === 4 ?
-              data[4].map(el => {
+              pizza.map(el => {
                 return <FoodCard el={el}
                                  modal={modal}
                                  setModal={setModal}
@@ -76,7 +84,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
           }
           {
             active === 5 ?
-              data[5].map(el => {
+              desert.map(el => {
                 return <FoodCard el={el}
                                  modal={modal}
                                  setModal={setModal}
@@ -85,7 +93,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
           }
           {
             active === 6 ?
-              data[6].map(el => {
+              juice.map(el => {
                 return <FoodCard el={el}
                                  modal={modal}
                                  setModal={setModal}
@@ -94,7 +102,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
           }
           {
             active === 7 ?
-              data[7].map(el => {
+              drink.map(el => {
                 return <FoodCard el={el}
                                  modal={modal}
                                  setModal={setModal}/>
