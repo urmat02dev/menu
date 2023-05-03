@@ -11,21 +11,23 @@ import {BiBasket} from "react-icons/bi";
 import {
     GET_BASKET,
     GET_MODAL,
-    MINUS, MODAL_MINUS, MODAL_PLUS,
+    MINUS, MODAL, MODAL_MINUS, MODAL_PLUS,
     PLUS
 } from "../../redux/Reducer/ActionTypes";
 import {BsBasket, BsBasket3Fill} from "react-icons/bs";
 import {IoMdClose} from "react-icons/io";
-import React from "react";
+import React, {useEffect} from "react";
 import "./Modal.scss"
 import {data} from "../fake-backend/backend";
 import FoodCard from "../main-page/foods/FoodCard";
 import ModalCard from "./ModalCard";
+
 const Modal = ({modal,setModal}) => {
     const basket = useSelector(state => state.basket)
     let baskets = JSON.parse(localStorage.getItem("basket")) || []
+
     const {id} = useParams()
-    const detail = data.filter(el  => el.id === id)
+    const detail = data.filter(el => el.id === id)
     console.log(detail)
     const nav = useNavigate()
     const dispatch = useDispatch()
@@ -53,7 +55,8 @@ const Modal = ({modal,setModal}) => {
     //     }
     // }
     const getClose = async () => {
-         setModal(!modal)
+        dispatch({type:MODAL,payload:false})
+        nav("/main")
     }
   return (
       <>
@@ -78,34 +81,24 @@ const Modal = ({modal,setModal}) => {
                               })
                           }
 
-                          {/*<div className={"modals--img"}>*/}
-                          {/*    <img src={modalDetail.image} alt=""/>*/}
-                          {/*</div>*/}
-                          {/*<div className="modals--desc">*/}
-                          {/*    <h2>{getTitle()}</h2>*/}
-                          {/*    <h3>{getDesc()}</h3>*/}
-                          {/*    <h4>{mass}г.</h4>*/}
-                          {/*    <h5>Цена:<span>{price}c</span></h5>*/}
+                }}>
 
-                          {/*</div>*/}
-                          {/*<div className="modals--basket">*/}
-                          {/*    <div className="basket">*/}
-                          {/*        Добавить в*/}
-                          {/*        <div className="icon-block" onClick={() => getBasket()}>*/}
-                          {/*            {*/}
-                          {/*                foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/><AiOutlineArrowRight className='next'/></div>   :<div className="foods--one__basket--icon" onClick={() => getBasket()}>*/}
-                          {/*                    <BiBasket className='icon'/></div>*/}
-                          {/*            }*/}
-                          {/*        </div>*/}
-                          {/*    </div>*/}
-                          {/*</div>*/}
-                      </div>
-                  </div>
-              </div>
+                    <div className="modals">
+                        <div className="close" onClick={() => getClose()}>
+                            <IoMdClose className={"icon"}/>
+                        </div>
+                        {
+                            detail.map(el => {
+                                return <ModalCard el={el}/>
+                            })
+                        }
+                    </div>
+                </div>
+            </div>
 
-      </>
+        </>
 
-  );
+    );
 };
 
 export default Modal;

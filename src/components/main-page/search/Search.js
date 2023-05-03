@@ -36,8 +36,10 @@ const Search = ({setModal,modal}) => {
 
   const res = data.filter(el =>
       el => el.title.toLowerCase() === search.toLowerCase() || el.title_ru.toLowerCase() === search.toLowerCase() || el.title_kg.toLowerCase() === search.toLowerCase() )
-  console.log(res.map(el => el.title))
-
+  console.log(res.filter(el => el.title === search))
+  const poscast = data.find(el => el.title === value[0])
+  console.log(poscast)
+  console.log(value)
   return (
       <div id='search'>
         <div className="container">

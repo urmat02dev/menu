@@ -9,7 +9,7 @@ import basket from "../../basket/Basket";
 import {BsBasket3Fill} from "react-icons/bs";
 import {AiOutlineArrowRight} from "react-icons/ai";
 
-const FoodPage = ({el,modal,setModal}) => {
+const FoodPage = ({el}) => {
     const {t } = useTranslation()
     const nav = useNavigate()
     const {basket} = useSelector(state => state)
@@ -41,8 +41,7 @@ const FoodPage = ({el,modal,setModal}) => {
     }
     const dispatch = useDispatch()
          function getWindow () {
-             setModal(!modal)
-
+            dispatch({type:MODAL,payload:true})
         }
     function getBasket() {
 
@@ -67,10 +66,8 @@ const FoodPage = ({el,modal,setModal}) => {
     console.log("FoundProduct",foundProduct)
     console.log("BasketLocal",baskets)
 useEffect(() =>{
-
 },[foundProduct])
-    const foundProduct = basket.some(e => e.id === el.id)
-    console.log(foundProduct)
+
     return (
         <div className="foods--one" >
             <NavLink to={`/detail/${el.id}`}>

@@ -37,7 +37,7 @@ const FoodCard = ({el, setModal, modal}) => {
     }
 
     function getWindow() {
-        setModal(!modal)
+        dispatch({type:MODAL,payload:true})
     }
     function getBasket(el) {
         let basket = JSON.parse(localStorage.getItem("basket")) || []
@@ -47,7 +47,6 @@ const FoodCard = ({el, setModal, modal}) => {
         }else {
             basket = [...basket, {...el, quantity: 1}]
         }
-        basket = [...basket, {...el}]
         localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:GET_BASKET,payload:el})
     }

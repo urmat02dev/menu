@@ -14,7 +14,6 @@ const Basket = () => {
   const dispatch = useDispatch()
   const {basket} = useSelector(s => s)
   let baskets = JSON.parse(localStorage.getItem("basket")) || []
-
   const [here,setHere] = useState(false)
   const [s,setS] = useState(false)
   const [order,setOrder] = useState(false)
@@ -59,17 +58,13 @@ const Basket = () => {
       return  nav("/main/print")
 
     }
-
-
     else if (order === false && pay === false){
       setTimeout(() => {
         setBtn(false)
       },2000)
     }
-
-
-
   }
+  
   console.log( "order",order )
   console.log( "pay",pay )
   console.log( "btn",btn )
@@ -79,6 +74,7 @@ const Basket = () => {
     return acc + e.price * e.quantity
   },0)
   return basket.length ? (
+  
     <>
       <Header/>
       <div id={"basket"}>
