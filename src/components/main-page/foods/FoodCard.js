@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {GET_BASKET, MODAL} from "../../../redux/Reducer/ActionTypes";
 import {AiOutlineArrowRight} from "react-icons/ai";
 import {BiBasket} from "react-icons/bi";
-import {useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 
 const FoodCard = ({el, setModal, modal}) => {
     const {t} = useTranslation()
@@ -38,7 +38,6 @@ const FoodCard = ({el, setModal, modal}) => {
 
     function getWindow() {
         setModal(!modal)
-        dispatch({type:MODAL,payload:el})
     }
     function getBasket(el) {
         let basket = JSON.parse(localStorage.getItem("basket")) || []
@@ -52,31 +51,35 @@ const FoodCard = ({el, setModal, modal}) => {
         localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:GET_BASKET,payload:el})
     }
-    
-    const foundProduct = baskets.some(e => e.id === el.id)
-    return (
-        <div id='food'>
-            <div className="food--card" onClick={() =>  getWindow(modal)}>
-                <div className={"img"}>
-                    <img className="food--card__img" src={el.image} alt="img"/>
-                </div>
-                <div className="food--card__word">
-                    <h2>{getTitle(el)}</h2>
-                    <p>{getDesc(el)}</p>
-                    <div className="food--card__word--order">
-                        <h4>{el.price}c.</h4>
-                        {
-                            foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
-                                :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
-                                    <BiBasket className='icon'/></div>
-                        }
 
+    const foundProduct = baskets.some(e => e.id === el.id)
+    return (el.id ?
+            <div id='food'>
+                <div className="food--card" onClick={() =>  getWindow()}>
+                    <div className={"img"}>
+                        <NavLink to={`/detail/${el.id}`}>
+                            <img className="food--card__img" src={el.image} alt=""  />
+                        </NavLink>
                     </div>
-                    <div>
+                    <div className="food--card__word">
+                        <h2>{getTitle(el)}</h2>
+                        <p>{getDesc(el)}</p>
+                        <div className="food--card__word--order">
+                            <h4>{el.price}c.</h4>
+                            {
+                                foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
+                                    :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
+                                        <BiBasket className='icon'/></div>
+                            }
+
+                        </div>
+                        <div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            : <div>error</div>
+
     );
 
 };

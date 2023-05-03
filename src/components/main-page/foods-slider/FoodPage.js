@@ -3,7 +3,7 @@ import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
 import {GET_BASKET, GET_MODAL, MODAL} from "../../../redux/Reducer/ActionTypes";
 import {useDispatch, useSelector} from "react-redux";
-import {useNavigate} from "react-router-dom";
+import {NavLink, useNavigate, useParams} from "react-router-dom";
 import "./FoodPage.scss"
 import basket from "../../basket/Basket";
 import {BsBasket3Fill} from "react-icons/bs";
@@ -40,11 +40,16 @@ const FoodPage = ({el,modal,setModal}) => {
         }
     }
     const dispatch = useDispatch()
-        function getWindow() {
-            setModal(!modal)
-            dispatch({type:MODAL,payload:el})
+         function getWindow () {
+             setModal(!modal)
+
         }
     function getBasket() {
+
+
+
+    console.log(modal)
+    function getBasket(el) {
         let basket = JSON.parse(localStorage.getItem("basket")) || []
         let foundProduct = basket.some(e => e.id === el.id )
         console.log(foundProduct)
@@ -64,9 +69,13 @@ const FoodPage = ({el,modal,setModal}) => {
 useEffect(() =>{
 
 },[foundProduct])
+    const foundProduct = basket.some(e => e.id === el.id)
+    console.log(foundProduct)
     return (
-        <div className="foods--one">
-            <img src={el.image} alt="" onClick={() =>  getWindow() }/>
+        <div className="foods--one" >
+            <NavLink to={`/detail/${el.id}`}>
+                <img src={el.image} alt="" onClick={() =>  getWindow()}/>
+            </NavLink>
             <h3>{getTitle(el)}</h3>
             <p>{getDesc(el)}</p>
             <div className='foods--one__basket'>

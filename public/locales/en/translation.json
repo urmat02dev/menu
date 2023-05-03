@@ -1,6 +1,7 @@
 {
   "search": {
-    "placeholder": "Search"
+    "placeholder": "Search",
+    "error": "There is no such food, drink or dessert!!"
   },
   "category": {
     "1": "Bestseller",

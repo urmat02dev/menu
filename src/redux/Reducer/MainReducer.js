@@ -4,17 +4,18 @@ import {
   MINUS,
   MODAL, MODAL_MINUS,
   MODAL_PLUS,
-  PLUS,
+  PLUS, PODCAST,
   SEARCH
 } from "./ActionTypes";
 import basket from "../../components/basket/Basket";
 import modal from "../../components/modal/Modal";
-
+import search from "../../components/main-page/search/Search";
 
 const initialState ={
   foods:[],
   basket:JSON.parse(localStorage.getItem("basket")) || [],
-  modal:{},
+  modal:[],
+  result:[],
   search:"",
 }
 console.log()
@@ -49,12 +50,8 @@ export const MainReducer = (state = initialState, action) => {
       }
     }
     case MODAL : {
-      const foundProduct = state.basket.find(el => el.id === action.payload.id)
-      if (foundProduct) {
-        return{...state, modal: {...modal, quantity: modal.quantity + 1}}
-      } else {
-        return {...state, modal: {...action.payload, quantity: 1 }}
-      }
+        return {...state, basket: [...state.basket, {...action.payload, quantity: 1 }]}
+
     }
     case SEARCH : {
       return {...state,
@@ -68,6 +65,11 @@ export const MainReducer = (state = initialState, action) => {
     }
     case MODAL_PLUS:{
       return {...state, modal: {...state.modal.quantity + 1}}
+    }
+    case PODCAST:{
+      return {
+        ...state, result: state.foods.filter(el => el.title.include(search))
+      }
     }
     default :
       return state
