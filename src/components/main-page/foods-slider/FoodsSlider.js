@@ -70,7 +70,7 @@ const FoodsSlider = ({modal,setModal,best,setBest}) => {
             },
         ]
     };
-
+    const bests = data.filter(el => el.type === "Best")
 
   return (
     <div id='foods' style={{
@@ -81,7 +81,7 @@ const FoodsSlider = ({modal,setModal,best,setBest}) => {
         <div className="foods">
             <Slider {...settings}>
                 {
-                    data[0].map((el) => {
+                    bests.map((el) => {
                         return <FoodPage el={el}
                                          modal={modal}
                                          setModal={setModal}/>

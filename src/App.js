@@ -18,8 +18,7 @@ function App() {
        <Route path="/main" element={<MainPage/>}/>
        <Route path="/basket" element={<Basket/>}/>
        <Route path="/search" element={<SearchResult/>}/>
-       <Route path="/modal" element={<Modal/>}/>
-       <Route path="/detail-page/:id" element={<Modal/>}/>
+       <Route path="/detail/:id" element={<Modal/>}/>
        <Route path="/main/print" element={<BasketModal/>}/>
      </Routes>
    </>
