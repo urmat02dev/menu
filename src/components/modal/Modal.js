@@ -67,22 +67,6 @@ const Modal = ({modal,setModal}) => {
               <div className="modal"  style={{
                   display:detail.id ? "flex":  "none"
               }}>
-
-                      <div className="modals">
-                          <div className="close" onClick={() => getClose()}>
-                              <IoMdClose className={"icon"}/>
-                          </div>
-                          {
-                              detail.map(el => {
-                                  return <div className={"modals--img"}>
-                                          <img src={el.image} alt=""/>
-                                      </div>
-
-                              })
-                          }
-
-                }}>
-
                     <div className="modals">
                         <div className="close" onClick={() => getClose()}>
                             <IoMdClose className={"icon"}/>

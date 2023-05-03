@@ -43,11 +43,7 @@ const FoodPage = ({el}) => {
          function getWindow () {
             dispatch({type:MODAL,payload:true})
         }
-    function getBasket() {
 
-
-
-    console.log(modal)
     function getBasket(el) {
         let basket = JSON.parse(localStorage.getItem("basket")) || []
         let foundProduct = basket.some(e => e.id === el.id )
