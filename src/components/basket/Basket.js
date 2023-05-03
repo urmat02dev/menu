@@ -11,6 +11,7 @@ const Basket = () => {
   const nav = useNavigate()
   const {t} = useTranslation()
   const {basket} = useSelector(s => s)
+  let basketLocal = JSON.parse(localStorage.getItem("basket")) || []
   const [here,setHere] = useState(false)
   const [s,setS] = useState(false)
   const [cash,setCash] = useState(false)
@@ -26,11 +27,11 @@ const Basket = () => {
       }
     }
 
-  const total = basket.reduce((acc,e) => {
+  const total = basketLocal.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
   console.log(btn)
-  return basket.length ? (
+  return basketLocal.length ? (
     <>
       <Header/>
       <div id={"basket"}>

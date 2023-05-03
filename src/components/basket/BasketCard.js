@@ -65,15 +65,12 @@ const BasketCard = ({el}) => {
     localStorage.setItem("basket",JSON.stringify(basket))
     dispatch({type: MINUS, payload: el})
   }
-  console.log("Del", del)
-  console.log("Local" , JSON.parse(localStorage.getItem("basket")))
-
 
 
 
 
   return (
-    <div className="basket--card" style={{
+    <div className="basket--card" key={el.id} style={{
       translateY: del ? '-400px' : ''
     }}>
       <img className="basket--card__img" src={el.image} alt=""/>
@@ -94,7 +91,7 @@ const BasketCard = ({el}) => {
           <div className={"count"}>
             <span style={{color:`${el.quantity > 1 ? "" : "#FFFFFF80" }`}} onClick={() => minusDelete()}><AiOutlineMinus/></span>
             <p>{el.quantity}</p>
-            <span onClick={() => addPlus(el)}> <AiOutlinePlus/></span>
+            <span onClick={() => addPlus()}> <AiOutlinePlus/></span>
           </div>
 
         </div>

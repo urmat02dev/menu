@@ -8,7 +8,7 @@ import {useSelector} from "react-redux";
 const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
   const {i18n} = useTranslation()
-  const {basket} = useSelector(state => state)
+    let basket = JSON.parse(localStorage.getItem("basket")) || []
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };

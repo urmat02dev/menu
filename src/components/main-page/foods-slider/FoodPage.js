@@ -9,10 +9,11 @@ import basket from "../../basket/Basket";
 import {BsBasket3Fill} from "react-icons/bs";
 import {AiOutlineArrowRight} from "react-icons/ai";
 
-const FoodPage = ({el,modal,setModal}) => {
+const FoodPage = ({el}) => {
     const {t } = useTranslation()
     const nav = useNavigate()
-    const {basket} = useSelector(state => state)
+    let basket = JSON.parse(localStorage.getItem("basket")) || []
+    const {modal} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
     const getTitle = (el) => {
         if (lang === "en"){
@@ -38,8 +39,7 @@ const FoodPage = ({el,modal,setModal}) => {
     }
     const dispatch = useDispatch()
          function getWindow () {
-             setModal(!modal)
-
+            dispatch({type:MODAL,payload:true})
         }
 
 
@@ -51,8 +51,7 @@ const FoodPage = ({el,modal,setModal}) => {
         localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:GET_BASKET,payload:el})
     }
-    const foundProduct = basket.some(e => e.id === el.id)
-    console.log(foundProduct)
+    const foundProduct = basket.length ?  basket.some(e => e.id === el.id) : false
     return (
         <div className="foods--one" >
             <NavLink to={`/detail/${el.id}`}>
