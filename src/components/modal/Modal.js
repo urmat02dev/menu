@@ -23,12 +23,12 @@ import FoodCard from "../main-page/foods/FoodCard";
 import ModalCard from "./ModalCard";
 const Modal = ({modal,setModal}) => {
     const basket = useSelector(state => state.basket)
+    let baskets = JSON.parse(localStorage.getItem("basket")) || []
     const {id} = useParams()
     const detail = data.filter(el  => el.id === id)
     console.log(detail)
     const nav = useNavigate()
     const dispatch = useDispatch()
-    // const {title,title_ru,title_kg,desc,desc_kg,desc_ru,mass,price,quantity} = modalDetail
     const lang = localStorage.getItem("i18nextLng")
     // function getTitle () {
     //     if (lang === "en"){
@@ -55,8 +55,6 @@ const Modal = ({modal,setModal}) => {
     const getClose = async () => {
          setModal(!modal)
     }
-    console.log(modal)
-
   return (
       <>
       <div id={"modal"} style={{
