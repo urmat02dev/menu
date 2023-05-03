@@ -38,7 +38,7 @@
       justify-content: center;
       input{
         width: 510px;
-        height: 40px;
+        height: 46px;
         border-radius: 21px;
         background: #DFE2FF;
         border: none;
@@ -52,12 +52,12 @@
       }
       .icon {
         position: absolute;
-        left: 35rem;
+        left: 36rem;
         right: 20px;
-        top: 10px;
+        top: 12px;
         bottom: 0;
         color: rgba(40, 49, 255, 0.3);
-        font-size: 22px;
+        font-size: 25px;
       }
     }
   }
@@ -67,14 +67,13 @@
     .search {
       position: relative;
       input {
-        width: 325px;
-        height: 40px;
+        width: 400px;
+        height: 37px;
         border-radius: 21px;
         background: #DFE2FF;
         border: none;
         outline: none;
         padding: 0 15px;
-
         font-size: 15px;
       }
       ::placeholder {
@@ -83,9 +82,8 @@
       }
       .icon {
         position: absolute;
-        left: 25rem;
-        right: 20px;
-        top: 10px;
+        left: 27rem;
+        top: 9px;
         bottom: 0;
         color: rgba(40, 49, 255, 0.3);
         font-size: 22px;
@@ -98,14 +96,13 @@
     .search {
       position: relative;
       input {
-        width: 260px;
-        height: 40px;
+        width: 290px;
+        height: 37px;
         border-radius: 21px;
         background: #DFE2FF;
         border: none;
         outline: none;
-        padding: 0 15px;
-
+        padding: 0 10px 0 15px;
         font-size: 15px;
       }
       ::placeholder {
@@ -114,9 +111,9 @@
       }
       .icon {
         position: absolute;
-        left: 19.60rem;
+        left: 19.8rem;
         right: 20px;
-        top: 10px;
+        top: 9px;
         bottom: 0;
         color: rgba(40, 49, 255, 0.3);
         font-size: 22px;
@@ -129,14 +126,13 @@
     .search {
       position: relative;
       input {
-        width: 260px;
-        height: 40px;
+        width: 290px;
+        height: 35px;
         border-radius: 21px;
         background: #DFE2FF;
         border: none;
         outline: none;
-        padding: 0 15px;
-
+        padding: 0 10px 0 30px;
         font-size: 15px;
       }
       ::placeholder {
@@ -145,15 +141,16 @@
       }
       .icon {
         position: absolute;
-        left: 18.20rem;
+        left: 19.5rem;
         right: 20px;
-        top: 10px;
+        top: 9px;
         bottom: 0;
         color: rgba(40, 49, 255, 0.3);
-        font-size: 22px;
+        font-size: 21px;
       }
     }
   }
+
 }
 @media (max-width: 400px){
   #search {
@@ -161,7 +158,7 @@
       position: relative;
       input {
         width: 260px;
-        height: 40px;
+        height: 35px;
         border-radius: 21px;
         background: #DFE2FF;
         border: none;
@@ -178,7 +175,7 @@
         position: absolute;
         left: 18rem;
         right: 20px;
-        top: 10px;
+        top: 9px;
         bottom: 0;
         color: rgba(40, 49, 255, 0.3);
         font-size: 22px;
@@ -190,32 +187,60 @@
   #search {
     .search {
       position: relative;
-      input {
-        width: 260px;
-        height: 40px;
-        border-radius: 21px;
-        background: #DFE2FF;
-        border: none;
-        outline: none;
-        padding: 0 15px;
-        font-size: 15px;
-        position: relative;
-        left: 4px;
-      }
       ::placeholder {
         color: rgba(40, 49, 255, 0.3);
         font-size: 16px;
       }
       .icon {
         position: absolute;
-        left: 17.30rem;
+        left: 18rem;
         right: 20px;
-        top: 10px;
+        top: 8px;
         bottom: 0;
         color: rgba(40, 49, 255, 0.3);
         font-size: 22px;
       }
     }
+  }
+  #search .search input {
+    width: 270px;
+    height: 35px;
+    border-radius: 21px;
+    background: #DFE2FF;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 360px){
+  #search {
+    .search {
+      position: relative;
+      ::placeholder {
+        color: rgba(40, 49, 255, 0.3);
+        font-size: 16px;
+      }
+      .icon {
+        position: absolute;
+        left: 17rem;
+        right: 20px;
+        top: 7px;
+        bottom: 0;
+        color: rgba(40, 49, 255, 0.3);
+        font-size: 20px;
+      }
+    }
+  }
+  #search .search input {
+    width: 250px;
+    height: 32px;
+    border-radius: 21px;
+    background: #DFE2FF;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    font-size: 15px;
   }
 }
 @media (max-width: 321px){
@@ -224,13 +249,14 @@
       position: relative;
       left: 5px;
       input {
-        width: 85%;
-        height: 37px;
+        width: 220px;
+        height: 32px;
         border-radius: 21px;
         background: #DFE2FF;
         border: none;
         outline: none;
         padding: 0 15px;
+        left: 2px;
         position: relative;
         font-size: 15px;
       }
@@ -240,9 +266,9 @@
       }
       .icon {
         position: absolute;
-        left: 15.5rem;
+        left: 15rem;
         right: 20px;
-        top: 8px;
+        top: 7px;
         bottom: 0;
         color: rgba(40, 49, 255, 0.3);
         font-size: 22px;

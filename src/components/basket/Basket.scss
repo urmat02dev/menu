@@ -393,8 +393,8 @@
     height: 268px;
   }
   #basket .basket .basket--card__word--order .count {
-    width: 192px;
-    height: 43px;
+    width: 185px;
+    height: 32px;
   }
   #basket .basket--total h2 {
     margin-left: 33px;
@@ -737,7 +737,7 @@
   }
   #basket .basket .basket--card__word--order .count {
     width: 156px;
-    height: 39px;
+    height: 19px;
   }
   #basket .basket .basket--card__word .desc {
     width: 82%;
@@ -805,7 +805,7 @@
   }
   #basket .basket .basket--card__word--order .count {
     width: 157px;
-    height: 30px;
+    height: 20px;
     margin-right: 6px;
   }
   #basket .basket--btn button {
@@ -1290,6 +1290,7 @@
     position: relative;
     bottom: 5px;
   }
+
 }
 
 @media (max-width: 428px) {
@@ -1400,6 +1401,10 @@
     height: 50px;
     color: #FFFFFF;
   }
+  #basket .basket .basket--card__word--order .count {
+    width: 157px;
+    height: 11px;
+  }
 }
 
 @media (max-width: 414px) {
@@ -1475,6 +1480,9 @@
     text-align: center;
     margin-top: 20px;
   }
+  #basket .basket--status__general {
+    padding: 0 1px;
+  }
   #basket .btn button {
     width: 206px;
     height: 42px;
@@ -1494,6 +1502,7 @@
   }
   #basket .basket .basket--card__word .desc h2 {
     font-size: 16px;
+    width: 150px;
   }
   #basket .basket .basket--card__word--order {
     height: 34px;
@@ -1516,10 +1525,12 @@
     font-size: 16px;
   }
   #basket .basket--status__general .active h2 {
-    font-size: 15px;
-  }
-  #basket .basket--status__general .active h2 {
     font-size: 14px;
+    width: 190px;
+  }
+  #basket .basket--status__general--here h2 {
+    font-size: 15px;
+    width: 100px;
   }
 }
 
@@ -1528,7 +1539,6 @@
     height: 34px;
     top: -22px;
     width: 184px;
-    left: 7px;
   }
   #basket .basket--btn button {
     width: 151px;
@@ -1657,12 +1667,6 @@
     height: 114px;
     margin: 10px 0 20px 12px;
   }
-  #basket .basket .basket--card__word--order {
-    height: 34px;
-    top: -33px;
-    width: 184px;
-    left: -8px;
-  }
   #basket .basket .basket--card__word .desc h2 {
     width: 150px;
     font-size: 15px;
@@ -1692,6 +1696,9 @@
     height: 26px;
     font-size: 17px;
   }
+  #basket .basket .basket--card__word {
+    margin: -6px 0 0 19px;
+  }
   #basket .basket--total h1 {
     top: -6px;
     height: 26px;
@@ -1704,15 +1711,35 @@
   #basket .basket--pay__block--terminal {
     width: 166px;
   }
-  #basket .basket--pay__block--cash {
-    width: 241px;
-  }
   #basket .basket--btn button {
     width: 127px;
     height: 29px;
   }
   #basket .basket--pay__block--cash {
     width: 172px;
+  }
+  #basket .basket--status__general .active {
+    width: 83px;
+  }
+  #basket .basket--status__general--here h2 {
+    font-size: 16px;
+    line-height: 17px;
+    width: 89px;
+  }
+  #basket .basket--status__general--with h2 {
+    font-size: 16px;
+    line-height: 17px;
+  }
+  #basket .basket--status__general .active h2 {
+    font-size: 14px;
+    width: 65px;
+  }
+  #basket .basket .basket--card__word .desc .close {
+    width: 18px;
+    position: relative;
+    height: 18px;
+    right: 5px;
+    top: -8px;
   }
 }
 
@@ -1728,10 +1755,6 @@
     position: relative;
     left: -2px;
   }
-  #basket .basket .basket--card__word .desc {
-    width: 96%;
-    padding: 29px 0 0 0;
-  }
   #basket .basket .basket--card {
     height: 149px;
   }
@@ -1740,13 +1763,6 @@
     top: -33px;
     width: 160px;
     left: -5px;
-  }
-  #basket .basket .basket--card__word {
-    margin: 4px 0 0 8px;
-  }
-  #basket .basket .basket--card__word .desc {
-    width: 81%;
-    padding: 29px 0 0 0;
   }
   #basket .basket .basket--card__img {
     width: 91px;
@@ -1780,10 +1796,7 @@
     width: 167px;
   }
   #basket .basket--status__general .active {
-    width: 49px;
-  }
-  #basket .basket--pay__block .active {
-    width: 206px;
+    width: 45px;
   }
   #basket .no-basket {
     margin: 50px auto 10px auto;
@@ -1833,6 +1846,7 @@
   }
   #basket .basket--status__general .active h2 {
     font-size: 11px;
+    width: 100px;
   }
   #basket .basket--pay__block {
     right: 85px;
@@ -1847,9 +1861,6 @@
   }
   #basket .basket--pay__block .active {
     width: 160px;
-  }
-  #basket .basket--status__general .active {
-    width: 62px;
   }
   #basket .basket--status__general--here h2 {
     font-size: 14px;
