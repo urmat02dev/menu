@@ -5,33 +5,76 @@ import {Link, useNavigate} from "react-router-dom";
 import group from "../../assets/img/Group.svg"
 import {useTranslation} from "react-i18next";
 import BasketCard from "./BasketCard";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import BasketModal from "./BasketModal";
+import {DELETE, DELETE_BASKET, GET_BASKET} from "../../redux/Reducer/ActionTypes";
 const Basket = () => {
   const nav = useNavigate()
   const {t} = useTranslation()
+  const dispatch = useDispatch()
   const {basket} = useSelector(s => s)
-  let basketLocal = JSON.parse(localStorage.getItem("basket")) || []
+  let baskets = JSON.parse(localStorage.getItem("basket")) || []
   const [here,setHere] = useState(false)
   const [s,setS] = useState(false)
+  const [order,setOrder] = useState(false)
+  const [pay,setPay] = useState(false)
   const [cash,setCash] = useState(false)
   const [tern,setTern] = useState(false)
   const [btn,setBtn] = useState(false)
-  const getModal = () => {
-    if (btn){
-      if (here || s || cash || tern){
-        return  <BasketModal/> && nav("/main/print")
-        setBtn(true)
-        }
-      else return setBtn(false)
-      }
+  const [cash2, setCash2]  = useState(false)
+  function getHere() {
+    setHere(!here) || setS(false)
+    if (!here){
+      setOrder(true)
     }
+    else setOrder(false)
+  }
+  function getS() {
+    setS(!s) || setHere(false)
+    if (!s){
+      setOrder(true)
+    }
+    else setOrder(false)
+  }
+  function getCash() {
+    setCash(!cash) || setTern(false)
+    if (!cash){
+      setPay(true)
+    }
+    else setPay(false)
+  }
+  function getTerm() {
+    setTern(!tern) || setCash(false)
+    if (!tern){
+      setPay(true)
+    }
+    else setPay(false)
+  }
 
-  const total = basketLocal.reduce((acc,e) => {
+  const getModal = () => {
+    const p = []
+    const pust = localStorage.setItem("basket",JSON.stringify(p))
+    if (order && pay) {
+      return  nav("/main/print")
+
+    }
+    else if (order === false && pay === false){
+      setTimeout(() => {
+        setBtn(false)
+      },2000)
+    }
+  }
+  
+  console.log( "order",order )
+  console.log( "pay",pay )
+  console.log( "btn",btn )
+
+
+  const total = baskets.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
-  console.log(btn)
-  return basketLocal.length ? (
+  return basket.length ? (
+  
     <>
       <Header/>
       <div id={"basket"}>
@@ -52,10 +95,10 @@ const Basket = () => {
                 <h1>{t("basket.status")}</h1>
               </div>
               <div  className='basket--status__general'>
-                <div style={{background: btn === true ? "red" : ""}} onClick={() => setHere(!here) || setS(false)}  className={ here ? "basket--status__general--here active" :"basket--status__general--here"}>
+                <div onClick={() => getHere()}  className={ here ? "basket--status__general--here active" :"basket--status__general--here"}>
                   <h2>{t("basket.here")}</h2>
                 </div>
-                <div onClick={() => setS(!s) || setHere(false)}  className={ s ? "basket--status__general--with active" :"basket--status__general--with"}>
+                <div onClick={() => getS()}  className={ s ? "basket--status__general--with active" :"basket--status__general--with"}>
                   <h2>{t("basket.with")}</h2>
                 </div>
               </div>
@@ -65,18 +108,22 @@ const Basket = () => {
                 <h1>{t("basket.pay")}</h1>
               </div>
               <div className='basket--pay__block'>
-                <div className={cash ? "basket--pay__block--cash active" : "basket--pay__block--cash"} >
-                  <input type="radio" name={"status"} onClick={() => setCash(!cash) || setTern(false)}/>
-                  <h2>{t("basket.cash")}</h2>
+                <div className={cash ? "basket--pay__block--cash active" : "basket--pay__block--cash"} onClick={getCash} >
+                  <div style={{background: cash ? "white" : ""}}  className='basket--pay__block--cash__radus'></div>
+                  <h2 onClick={() => setCash2(!cash2)}>{t("basket.cash")}</h2>
                 </div>
-                <div className={tern ? "basket--pay__block--terminal active" : "basket--pay__block--terminal" }>
-                  <input type="radio" name={"status"} onClick={() => setTern(!tern) || setCash(false)}/>
+                <div className={tern ? "basket--pay__block--terminal active" : "basket--pay__block--terminal" } onClick={getTerm}>
+                  <div style={{background: tern ? "white" : ""}}  className='basket--pay__block--terminal__radus'></div>
                   <h2>{t("basket.term")}</h2>
                 </div>
               </div>
             </div>
-            <div className='basket--btn' onClick={() => getModal()}>
-                <button onClick={() => setBtn(true)}>{t("basket.cont")}</button>
+            <div className='basket--btn' onClick={() => getModal()} style={{
+
+            }}>
+                <button onClick={() => setBtn(true)} style={{
+                  background:btn ? !order || !pay  ? "red" : "#004FC7" : "#004FC7"
+                }}>{t("basket.cont")}</button>
             </div>
           </div>
         </div>

@@ -39,6 +39,7 @@ const BasketCard = ({el}) => {
   const  addPlus = () => {
     let basket = JSON.parse(localStorage.getItem("basket")) || []
     let foundProduct = basket.find(e => e.id === el.id )
+    console.log(basket)
     if (foundProduct){
       basket = basket.map(e => e.id === el.id ? {...e, quantity: e.quantity + 1}: e)
     }else {
@@ -65,9 +66,6 @@ const BasketCard = ({el}) => {
     localStorage.setItem("basket",JSON.stringify(basket))
     dispatch({type: MINUS, payload: el})
   }
-
-
-
 
   return (
     <div className="basket--card" key={el.id} style={{

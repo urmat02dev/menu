@@ -11,7 +11,9 @@ import {NavLink, useNavigate} from "react-router-dom";
 const FoodCard = ({el, setModal, modal}) => {
     const {t} = useTranslation()
     const nav = useNavigate()
-    let basket = JSON.parse(localStorage.getItem("basket")) || []
+    const {basket} = useSelector(state => state)
+    let baskets = JSON.parse(localStorage.getItem("basket")) || []
+
     const lang = localStorage.getItem("i18nextLng")
     const dispatch = useDispatch()
     const getTitle = (el) => {
@@ -39,18 +41,17 @@ const FoodCard = ({el, setModal, modal}) => {
     }
     function getBasket(el) {
         let basket = JSON.parse(localStorage.getItem("basket")) || []
-        const found = basket.find(e => e.id === el.id)
-        if (found){
-            basket = basket.map(elem => elem.id === el.id ? {...elem,quantity:elem.quantity + 1 } : elem)
-        }
-        else {
-            basket = [...basket, {...el,quantity:1}]
+        let foundProduct = basket.find(e => e.id === el.id )
+        if (foundProduct){
+            basket = basket.map(e => e.id === el.id ? {...e, quantity: e.quantity + 1}: e)
+        }else {
+            basket = [...basket, {...el, quantity: 1}]
         }
         localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:GET_BASKET,payload:el})
     }
-    
-    const foundProduct = basket.some(e => e.id === el.id)
+
+    const foundProduct = baskets.some(e => e.id === el.id)
     return (el.id ?
             <div id='food'>
                 <div className="food--card" onClick={() =>  getWindow()}>
@@ -58,8 +59,6 @@ const FoodCard = ({el, setModal, modal}) => {
                         <NavLink to={`/detail/${el.id}`}>
                             <img className="food--card__img" src={el.image} alt=""  />
                         </NavLink>
-
-
                     </div>
                     <div className="food--card__word">
                         <h2>{getTitle(el)}</h2>

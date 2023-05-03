@@ -22,15 +22,15 @@ import {data} from "../fake-backend/backend";
 import FoodCard from "../main-page/foods/FoodCard";
 import ModalCard from "./ModalCard";
 
-const Modal = () => {
-    const {basket} = useSelector(state => state)
-    const {modal} = useSelector(state => state)
+const Modal = ({modal,setModal}) => {
+    const basket = useSelector(state => state.basket)
+    let baskets = JSON.parse(localStorage.getItem("basket")) || []
+
     const {id} = useParams()
     const detail = data.filter(el => el.id === id)
     console.log(detail)
     const nav = useNavigate()
     const dispatch = useDispatch()
-    // const {title,title_ru,title_kg,desc,desc_kg,desc_ru,mass,price,quantity} = modalDetail
     const lang = localStorage.getItem("i18nextLng")
     // function getTitle () {
     //     if (lang === "en"){
@@ -58,19 +58,28 @@ const Modal = () => {
         dispatch({type:MODAL,payload:false})
         nav("/main")
     }
-    console.log(modal)
-useEffect(() => {
-   if (!modal){
-       nav("/main")
-   }
-},[])
-    return (
-        <>
-            <div id={"modal"} hidden={!modal} style={{
+  return (
+      <>
+      <div id={"modal"} style={{
+          display:detail.id ? "flex":  "none"
+      }} onClick={() => getClose()}/>
+          <div className="container">
+              <div className="modal"  style={{
+                  display:detail.id ? "flex":  "none"
+              }}>
 
-            }} onClick={() => getClose()}/>
-            <div className="container">
-                <div className="modal" hidden={!modal}  style={{
+                      <div className="modals">
+                          <div className="close" onClick={() => getClose()}>
+                              <IoMdClose className={"icon"}/>
+                          </div>
+                          {
+                              detail.map(el => {
+                                  return <div className={"modals--img"}>
+                                          <img src={el.image} alt=""/>
+                                      </div>
+
+                              })
+                          }
 
                 }}>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
 import {GET_BASKET, GET_MODAL, MODAL} from "../../../redux/Reducer/ActionTypes";
@@ -12,9 +12,11 @@ import {AiOutlineArrowRight} from "react-icons/ai";
 const FoodPage = ({el}) => {
     const {t } = useTranslation()
     const nav = useNavigate()
-    let basket = JSON.parse(localStorage.getItem("basket")) || []
-    const {modal} = useSelector(state => state)
+    const {basket} = useSelector(state => state)
+    let baskets = JSON.parse(localStorage.getItem("basket")) || []
     const lang = localStorage.getItem("i18nextLng")
+    const foundProduct = baskets.some(e => e.id === el.id)
+    const found = basket.some(e => e.id === el.id)
     const getTitle = (el) => {
         if (lang === "en"){
             return el.title
@@ -41,17 +43,31 @@ const FoodPage = ({el}) => {
          function getWindow () {
             dispatch({type:MODAL,payload:true})
         }
+    function getBasket() {
 
 
 
     console.log(modal)
     function getBasket(el) {
         let basket = JSON.parse(localStorage.getItem("basket")) || []
-        basket = [...basket, {...el}]
+        let foundProduct = basket.some(e => e.id === el.id )
+        console.log(foundProduct)
+        if (foundProduct){
+            basket = basket.map(e => e.id === el.id ? {...e, quantity: e.quantity + 1}: e)
+        }else {
+            basket = [...basket, {...el, quantity: 1}]
+        }
         localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:GET_BASKET,payload:el})
     }
-    const foundProduct = basket.length ?  basket.some(e => e.id === el.id) : false
+
+    console.log("Basket",basket)
+    console.log("Found",found)
+    console.log("FoundProduct",foundProduct)
+    console.log("BasketLocal",baskets)
+useEffect(() =>{
+},[foundProduct])
+
     return (
         <div className="foods--one" >
             <NavLink to={`/detail/${el.id}`}>
@@ -62,7 +78,7 @@ const FoodPage = ({el}) => {
             <div className='foods--one__basket'>
                 <h3>{el.price}c</h3>
                 {
-                    foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>   :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
+                    foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>   :<div className="foods--one__basket--icon" onClick={() => getBasket()}>
                         <BiBasket className='icon'/></div>
                 }
 
