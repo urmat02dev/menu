@@ -1,5 +1,5 @@
 import {
-  DELETE,
+  DELETE, DELETE_BASKET,
   GET_BASKET,
   MINUS,
   MODAL, MODAL_MINUS,
@@ -18,6 +18,7 @@ const initialState ={
   search:"",
 }
 console.log()
+
 export const MainReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_BASKET : {
@@ -29,6 +30,10 @@ export const MainReducer = (state = initialState, action) => {
         return {...state, basket: [...state.basket, {...action.payload, quantity: 1 }]}
       }
     }
+    case DELETE_BASKET : {
+     return {...state,basket: [...action.payload]}
+    }
+
     case PLUS : {
       return{...state, basket: state.basket.map(el => el.id === action.payload ?
           {...el,quantity:el.quantity+1} : el)}

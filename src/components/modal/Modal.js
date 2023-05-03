@@ -21,6 +21,8 @@ import "./Modal.scss"
 const Modal = ({modal,setModal}) => {
     const modalDetail = useSelector(state => state.modal)
     const basket = useSelector(state => state.basket)
+    let baskets = JSON.parse(localStorage.getItem("basket")) || []
+
     const nav = useNavigate()
     const dispatch = useDispatch()
     const {title,title_ru,title_kg,desc,desc_kg,desc_ru,mass,price,quantity} = modalDetail
@@ -50,7 +52,7 @@ const Modal = ({modal,setModal}) => {
     function getBasket() {
         dispatch({type:GET_BASKET,payload:modalDetail})
     }
-    const foundProduct = basket.some(e => e.id === modalDetail.id)
+    const foundProduct = baskets.some(e => e.id === modalDetail.id)
     const getClose = () => {
         setModal(!modal)
     }

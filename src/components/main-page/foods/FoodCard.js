@@ -12,6 +12,8 @@ const FoodCard = ({el, setModal, modal}) => {
     const {t} = useTranslation()
     const nav = useNavigate()
     const {basket} = useSelector(state => state)
+    let baskets = JSON.parse(localStorage.getItem("basket")) || []
+
     const lang = localStorage.getItem("i18nextLng")
     const dispatch = useDispatch()
     const getTitle = (el) => {
@@ -40,13 +42,18 @@ const FoodCard = ({el, setModal, modal}) => {
     }
     function getBasket(el) {
         let basket = JSON.parse(localStorage.getItem("basket")) || []
+        let foundProduct = basket.find(e => e.id === el.id )
+        if (foundProduct){
+            basket = basket.map(e => e.id === el.id ? {...e, quantity: e.quantity + 1}: e)
+        }else {
+            basket = [...basket, {...el, quantity: 1}]
+        }
         basket = [...basket, {...el}]
         localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:GET_BASKET,payload:el})
     }
     
-    const foundProduct = basket.some(e => e.id === el.id)
-    console.log(modal)
+    const foundProduct = baskets.some(e => e.id === el.id)
     return (
         <div id='food'>
             <div className="food--card" onClick={() =>  getWindow(modal)}>
