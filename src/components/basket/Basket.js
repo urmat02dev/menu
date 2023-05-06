@@ -6,14 +6,13 @@ import group from "../../assets/img/Group.svg"
 import {useTranslation} from "react-i18next";
 import BasketCard from "./BasketCard";
 import {useDispatch, useSelector} from "react-redux";
-import BasketModal from "./BasketModal";
-import {DELETE, DELETE_BASKET, GET_BASKET} from "../../redux/Reducer/ActionTypes";
+import {EMPTY} from "../../redux/Reducer/ActionTypes";
+
 const Basket = () => {
   const nav = useNavigate()
   const {t} = useTranslation()
   const dispatch = useDispatch()
   const {basket} = useSelector(s => s)
-  let baskets = JSON.parse(localStorage.getItem("basket")) || []
   const [here,setHere] = useState(false)
   const [s,setS] = useState(false)
   const [order,setOrder] = useState(false)
@@ -50,27 +49,25 @@ const Basket = () => {
     }
     else setPay(false)
   }
-
-  const getModal = () => {
-    const p = []
-    const pust = localStorage.setItem("basket",JSON.stringify(p))
+  const empty = []
+  const getModal = (el) => {
     if (order && pay) {
-      return  nav("/main/print")
-
+      return  basket.splice(0,basket.length) && nav("/main/print")
     }
+
     else if (order === false && pay === false){
       setTimeout(() => {
         setBtn(false)
       },2000)
     }
   }
-  
+  console.log(basket.filter(el => !el.id))
   console.log( "order",order )
   console.log( "pay",pay )
   console.log( "btn",btn )
 
 
-  const total = baskets.reduce((acc,e) => {
+  const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
   return basket.length ? (
