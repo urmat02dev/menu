@@ -13,9 +13,10 @@ const FoodPage = ({el}) => {
     const {t } = useTranslation()
     const nav = useNavigate()
     const {basket} = useSelector(state => state)
-    let baskets = JSON.parse(localStorage.getItem("basket")) || []
     const lang = localStorage.getItem("i18nextLng")
-    const foundProduct = baskets.some(e => e.id === el.id)
+    const foundProduct = basket.some(e => e.id === el.id)
+    console.log(basket)
+    console.log(foundProduct)
     const found = basket.some(e => e.id === el.id)
     const getTitle = (el) => {
         if (lang === "en"){
@@ -45,24 +46,10 @@ const FoodPage = ({el}) => {
         }
 
     function getBasket(el) {
-        let basket = JSON.parse(localStorage.getItem("basket")) || []
-        let foundProduct = basket.some(e => e.id === el.id )
-        console.log(foundProduct)
-        if (foundProduct){
-            basket = basket.map(e => e.id === el.id ? {...e, quantity: e.quantity + 1}: e)
-        }else {
-            basket = [...basket, {...el, quantity: 1}]
-        }
-        localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:GET_BASKET,payload:el})
     }
 
-    console.log("Basket",basket)
-    console.log("Found",found)
-    console.log("FoundProduct",foundProduct)
-    console.log("BasketLocal",baskets)
-useEffect(() =>{
-},[foundProduct])
+    console.log(el.id)
 
     return (
         <div className="foods--one" >
@@ -74,7 +61,8 @@ useEffect(() =>{
             <div className='foods--one__basket'>
                 <h3>{el.price}c</h3>
                 {
-                    foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>   :<div className="foods--one__basket--icon" onClick={() => getBasket()}>
+                    foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
+                        :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
                         <BiBasket className='icon'/></div>
                 }
 

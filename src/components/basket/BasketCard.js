@@ -5,7 +5,6 @@ import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {useDispatch, useSelector} from "react-redux";
 import {DELETE, GET_BASKET, MINUS, PLUS} from "../../redux/Reducer/ActionTypes";
 import {useTranslation} from "react-i18next";
-import basket from "./Basket";
 const BasketCard = ({el}) => {
   const lang = localStorage.getItem("i18nextLng")
   // const basket = JSON.parse(localStorage.getItem("basket"))
@@ -37,33 +36,14 @@ const BasketCard = ({el}) => {
   }
 
   const  addPlus = () => {
-    let basket = JSON.parse(localStorage.getItem("basket")) || []
-    let foundProduct = basket.find(e => e.id === el.id )
-    console.log(basket)
-    if (foundProduct){
-      basket = basket.map(e => e.id === el.id ? {...e, quantity: e.quantity + 1}: e)
-    }else {
-      basket = [...basket, {...el, quantity: 1}]
-    }
-    localStorage.setItem("basket",JSON.stringify(basket))
     dispatch({type:GET_BASKET, payload: el})
   }
   const [del, setDel] = useState(false)
   const getDelete = () => {
-    let basket = JSON.parse(localStorage.getItem("basket")) || []
-    basket = basket.filter(e => e.id !== el.id)
     dispatch({type: DELETE, payload: el})
     setDel(!del)
-    localStorage.setItem("basket",JSON.stringify(basket))
   }
   const minusDelete = () =>{
-    let basket = JSON.parse(localStorage.getItem("basket")) || []
-    basket = basket.map(e => {
-      if (e.quantity > 1) {
-        return {...e, quantity: e.quantity - 1}
-      }else return e
-    })
-    localStorage.setItem("basket",JSON.stringify(basket))
     dispatch({type: MINUS, payload: el})
   }
 
