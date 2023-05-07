@@ -849,6 +849,50 @@
 }
 
 @media (max-width: 450px) {
+  #basket .basket--pay__block--terminal__radus {
+    width: 11px;
+    height: 11px;
+  }
+
+  #basket .basket--pay__block .active {
+    width: 220px;
+    height: 48px;
+  }
+  #basket .basket--pay__block--cash__radus {
+    width: 11px;
+    height: 11px;
+  }
+  #basket .basket--pay__block--terminal{
+    width: 190px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #basket .basket--pay__block--cash{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #basket .basket--pay__block--terminal__radus{
+    margin: 0 15px;
+  }
+  #basket .basket--pay__block--cash__radus{
+    margin: 0 15px;
+  }
+
+  #basket .basket--pay__block--cash h2{
+    width: 70px;
+    padding-left: 20px;
+  }
+  #basket .basket--pay__block--terminal h2{
+    width: 70px;
+    padding-left: 20px;
+  }
+  #basket .basket--pay__block--cash{
+    width: 220px;
+    height: 54px;
+  }
   #basket .basket .basket--card__word .desc .close .icon {
     font-size: 18px;
     color: white;
@@ -1278,8 +1322,8 @@
     margin: 0 0 10px 75px;
   }
   #basket .basket--btn button {
-    width: 140px;
-    height: 38px;
+    width: 200px;
+    height: 58px;
     border-radius: 18px;
   }
   #basket .basket--total {
@@ -1301,6 +1345,51 @@
 }
 
 @media (max-width: 428px) {
+  #basket .basket--pay__block--terminal__radus {
+    width: 11px;
+    height: 11px;
+  }
+
+  #basket .basket--pay__block .active {
+    width: 200px;
+    height: 56px;
+  }
+  #basket .basket--pay__block--cash__radus {
+    width: 11px;
+    height: 11px;
+  }
+  #basket .basket--pay__block--terminal{
+    width: 200px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #basket .basket--pay__block--cash{
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #basket .basket--pay__block--terminal__radus{
+    margin: 0 15px;
+  }
+  #basket .basket--pay__block--cash__radus{
+    margin: 0 15px;
+  }
+
+  #basket .basket--pay__block--cash h2{
+    width: 70px;
+    padding-left: 20px;
+  }
+  #basket .basket--pay__block--terminal h2{
+    width: 70px;
+    padding-left: 20px;
+  }
+  #basket .basket--pay__block--cash{
+    width: 190px;
+    height: 54px;
+  }
   #basket .basket--total h1 {
     top: 46px;
     position: relative;
@@ -1372,31 +1461,16 @@
     position: relative;
     right: 10px;
   }
-  #basket .basket--pay__block--terminal h2 {
-    font-size: 16px;
-    position: relative;
-    right: 10px;
-  }
   #basket .basket--pay__block--cash {
     width: 200px;
   }
-  #basket .basket--pay__block--terminal {
-    width: 200px;
-    width: 263px;
-  }
-  #basket .basket--pay__block--terminal {
-    width: 261px;
-  }
   #basket .basket--btn button {
-    width: 165px;
-    height: 41px;
+    width: 200px;
+    height: 58px;
+    border-radius: 18px;
   }
   #basket .basket--status__general .active {
     width: 92px;
-  }
-  #basket .basket--btn button {
-    width: 123px;
-    height: 37px;
   }
   #basket .basket--status__general--with h2 {
     font-size: 16px;
@@ -1405,7 +1479,7 @@
     background: #004FC7;
     border-radius: 15px;
     width: 200px;
-    height: 50px;
+    height: 54px;
     color: #FFFFFF;
   }
   #basket .basket .basket--card__word--order .count {
@@ -1542,7 +1616,51 @@
 }
 
 @media (max-width: 400px) {
-  #basket .basket .basket--card__word--order {
+  #basket .basket--pay__block--terminal__radus {
+    width: 11px;
+    height: 11px;
+  }
+
+    #basket .basket--pay__block .active {
+      width: 190px;
+      height: 54px;
+    }
+      #basket .basket--pay__block--cash__radus {
+        width: 11px;
+        height: 11px;
+      }
+  #basket .basket--pay__block--terminal{
+    width: 190px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #basket .basket--pay__block--cash{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #basket .basket--pay__block--terminal__radus{
+    margin: 0 15px;
+  }
+  #basket .basket--pay__block--cash__radus{
+    margin: 0 15px;
+  }
+
+    #basket .basket--pay__block--cash h2{
+    width: 70px;
+      padding-left: 20px;
+  }
+  #basket .basket--pay__block--terminal h2{
+    width: 70px;
+    padding-left: 20px;
+  }
+    #basket .basket--pay__block--cash{
+    width: 190px;
+    height: 54px;
+  }
+    #basket .basket .basket--card__word--order {
     height: 34px;
     top: -22px;
     width: 184px;
@@ -1552,22 +1670,23 @@
     height: 41px;
   }
   #basket .basket--pay__text h1 {
-    #basket .basket--btn button {
-      width: 136px;
-      height: 36px;
-    }
     font-size: 20px;
   }
+  #basket .basket--btn button {
+    width: 190px;
+    height: 53px;
+    border-radius: 18px;
+  }
   #basket .basket--pay__block .active {
-    width: 194px;
+    width: 190px;
   }
   #basket .basket--status__general .active {
-    width: 92px;
+    width: 63px;
     height: 41px;
   }
   #basket .basket--pay__block .active {
-    width: 194px;
-    height: 42px;
+    width: 190px;
+    height: 54px;
   }
   #basket .basket--total h2 {
     font-size: 16px;
@@ -1663,12 +1782,62 @@
     right: 20px;
   }
   #basket .basket--btn button {
-    width: 122px;
-    height: 35px;
+    width: 190px;
+    height: 53px;
+    border-radius: 18px;
   }
 }
 
 @media (max-width: 360px) {
+  #basket .basket--pay__block--terminal__radus {
+    width: 11px;
+    height: 11px;
+  }
+
+  #basket .basket--pay__block .active {
+    width: 190px;
+    height: 54px;
+  }
+  #basket .basket--pay__block--cash__radus {
+    width: 11px;
+    height: 11px;
+  }
+  #basket .basket--pay__block--terminal{
+    width: 190px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #basket .basket--pay__block--cash{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #basket .basket--pay__block--terminal__radus{
+    margin: 0 15px;
+  }
+  #basket .basket--pay__block--cash__radus{
+    margin: 0 15px;
+  }
+
+  #basket .basket--pay__block--cash h2{
+    width: 70px;
+    padding-left: 20px;
+  }
+  #basket .basket--pay__block--terminal h2{
+    width: 70px;
+    padding-left: 20px;
+  }
+  #basket .basket--pay__block--cash{
+    width: 190px;
+    height: 54px;
+  }
+  #basket .basket--btn button {
+    width: 180px;
+    height: 50px;
+    border-radius: 18px;
+  }
   #basket .basket .basket--card__img {
     width: 114px;
     height: 114px;
@@ -1715,18 +1884,8 @@
     width: 87%;
     height: 50px;
   }
-  #basket .basket--pay__block--terminal {
-    width: 166px;
-  }
-  #basket .basket--btn button {
-    width: 127px;
-    height: 29px;
-  }
-  #basket .basket--pay__block--cash {
-    width: 172px;
-  }
   #basket .basket--status__general .active {
-    width: 83px;
+    width: 63px;
   }
   #basket .basket--status__general--here h2 {
     font-size: 16px;
@@ -1751,6 +1910,50 @@
 }
 
 @media (max-width: 320px) {
+  #basket .basket--pay__block--terminal__radus {
+    width: 11px;
+    height: 11px;
+  }
+
+  #basket .basket--pay__block .active {
+    width: 170px;
+    height: 54px;
+  }
+  #basket .basket--pay__block--cash__radus {
+    width: 11px;
+    height: 11px;
+  }
+  #basket .basket--pay__block--terminal{
+    width: 170px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #basket .basket--pay__block--cash{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #basket .basket--pay__block--terminal__radus{
+    margin: 0 15px;
+  }
+  #basket .basket--pay__block--cash__radus{
+    margin: 0 15px;
+  }
+
+  #basket .basket--pay__block--cash h2{
+    width: 70px;
+    padding-left: 20px;
+  }
+  #basket .basket--pay__block--terminal h2{
+    width: 70px;
+    padding-left: 20px;
+  }
+  #basket .basket--pay__block--cash{
+    width: 170px;
+    height: 54px;
+  }
   #basket .basket .basket--card__img {
     width: 101px;
     height: 99px;
@@ -1796,12 +1999,6 @@
     right: 43px;
     position: relative;
   }
-  #basket .basket--pay__block--cash {
-    width: 208px;
-  }
-  #basket .basket--pay__block--terminal {
-    width: 167px;
-  }
   #basket .basket--status__general .active {
     width: 45px;
   }
@@ -1815,11 +2012,6 @@
     }
 
     #basket .basket--status__general--here h2 {
-      font-size: 15px;
-    }
-
-    #basket .basket--pay__block--cash h2 {
-      padding-left: 15px;
       font-size: 15px;
     }
 
@@ -1859,18 +2051,15 @@
     right: 85px;
     position: relative;
   }
-  #basket .basket--pay__block--cash {
-    width: 170px;
-  }
   #basket .basket--status__general--with h2 {
-    font-size: 14px;
+    font-size: 11px;
     line-height: 18px;
-  }
-  #basket .basket--pay__block .active {
-    width: 160px;
   }
   #basket .basket--status__general--here h2 {
     font-size: 14px;
     line-height: 18px;
   }
-}
+  #basket .basket--status__general .active {
+    width: 45px;
+  }
+  }
