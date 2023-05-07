@@ -6,8 +6,6 @@ import group from "../../assets/img/Group.svg"
 import {useTranslation} from "react-i18next";
 import BasketCard from "./BasketCard";
 import {useDispatch, useSelector} from "react-redux";
-import {EMPTY} from "../../redux/Reducer/ActionTypes";
-
 const Basket = () => {
   const nav = useNavigate()
   const {t} = useTranslation()
@@ -49,12 +47,11 @@ const Basket = () => {
     }
     else setPay(false)
   }
-  const empty = []
-  const getModal = (el) => {
+  const getModal = () => {
+    let basket = JSON.parse(localStorage.getItem("basket")) || []
     if (order && pay) {
-      return  basket.splice(0,basket.length) && nav("/main/print")
+      return  nav("/main/print") && localStorage.setItem("basket", JSON.stringify(basket.splice(0,basket.length)))
     }
-
     else if (order === false && pay === false){
       setTimeout(() => {
         setBtn(false)

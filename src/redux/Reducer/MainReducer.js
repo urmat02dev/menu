@@ -10,7 +10,7 @@ import search from "../../components/main-page/search/Search";
 
 const initialState ={
   foods:[],
-  basket: [],
+  basket: JSON.parse(localStorage.getItem("basket")) || [],
   modal:false,
   result:[],
   search:"",
