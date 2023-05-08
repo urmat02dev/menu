@@ -12,7 +12,6 @@ const FoodCard = ({el, setModal, modal}) => {
     const {t} = useTranslation()
     const nav = useNavigate()
     const {basket} = useSelector(state => state)
-    let baskets = JSON.parse(localStorage.getItem("basket")) || []
 
     const lang = localStorage.getItem("i18nextLng")
     const dispatch = useDispatch()
@@ -40,15 +39,6 @@ const FoodCard = ({el, setModal, modal}) => {
         dispatch({type:MODAL,payload:true})
     }
     function getBasket(el) {
-        let basket = JSON.parse(localStorage.getItem("basket")) || []
-        const found = basket.find(e => e.id === el.id)
-        if (found){
-            basket = basket.map(elem => elem.id === el.id ? {...elem,quantity:elem.quantity + 1 } : elem)
-        }
-        else {
-            basket = [...basket, {...el,quantity:1}]
-        }
-        localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:GET_BASKET,payload:el})
     }
     

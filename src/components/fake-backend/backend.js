@@ -9,7 +9,6 @@ export const data = [
         desc: "Flour, milk, banana, powdered sugar, currant",
         desc_ru: "Мука, молоко, банан, сахарная пудра,смородина",
         desc_kg: "Ун, сүт, банан, кант упасы, карагат",
-        quantity: 1,
         price: 150,
         image: "https://static.1000.menu/res/640/img/content-v2/18/ae/13309/pankeiki-na-moloke_1614588045_9_max.jpg",
         mass: 240,
