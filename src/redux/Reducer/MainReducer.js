@@ -20,10 +20,21 @@ const initialState ={
 export const MainReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_BASKET : {
-      const found = state.basket.find(el => el.id === action.payload.id)
-          console.log(found)
-      if (found) {
-        return{...state, basket: state.basket.map(el => el.id === found.id ?
+      const basketLocal = JSON.parse(localStorage.getItem("basket"))
+      function getFound(el) {
+        if (basketLocal){
+          return  basketLocal.find(e => e.id)
+        }
+        else if(state.basket){
+          return  el.find(e => e.id === el.id)
+        }
+      }
+
+      console.log(getFound())
+
+
+      if (getFound()) {
+        return{...state, basket: state.basket.map(el => el.id === getFound(el) ?
             {...el, quantity: el.quantity + 1} : el)}
       } else {
         return {...state, basket: [...state.basket, {...action.payload, quantity: 1 }]}

@@ -14,10 +14,18 @@ const FoodPage = ({el}) => {
     const nav = useNavigate()
     const {basket} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
-    const foundProduct = basket.some(e => e.id === el.id)
+    const basketLocal = JSON.parse(localStorage.getItem("basket"))
+    function getFound() {
+        if (basketLocal){
+            return  basketLocal.some(e => e.id === el.id)
+        }
+        else if(basket){
+            return  basket.some(e => e.id === el.id)
+        }
+    }
     console.log(basket)
-    console.log(foundProduct)
-    const found = basket.some(e => e.id === el.id)
+    console.log(basketLocal)
+    console.log(getFound())
     const getTitle = (el) => {
         if (lang === "en"){
             return el.title
@@ -41,8 +49,9 @@ const FoodPage = ({el}) => {
         }
     }
     const dispatch = useDispatch()
-         function getWindow () {
+         function getWindow (el) {
             dispatch({type:MODAL,payload:true})
+             nav(`/detail/${el.id}`)
         }
 
     function getBasket(el) {
@@ -61,15 +70,13 @@ const FoodPage = ({el}) => {
 
     return (
         <div className="foods--one" >
-            <NavLink to={`/detail/${el.id}`}>
-                <img src={el.image} alt="" onClick={() =>  getWindow()}/>
-            </NavLink>
+                <img src={el.image} alt="" onClick={() =>  getWindow(el)}/>
             <h3>{getTitle(el)}</h3>
             <p>{getDesc(el)}</p>
             <div className='foods--one__basket'>
                 <h3>{el.price}c</h3>
                 {
-                    foundProduct ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
+                    getFound() ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
                         :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
                         <BiBasket className='icon'/></div>
                 }

@@ -8,9 +8,9 @@ import {useSelector} from "react-redux";
 const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
   const {i18n} = useTranslation()
-
   const {basket} = useSelector(state => state)
-    console.log(basket)
+    let basketLocal = JSON.parse(localStorage.getItem("basket")) || []
+    console.log(basketLocal)
     const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
@@ -26,10 +26,11 @@ const Header = () => {
                   <div className="header--end__one" onClick={() => nav("/basket")}>
                     <div className={"sup"}
                          style={{
-                           display:basket.length ?  "flex" : "none"
+                           display:basketLocal.length ? basketLocal.length  ?  "flex" : false : "none"
                          }}
                     >
-                      <sup>{basket.length !== 0 ? basket.length : ""}</sup></div>
+                      <sup>{basketLocal.length !== 0 ? basketLocal.length : null}</sup>
+                    </div>
                       <BiBasket className='header--end__one--icon'/>
                   </div>
                   <div className="header--end__two">

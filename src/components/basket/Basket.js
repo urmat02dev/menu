@@ -19,6 +19,7 @@ const Basket = () => {
   const [tern,setTern] = useState(false)
   const [btn,setBtn] = useState(false)
   const [cash2, setCash2]  = useState(false)
+  let basketLocal = JSON.parse(localStorage.getItem("basket")) || []
   function getHere() {
     setHere(!here) || setS(false)
     if (!here){
@@ -49,6 +50,7 @@ const Basket = () => {
   }
   const getModal = () => {
     let basket = JSON.parse(localStorage.getItem("basket")) || []
+    console.log(basket)
     if (order && pay) {
       return  nav("/main/print") && localStorage.setItem("basket", JSON.stringify(basket.splice(0,basket.length)))
     }
@@ -58,16 +60,15 @@ const Basket = () => {
       },2000)
     }
   }
-  console.log(basket.filter(el => !el.id))
   console.log( "order",order )
   console.log( "pay",pay )
   console.log( "btn",btn )
 
 
-  const total = basket.reduce((acc,e) => {
+  const total = basketLocal.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
-  return basket.length ? (
+  return basketLocal.length ? (
   
     <>
       <Header/>
@@ -76,7 +77,7 @@ const Basket = () => {
           <h2 className={"title"}>{t("basket.h1")}</h2>
           <div className="basket">
             {
-              basket.map(el => <BasketCard el={el} />)
+              basketLocal.map(el => <BasketCard el={el} />)
             }
             <div>
               <div className="basket--total">
