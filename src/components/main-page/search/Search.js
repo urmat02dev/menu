@@ -3,11 +3,14 @@ import './Search.scss'
 import {AiOutlineSearch} from "react-icons/ai";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
-import {PODCAST, SEARCH} from "../../../redux/Reducer/ActionTypes";
+import { SEARCH} from "../../../redux/Reducer/ActionTypes";
 import {useNavigate} from "react-router-dom";
 import {data} from "../../fake-backend/backend";
+import {HiOutlineSearch} from "react-icons/hi";
 const Search = ({setModal,modal}) => {
   const {t} = useTranslation()
+  const lang = localStorage.getItem("i18nextLng")
+
   const dispatch = useDispatch()
   const nav = useNavigate()
   const {search} = useSelector(s => s)
@@ -19,41 +22,56 @@ const Search = ({setModal,modal}) => {
         dispatch({type: SEARCH, payload: value})
         nav("/search")
         e.target.value = ""
-
       }
     }
+  }
 
-
+  const getTitle = (el) => {
+    if (lang === "en") {
+      return el.title
+    } else if (lang === "ru") {
+      return el.title_ru
+    } else if (lang === "kg") {
+      return el.title_kg
+    }
   }
   function getSearchClick () {
     if (value !== "") {
         dispatch({type: SEARCH, payload: value})
         nav("/search")
       }
-
   }
 
 
-  const res = data.filter(el =>
-      el => el.title.toLowerCase() === search.toLowerCase() || el.title_ru.toLowerCase() === search.toLowerCase() || el.title_kg.toLowerCase() === search.toLowerCase() )
-  console.log(res.filter(el => el.title === search))
-  const poscast = data.find(el => el.title === value[0])
-  console.log(poscast)
-  console.log(value)
+
   return (
       <div id='search'>
         <div className="container">
           <div className="search">
-            <input type="text" onChange={(e) => {getSearch(e)}}
+            <input value={value} type="text" onChange={(e) => {getSearch(e)}}
                    onKeyDown={(e) => getSearch(e)}
                    placeholder={t("search.placeholder")}/>
             <AiOutlineSearch className='icon' onClick={() => getSearchClick()}/>
-            <ul className={"ul"}>
-              {
-                <li></li>
-              }
+            {
+              value !== "" &&
+                <div className="search--block">
+            {
+              data.map(el => (
+                  <div>
+                    {
+                      value !=="" && <div className={"search--block__modal"}>{el.title.toLowerCase().includes(value) || el.title_kg.toLowerCase().includes(value) ||  el.title_ru.toLowerCase().includes(value) ?
+                            <p onClick={() =>  {
+                          dispatch({type: SEARCH, payload: el.title || el.title_kg || el.title_ru})
+                          nav(`/search`)
+                          setValue("")
+                        }}> <HiOutlineSearch className="p-ic"/> {getTitle(el)}</p> : false}</div>
+                    }
+                  </div>
+              ))
+            }
+            </div>
+            }
 
-            </ul>
           </div>
         </div>
       </div>
