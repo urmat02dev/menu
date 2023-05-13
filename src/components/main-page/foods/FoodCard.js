@@ -12,17 +12,9 @@ const FoodCard = ({el, setModal, modal}) => {
     const {t} = useTranslation()
     const nav = useNavigate()
     const {basket} = useSelector(state => state)
-    const basketLocal = JSON.parse(localStorage.getItem("basket"))
     const lang = localStorage.getItem("i18nextLng")
     const dispatch = useDispatch()
-    function getFound() {
-        if (basketLocal){
-            return  basketLocal.some(e => e.id === el.id)
-        }
-        else if(basket){
-            return  basket.some(e => e.id === el.id)
-        }
-    }
+    const found = basket.some(e => e.id === el.id)
     const getTitle = (el) => {
         if (lang === "en") {
             return el.title
@@ -66,7 +58,7 @@ const FoodCard = ({el, setModal, modal}) => {
                             <div className="food--card__word--order">
                                 <h4>{el.price}c.</h4>
                                 {
-                                    getFound() ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
+                                   found  ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
                                         :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
                                             <BiBasket className='icon'/></div>
                                 }
