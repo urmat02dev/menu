@@ -6,7 +6,6 @@ import {data} from "../../fake-backend/backend";
 import FoodCard from "../foods/FoodCard";
 import "./SearchResult.scss"
 import Search from "./Search";
-import modal from "../../modal/Modal";
 import {useTranslation} from "react-i18next";
 
 const SearchResult = () => {

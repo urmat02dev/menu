@@ -13,35 +13,12 @@ const ModalCard = ({el}) => {
     let basket = JSON.parse(localStorage.getItem("basket")) || []
     const  getBasket = (el) => {
         console.log(el)
-        let basket = JSON.parse(localStorage.getItem("basket")) || []
-        let foundProduct = basket.find(e => e.id === el.id )
-        if (foundProduct){
-            basket = basket.map(e => e.id === el.id ? {...e, quantity: e.quantity + 1}: e)
-        }else {
-            basket = [...basket, {...el, quantity: 1}]
-        }
-        localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:GET_BASKET, payload: el})
     }
     const getMinus = () =>{
-        let basket = JSON.parse(localStorage.getItem("basket")) || []
-        basket = basket.map(e => {
-            if (e.quantity > 1) {
-                return {...e, quantity: e.quantity - 1}
-            }else return e
-        })
-        localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type: MINUS, payload: el})
     }
     const  addPlus = () => {
-        let basket = JSON.parse(localStorage.getItem("basket")) || []
-        let foundProduct = basket.find(e => e.id === el.id )
-        if (foundProduct){
-            basket = basket.map(e => e.id === el.id ? {...e, quantity: e.quantity + 1}: e)
-        }else {
-            basket = [...basket, {...el, quantity: 1}]
-        }
-        localStorage.setItem("basket",JSON.stringify(basket))
         dispatch({type:PLUS,payload:el})
     }
 

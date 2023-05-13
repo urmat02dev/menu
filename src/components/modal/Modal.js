@@ -1,20 +1,12 @@
-import {
-    AiOutlineArrowRight,
-    AiOutlineClose,
-    AiOutlineMinus,
-
-    AiOutlinePlus
-} from "react-icons/ai";
 import {useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {BiBasket} from "react-icons/bi";
 import {
     GET_BASKET,
     GET_MODAL,
     MINUS, MODAL, MODAL_MINUS, MODAL_PLUS,
     PLUS
 } from "../../redux/Reducer/ActionTypes";
-import {BsBasket, BsBasket3Fill} from "react-icons/bs";
+
 import {IoMdClose} from "react-icons/io";
 import React, {useEffect} from "react";
 import "./Modal.scss"
@@ -22,8 +14,9 @@ import {data} from "../fake-backend/backend";
 import FoodCard from "../main-page/foods/FoodCard";
 import ModalCard from "./ModalCard";
 
-const Modal = ({modal,setModal}) => {
+const Modal = () => {
     const basket = useSelector(state => state.basket)
+    const {modal} = useSelector(state => state)
     let baskets = JSON.parse(localStorage.getItem("basket")) || []
 
     const {id} = useParams()
@@ -55,30 +48,40 @@ const Modal = ({modal,setModal}) => {
     //     }
     // }
     const getClose = async () => {
-        dispatch({type:MODAL,payload:false})
-        nav("/main")
+
+        if (modal){
+            await dispatch({type:MODAL,payload:false})
+
+        }
+        else {
+            nav("/main")
+        }
     }
+    console.log("Modal",modal)
+    console.log(detail)
+
   return (
       <>
-      <div id={"modal"} style={{
-          display:detail.id ? "flex":  "none"
-      }} onClick={() => getClose()}/>
-          <div className="container">
-              <div className="modal"  style={{
-                  display:detail.id ? "flex":  "none"
+          <div id={"modal"} style={{
+              top:detail.length ? "0":  "-100%",
+          }} onClick={() => getClose()}/>
+          <div id="modalWindow"  style={{
+              top:!modal ? "100vh":  "100px",
+          }} onClick={() => getClose( )}>
+              <div className="modals" style={{
               }}>
-                    <div className="modals">
-                        <div className="close" onClick={() => getClose()}>
-                            <IoMdClose className={"icon"}/>
-                        </div>
-                        {
-                            detail.map(el => {
-                                return <ModalCard el={el}/>
-                            })
-                        }
-                    </div>
-                </div>
-            </div>
+                  <div className="close" onClick={() => getClose()}>
+                      <IoMdClose className={"icon"}/>
+                  </div>
+                  {
+                      detail.map(el => {
+                          return <ModalCard el={el}/>
+                      })
+                  }
+              </div>
+          </div>
+
+
 
         </>
 
