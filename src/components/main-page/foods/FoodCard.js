@@ -53,7 +53,6 @@ const FoodCard = ({el, setModal, modal}) => {
 
     return (el.id ?
             <div id='food'>
-
                 <NavLink to={`/detail/${el.id}`}>
                     <div className="food--card" onClick={() =>  getWindow()}>
                         <div className={"img"}>

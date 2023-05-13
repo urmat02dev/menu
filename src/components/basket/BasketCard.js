@@ -7,8 +7,6 @@ import {DELETE, GET_BASKET, MINUS, PLUS} from "../../redux/Reducer/ActionTypes";
 import {useTranslation} from "react-i18next";
 const BasketCard = ({el}) => {
   const lang = localStorage.getItem("i18nextLng")
-  // const basket = JSON.parse(localStorage.getItem("basket"))
-  const basket = useSelector(state => state.basket)
   const dispatch = useDispatch()
   const {t} = useTranslation()
 
@@ -36,34 +34,14 @@ const BasketCard = ({el}) => {
   }
 
   const  addPlus = (el) => {
-    let basket = JSON.parse(localStorage.getItem("basket")) || []
-    const found = basket.find(e => e.id === el.id)
-    if (found){
-      basket = basket.map(e => e.id === found.id ? {...e,quantity: e.quantity + 1}: e)
-    }else {
-      basket = [...basket, {...el, quantity: 1 }]
-    }
-    localStorage.setItem("basket", JSON.stringify(basket))
     dispatch({type:GET_BASKET, payload: el})
   }
   const [del, setDel] = useState(false)
   const getDelete = (el) => {
-    let basket = JSON.parse(localStorage.getItem("basket")) || []
-    basket = basket.filter(e => e.id !== el.id)
-    localStorage.setItem("basket", JSON.stringify(basket))
     dispatch({type: DELETE, payload: el})
     setDel(!del)
   }
   const minusDelete = (el) =>{
-    let basket = JSON.parse(localStorage.getItem("basket")) || []
-    basket = basket.map(e => {
-      if (e.id === el.id){
-        if (e.quantity > 1){
-          return {...e,quantity: e.quantity - 1}
-        }return e
-      }return e
-    })
-    localStorage.setItem("basket", JSON.stringify(basket))
     dispatch({type: MINUS, payload: el})
   }
 

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import "./Category.scss"
 import Slider from "react-slick";
 import {useTranslation} from "react-i18next";
+import axios from "axios";
 const Category = ({active,setActive,best,setBest}) => {
     const {t} = useTranslation()
   let settings = {
@@ -77,6 +78,7 @@ const Category = ({active,setActive,best,setBest}) => {
         },
     ]
   };
+
   return (
     <div id='category'>
         <div className="container">

@@ -52,7 +52,7 @@ const Basket = () => {
     let basket = JSON.parse(localStorage.getItem("basket")) || []
     console.log(basket)
     if (order && pay) {
-      return  nav("/main/print") && localStorage.setItem("basket", JSON.stringify(basket.splice(0,basket.length)))
+      return basket.splice(0, basket.length) && nav("/main/print")
     }
     else if (order === false && pay === false){
       setTimeout(() => {
@@ -64,11 +64,12 @@ const Basket = () => {
   console.log( "pay",pay )
   console.log( "btn",btn )
 
-
   const total = basketLocal.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
-  return basketLocal.length ? (
+  return basket.length ? (
+
+ return basketLocal.length ? (
   
     <>
       <Header/>
@@ -77,6 +78,7 @@ const Basket = () => {
           <h2 className={"title"}>{t("basket.h1")}</h2>
           <div className="basket">
             {
+              basket.map(el => <BasketCard el={el}/>)
               basketLocal.map(el => <BasketCard el={el} />)
             }
             <div>
@@ -117,7 +119,7 @@ const Basket = () => {
 
             }}>
                 <button onClick={() => setBtn(true)} style={{
-                  background:btn ? !order || !pay  ? "red" : "#004FC7" : "#004FC7"
+                  background: btn ? !order || !pay  ? "red" : "#004FC7" : "#004FC7"
                 }}>{t("basket.cont")}</button>
             </div>
           </div>
