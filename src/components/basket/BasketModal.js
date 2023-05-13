@@ -3,7 +3,6 @@ import print from "../../assets/img/Vector.svg"
 import "./BasketModal.scss"
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
-import as from "./../../assets/img/Rectangle 4.svg"
 const BasketModal = () => {
     const nav = useNavigate()
     const {t} = useTranslation()

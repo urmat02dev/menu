@@ -9,8 +9,6 @@ const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
   const {i18n} = useTranslation()
   const {basket} = useSelector(state => state)
-    let basketLocal = JSON.parse(localStorage.getItem("basket")) || []
-    console.log(basketLocal)
     const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
@@ -26,10 +24,10 @@ const Header = () => {
                   <div className="header--end__one" onClick={() => nav("/basket")}>
                     <div className={"sup"}
                          style={{
-                           display:basketLocal.length ? basketLocal.length  ?  "flex" : false : "none"
+                           display:basket.length ? basket.length  ?  "flex" : false : "none"
                          }}
                     >
-                      <sup>{basketLocal.length !== 0 ? basketLocal.length : null}</sup>
+                      <sup>{basket.length !== 0 ? basket.length : null}</sup>
                     </div>
                       <BiBasket className='header--end__one--icon'/>
                   </div>
