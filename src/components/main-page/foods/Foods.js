@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Foods.scss"
 import {useTranslation} from "react-i18next";
 import {data} from "../../fake-backend/backend";
 import FoodCard from "./FoodCard";
+import axios from "axios";
 
 
 const Foods = ({active,setActive,modal,setModal}) => {
@@ -38,7 +39,16 @@ const Foods = ({active,setActive,modal,setModal}) => {
   const desert = data.filter(el => el.type === "desert")
   const juice = data.filter(el => el.type === "juice")
   const drink = data.filter(el => el.type === "drink")
-
+  const [back, setBack] = useState([])
+  const getBack = async () => {
+    const url = await axios("http://192.168.0.253:8000/api/dishes/")
+    const {data} = url
+    setBack(data)
+  }
+  useEffect(() => {
+    getBack()
+  },[])
+  console.log(back)
   return (
     <div id="food">
       <div className="container">
@@ -66,11 +76,10 @@ const Foods = ({active,setActive,modal,setModal}) => {
           }
           {
             active === 3 ?
-              foods.map(el => {
-                return <FoodCard el={el}
-                                 modal={modal}
-                                 setModal={setModal}
-                />
+              back.map(el => {
+                return <div>
+                  <h1>{el.name}</h1>
+                </div>
               }) : ''
           }
           {

@@ -27,4 +27,67 @@
 }
 
 
+@media (max-width: 576px) {
+  .error{
+    &--title{
+      h1{
+       padding-right: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .error{
+    &--title{
+      h1{
+        padding-right: 33px;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .error{
+    &--title{
+      h1{
+        font-size: 36px;
+        padding-right: 40px;
+      }
+      p{
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .error{
+    &--title{
+      h1{
+        font-size: 36px;
+        padding-right: 40px;
+      }
+      p{
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px)  {
+  .error{
+    &--title{
+      h1{
+        font-size: 36px;
+        padding-right: 43px;
+      }
+      p{
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+
 

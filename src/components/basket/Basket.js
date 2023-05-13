@@ -48,9 +48,8 @@ const Basket = () => {
     else setPay(false)
   }
   const getModal = () => {
-    let basket = JSON.parse(localStorage.getItem("basket")) || []
     if (order && pay) {
-      return  nav("/main/print") && localStorage.setItem("basket", JSON.stringify(basket.splice(0,basket.length)))
+      return basket.splice(0, basket.length) && nav("/main/print")
     }
     else if (order === false && pay === false){
       setTimeout(() => {
@@ -58,17 +57,12 @@ const Basket = () => {
       },2000)
     }
   }
-  console.log(basket.filter(el => !el.id))
-  console.log( "order",order )
-  console.log( "pay",pay )
-  console.log( "btn",btn )
-
 
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
   return basket.length ? (
-  
+
     <>
       <Header/>
       <div id={"basket"}>
@@ -76,7 +70,7 @@ const Basket = () => {
           <h2 className={"title"}>{t("basket.h1")}</h2>
           <div className="basket">
             {
-              basket.map(el => <BasketCard el={el} />)
+              basket.map(el => <BasketCard el={el}/>)
             }
             <div>
               <div className="basket--total">
@@ -116,7 +110,7 @@ const Basket = () => {
 
             }}>
                 <button onClick={() => setBtn(true)} style={{
-                  background:btn ? !order || !pay  ? "red" : "#004FC7" : "#004FC7"
+                  background: btn ? !order || !pay  ? "red" : "#004FC7" : "#004FC7"
                 }}>{t("basket.cont")}</button>
             </div>
           </div>

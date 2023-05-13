@@ -45,7 +45,6 @@ const FoodCard = ({el, setModal, modal}) => {
     const foundProduct = basket.some(e => e.id === el.id)
     return (el.id ?
             <div id='food'>
-
                 <NavLink to={`/detail/${el.id}`}>
                     <div className="food--card" onClick={() =>  getWindow()}>
                         <div className={"img"}>

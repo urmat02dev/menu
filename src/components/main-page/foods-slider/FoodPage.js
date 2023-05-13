@@ -15,8 +15,6 @@ const FoodPage = ({el}) => {
     const {basket} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
     const foundProduct = basket.some(e => e.id === el.id)
-    console.log(basket)
-    console.log(foundProduct)
     const found = basket.some(e => e.id === el.id)
     const getTitle = (el) => {
         if (lang === "en"){
@@ -46,18 +44,8 @@ const FoodPage = ({el}) => {
         }
 
     function getBasket(el) {
-        let basket = JSON.parse(localStorage.getItem("basket")) || []
-        const found = basket.find(e => e.id === el.id)
-        if (found){
-            basket = basket.map(e => e.id === found.id ? {...e,quantity: e.quantity + 1}: e)
-        }else {
-            basket = [...basket, {...el, quantity: 1 }]
-        }
-        localStorage.setItem("basket", JSON.stringify(basket))
         dispatch({type:GET_BASKET,payload:el})
     }
-
-    console.log(el.id)
 
     return (
         <div className="foods--one" >
