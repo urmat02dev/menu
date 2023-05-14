@@ -48,7 +48,6 @@ const Foods = ({active,setActive,modal,setModal}) => {
   useEffect(() => {
     getBack()
   },[])
-  console.log(back)
   return (
     <div id="food">
       <div className="container">
@@ -59,6 +58,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
               active === 0 || active === 1 ?
               breakfast.map(el =>{
                 return <FoodCard el={el}
+                                 key={el.id}
                                  modal={modal}
                                  setModal={setModal}
                 />

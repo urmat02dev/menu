@@ -17,6 +17,7 @@ const Search = ({setModal,modal}) => {
   const [value , setValue] = useState("")
   function getSearch (e) {
     setValue(e.target.value)
+    console.log(e.target.value.toLowerCase())
     if (value !== "") {
       if (e.key === "Enter") {
         dispatch({type: SEARCH, payload: value})
@@ -44,6 +45,7 @@ const Search = ({setModal,modal}) => {
 
 
 
+
   return (
       <div id='search'>
         <div className="container">
@@ -61,7 +63,7 @@ const Search = ({setModal,modal}) => {
                     {
                       value !=="" && <div className={"search--block__modal"}>{el.title.toLowerCase().includes(value) || el.title_kg.toLowerCase().includes(value) ||  el.title_ru.toLowerCase().includes(value) ?
                             <p onClick={() =>  {
-                          dispatch({type: SEARCH, payload: el.title || el.title_kg || el.title_ru})
+                          dispatch({type: SEARCH, payload: el.title.toLowerCase() || el.title_kg.toLowerCase() || el.title_ru.toLowerCase()})
                           nav(`/search`)
                           setValue("")
                         }}> <HiOutlineSearch className="p-ic"/> {getTitle(el)}</p> : false}</div>

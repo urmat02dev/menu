@@ -67,15 +67,21 @@
           }
 
           &__icon1 {
+            position: absolute;
+            right: 10%;
             background: #DFE2FF;
             border-radius: 15px;
-            width: 70px;
-            height: 35px;
+            width: 80px;
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
-
-            .icon {
+            z-index: 1;
+            .icon1 {
+              font-size: 26px;
+              color: #0256d3;
+            }
+            .icon2 {
               font-size: 30px;
               color: #0256d3;
             }
@@ -161,12 +167,31 @@
           display: flex;
           align-items: center;
           justify-content: center;
-
+          z-index: 10;
           .icon {
             font-size: 30px;
             color: #0256d3;
+
           }
         }
+        &__icon2 {
+          background: #DFE2FF;
+          border-radius: 15px;
+          width: 70px;
+          height: 35px;
+          right: 101px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10;
+          .icon {
+            font-size: 30px;
+            color: #0256d3;
+
+          }
+        }
+
 
       }
     }

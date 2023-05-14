@@ -83,6 +83,7 @@ const FoodsSlider = ({modal,setModal,best,setBest}) => {
                 {
                     bests.map((el) => {
                         return <FoodPage el={el}
+                                         key={el.id}
                                          modal={modal}
                                          setModal={setModal}/>
                     })

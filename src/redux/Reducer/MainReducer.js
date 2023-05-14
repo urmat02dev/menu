@@ -1,8 +1,8 @@
 import {
   DELETE,
-  GET_BASKET,
+  GET_BASKET, GET_DETAIL, GET_FOODS,
   MINUS,
-  MODAL,
+  MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET, PLUS,
   SEARCH
 } from "./ActionTypes";
 
@@ -10,6 +10,7 @@ const initialState ={
   foods:[],
   basket: [],
   modal:false,
+  detail:{},
   result:[],
   search:"",
 }
@@ -26,6 +27,12 @@ export const MainReducer = (state = initialState, action) => {
         return {...state, basket: [...state.basket, {...action.payload, quantity: 1 }]}
       }
     }
+    case MODAL_TO_BASKET : {
+      return {...state, basket: [...state.basket, {...action.payload, quantity: action.payload.quantity}]}
+    }
+    case GET_DETAIL : {
+      return {...state, detail: {...action.payload,quantity: 1}}
+    }
     case MINUS : {
       return{...state, basket: state.basket.map(el => {
           if (el.id === action.payload.id) {
@@ -37,7 +44,7 @@ export const MainReducer = (state = initialState, action) => {
       }
     }
     case MODAL : {
-        return { modal: action.payload}
+        return {...state, modal: action.payload}
 
     }
     case SEARCH : {
@@ -46,6 +53,12 @@ export const MainReducer = (state = initialState, action) => {
     }
     case DELETE : {
       return {...state, basket: state.basket.filter(el => el.id !== action.payload.id)}
+    }
+    case MODAL_PLUS : {
+      return {...state,detail: {...action.payload, quantity:action.payload.quantity + 1}}
+    }
+    case MODAL_MINUS : {
+      return {...state,detail: {...action.payload, quantity: action.payload.quantity > 1 ? action.payload.quantity - 1  : action.payload.quantity }}
     }
     default :
       return state
