@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Category.scss"
 import Slider from "react-slick";
 import {useTranslation} from "react-i18next";
 import axios from "axios";
 const Category = ({active,setActive,best,setBest}) => {
     const {t} = useTranslation()
+
+
   let settings = {
     infinite: false,
     speed: 500,

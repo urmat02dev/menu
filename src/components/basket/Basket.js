@@ -57,9 +57,9 @@ const Basket = () => {
       },2000)
     }
   }
-  console.log( "order",order )
-  console.log( "pay",pay )
-  console.log( "btn",btn )
+  // console.log( "order",order )
+  // console.log( "pay",pay )
+  // console.log( "btn",btn )
 
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity

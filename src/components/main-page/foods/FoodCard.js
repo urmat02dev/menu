@@ -3,10 +3,9 @@ import {BsBasket3Fill} from "react-icons/bs";
 import {useTranslation} from "react-i18next";
 import "./FoodCard.scss"
 import {useDispatch, useSelector} from "react-redux";
-import {GET_BASKET, MODAL} from "../../../redux/Reducer/ActionTypes";
-import {AiOutlineArrowRight} from "react-icons/ai";
+import {GET_BASKET, GET_DETAIL, MODAL} from "../../../redux/Reducer/ActionTypes";
 import {BiBasket} from "react-icons/bi";
-import {NavLink, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 const FoodCard = ({el, setModal, modal}) => {
     const {t} = useTranslation()
@@ -35,32 +34,41 @@ const FoodCard = ({el, setModal, modal}) => {
         }
     }
 
-    function getWindow() {
-        dispatch({type:MODAL,payload:true})
+    function getWindow(el) {
+        if (!found){
+            dispatch({type:MODAL,payload:true}) && dispatch({type: GET_DETAIL,payload:el})
+        }
     }
     function getBasket(el) {
-        dispatch({type:GET_BASKET,payload:el})
+            dispatch({type:GET_BASKET,payload:el})
+
     }
-    
+    function getNav() {
+        dispatch({type:MODAL,payload:false})
+        nav("/basket")
+    }
+
 
     return (el.id ?
             <div id='food'>
-                <NavLink to={`/detail/${el.id}`}>
-                    <div className="food--card" onClick={() =>  getWindow()}>
-                        <div className={"img"}>
-                            <NavLink to={`/detail/${el.id}`}>
+                    <div className="food--card">
+                        <div className={"img"} onClick={() =>  getWindow(el)}>
                                 <img className="food--card__img" src={el.image} alt=""/>
-                            </NavLink>
                         </div>
-                        <div className="food--card__word">
+                        <div className="food--card__word" onClick={() =>  getWindow(el)}>
                             <h2>{getTitle(el)}</h2>
                             <p>{getDesc(el)}</p>
                             <div className="food--card__word--order">
                                 <h4>{el.price}c.</h4>
                                 {
-                                   found  ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
-                                        :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
-                                            <BiBasket className='icon'/></div>
+                                   found  ?
+                                       <div onClick={() => getNav()} className="food--card__word--order__icon1">
+                                           <BsBasket3Fill className={"icon1"}/>
+                                       </div>
+                                        :
+                                       <div className="food--card__word--order__icon1" onClick={() => getBasket(el)}>
+                                            <BiBasket className='icon2'/>
+                                       </div>
                                 }
 
                             </div>
@@ -68,7 +76,6 @@ const FoodCard = ({el, setModal, modal}) => {
                             </div>
                         </div>
                     </div>
-                </NavLink>
             </div>
             : <div>error</div>
 

@@ -1,52 +1,76 @@
 import React from 'react';
-import {GET_BASKET, MINUS, PLUS} from "../../redux/Reducer/ActionTypes";
+import "./Modal.scss"
+import {
+    GET_BASKET,
+    MINUS,
+    MODAL,
+    MODAL_MINUS,
+    MODAL_PLUS,
+    MODAL_TO_BASKET,
+    PLUS
+} from "../../redux/Reducer/ActionTypes";
 import {useDispatch, useSelector} from "react-redux";
 import {BiBasket} from "react-icons/bi";
 import {useNavigate} from "react-router-dom";
 import {BsBasket3Fill} from "react-icons/bs";
-import {AiOutlineArrowRight} from "react-icons/ai";
+import { AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import modal from "./Modal";
 
 const ModalCard = ({el}) => {
     const dispatch = useDispatch()
     const nav = useNavigate()
-    let basket = JSON.parse(localStorage.getItem("basket")) || []
+    const {basket} = useSelector(state => state)
+    const found  = basket.some(e => e.id === el.id)
+
     const  getBasket = (el) => {
-        console.log(el)
-        dispatch({type:GET_BASKET, payload: el})
+        dispatch({type:MODAL_TO_BASKET, payload: el})
     }
-    const getMinus = () =>{
-        dispatch({type: MINUS, payload: el})
+    const getMinus = (el) =>{
+        dispatch({type: MODAL_MINUS, payload: el})
     }
-    const  addPlus = () => {
-        dispatch({type:PLUS,payload:el})
+    const  getPlus = (el) => {
+        dispatch({type:MODAL_PLUS,payload:el})
     }
 
     return (
         <>
-                <div className={"modals--img"}>
+                <div className={"modal--img"}>
                     <img src={el.image} alt=""/>
                 </div>
-                <div className="modals--desc">
+                <div className="modal--desc">
                     <h2>{el.title}</h2>
                     <h3>{el.desc}</h3>
                     <h4>{el.mass}г.</h4>
                     <h5>Цена:<span>{el.price}c</span></h5>
                 </div>
-            <div className="modals--basket">
-                <div className="basket">
-                    Добавить в
-                    <div className="icon-block" onClick={() => getBasket()}>
-                        {
-                            el.id ? <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/><AiOutlineArrowRight className='next'/></div>   :<div className="foods--one__basket--icon" onClick={() => getBasket()}>
-                                <BiBasket className='icon'/></div>
-                        }
-                    </div>
-                </div>
+            <div className="modal--basket">
+                {
+                    found ?
+                        <div className="basket"
+                             onClick={() => nav("/basket") || dispatch({type:MODAL, payload:false})}>
+                            Добавить в
+                            <div className="icon-block" >
+                                <div  className="foods--one__basket--icon"><BsBasket3Fill/></div>
+                            </div>
+                        </div>
+                        :
+                        <div className="basket" onClick={() => getBasket(el)}>
+                            Добавить в
+                            <div className="icon-block" >
+                                <div className="foods--one__basket--icon" >
+                                    <BiBasket className='icon'/></div>
+                            </div>
+                        </div>
+                }
                 <div className="count">
-                    <span onClick={() => getMinus()}>-</span>
+                    <span style={{
+
+                    }}
+                        onClick={() => getMinus(el)}><AiOutlineMinus className={"ico"} style={{
+                        color:`${el.quantity > 1 ? "" : "rgba(10,10,10,0.39)" }`
+                    }}/></span>
                     <p>{el.quantity}</p>
-                    <span onClick={() => addPlus()}>+</span>
+                    <span onClick={() => getPlus(el)}><AiOutlinePlus className={"ico"}/></span>
                 </div>
             </div>
         </>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./Header.scss"
 import logos from "../../assets/img/logos.svg"
 import {BiBasket} from "react-icons/bi";
@@ -13,6 +13,9 @@ const Header = () => {
     i18n.changeLanguage(language);
   };
   const nav = useNavigate()
+    useEffect(() => {
+
+    },[basket])
   return (
     <div id='header'>
         <div className="container">
@@ -24,10 +27,10 @@ const Header = () => {
                   <div className="header--end__one" onClick={() => nav("/basket")}>
                     <div className={"sup"}
                          style={{
-                           display:basket.length ? basket.length  ?  "flex" : false : "none"
+                           display: basket.length  ?  "flex" : "none"
                          }}
                     >
-                      <sup>{basket.length !== 0 ? basket.length : null}</sup>
+                      <sup>{basket.length  ? basket.length : "none" }</sup>
                     </div>
                       <BiBasket className='header--end__one--icon'/>
                   </div>
