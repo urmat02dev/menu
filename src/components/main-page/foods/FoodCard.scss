@@ -66,28 +66,27 @@
             color: #000000;
           }
 
-          &__icon1 {
-            position: absolute;
-            right: 10%;
-            background: #DFE2FF;
-            border-radius: 15px;
-            width: 80px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-            .icon1 {
-              font-size: 26px;
-              color: #0256d3;
-            }
-            .icon2 {
-              font-size: 30px;
-              color: #0256d3;
-            }
-          }
-
         }
+      }
+    }
+    .blockZ {
+      position: absolute;
+      right: 10%;
+      background: #DFE2FF;
+      border-radius: 15px;
+      width: 80px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      .icon1 {
+        font-size: 26px;
+        color: #0256d3;
+      }
+      .icon2 {
+        font-size: 30px;
+        color: #0256d3;
       }
     }
   }
