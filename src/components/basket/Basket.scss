@@ -399,8 +399,10 @@
     height: 268px;
   }
   #basket .basket .basket--card__word--order .count {
-    width: 185px;
-    height: 32px;
+    width: 180px;
+    height: 28px;
+    position: relative;
+    right: 10px;
   }
   #basket .basket--total h2 {
     margin-left: 33px;
@@ -410,7 +412,7 @@
   }
   #basket .basket .basket--card__word--order {
     width: 423px;
-    height: 60px;
+    height: 70px;
   }
   #basket .basket .basket--card__img {
     width: 228px;
@@ -433,8 +435,8 @@
     height: 268px;
   }
   #basket .basket .basket--card__word--order .count {
-    width: 185px;
-    height: 32px;
+    width: 170px;
+    height: 20px;
   }
   #basket .basket--total h2 {
     margin-left: 33px;
@@ -467,11 +469,15 @@
 
 @media (max-width: 800px) {
   #basket .basket .basket--card__img {
-    width: 211px;
-    height: 204px;
+    width: 200px;
+    height: 190px;
     margin: 9px 0 20px 26px;
   }
-
+  #basket .basket .basket--card__word p {
+    font-size: 24px;
+    width: 450px;
+    margin: 16px 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -480,7 +486,7 @@
   }
   #basket .basket .basket--card__word--order {
     width: 388px;
-    height: 48px;
+    height: 60px;
   }
   #basket .basket .basket--card__word--order .count {
     width: 156px;
@@ -490,8 +496,8 @@
     width: 82%;
   }
   #basket .basket .basket--card__img {
-    width: 214px;
-    height: 192px;
+    width: 200px;
+    height: 185px;
     margin: 10px 0 20px 29px;
   }
   #basket .basket .basket--card__word {
@@ -511,13 +517,9 @@
 
 @media (max-width: 576px) {
   #basket .basket .basket--card__img {
-    width: 172px;
-    height: 166px;
+    width: 160px;
+    height: 150px;
     margin: 10px 0 20px 18px;
-  }
-  #basket .basket .basket--card__word .desc h2 {
-    width: 250px;
-    font-size: 21px;
   }
   #basket .basket .basket--card {
     height: 215px;
@@ -533,18 +535,7 @@
   }
   #basket .basket .basket--card__word--order {
     width: 289px;
-    height: 40px;
-    position: relative;
-    left: -9px;
-    top: -7px;
-  }
-  #basket .basket .basket--card__word--order {
-    width: 289px;
-    height: 40px;
-  }
-  #basket .basket .basket--card__word--order .count {
-    width: 157px;
-    height: 35px;
+    height: 50px;
   }
   #basket .title {
     font-size: 26px;
@@ -561,8 +552,8 @@
     height: 69px;
   }
   #basket .basket .basket--card__word--order .count {
-    width: 157px;
-    height: 20px;
+    width: 150px;
+    height: 14px;
     margin-right: 6px;
   }
   #basket .basket--btn button {
@@ -608,6 +599,12 @@
     position: relative;
     left: 14px;
   }
+  #basket .basket .basket--card__word--order .count p {
+    color: white;
+    font-size: 19px;
+    width: 5px;
+    margin: 0 22px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -640,7 +637,7 @@
     height: 198px;
   }
   #basket .basket .basket--card__word--order {
-    width: 221px;
+    width: 215px;
     position: relative;
     height: 40px;
     top: -8px;
@@ -656,302 +653,6 @@
     width: 183px;
     font-size: 17px;
 
-    #basket {
-      .no-basket {
-        margin: 90px auto 20px auto;
-        width: 400px;
-        height: 600px;
-      }
-
-      .basket {
-        &--total {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 20px;
-          width: 95%;
-          height: 77px;
-          background: #DFE2FF;
-          border-radius: 15px;
-
-          h2 {
-            font-weight: 600;
-            font-size: 26px;
-            line-height: 23px;
-            color: #004FC7;
-          }
-
-          h1 {
-            padding-top: 10px;
-            width: 105px;
-            height: 36px;
-            text-align: center;
-            background: #FFFFFF;
-            border-radius: 15px;
-            font-weight: 600;
-            font-size: 20px;
-            color: #004FC7;
-          }
-        }
-
-        .basket--card {
-          background: #FFFFFF;
-          display: flex;
-          width: 100%;
-          height: 300px;
-          align-items: center;
-          justify-content: space-between;
-          border-radius: 20px;
-          margin: 20px 0;
-          animation: jan 1s ease-out;
-
-          &__img {
-            width: 250px;
-            height: 220px;
-            margin: 10px 0 20px 50px;
-            border-radius: 30px;
-          }
-
-          &__word {
-            .desc {
-              display: flex;
-              align-items: center;
-              width: 95%;
-              justify-content: space-between;
-
-              h2 {
-                font-family: 'Armin Grotesk', sans-serif;
-                font-weight: 600;
-                font-size: 30px;
-                width: 500px;
-              }
-
-              .close {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                background: rgba(40, 49, 255, 0.3);
-                width: 25px;
-                height: 25px;
-
-                .icon {
-                  font-size: 25px;
-                  color: white;
-                }
-              }
-            }
-
-            p {
-              font-family: 'Armin Grotesk', sans-serif;
-              font-style: italic;
-              font-weight: 400;
-              font-size: 21px;
-              line-height: 17px;
-              color: rgba(0, 0, 0, 0.7);
-              width: 450px;
-              margin: 10px 0;
-            }
-
-            &--order {
-              width: 500px;
-              height: 80px;
-              background: #DFE2FF;
-              border-radius: 50px;
-              margin-top: 60px;
-              display: flex;
-              align-items: center;
-              justify-content: space-around;
-
-              .price {
-                width: 200px;
-
-                h4 {
-                  font-family: 'Armin Grotesk', sans-serif;
-                  font-style: italic;
-                  font-weight: 600;
-                  font-size: 24px;
-                  line-height: 22px;
-                  color: #004FC7;
-                  margin-left: 15px;
-                }
-              }
-
-              .count {
-                width: 200px;
-                height: 55px;
-                background: #004FC7;
-                border-radius: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                p {
-                  color: white;
-                  font-size: 22px;
-                  width: 20px;
-                  margin: 0 40px;
-                }
-
-                span {
-                  font-weight: 700;
-                  margin: 0 5px;
-                  color: white;
-                  font-size: 20px;
-                }
-              }
-
-
-            }
-          }
-        }
-
-        &--status {
-          margin-top: 8%;
-          display: flex;
-          flex-direction: column;
-          align-items: start;
-
-          &__title {
-            margin: 10px 0;
-
-            h1 {
-              margin: 0;
-              font-weight: 600;
-              font-size: 27px;
-              line-height: 34px;
-              color: #121212;
-            }
-          }
-
-          &__general {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #FFFFFF;
-            border-radius: 15px;
-            width: 100%;
-            height: 70px;
-
-            &--here {
-              padding: 0 40px;
-              font-weight: 600;
-              font-size: 13px;
-              line-height: 23px;
-              color: #004FC7;
-            }
-
-            &--with {
-              padding: 0 40px;
-              font-weight: 600;
-              font-size: 13px;
-              line-height: 23px;
-              color: #004FC7;
-            }
-          }
-        }
-
-        &--pay {
-          display: flex;
-          justify-content: space-between;
-          align-items: start;
-          margin-top: 3%;
-
-          &__text {
-            h1 {
-              font-weight: 600;
-              font-size: 28px;
-              line-height: 34px;
-              color: #121212;
-            }
-          }
-
-          &__block {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-
-            &--cash {
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              background: #FFFFFF;
-              border-radius: 15px;
-              width: 240px;
-              height: 54px;
-              margin: 10px 0;
-
-              h2 {
-                width: 100px;
-                padding-left: 10px;
-                font-weight: 600;
-                font-size: 22px;
-                line-height: 100%;
-                color: #004FC7;
-              }
-
-              input {
-                margin-left: 20px;
-                width: 30px;
-                height: 20px;
-              }
-            }
-
-            &--terminal {
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              background: #FFFFFF;
-              border-radius: 15px;
-              width: 240px;
-              height: 54px;
-
-              h2 {
-                width: 100px;
-                padding-left: 10px;
-                font-weight: 600;
-                font-size: 22px;
-                line-height: 100%;
-                color: #004FC7;
-              }
-
-              input {
-                margin-left: 20px;
-                width: 30px;
-                height: 20px;
-              }
-            }
-          }
-        }
-
-        &--btn {
-          margin-top: 6%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          button {
-            width: 228px;
-            height: 59px;
-            background: #004FC7;
-            border-radius: 20px;
-            font-size: 16px;
-            line-height: 23px;
-            font-weight: 600;
-            color: #FFFFFF;
-            border: none;
-          }
-        }
-      }
-
-      .btn {
-        button {
-          width: 400px;
-          height: 65px;
-          border-radius: 19px;
-        }
-      }
-    }
   }
   #basket .basket--pay__text h1 {
     font-size: 22px;
@@ -1043,14 +744,18 @@
     position: relative;
     bottom: 5px;
   }
-  #basket .basket .basket--card__word--order .count {
-    height: 10px;
-  }
   #basket .basket .basket--card__word .desc .close {
     width: 20px;
     height: 20px;
     position: relative;
     left: 1px;
+  }
+  #basket .basket .basket--card__word--order .count span {
+    font-size: 19px;
+  }
+  #basket .basket .basket--card__word--order .count {
+    height: 5px;
+    margin-right: 1px;
   }
 }
 
@@ -1060,21 +765,15 @@
     padding: 13px 0 0 0;
   }
   #basket .basket .basket--card__img {
-    width: 135px;
-    height: 136px;
+    width: 130px;
+    height: 130px;
     margin: 10px 0 20px 12px;
   }
   #basket .basket .basket--card {
     height: 179px;
   }
   #basket .basket .basket--card__word--order {
-
-    height: 34px;
-    top: -8px;
-    left: -10px;
-  }
-  #basket .basket .basket--card__word--order {
-    height: 34px;
+    height: 35px;
     top: -8px;
     width: 202px;
     left: -8px;
@@ -1106,9 +805,6 @@
     font-size: 22px;
     position: relative;
     left: 10px;
-  }
-  #basket .basket--status__general--with h2 {
-    font-size: 20px;
   }
   #basket .basket--status__general--here {
     width: 80px;
@@ -1156,7 +852,7 @@
   }
   #basket .basket .basket--card__word--order .count {
     width: 157px;
-    height: 11px;
+    height: 5px;
   }
   #basket .basket .basket--card__word--order .count p{
    font-size: 18px;
@@ -1263,7 +959,7 @@
     width: 150px;
   }
   #basket .basket .basket--card__word--order {
-    height: 34px;
+    height: 38px;
     top: -20px;
   }
   #basket .basket--pay__block--cash {
@@ -1279,9 +975,6 @@
     height: 50px;
     color: #FFFFFF;
   }
-  #basket .basket--pay__block--cash h2 {
-    font-size: 16px;
-  }
   #basket .basket--status__general .active h2 {
     font-size: 14px;
     width: 190px;
@@ -1290,13 +983,18 @@
     font-size: 15px;
     width: 100px;
   }
+  #basket .basket .basket--card__word .desc {
+    width: 92%;
+    padding: 18px 0 0 0;
+  }
 }
 
 @media (max-width: 400px) {
-  #basket .basket .basket--card__word--order {
-    height: 34px;
-    top: -22px;
-    width: 184px;
+  #basket .basket .basket--card__img {
+    width: 105px;
+    height: 100px;
+    position: relative;
+    left: 10px;
   }
   #basket .basket--btn button {
     width: 151px;
@@ -1322,8 +1020,8 @@
     width: 259px;
   }
   #basket .basket .basket--card__word--order .count {
-    width: 157px;
-    height: 7px;
+    width: 108px;
+    height: 4px;
   }
   #basket .basket .basket--card__word--order .count span {
     font-weight: 700;
@@ -1331,6 +1029,50 @@
     color: white;
     font-size: 20px;
     text-align: center;
+  }
+  #basket .basket .basket--card__word--order {
+    height: 40px;
+    top: -34px;
+    left: 1px;
+    width: 200px;
+  }
+  #basket .basket .basket--card__word p {
+    width: 183px;
+    font-size: 15px;
+    margin: 6px 0 0 0;
+  }
+  #basket .basket .basket--card__word {
+    margin: 24px 15px 0 18px;
+  }
+  #basket .basket .basket--card__word .desc .close {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    left: 15px;
+    top: -15px;
+  }
+  #basket .basket .basket--card__word .desc .close .icon {
+    font-size: 14px;
+    color: white;
+  }
+  #basket .basket .basket--card__word--order .count span {
+    font-weight: 700;
+    margin: 0 1px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+  }
+  #basket .basket .basket--card {
+    height: 159px;
+    border-radius: 25px;
+  }
+  #basket .basket .basket--card__word--order .price h4 {
+    font-size: 14px;
+  }
+  #basket .basket .basket--card__word--order .count p {
+    font-size: 15px;
+    position: relative;
+    left: 5px;
   }
 }
 
@@ -1340,8 +1082,8 @@
     width: 150px;
   }
   #basket .basket .basket--card__img {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 105px;
     margin: 10px 0 20px 12px;
   }
   #basket .basket--pay__block--terminal {
@@ -1366,8 +1108,8 @@
     width: 175px;
   }
   #basket .basket .basket--card__word--order {
-    height: 34px;
-    top: -22px;
+    height: 39px;
+    top: -28px;
     width: 184px;
     left: -5px;
   }
@@ -1388,8 +1130,18 @@
     font-size: 16px;
   }
   #basket .basket .basket--card__word--order .count {
-    width: 157px;
-    height: 7px;
+    width: 135px;
+    height: 4px;
+  }
+  #basket .basket .basket--card__word {
+    margin: 7px 10px 0 22px;
+  }
+  #basket .basket .basket--card__word .desc .close {
+    width: 17px;
+    height: 17px;
+    position: relative;
+    left: 15px;
+    top: -9px;
   }
 }
 
@@ -1399,7 +1151,6 @@
       margin: 50px auto 10px auto;
     }
   }
-
   #basket .basket .basket--card__word--order .price h4 {
     font-size: 15px;
   }
@@ -1429,13 +1180,31 @@
     width: 122px;
     height: 35px;
   }
-
+  #basket .basket .basket--card__img {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0 20px 5px;
+    border-radius: 15px;
+  }
+  #basket .basket .basket--card__word--order {
+    height: 39px;
+    top: -39px;
+    width: 184px;
+    left: -5px;
+  }
+  #basket .basket .basket--card__word {
+    margin: 28px 10px 0 22px;
+  }
+  #basket .basket .basket--card {
+    height: 150px;
+    border-radius: 25px;
+  }
 }
 
 @media (max-width: 360px) {
   #basket .basket .basket--card__img {
-    width: 114px;
-    height: 114px;
+    width: 100px;
+    height: 100px;
     margin: 10px 0 20px 12px;
   }
   #basket .basket .basket--card__word .desc h2 {
@@ -1456,7 +1225,7 @@
     width: 174px;
   }
   #basket .basket .basket--card {
-    height: 165px;
+    height: 150px;
   }
   #basket .basket--total h2 {
     font-size: 15px;
@@ -1468,7 +1237,7 @@
     font-size: 17px;
   }
   #basket .basket .basket--card__word {
-    margin: -6px 0 0 19px;
+    margin: 7px 0 0 19px;
   }
   #basket .basket--total h1 {
     top: -6px;
@@ -1506,13 +1275,13 @@
     width: 65px;
   }
   #basket .basket .basket--card__word .desc .close {
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
     position: relative;
-    left: -3px;
+    left: 5px;
   }
   #basket .basket .basket--card__word .desc .close .icon {
-    font-size: 14px;
+    font-size: 13px;
     color: white;
   }
   #basket .basket .basket--card__word--order .count span {
@@ -1523,17 +1292,18 @@
     text-align: center;
   }
   #basket .basket .basket--card__word--order .count {
-    width: 157px;
-    height: 5px;
+    width: 120px;
+    height: 1px;
+  }
+  #basket .basket .basket--card__word--order .count p {
+    color: white;
+    font-size: 14px;
+    width: 20px;
+    margin: -4px -8px 0 -4px;
   }
 }
 
 @media (max-width: 320px) {
-  #basket .basket .basket--card__img {
-    width: 101px;
-    height: 99px;
-    margin: 10px 0 20px 12px;
-  }
   #basket .basket .basket--card__word .desc h2 {
     width: 150px;
     font-size: 13px;
@@ -1549,13 +1319,8 @@
     width: 160px;
     left: -5px;
   }
-  #basket .basket .basket--card__img {
-    width: 91px;
-    height: 99px;
-    margin: 10px 0 20px 12px;
-  }
   #basket .basket .basket--card__word {
-    margin: 4px 0 0 15px;
+    margin: 4px 0 0 35px;
   }
   #basket .basket--total {
     width: 85%;
@@ -1564,11 +1329,6 @@
   #basket .basket .basket--card__word .desc {
     width: 88%;
     padding: 29px 0 0 0;
-  }
-  #basket .basket .basket--card__img {
-    width: 81px;
-    height: 93px;
-    margin: 10px 0 20px 12px;
   }
   #basket .basket--pay__block {
     right: 43px;
@@ -1614,7 +1374,6 @@
       height: 15px;
     }
   }
-
   #basket .basket--status__title h1 {
     font-size: 19px;
   }
@@ -1646,9 +1405,14 @@
     line-height: 18px;
   }
   #basket .basket .basket--card__word .desc .close {
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
     position: relative;
-    left: 9px;
+    left: -5px;
+  }
+  #basket .basket .basket--card__img {
+    width:80px;
+    height: 85px;
+    margin: 10px 0 20px 12px;
   }
 }

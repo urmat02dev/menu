@@ -410,17 +410,31 @@
     width: 101px;
     height: 101px;
     position: relative;
-    left: 15px;
+    left: 13px;
   }
   #food .food--card {
     width: 357px;
     margin: -130px 0 10px 25px;
+    height: 150px;
   }
   #food .food--card__word {
-    margin: 158px 67px 0 0;
+    margin: 164px 67px 0 0;
   }
   #foods .foods--one__basket .foods--one__basket--icon .icon {
     font-size: 18px;
+  }
+  #food .food--card__word--order__icon1 {
+    position: relative;
+    left: 10px;
+  }
+  #food .food--card__word--order__icon1 {
+    position: relative;
+    left: 9px;
+    top: -5px;
+  }
+  #food .food--card__word p {
+    width: 195px;
+    line-height: 15px;
   }
 }
 
