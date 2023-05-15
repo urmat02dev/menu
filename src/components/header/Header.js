@@ -5,10 +5,11 @@ import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
 import {NavLink, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {ran} from "../starts/random";
 const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
   const {i18n} = useTranslation()
-  const {basket} = useSelector(state => state)
+  const {basket,params} = useSelector(state => state)
     const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
@@ -16,11 +17,12 @@ const Header = () => {
     useEffect(() => {
 
     },[basket])
+    console.log(params)
   return (
     <div id='header'>
         <div className="container">
           <div className="header">
-              <NavLink to={"/main"}>
+              <NavLink to={`/main/${params}`}>
                 <img src={logos} alt=""/>
               </NavLink>
               <div className="header--end">

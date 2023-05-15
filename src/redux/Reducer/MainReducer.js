@@ -1,6 +1,6 @@
 import {
   DELETE,
-  GET_BASKET, GET_DETAIL, GET_FOODS,
+  GET_BASKET, GET_DETAIL, GET_FOODS, GET_PARAMS,
   MINUS,
   MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET, PLUS,
   SEARCH
@@ -13,6 +13,7 @@ const initialState ={
   detail:{},
   result:[],
   search:"",
+  params:""
 }
 
 
@@ -59,6 +60,9 @@ export const MainReducer = (state = initialState, action) => {
     }
     case MODAL_MINUS : {
       return {...state,detail: {...action.payload, quantity: action.payload.quantity > 1 ? action.payload.quantity - 1  : action.payload.quantity }}
+    }
+    case GET_PARAMS : {
+      return {...state,params: action.payload}
     }
     default :
       return state
