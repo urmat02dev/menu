@@ -7,7 +7,7 @@ import {GET_BASKET, GET_DETAIL, MODAL} from "../../../redux/Reducer/ActionTypes"
 import {BiBasket} from "react-icons/bi";
 import { useNavigate} from "react-router-dom";
 
-const FoodCard = ({el, setModal, modal}) => {
+const FoodCard = ({el}) => {
     const {t} = useTranslation()
     const nav = useNavigate()
     const {basket} = useSelector(state => state)

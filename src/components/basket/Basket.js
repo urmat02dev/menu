@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Basket.scss"
 import Header from "../header/Header";
 import {Link, useNavigate} from "react-router-dom";
@@ -6,6 +6,7 @@ import group from "../../assets/img/Group.svg"
 import {useTranslation} from "react-i18next";
 import BasketCard from "./BasketCard";
 import {useDispatch, useSelector} from "react-redux";
+import axios from "axios";
 const Basket = () => {
   const nav = useNavigate()
   const {t} = useTranslation()
@@ -19,6 +20,8 @@ const Basket = () => {
   const [tern,setTern] = useState(false)
   const [btn,setBtn] = useState(false)
   const [cash2, setCash2]  = useState(false)
+  const [cart, setCart]  = useState([])
+
   function getHere() {
     setHere(!here) || setS(false)
     if (!here){
@@ -57,13 +60,19 @@ const Basket = () => {
       },2000)
     }
   }
-  // console.log( "order",order )
-  // console.log( "pay",pay )
-  // console.log( "btn",btn )
+  const getBack = async () => {
+    const url = await axios.get("http://192.168.0.180:8000/api/carts/")
+    const {data} = url
+    setCart(data)
+  }
 
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
+  useEffect(() => {
+    getBack()
+  },[])
+  console.log(cart)
   return basket.length ?
     <>
       <Header/>

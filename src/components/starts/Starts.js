@@ -5,8 +5,11 @@ import start1 from "../../assets/img/start1.png"
 import start2 from "../../assets/img/start2.png"
 import start3 from "../../assets/img/start3.png"
 import {useNavigate} from "react-router-dom";
+import {ran} from "./random";
 const Starts = () => {
   const nav = useNavigate()
+
+
   const settings = {
     infinite: true,
     slidesToShow: 1,
@@ -18,7 +21,7 @@ const Starts = () => {
     cssEase: "ease",
   };
   return (
-    <div id={"start"} onClick={() => nav("/main")}>
+    <div id={"start"} onClick={() => nav(`/main/${ran}`)}>
       <div className="container">
         <div className="start">
           <div className="slider">
@@ -56,7 +59,7 @@ const Starts = () => {
 
             </Slider>
           </div>
-          <div className={"btn"} onClick={() => nav("/main") }>
+          <div className={"btn"} onClick={() => nav(`/main/${ran}`) }>
             <button  >Открыть меню</button>
           </div>
         </div>

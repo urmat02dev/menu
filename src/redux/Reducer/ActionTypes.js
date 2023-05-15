@@ -1,6 +1,7 @@
 export const GET_BASKET = "GET_BASKET"
 export const MODAL_TO_BASKET = "MODAL_TO_BASKET"
 export const GET_DETAIL = "GET_DETAIL"
+export const GET_PARAMS = "GET_PARAMS"
 export const PLUS = "PLUS"
 export const MINUS = "MINUS"
 export const DELETE = "DELETE"
