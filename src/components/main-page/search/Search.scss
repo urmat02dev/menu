@@ -356,6 +356,15 @@
       }
     }
   }
+  #search .search .icon {
+    position: absolute;
+    left: 266px;
+    right: 19px;
+    top: 7px;
+    bottom: 0;
+    color: rgba(40, 49, 255, 0.3);
+    font-size: 21px;
+  }
 }
 @media (max-width: 321px){
   #search {
@@ -397,7 +406,7 @@
         top: 7px;
         bottom: 0;
         color: rgba(40, 49, 255, 0.3);
-        font-size: 22px;
+        font-size: 20px;
       }
     }
   }

@@ -7,6 +7,7 @@
       font-size: 36px;
       line-height: 34px;
       color: #121212;
+      margin: 30px 0;
     }
 
     .no-basket {
@@ -119,11 +120,6 @@
         border-radius: 20px;
         margin: 20px 0;
         animation: jan 1s ease-out;
-        //@keyframes jan {
-        //  0% {
-        //    transform: translatey(400px);
-        //  }
-        //}
         &__img {
           width: 250px;
           height: 220px;
@@ -132,6 +128,8 @@
         }
 
         &__word {
+          position: relative;
+          right: 20px;
           .desc {
             display: flex;
             align-items: center;
@@ -142,21 +140,22 @@
               font-family: 'Armin Grotesk', sans-serif;
               font-weight: 600;
               font-size: 30px;
-              width: 500px;
             }
 
             .close {
-              display: flex;
-              align-items: center;
-              justify-content: center;
               border-radius: 50%;
               background: rgba(40, 49, 255, 0.3);
-              width: 25px;
-              height: 25px;
+              width: 35px;
+              height: 35px;
               z-index: 5;
+              position: relative;
+              top: -10px;
               .icon {
                 font-size: 25px;
                 color: white;
+                position: relative;
+                left: 4px;
+                top: 5px;
               }
             }
           }
@@ -395,7 +394,7 @@
   }
 }
 
-@media (max-width: 834px) {
+@media (max-width: 884px) {
   #basket .basket .basket--card {
     height: 268px;
   }
@@ -413,8 +412,43 @@
     width: 423px;
     height: 60px;
   }
-  #basket .basket .basket--card__word .desc h2 {
-    width: 378px;
+  #basket .basket .basket--card__img {
+    width: 228px;
+    height: 204px;
+    margin: 10px 0 20px 36px;
+    border-radius: 30px;
+  }
+  #basket .title {
+    line-height: 121px;
+  }
+  #basket .basket .basket--card__word .desc .close .icon {
+    font-size: 25px;
+    position: relative;
+    left: 5px;
+  }
+}
+
+@media (max-width: 834px) {
+  #basket .basket .basket--card {
+    height: 268px;
+  }
+  #basket .basket .basket--card__word--order .count {
+    width: 185px;
+    height: 32px;
+  }
+  #basket .basket--total h2 {
+    margin-left: 33px;
+  }
+  #basket .basket--total {
+    margin: 0 0 60px 0;
+  }
+  #basket .basket .basket--card__word {
+    position: relative;
+    right: 1px;
+  }
+  #basket .basket .basket--card__word--order {
+    width: 423px;
+    height: 60px;
   }
   #basket .basket .basket--card__img {
     width: 228px;
@@ -424,6 +458,10 @@
   }
   #basket .title {
     line-height: 121px;
+  }
+  #basket .basket .basket--card__word .desc .close {
+    width: 34px;
+    height: 33px;
   }
 }
 
@@ -437,306 +475,8 @@
 }
 
 @media (max-width: 768px) {
-  #basket {
-    .title {
-      font-size: 30px;
-    }
-
-    .no-basket {
-      margin: 40px auto 20px auto;
-    }
-
-    .basket {
-      &--total {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        width: 95%;
-        height: 77px;
-        background: #DFE2FF;
-        border-radius: 15px;
-
-        h2 {
-          font-weight: 600;
-          font-size: 26px;
-          line-height: 23px;
-          color: #004FC7;
-        }
-
-        h1 {
-          padding-top: 10px;
-          width: 105px;
-          height: 36px;
-          text-align: center;
-          background: #FFFFFF;
-          border-radius: 15px;
-          font-weight: 600;
-          font-size: 20px;
-          color: #004FC7;
-        }
-      }
-
-      .basket--card {
-        background: #FFFFFF;
-        display: flex;
-        width: 100%;
-        height: 300px;
-        align-items: center;
-        justify-content: space-between;
-        border-radius: 20px;
-        margin: 20px 0;
-        animation: jan 1s ease-out;
-        //@keyframes jan {
-        //  0% {
-        //    transform: translatey(400px);
-        //  }
-        //}
-        &__img {
-          width: 250px;
-          height: 220px;
-          margin: 10px 0 20px 50px;
-          border-radius: 30px;
-        }
-
-        &__word {
-          .desc {
-            display: flex;
-            align-items: center;
-            width: 95%;
-            justify-content: space-between;
-
-            h2 {
-              font-family: 'Armin Grotesk', sans-serif;
-              font-weight: 600;
-              font-size: 30px;
-              width: 500px;
-            }
-
-            .close {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border-radius: 50%;
-              background: rgba(40, 49, 255, 0.3);
-              width: 25px;
-              height: 25px;
-
-              .icon {
-                font-size: 25px;
-                color: white;
-              }
-            }
-          }
-
-          p {
-            font-family: 'Armin Grotesk', sans-serif;
-            font-style: italic;
-            font-weight: 400;
-            font-size: 21px;
-            line-height: 17px;
-            color: rgba(0, 0, 0, 0.7);
-            width: 450px;
-            margin: 10px 0;
-          }
-
-          &--order {
-            width: 500px;
-            height: 80px;
-            background: #DFE2FF;
-            border-radius: 50px;
-            margin-top: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-
-            .price {
-              width: 200px;
-
-              h4 {
-                font-family: 'Armin Grotesk', sans-serif;
-                font-style: italic;
-                font-weight: 600;
-                font-size: 24px;
-                line-height: 22px;
-                color: #004FC7;
-                margin-left: 15px;
-              }
-            }
-
-            .count {
-              width: 200px;
-              height: 55px;
-              background: #004FC7;
-              border-radius: 40px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-
-              p {
-                color: white;
-                font-size: 22px;
-                width: 20px;
-                margin: 0 40px;
-              }
-
-              span {
-                font-weight: 700;
-                margin: 0 5px;
-                color: white;
-                font-size: 20px;
-              }
-            }
-
-
-          }
-        }
-      }
-
-      &--status {
-        margin-top: 8%;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-
-        &__title {
-          margin: 10px 0;
-
-          h1 {
-            margin: 0;
-            font-weight: 600;
-            font-size: 30px;
-            line-height: 34px;
-            color: #121212;
-          }
-        }
-
-        &__general {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          background: #FFFFFF;
-          border-radius: 15px;
-          width: 100%;
-          height: 77px;
-
-          &--here {
-            padding: 0 40px;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 23px;
-            color: #004FC7;
-          }
-
-          &--with {
-            padding: 0 40px;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 23px;
-            color: #004FC7;
-          }
-        }
-      }
-
-      &--pay {
-        display: flex;
-        justify-content: space-between;
-        align-items: start;
-        margin-top: 3%;
-
-        &__text {
-          h1 {
-            font-weight: 600;
-            font-size: 34px;
-            line-height: 34px;
-            color: #121212;
-          }
-        }
-
-        &__block {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-
-          &--cash {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background: #FFFFFF;
-            border-radius: 15px;
-            width: 300px;
-            height: 54px;
-            margin: 10px 0;
-
-            h2 {
-              width: 100px;
-              padding-left: 50px;
-              font-weight: 600;
-              font-size: 22px;
-              line-height: 100%;
-              color: #004FC7;
-            }
-
-            input {
-              margin-left: 20px;
-              width: 30px;
-              height: 20px;
-            }
-          }
-
-          &--terminal {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background: #FFFFFF;
-            border-radius: 15px;
-            width: 300px;
-            height: 54px;
-
-            h2 {
-              width: 100px;
-              padding-left: 50px;
-              font-weight: 600;
-              font-size: 22px;
-              line-height: 100%;
-              color: #004FC7;
-            }
-
-            input {
-              margin-left: 20px;
-              width: 30px;
-              height: 20px;
-            }
-          }
-        }
-      }
-
-      &--btn {
-        margin-top: 6%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        button {
-          width: 228px;
-          height: 59px;
-          background: #004FC7;
-          border-radius: 20px;
-          font-size: 16px;
-          line-height: 23px;
-          font-weight: 600;
-          color: #FFFFFF;
-          border: none;
-        }
-      }
-    }
-  }
   #basket .basket .basket--card {
     height: 250px;
-  }
-  #basket .basket .basket--card__word .desc h2 {
-    width: 309px;
-    font-size: 27px;
   }
   #basket .basket .basket--card__word--order {
     width: 388px;
@@ -756,6 +496,16 @@
   }
   #basket .basket .basket--card__word {
     margin: 0 0 0 30px;
+  }
+  #basket .basket .basket--card__word .desc h2 {
+    font-size: 30px;
+    width: 304px;
+  }
+  #basket .basket .basket--card__word .desc .close {
+    width: 34px;
+    height: 33px;
+    position: relative;
+    left: 21px;
   }
 }
 
@@ -846,6 +596,18 @@
     margin: 0 0 20px 0;
     height: 52px;
   }
+  #basket .basket .basket--card__word .desc .close .icon {
+    font-size: 22px;
+    position: relative;
+    left: 2px;
+    top: 1px;
+  }
+  #basket .basket .basket--card__word .desc .close {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    left: 14px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -859,18 +621,6 @@
   }
   #basket .basket--total h2 {
     font-size: 20px;
-  }
-  #basket .basket .basket--card__word .desc .close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(40, 49, 255, 0.3);
-    width: 21px;
-    position: relative;
-    height: 21px;
-    right: 1px;
-    top: -12px;
   }
   #basket .basket .basket--card__word .desc h2 {
     width: 176px;
@@ -1286,10 +1036,6 @@
     width: 88%;
     height: 53px;
   }
-  #basket .basket--total h2 {
-    font-size: 17px;
-    line-height: 17px;
-  }
   #basket .basket--total h1 {
     width: 77px;
     height: 25px;
@@ -1298,7 +1044,13 @@
     bottom: 5px;
   }
   #basket .basket .basket--card__word--order .count {
-    height: 14px;
+    height: 10px;
+  }
+  #basket .basket .basket--card__word .desc .close {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 1px;
   }
 }
 
@@ -1408,6 +1160,12 @@
   }
   #basket .basket .basket--card__word--order .count p{
    font-size: 18px;
+  }
+  #basket .basket .basket--card__word .desc .close {
+    width: 22px;
+    height: 21px;
+    position: relative;
+    left: 1px;
   }
 }
 
@@ -1551,9 +1309,6 @@
     }
     font-size: 20px;
   }
-  #basket .basket--pay__block .active {
-    width: 194px;
-  }
   #basket .basket--status__general .active {
     width: 92px;
     height: 41px;
@@ -1565,6 +1320,17 @@
   #basket .basket--total h2 {
     font-size: 16px;
     width: 259px;
+  }
+  #basket .basket .basket--card__word--order .count {
+    width: 157px;
+    height: 7px;
+  }
+  #basket .basket .basket--card__word--order .count span {
+    font-weight: 700;
+    margin: 0 5px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
   }
 }
 
@@ -1633,13 +1399,7 @@
       margin: 50px auto 10px auto;
     }
   }
-  #basket .basket .basket--card__word .desc .close {
-    width: 18px;
-    position: relative;
-    height: 18px;
-    right: 1px;
-    top: -8px;
-  }
+
   #basket .basket .basket--card__word--order .price h4 {
     font-size: 15px;
   }
@@ -1669,6 +1429,7 @@
     width: 122px;
     height: 35px;
   }
+
 }
 
 @media (max-width: 360px) {
@@ -1745,13 +1506,26 @@
     width: 65px;
   }
   #basket .basket .basket--card__word .desc .close {
-    width: 18px;
+    width: 17px;
+    height: 17px;
     position: relative;
-    height: 18px;
-    right: 5px;
-    top: -8px;
+    left: -3px;
   }
-
+  #basket .basket .basket--card__word .desc .close .icon {
+    font-size: 14px;
+    color: white;
+  }
+  #basket .basket .basket--card__word--order .count span {
+    font-weight: 700;
+    margin: 0 5px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+  }
+  #basket .basket .basket--card__word--order .count {
+    width: 157px;
+    height: 5px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -1840,13 +1614,7 @@
       height: 15px;
     }
   }
-  #basket .basket .basket--card__word .desc .close {
-    width: 18px;
-    position: relative;
-    height: 18px;
-    right: -8px;
-    top: -8px;
-  }
+
   #basket .basket--status__title h1 {
     font-size: 19px;
   }
@@ -1876,5 +1644,11 @@
   #basket .basket--status__general--here h2 {
     font-size: 14px;
     line-height: 18px;
+  }
+  #basket .basket .basket--card__word .desc .close {
+    width: 17px;
+    height: 17px;
+    position: relative;
+    left: 9px;
   }
 }
