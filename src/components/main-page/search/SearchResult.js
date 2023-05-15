@@ -7,6 +7,7 @@ import FoodCard from "../foods/FoodCard";
 import "./SearchResult.scss"
 import Search from "./Search";
 import {useTranslation} from "react-i18next";
+import Card from "./Card";
 
 const SearchResult = () => {
     const {t} = useTranslation()
@@ -21,7 +22,7 @@ const SearchResult = () => {
             {
                 res.length ?
                     res.map( el => {
-                        return <FoodCard el={el} setModal={setModal}
+                        return <Card el={el} setModal={setModal}
                                          modal={modal}/>
                     })
 

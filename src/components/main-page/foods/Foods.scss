@@ -61,6 +61,11 @@
     .food {
     }
   }
+  #food .food--card__word h2 {
+    width: 230px;
+    font-size: 18px;
+    margin: -10px 0;
+  }
 }
 
 @media (max-width: 428px) {

@@ -1,18 +1,18 @@
 @media (max-width: 992px) {
-  #food .food h1 {
+  #card .card h1 {
     font-family: "Armin Grotesk,", sans-serif;
     font-weight: 600;
     font-size: 41px;
     margin: 0 0 0 36px;
   }
-  #food {
+  #card {
     display: flex;
     align-items: center;
     justify-content: center;
     a{
       color: #121212;
     }
-    .food--card {
+    .card--card {
       background: #FFFFFF;
       display: flex;
       width: 845px;
@@ -66,33 +66,30 @@
             color: #000000;
           }
 
+          &__icon1 {
+            position: absolute;
+            right: 10%;
+            background: #DFE2FF;
+            border-radius: 15px;
+            width: 80px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            .icon1 {
+              font-size: 26px;
+              color: #0256d3;
+            }
+            .icon2 {
+              font-size: 30px;
+              color: #0256d3;
+            }
+          }
+
         }
       }
     }
-    .blockZ {
-      position: absolute;
-      right: 10%;
-      background: #DFE2FF;
-      border-radius: 15px;
-      width: 80px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1;
-      .icon1 {
-        font-size: 26px;
-        color: #0256d3;
-      }
-      .icon2 {
-        font-size: 30px;
-        color: #0256d3;
-      }
-    }
-  }
-  .foods--one__basket--icon {
-    width: 58px;
-    height: 39px;
   }
 }
 
@@ -101,7 +98,7 @@
     font-size: 41px;
     margin: 10px 0 0 60px;
   }
-  .food--card {
+  .card--card {
     background: #FFFFFF;
     display: flex;
     position: relative;
@@ -203,10 +200,10 @@
 }
 
 @media (max-width: 834px) {
-  #food .food h1 {
+  #card .card h1 {
     margin: -130px 0 20px 36px;
   }
-  #food .food--card {
+  #card .card--card {
     background: #FFFFFF;
     display: flex;
     width: 790px;
@@ -214,229 +211,218 @@
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-    margin: -105px 0 20px 20px;
+    margin: 50px 0 20px 20px;
   }
-  #food .food--card__img {
+  #card .card--card__img {
     width: 210px;
   }
-  #food .food--card__word h2 {
+  #card .card--card__word h2 {
     width: 427px;
   }
 }
 
 @media (max-width: 800px) {
-  #food .food--card__word h2 {
+  #card .card--card__word h2 {
     width: 326px;
   }
-  #food .food--card {
+  #card .card--card {
     margin: -116px 0 20px 18x;
     width: 680px;
     height: 250px;
   }
-  #food .food--card__img {
+  #card .card--card__img {
     width: 197px;
     height: 175px;
     margin: 0 0 0 30px;
   }
-  #food .food--card__word p {
+  #card .card--card__word p {
     width: 373px;
   }
-  #food .food--card__word--order {
+  #card .card--card__word--order {
     width: 381px;
     margin: 25px 0 0 0;
   }
-  #food .food--card__word {
+  #card .card--card__word {
     margin-top: 48px;
   }
 }
 
 @media (max-width: 768px) {
-  #food .food--card__word--order {
-    width: 381px;
-    margin: 36px 0 0 0;
-  }
-  #food .food--card__word--order__icon1 {
-    position: absolute;
-    right: 19%;
-    border-radius: 20px;
-    width: 73px;
-    height: 45px;
-  }
-  .foods--one__basket--icon .icon {
-    font-size: 24px;
-  }
-  #foods .foods--one__basket--icon {
-    width: 51px;
-    height: 32px;
-  }
+
 }
 
 @media (max-width: 576px) {
-  #food .food--card {
+  #card .card--card {
     width: 520px;
     height: 200px;
-    margin-top: -140px;
+    margin-top: 40px;
   }
-  #food .food--card__img {
+  #card .card--card__img {
     width: 154px;
     height: 157px;
   }
-  #food .food--card__word h2 {
+  #card .card--card__word h2 {
     width: 308px;
     font-size: 22px;
   }
-  #food .food--card__word p {
+  #card .card--card__word p {
     width: 266px;
     font-size: 16px;
   }
-  #food .food--card__word--order {
+  #card .card--card__word--order {
     width: 269px;
     margin: 20px 0 0 0;
   }
-  #foods .foods--one__basket--icon {
-    color: #004FC7;
-    width: 45px;
-    background: #DFE2FF;
-    height: 32px;
-    border-radius: 20px;
-    font-size: 17px;
+  .foods--one__basket--icon .icon {
+    font-size: 21px;
   }
-  #food .food--card__word {
+  .foods--one__basket--icon {
+    width: 43px;
+    height: 32px;
+    #food .food--card__word {
+      margin-top: 55px;
+      height: 229px;
+    }
+  }
+  #card .card--card__word {
     margin-top: 85px;
   }
-  #food .food h1 {
-    margin: -115px 0 20px 36px;
-    font-size: 30px;
+  #card .card--card__word--order__icon1 .icon2 {
+    font-size: 23px;
+    color: #0256d3;
   }
-  #food .food--card__word--order__icon1 {
+  #card .card--card__word--order__icon1 {
+    position: absolute;
+    right: 16%;
+    border-radius: 17px;
     width: 60px;
-    height: 36px;
-  }
-  #food .food--card__word--order__icon1 .icon2 {
-    font-size: 25px;
+    height: 37px;
   }
 }
 
 @media (max-width: 450px) {
-  #food .food--card__img {
+  #card .card--card__img {
     width: 120px;
     height: 120px;
     position: relative;
     left: 10px;
   }
-  #food .food--card {
+  #card .card--card {
     width: 400px;
     height: 160px;
   }
-  #food .food--card__word h2 {
-    width: 272px;
+  #card .card--card__word h2 {
+    width: 250px;
     font-size: 18px;
     margin: -10px 0;
   }
-  #food .food--card__word p {
+  #card .card--card__word p {
     width: 220px;
     font-size: 14px;
     line-height: 20px;
   }
-  #food .food--card__word--order {
+  #card .card--card__word--order {
     width: 221px;
     height: 4px;
   }
-  #food .food h1 {
+  #card .card h1 {
     margin: -87px 0 20px 36px;
     font-size: 25px;
   }
-  #food .food--card__word {
+  #card .card--card__word {
     margin: 140px 30px 0 2px;
   }
-  #food .food--card__word--order h4 {
+  #card .card--card__word--order h4 {
     font-size: 16px;
   }
-  #food .food--card__word--order__icon1 {
-    width: 55px;
-    height: 32px;
+  #card .card--card__word--order__icon1 {
+    width: 51px;
+    height: 31px;
   }
-  #food .food--card__word--order__icon1 .icon2 {
-    font-size: 22px;
-  }
-  #food .food--card__word--order__icon1 .icon1 {
-    font-size: 19px;
-    color: #0256d3;
+  #card .card--card__word--order__icon1 .icon2 {
+    font-size: 20px;
   }
 }
 
 @media (max-width: 428px) {
-  #food .food--card__word h2 {
-    width: 239px;
+  #card .card--card__word h2 {
+    width: 200px;
     font-size: 16px;
   }
-  #food .food--card__word p {
-    width: 220px;
+  #card .card--card__word p {
+    width: 190px;
     font-size: 13px;
     line-height: 18px;
   }
-  #food .food--card__word--order {
+  #card .card--card__word--order {
     width: 189px;
     margin: 30px 0 0 0;
   }
-  #food .food--card__word {
-    margin: 146px 26px 0 2px;
+  #card .card--card__word {
+    margin: 146px 26px 0 -8px;
   }
-
+  #card .card--card__img {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    left: -3px;
+  }
 }
 
 @media (max-width: 414px) {
-  #food .food--card__word h2 {
+  #card .card--card__word h2 {
     width: 207px;
     font-size: 15px;
   }
-  #food .food--card__word p {
+  #card .card--card__word p {
     width: 195px;
   }
-  #food .food--card__word {
-    margin: 139px 76px 0 2px;
+  #card .card--card__word {
+    margin: 139px 76px 0 5px;
   }
-  #food .food--card {
+  #card .card--card {
     width: 373px;
   }
-  #food .food--card__word--order__icon1 {
-    width: 49px;
-    height: 32px;
+  #card .card--card__img {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    left: 17px;
   }
 }
 
 @media (max-width: 400px) {
-  #food .food--card__img {
+  #card .card--card__img {
     width: 101px;
     height: 101px;
     position: relative;
     left: 15px;
   }
-  #food .food--card {
+  #card .card--card {
     width: 357px;
-    margin: -130px 0 10px 25px;
+    margin: 30px 0 10px 25px;
   }
-  #food .food--card__word {
+  #card .card--card__word {
     margin: 158px 67px 0 0;
-  }
-  #foods .foods--one__basket .foods--one__basket--icon .icon {
-    font-size: 18px;
-  }
-}
+  }}
 
 @media (max-width: 376px) {
+  #card .card--card {
+    width: 343px;
+    margin: 30px 0 10px 25px;
+  }
   #foods .foods--one__basket--icon {
-    width: 49px;
-    height: 25px;
+    color: #004FC7;
+    width: 63px;
+    background: #DFE2FF;
+    height: 30px;
+    border-radius: 13px;
+    font-size: 17px;
   }
-  #food .food--card__word--order__icon1 .icon2 {
-    font-size: 20px;
-  }
-
 }
 
 @media (max-width: 360px) {
-  #food .food--card__word p {
+  #card .card--card__word p {
     width: 195px;
     font-size: 12px;
     line-height: 15px;
@@ -445,52 +431,66 @@
     width: 37px;
     height: 26px;
   }
-  #food .food--card {
+  #card .card--card {
     width: 330px;
-    margin: -144px 0 10px 27px;
+    margin: 30px 0 10px 27px;
   }
-  #food .food--card__img {
+  #card .card--card__img {
     width: 95px;
     height: 92px;
+  }
+  #card .card--card__word--order__icon1 .icon1 {
+    font-size: 20px;
+    color: #0256d3;
   }
 }
 
 @media (max-width: 320px) {
-  #food .food--card__img {
+  #card .card--card__img {
     width: 86px;
     height: 86px;
   }
-  #food .food--card__word h2 {
-    width: 180px;
+  #card .card--card__word h2 {
+    width: 160px;
     font-size: 13px;
     line-height: 15px;
   }
-  #food .food--card__word p {
-    width: 176px;
+  #card .card--card__word p {
+    width: 160px;
     font-size: 11px;
     line-height: 15px;
   }
-  #food .food--card__word {
+  #card .card--card__word {
     margin: 166px 60px 0 0;
   }
-  #food .food--card__word--order {
+  #card .card--card__word--order {
     width: 166px;
   }
-  #food .food--card {
-    width: 305px;
+  #card .card--card {
+    width: 280px;
     height: 132px;
-    margin: -144px 0 10px 38px;
+    margin: 20px 0 10px 22px;
   }
-  #food .food h1 {
+  #card .card h1 {
     margin: -160px 0 20px 17px;
     font-size: 23px;
   }
-  #food .food--card__word--order__icon1 {
-    width: 43px;
+  #card .card--card__word--order__icon1 {
+    width: 45px;
     height: 26px;
   }
-  #food .food--card__word--order__icon1 .icon2 {
+  #card .card--card__word--order__icon1 .icon2 {
     font-size: 18px;
   }
-
+  #foods .foods--one__basket .foods--one__basket--icon .icon {
+    font-size: 15px;
+  }
+  #foods .foods--one__basket--icon {
+    width: 68px;
+    height: 23px;
+  }
+  #card .card--card__word--order__icon1 .icon1 {
+    font-size: 18px;
+    color: #0256d3;
+  }
 }

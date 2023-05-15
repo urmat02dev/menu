@@ -259,7 +259,10 @@
   #header .header--end__two select {
     height: 26px;
   }
-
+  #header .header--end__one .sup {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 @media (max-width: 376px) {
@@ -281,7 +284,7 @@
         &__one {
           .sup {
             position: absolute;
-            right: 21px;
+            right: 23px;
             width: 18px;
             height: 18px;
             bottom: 19px;
@@ -375,6 +378,15 @@
     font-size: 8px;
     padding: 0 1px 0 5px;
   }
+  #search .search .icon {
+    position: absolute;
+    left: 266px;
+    right: 19px;
+    top: 7px;
+    bottom: 0;
+    color: rgba(40, 49, 255, 0.3);
+    font-size: 21px;
+  }
 
 }
 
@@ -398,15 +410,15 @@
             position: absolute;
             right: 18px;
             bottom: 19px;
-            height: 14px;
-            width: 14px;
+            height: 16px;
+            width: 16px;
             sup{
-              font-size: 8px;
+              font-size: 9px;
             }
           }
 
           &--icon {
-            width: 22px;
+            width: 23px;
           }
         }
 

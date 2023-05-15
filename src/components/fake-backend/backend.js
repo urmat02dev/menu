@@ -170,8 +170,8 @@ export const data = [
     },
     {
         id: uniqid(),
-        title: "Omelet with vegetables, toast",
-        title_ru: "Омлет с овощами,тостом",
+        title: "Omelet with vegetables",
+        title_ru: "Омлет с овощами, тостом",
         title_kg: "Жашылчалар менен омлет,тост",
         desc: "Tomato, greenery, eggs, flour, cabbage, toast",
         desc_ru: "Помидор, зелень, яйца, мука, капуста, тост",
