@@ -40,7 +40,7 @@ const FoodCard = ({el, setModal, modal}) => {
         }
     }
     function getBasket(el) {
-            dispatch({type:GET_BASKET,payload:el})
+            dispatch({type:GET_BASKET,payload:el}) && dispatch({type:MODAL,payload:false})
 
     }
     function getNav() {
@@ -55,27 +55,29 @@ const FoodCard = ({el, setModal, modal}) => {
                         <div className={"img"} onClick={() =>  getWindow(el)}>
                                 <img className="food--card__img" src={el.image} alt=""/>
                         </div>
-                        <div className="food--card__word" onClick={() =>  getWindow(el)}>
+                        <div className="food--card__word" onClick={() => getWindow(el)}>
                             <h2>{getTitle(el)}</h2>
                             <p>{getDesc(el)}</p>
                             <div className="food--card__word--order">
                                 <h4>{el.price}c.</h4>
-                                {
-                                   found  ?
-                                       <div onClick={() => getNav()} className="food--card__word--order__icon1">
-                                           <BsBasket3Fill className={"icon1"}/>
-                                       </div>
-                                        :
-                                       <div className="food--card__word--order__icon1" onClick={() => getBasket(el)}>
-                                            <BiBasket className='icon2'/>
-                                       </div>
-                                }
 
                             </div>
                             <div>
                             </div>
                         </div>
                     </div>
+
+                    {
+                        found  ?
+                            <div onClick={() => getNav()} className="blockZ">
+                                <BsBasket3Fill className={"icon1"}/>
+                            </div>
+                            :
+                            <div className="blockZ" onClick={() => getBasket(el)}>
+                                <BiBasket className='icon2'/>
+                            </div>
+                    }
+
             </div>
             : <div>error</div>
 
