@@ -31,15 +31,15 @@ const ModalCard = ({el}) => {
     const  getPlus = (el) => {
         dispatch({type:MODAL_PLUS,payload:el})
     }
-
+    console.log(el.title)
     return (
         <>
                 <div className={"modal--img"}>
                     <img src={el.image} alt=""/>
                 </div>
                 <div className="modal--desc">
-                    <h2>{el.title}</h2>
-                    <h3>{el.desc}</h3>
+                    <h2 className="modal--desc__h2">{el.title }</h2>
+                    <p className='modal--desc__h3'>{el.desc}</p>
                     <h4>{el.mass}г.</h4>
                     <h5>Цена:<span>{el.price}c</span></h5>
                 </div>
@@ -48,14 +48,14 @@ const ModalCard = ({el}) => {
                     found ?
                         <div className="basket"
                              onClick={() => nav("/basket") || dispatch({type:MODAL, payload:false})}>
-                            Добавить в
+                            <h1 className='basket--were'>Добавить</h1>
                             <div className="icon-block" >
-                                <div  className="foods--one__basket--icon"><BsBasket3Fill/></div>
+                                <div  className="foods--one__basket--icon"><BsBasket3Fill className='icon'/></div>
                             </div>
                         </div>
                         :
                         <div className="basket" onClick={() => getBasket(el)}>
-                            Добавить в
+                            <h1 className='basket--were'>Добавить</h1>
                             <div className="icon-block" >
                                 <div className="foods--one__basket--icon" >
                                     <BiBasket className='icon'/></div>

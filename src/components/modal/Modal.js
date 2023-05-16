@@ -29,7 +29,7 @@ const Modal = () => {
       <div id={"modal"} hidden={!modal}  onClick={() => getClose()} style={{
       }}/>
           <div className="modal"  style={{
-              top:modal ? "200px" : "100%",
+              top:modal ? "" : "100%",
               zIndex:modal ? "2" : "-1"
           }}>
               <div className="modal--close" onClick={() => getClose()}>
