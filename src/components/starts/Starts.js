@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Slider from "react-slick"
 import "./Starts.scss"
 import start1 from "../../assets/img/start1.png"
@@ -6,9 +6,22 @@ import start2 from "../../assets/img/start2.png"
 import start3 from "../../assets/img/start3.png"
 import {useNavigate} from "react-router-dom";
 import {ran} from "./random";
+import axios from "axios";
+import {useDispatch} from "react-redux";
+import {CARD_ID} from "../../redux/Reducer/ActionTypes";
 const Starts = () => {
   const nav = useNavigate()
+  const dispatch = useDispatch()
+   const [cartId,setCartID] = useState('')
+  async function getCreateTable () {
+    nav(`/${ran}`)
+    const url = await axios.post("http://aitenir.pythonanywhere.com/api/carts/",{
+      "table": ran
+    })
+    dispatch({type:CARD_ID,payload:url.data.id})
 
+    console.log(url)
+  }
 
   const settings = {
     infinite: true,
@@ -20,8 +33,11 @@ const Starts = () => {
     autoplaySpeed: 1000,
     cssEase: "ease",
   };
+  useEffect(() => {
+    getCreateTable()
+  },[])
   return (
-    <div id={"start"} onClick={() => nav(`/main/${ran}`)}>
+    <div id={"start"} onClick={() => nav(`/${ran}/main`)}>
       <div className="container">
         <div className="start">
           <div className="slider">

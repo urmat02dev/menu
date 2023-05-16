@@ -21,6 +21,7 @@ const ModalCard = ({el}) => {
     const nav = useNavigate()
     const {basket} = useSelector(state => state)
     const found  = basket.some(e => e.id === el.id)
+    const lang = localStorage.getItem("i18nextLng")
 
     const  getBasket = (el) => {
         dispatch({type:MODAL_TO_BASKET, payload: el})
@@ -31,6 +32,24 @@ const ModalCard = ({el}) => {
     const  getPlus = (el) => {
         dispatch({type:MODAL_PLUS,payload:el})
     }
+    const getTitle = (el) => {
+        if (lang === "en") {
+            return el.name_en
+        } else if (lang === "ru") {
+            return el.name_ru
+        } else if (lang === "kg") {
+            return el.name_kg
+        }
+    }
+    function getDesc(el) {
+        if (lang === "en") {
+            return el.description_en.slice(0, 50)
+        } else if (lang === "ru") {
+            return el.description_ru.slice(0, 50)
+        } else if (lang === "kg") {
+            return el.description_kg.slice(0, 50)
+        }
+    }
 
     return (
         <>
@@ -38,9 +57,9 @@ const ModalCard = ({el}) => {
                     <img src={el.image} alt=""/>
                 </div>
                 <div className="modal--desc">
-                    <h2>{el.title}</h2>
-                    <h3>{el.desc}</h3>
-                    <h4>{el.mass}г.</h4>
+                    <h2>{getTitle(el)}</h2>
+                    <h3>{getDesc(el)}</h3>
+                    <h4>{el.gram}г.</h4>
                     <h5>Цена:<span>{el.price}c</span></h5>
                 </div>
             <div className="modal--basket">

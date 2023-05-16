@@ -6,10 +6,12 @@ import FoodCard from "./FoodCard";
 import axios from "axios";
 import BasketCard from "../../basket/BasketCard";
 import BackCard from "./BackCard";
+import {useSelector} from "react-redux";
 
 
 const Foods = ({active,setActive,modal,setModal}) => {
   const {t} = useTranslation()
+  const {foods} = useSelector(state => state)
   const getTitle = () => {
   if (active === 0 || active === 1){
     return t('category.2')
@@ -34,23 +36,22 @@ const Foods = ({active,setActive,modal,setModal}) => {
   }
 
   }
-  const breakfast = data.filter(el => el.type === "breakfast")
-  const salad = data.filter(el => el.type === "salad")
-  const foods = data.filter(el => el.type === "foods")
-  const pizza = data.filter(el => el.type === "pizza")
-  const desert = data.filter(el => el.type === "desert")
-  const juice = data.filter(el => el.type === "juice")
-  const drink = data.filter(el => el.type === "drink")
+  const breakfast = foods.filter(el => el.category === "b06e5329-2fe7-4a57-a0d7-cf1b3005d740")
+  const salad = foods.filter(el => el.category === "bfdd05bb-6744-42e7-b884-8271769e773c")
+  const food = foods.filter(el => el.category === "b733d72f-3026-4c05-9d3b-ba72a1269258")
+  const pizza = foods.filter(el => el.category === "5e61b742-d303-4daa-bddf-3fae745f0959")
+  const desert = foods.filter(el => el.category === "f38b8b75-991c-4ad2-9e19-13443e1c3708")
+  const juice = foods.filter(el => el.category === "1b7274d6-badd-41e4-8fca-d7db7d724f0b")
+  const drink = foods.filter(el => el.category === "fcd8d1c2-797e-4b22-a875-85987bda7e93")
   const [back, setBack] = useState([])
   const getBack = async () => {
-    const url = await axios("http://192.168.0.180:8000/api/dishes/")
+    const url = await axios("https://aitenir.pythonanywhere.com/api/dishes/")
     const {data} = url
     setBack(data)
   }
   useEffect(() => {
     getBack()
   },[])
-  console.log(back.map(el => el))
   return (
     <div id="food">
       <div className="container">
@@ -80,7 +81,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
           }
           {
             active === 3 ?
-              back.map(el => {
+              food.map(el => {
                 return <BackCard el={el}/>
               }) : ''
           }

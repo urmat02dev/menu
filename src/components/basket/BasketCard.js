@@ -12,24 +12,24 @@ const BasketCard = ({el}) => {
 
   const getTitle = (el) => {
     if (lang === "en"){
-      return el.title
+      return el.name_en
     }
     else if (lang === "ru"){
-      return el.title_ru
+      return el.name_ru
     }
     else if (lang === "kg"){
-      return el.title_kg
+      return el.name_kg
     }
   }
   function getDesc(el) {
     if (lang === "en"){
-      return el.desc.slice(0,200)
+      return el.description_en.slice(0,200)
     }
     else if (lang === "ru"){
-      return el.desc_ru.slice(0,200)
+      return el.description_ru.slice(0,200)
     }
     else if (lang === "kg"){
-      return el.desc_kg.slice(0,200)
+      return el.description_kg.slice(0,200)
     }
   }
 
@@ -57,7 +57,7 @@ const BasketCard = ({el}) => {
             <IoMdClose onClick={() => getDelete(el)} className={"icon"}/>
           </div>
         </div>
-        <p>{el.mass}г.</p>
+        <p>{el.gram}г.</p>
         <div className="basket--card__word--order">
 
           <div className={"price"}>

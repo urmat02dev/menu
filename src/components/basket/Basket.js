@@ -12,6 +12,7 @@ const Basket = () => {
   const {t} = useTranslation()
   const dispatch = useDispatch()
   const {basket} = useSelector(s => s)
+  const {foods} = useSelector(s => s)
   const [here,setHere] = useState(false)
   const [s,setS] = useState(false)
   const [order,setOrder] = useState(false)
@@ -21,6 +22,7 @@ const Basket = () => {
   const [btn,setBtn] = useState(false)
   const [cash2, setCash2]  = useState(false)
   const [cart, setCart]  = useState([])
+
 
   function getHere() {
     setHere(!here) || setS(false)
@@ -61,11 +63,11 @@ const Basket = () => {
     }
   }
   const getBack = async () => {
-    const url = await axios.get("http://192.168.0.180:8000/api/carts/")
+    const url = await axios.get("https://aitenir.pythonanywhere.com/api/carts")
     const {data} = url
-    setCart(data)
+    setCart(data.items)
   }
-
+  const back = foods.filter(el => el.id === "cc2a1ed5-8d14-4e6a-be7c-046c423d1832")
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
@@ -73,6 +75,8 @@ const Basket = () => {
     getBack()
   },[])
   console.log(cart)
+  console.log(back)
+
   return basket.length ?
     <>
       <Header/>

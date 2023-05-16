@@ -4,8 +4,10 @@ import Slider from "react-slick";
 import {data} from "../../fake-backend/backend";
 import FoodPage from "./FoodPage";
 import {useTranslation} from "react-i18next";
+import {useSelector} from "react-redux";
 const FoodsSlider = ({modal,setModal,best,setBest}) => {
     const {t} = useTranslation()
+    const {foods} = useSelector(state => state)
     let settings = {
         infinite: false,
         speed: 500,
@@ -70,7 +72,7 @@ const FoodsSlider = ({modal,setModal,best,setBest}) => {
             },
         ]
     };
-    const bests = data.filter(el => el.type === "Best")
+    const bests = foods.filter(el => el.category === "c53cb4dc-fd24-461f-99c1-2ad2e932e237")
 
   return (
     <div id='foods' style={{
