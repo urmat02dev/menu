@@ -32,6 +32,7 @@ const ModalCard = ({el}) => {
     const  getPlus = (el) => {
         dispatch({type:MODAL_PLUS,payload:el})
     }
+    console.log(el.title)
     const getTitle = (el) => {
         if (lang === "en") {
             return el.name_en
@@ -57,6 +58,9 @@ const ModalCard = ({el}) => {
                     <img src={el.image} alt=""/>
                 </div>
                 <div className="modal--desc">
+                    <h2 className="modal--desc__h2">{el.title }</h2>
+                    <p className='modal--desc__h3'>{el.desc}</p>
+                    <h4>{el.mass}г.</h4>
                     <h2>{getTitle(el)}</h2>
                     <h3>{getDesc(el)}</h3>
                     <h4>{el.gram}г.</h4>
@@ -67,14 +71,14 @@ const ModalCard = ({el}) => {
                     found ?
                         <div className="basket"
                              onClick={() => nav("/basket") || dispatch({type:MODAL, payload:false})}>
-                            Добавить в
+                            <h1 className='basket--were'>Добавить</h1>
                             <div className="icon-block" >
-                                <div  className="foods--one__basket--icon"><BsBasket3Fill/></div>
+                                <div  className="foods--one__basket--icon"><BsBasket3Fill className='icon'/></div>
                             </div>
                         </div>
                         :
                         <div className="basket" onClick={() => getBasket(el)}>
-                            Добавить в
+                            <h1 className='basket--were'>Добавить</h1>
                             <div className="icon-block" >
                                 <div className="foods--one__basket--icon" >
                                     <BiBasket className='icon'/></div>
