@@ -1,4 +1,5 @@
 import {
+  CARD_ID,
   DELETE,
   GET_BASKET, GET_DETAIL, GET_FOODS, GET_PARAMS,
   MINUS,
@@ -13,12 +14,20 @@ const initialState ={
   detail:{},
   result:[],
   search:"",
-  params:""
+  params:"",
+  cardId:""
+
 }
 
 
 export const MainReducer = (state = initialState, action) => {
   switch (action.type) {
+    case GET_FOODS: {
+      return {...state,foods: action.payload}
+    }
+    case CARD_ID: {
+      return {...state, cardId: action.payload}
+    }
     case GET_BASKET : {
       const foundProduct = state.basket.find(el => el.id === action.payload.id)
       if (foundProduct) {

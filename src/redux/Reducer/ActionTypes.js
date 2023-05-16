@@ -1,4 +1,6 @@
 export const GET_BASKET = "GET_BASKET"
+export const GET_FOODS = "GET_FOODS"
+export const CARD_ID = "CARD_ID"
 export const MODAL_TO_BASKET = "MODAL_TO_BASKET"
 export const GET_DETAIL = "GET_DETAIL"
 export const GET_PARAMS = "GET_PARAMS"
