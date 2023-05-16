@@ -16,12 +16,13 @@ import {ran} from "../starts/random";
 const Modal = () => {
     const {modal} = useSelector(state => state)
     const {detail,params} =  useSelector(state => state)
+
     const nav = useNavigate()
     const dispatch = useDispatch()
     const lang = localStorage.getItem("i18nextLng")
     const getClose = async () => {
         await dispatch({type:MODAL,payload:false})
-        nav(`/main/${params}`)
+        nav(`/${ran}/main`)
     }
 
   return (

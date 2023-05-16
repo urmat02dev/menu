@@ -13,30 +13,30 @@ import axios from "axios";
 const FoodPage = ({el}) => {
     const {t } = useTranslation()
     const nav = useNavigate()
-    const {basket,params} = useSelector(state => state)
+    const {basket,cardId} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
     const foundProduct = basket.some(e => e.id === el.id)
     const [back , setBack] = useState([])
     const getTitle = (el) => {
         if (lang === "en"){
-            return el.title
+            return el.name_en
         }
         else if (lang === "ru"){
-            return el.title_ru
+            return el.name_ru
         }
         else if (lang === "kg"){
-            return el.title_kg
+            return el.name_kg
         }
     }
     function getDesc(el) {
         if (lang === "en"){
-            return el.desc.slice(0,50)
+            return el.description_en.slice(0,20)
         }
         else if (lang === "ru"){
-            return el.desc_ru.slice(0,50)
+            return el.description_ru.slice(0,20)
         }
         else if (lang === "kg"){
-            return el.desc_kg.slice(0,50)
+            return el.description_kg.slice(0,20)
         }
     }
     const dispatch = useDispatch()
@@ -48,12 +48,14 @@ const FoodPage = ({el}) => {
 
     async function getBasket (el) {
         dispatch({type:GET_BASKET,payload:el})
-        const url = await axios.post("http://192.168.0.180:8000/api/cart-item/",{
-            "quantity":10,
-            "dish":"dab9dd48-f567-48c7-92b9-dfc8bbffc079",
-            "cart":"1cad5934-31fc-4fc8-b6d7-b2afa777ca89"
+        const url = await axios.post("https://aitenir.pythonanywhere.com/api/cart-item/",
+            {
+            "quantity":el.quantity,
+            "dish":el.id,
+            "cart":cardId
         })
         console.log(url)
+        console.log(cardId)
     }
 
     return (
