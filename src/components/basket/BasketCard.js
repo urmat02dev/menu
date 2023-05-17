@@ -21,17 +21,6 @@ const BasketCard = ({el}) => {
       return el.name_kg
     }
   }
-  function getDesc(el) {
-    if (lang === "en"){
-      return el.description_en.slice(0,200)
-    }
-    else if (lang === "ru"){
-      return el.description_ru.slice(0,200)
-    }
-    else if (lang === "kg"){
-      return el.description_kg.slice(0,200)
-    }
-  }
 
   const  addPlus = (el) => {
     dispatch({type:GET_BASKET, payload: el})

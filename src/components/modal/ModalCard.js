@@ -44,11 +44,11 @@ const ModalCard = ({el}) => {
     }
     function getDesc(el) {
         if (lang === "en") {
-            return el.description_en.slice(0, 50)
+            return el.description_en
         } else if (lang === "ru") {
-            return el.description_ru.slice(0, 50)
+            return el.description_ru
         } else if (lang === "kg") {
-            return el.description_kg.slice(0, 50)
+            return el.description_kg
         }
     }
 
