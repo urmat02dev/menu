@@ -13,10 +13,10 @@ const Search = ({setModal,modal}) => {
 
   const dispatch = useDispatch()
   const nav = useNavigate()
-  const {search} = useSelector(s => s)
+  const {search,foods} = useSelector(s => s)
   const [value , setValue] = useState("")
   function getSearch (e) {
-    setValue(e.target.value)
+    setValue(e.target.value.toLowerCase())
     console.log(e.target.value.toLowerCase())
     if (value !== "") {
       if (e.key === "Enter") {
@@ -27,13 +27,14 @@ const Search = ({setModal,modal}) => {
     }
   }
 
+
   const getTitle = (el) => {
     if (lang === "en") {
-      return el.title
+      return el.name_en
     } else if (lang === "ru") {
-      return el.title_ru
+      return el.name_ru
     } else if (lang === "kg") {
-      return el.title_kg
+      return el.name_kg
     }
   }
   function getSearchClick () {
@@ -58,12 +59,12 @@ const Search = ({setModal,modal}) => {
               value !== "" &&
                 <div className="search--block">
             {
-              data.map(el => (
+              foods.map(el => (
                   <div>
                     {
-                      value !=="" && <div className={"search--block__modal"}>{el.title.toLowerCase().includes(value) || el.title_kg.toLowerCase().includes(value) ||  el.title_ru.toLowerCase().includes(value) ?
+                      value !=="" && <div className={"search--block__modal"}>{el.name_kg.toLowerCase().includes(value) || el.name_ru.toLowerCase().includes(value) ||  el.name_en.toLowerCase().includes(value) ?
                             <p onClick={() =>  {
-                          dispatch({type: SEARCH, payload: el.title.toLowerCase() || el.title_kg.toLowerCase() || el.title_ru.toLowerCase()})
+                          dispatch({type: SEARCH, payload: el.name_ru.toLowerCase() || el.name_kg.toLowerCase() || el.name_en.toLowerCase()})
                           nav(`/search`)
                           setValue("")
                         }}> <HiOutlineSearch className="p-ic"/> {getTitle(el)}</p> : false}</div>

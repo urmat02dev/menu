@@ -16,21 +16,21 @@ const Card = ({el}) => {
     const found = basket.some(e => e.id === el.id)
     const getTitle = (el) => {
         if (lang === "en") {
-            return el.title
+            return el.name_en
         } else if (lang === "ru") {
-            return el.title_ru
+            return el.name_ru
         } else if (lang === "kg") {
-            return el.title_kg
+            return el.name_kg
         }
     }
 
     function getDesc(el) {
         if (lang === "en") {
-            return el.desc.slice(0, 200)
+            return el.description_en.slice(0, 80)
         } else if (lang === "ru") {
-            return el.desc_ru.slice(0, 200)
+            return el.description_ru.slice(0, 80)
         } else if (lang === "kg") {
-            return el.desc_kg.slice(0, 200)
+            return el.description_kg.slice(0, 80)
         }
     }
 
