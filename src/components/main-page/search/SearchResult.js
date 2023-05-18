@@ -1,19 +1,17 @@
 import React, {useState} from 'react';
 import {useSelector} from "react-redux";
 import Header from "../../header/Header";
-import {data} from "../../fake-backend/backend";
-
-import FoodCard from "../foods/FoodCard";
 import "./SearchResult.scss"
 import Search from "./Search";
 import {useTranslation} from "react-i18next";
 import Card from "./Card";
+import foods from "../foods/Foods";
 
 const SearchResult = () => {
     const {t} = useTranslation()
-  const {search} = useSelector(s => s)
+  const {search,foods} = useSelector(s => s)
   const [modal , setModal] = useState(false)
-  const res = data.filter(el  => el.title.toLowerCase() === search.toLowerCase() || el.title_ru.toLowerCase() === search.toLowerCase() || el.title_kg.toLowerCase() === search.toLowerCase() )
+  const res = foods.filter(el  => el.name_ru.toLowerCase() === search.toLowerCase() || el.name_en.toLowerCase() === search.toLowerCase() || el.name_kg.toLowerCase() === search.toLowerCase() )
   return (
     <>
       <Header/>

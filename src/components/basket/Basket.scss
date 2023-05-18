@@ -257,21 +257,29 @@
             color: #FFFFFF;
             display: flex;
             align-items: center;
+            justify-content: center;
+            font-weight: 600;
           }
 
           &--here {
-            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 170px;
+            height: 50px;
             font-weight: 600;
             font-size: 16px;
-            line-height: 23px;
             color: #004FC7;
           }
 
           &--with {
-            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 170px;
+            height: 50px;
             font-weight: 600;
             font-size: 16px;
-            line-height: 23px;
             color: #004FC7;
           }
         }
@@ -605,6 +613,35 @@
     width: 5px;
     margin: 0 22px;
   }
+  #basket{
+    .basket{
+      &--pay{
+        &__text{
+          h1{
+            font-size: 30px;
+          }
+        }
+      }
+      &--status{
+        &__title{
+          font-size: 1rem;
+        }
+      }
+      &--btn{
+        button{
+          width: 217px;
+          height: 55px;
+        }
+      }
+      &--status{
+        &__general{
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 450px) {
@@ -668,18 +705,6 @@
     left: 15px;
     margin: 0 0 10px 0;
   }
-  #basket .basket--status__general--with h2 {
-    font-size: 16px;
-  }
-  #basket .basket--status__general--here {
-    font-size: 14px;
-  }
-  #basket .basket--pay__block--cash h2 {
-    font-size: 16px;
-  }
-  #basket .basket--pay__block--terminal h2 {
-    font-size: 16px;
-  }
   #basket .no-basket {
     margin: 40px auto 20px auto;
     width: 304px;
@@ -705,29 +730,6 @@
     height: 36px;
     font-size: 15px;
   }
-  #basket .basket--status__general {
-    width: 99%;
-    height: 57px;
-  }
-  #basket .basket--status__general .active {
-    width: 110px;
-  }
-  #basket .basket--status__general .active h2 {
-    font-size: 16px;
-  }
-  #basket .basket--status__general--here h2 {
-    font-size: 16px;
-  }
-  #basket .basket--pay__block--cash {
-    width: 220px;
-    height: 48px;
-    margin: 0 0 10px 75px;
-  }
-  #basket .basket--pay__block--terminal {
-    width: 220px;
-    height: 48px;
-    margin: 0 0 10px 75px;
-  }
   #basket .basket--btn button {
     width: 140px;
     height: 38px;
@@ -741,8 +743,6 @@
     width: 77px;
     height: 25px;
     font-size: 15px;
-    position: relative;
-    bottom: 5px;
   }
   #basket .basket .basket--card__word .desc .close {
     width: 20px;
@@ -756,6 +756,76 @@
   #basket .basket .basket--card__word--order .count {
     height: 5px;
     margin-right: 1px;
+  }
+  #basket{
+    .basket{
+      &--pay{
+        &__text{
+          h1{
+            font-size: 25px;
+          }
+        }
+        &__block{
+          position: relative;
+          right: 4px;
+          &--cash{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 210px;
+            height: 48px;
+            h2{
+              padding-left: 0;
+              font-size: 19px;
+            }
+          }
+          &--terminal{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 210px;
+            height: 48px;
+            h2{
+              padding-left: 0;
+              font-size: 19px;
+            }
+          }
+          .active{
+            width: 210px;
+            height: 48px;
+            h2{
+              font-size: 19px;
+            }
+          }
+        }
+      }
+      &--status{
+        &__title{
+          font-size: 1.2rem;
+        }
+        &__general{
+          &--with{
+            font-size: 14px;
+          }
+          &--here{
+            font-size: 14px;
+          }
+        }
+      }
+      &--btn{
+        button{
+          width: 217px;
+          height: 55px;
+        }
+      }
+      &--status{
+        &__general{
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+      }
+    }
   }
 }
 
@@ -786,7 +856,6 @@
     top: -5px;
     height: 25px;
     left: 10px;
-    position: relative;
   }
   #basket .basket .basket--card__word .desc h2 {
     width: 190px;
@@ -797,58 +866,13 @@
   #basket .basket--pay__text h1 {
     font-size: 22px;
   }
-  #basket .basket--pay__block {
-    right: 40px;
-    position: relative;
-  }
-  #basket .basket--status__title h1 {
-    font-size: 22px;
-    position: relative;
-    left: 10px;
-  }
-  #basket .basket--status__general--here {
-    width: 80px;
-    font-size: 14px;
-  }
-  #basket .basket--status__general {
-    padding: 0 10px;
-  }
-  #basket .basket--pay__block--cash h2 {
-    font-size: 16px;
-    position: relative;
-    right: 10px;
-  }
-  #basket .basket--pay__block--terminal h2 {
-    font-size: 16px;
-    position: relative;
-    right: 10px;
-  }
-  #basket .basket--pay__block--cash {
-    width: 200px;
-  }
-  #basket .basket--pay__block--terminal {
-    width: 261px;
-  }
   #basket .basket--btn button {
     width: 165px;
     height: 41px;
   }
-  #basket .basket--status__general .active {
-    width: 92px;
-  }
   #basket .basket--btn button {
     width: 123px;
     height: 37px;
-  }
-  #basket .basket--status__general--with h2 {
-    font-size: 16px;
-  }
-  #basket .basket--pay__block .active {
-    background: #004FC7;
-    border-radius: 15px;
-    width: 200px;
-    height: 50px;
-    color: #FFFFFF;
   }
   #basket .basket .basket--card__word--order .count {
     width: 157px;
@@ -863,6 +887,83 @@
     position: relative;
     left: 1px;
   }
+  #basket{
+    .basket{
+      &--pay{
+        &__text{
+          h1{
+            font-size: 25px;
+          }
+        }
+        &__block{
+          position: relative;
+          right: 4px;
+          &--cash{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 210px;
+            height: 48px;
+            h2{
+              padding-left: 0;
+              font-size: 19px;
+            }
+          }
+          &--terminal{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 210px;
+            height: 48px;
+            h2{
+              padding-left: 0;
+              font-size: 19px;
+            }
+          }
+          .active{
+            width: 210px;
+            height: 48px;
+            h2{
+              font-size: 19px;
+            }
+          }
+        }
+      }
+      &--status{
+        &__title{
+          font-size: 1.2rem;
+        }
+        &__general{
+          height: 68px;
+          &--with{
+            width: 140px;
+            font-size: 14px;
+          }
+          &--here{
+            width: 140px;
+            font-size: 14px;
+          }
+          .active{
+            width: 140px;
+          }
+        }
+      }
+      &--btn{
+        button{
+          width: 217px;
+          height: 55px;
+        }
+      }
+      &--status{
+        &__general{
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+
 }
 
 @media (max-width: 414px) {
@@ -916,13 +1017,6 @@
       }
     }
   }
-  #basket .basket--pay__block .active {
-    background: #004FC7;
-    border-radius: 15px;
-    width: 274px;
-    height: 54px;
-    color: #FFFFFF;
-  }
   #basket .no-basket .block h1 {
     margin-top: 52px;
     font-size: 20px;
@@ -934,9 +1028,6 @@
     text-align: center;
     margin-top: 20px;
   }
-  #basket .basket--status__general {
-    padding: 0 1px;
-  }
   #basket .btn button {
     width: 206px;
     height: 42px;
@@ -945,9 +1036,6 @@
   #basket .basket .basket--card__img {
     width: 124px;
     height: 126px;
-  }
-  #basket .basket--pay__block--terminal h2 {
-    font-size: 16px;
   }
   #basket .basket--btn button {
     width: 123px;
@@ -962,31 +1050,87 @@
     height: 38px;
     top: -20px;
   }
-  #basket .basket--pay__block--cash {
-    width: 190px;
-  }
-  #basket .basket--pay__block--terminal {
-    width: 190px;
-  }
-  #basket .basket--pay__block .active {
-    background: #004FC7;
-    border-radius: 15px;
-    width: 190px;
-    height: 50px;
-    color: #FFFFFF;
-  }
-  #basket .basket--status__general .active h2 {
-    font-size: 14px;
-    width: 190px;
-  }
-  #basket .basket--status__general--here h2 {
-    font-size: 15px;
-    width: 100px;
-  }
   #basket .basket .basket--card__word .desc {
     width: 92%;
     padding: 18px 0 0 0;
   }
+  #basket{
+    .basket{
+      &--pay{
+        &__text{
+          h1{
+            font-size: 25px;
+          }
+        }
+        &__block{
+          position: relative;
+          right: 4px;
+          &--cash{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 210px;
+            height: 48px;
+            h2{
+              padding-left: 0;
+              font-size: 19px;
+            }
+          }
+          &--terminal{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 210px;
+            height: 48px;
+            h2{
+              padding-left: 0;
+              font-size: 19px;
+            }
+          }
+          .active{
+            width: 210px;
+            height: 48px;
+            h2{
+              font-size: 19px;
+            }
+          }
+        }
+      }
+      &--status{
+        &__title{
+          font-size: 1.2rem;
+        }
+        &__general{
+          height: 68px;
+          &--with{
+            width: 140px;
+            font-size: 14px;
+          }
+          &--here{
+            width: 140px;
+            font-size: 14px;
+          }
+          .active{
+            width: 140px;
+          }
+        }
+      }
+      &--btn{
+        button{
+          width: 217px;
+          height: 55px;
+        }
+      }
+      &--status{
+        &__general{
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+
 }
 
 @media (max-width: 400px) {
@@ -1006,14 +1150,6 @@
       height: 36px;
     }
     font-size: 20px;
-  }
-  #basket .basket--status__general .active {
-    width: 92px;
-    height: 41px;
-  }
-  #basket .basket--pay__block .active {
-    width: 194px;
-    height: 42px;
   }
   #basket .basket--total h2 {
     font-size: 16px;
@@ -1074,6 +1210,83 @@
     position: relative;
     left: 5px;
   }
+  #basket{
+    .basket{
+      &--pay{
+        &__text{
+          h1{
+            font-size: 21px;
+          }
+        }
+        &__block{
+          position: relative;
+          right: 1px;
+          &--cash{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 190px;
+            height: 45px;
+            h2{
+              padding-left: 0;
+              font-size: 19px;
+            }
+          }
+          &--terminal{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 190px;
+            height: 45px;
+            h2{
+              padding-left: 0;
+              font-size: 19px;
+            }
+          }
+          .active{
+            width: 190px;
+            height: 45px;
+            h2{
+              font-size: 19px;
+            }
+          }
+        }
+      }
+      &--status{
+        &__title{
+          font-size: 1.2rem;
+        }
+        &__general{
+          width: 100%;
+          height: 68px;
+          &--with{
+            width: 130px;
+            font-size: 12px;
+          }
+          &--here{
+            width: 130px;
+            font-size: 12px;
+          }
+          .active{
+            width: 130px;
+          }
+        }
+      }
+      &--btn{
+        button{
+          width: 217px;
+          height: 55px;
+        }
+      }
+      &--status{
+        &__general{
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 390px) {
@@ -1086,13 +1299,6 @@
     height: 105px;
     margin: 10px 0 20px 12px;
   }
-  #basket .basket--pay__block--terminal {
-    width: 254px;
-  }
-  #basket .basket--btn button {
-    width: 143px;
-    height: 35px;
-  }
   #basket .no-basket {
     margin: 30px auto 10px auto;
     width: 300px;
@@ -1101,27 +1307,11 @@
   #basket .basket--pay__text h1 {
     font-size: 20px;
   }
-  #basket .basket--pay__block--terminal {
-    width: 180px;
-  }
-  #basket .basket--pay__block--cash {
-    width: 175px;
-  }
   #basket .basket .basket--card__word--order {
     height: 39px;
     top: -28px;
     width: 184px;
     left: -5px;
-  }
-  #basket .basket--pay__block--cash h2 {
-    font-size: 14px;
-    margin: 0 -9px 0 0;
-  }
-  #basket .basket--pay__block--terminal h2 {
-    font-size: 14px;
-  }
-  #basket .basket--pay__block .active {
-    width: 181px;
   }
   #basket .basket .basket--card__word--order .count p {
     font-size: 16px;
@@ -1159,26 +1349,6 @@
     font-size: 16px;
     position: relative;
     left: 2px;
-  }
-  #basket .basket--pay__text h1 {
-    font-size: 19px;
-  }
-  #basket .basket--pay__block {
-    right: 62px;
-    position: relative;
-  }
-  #basket .basket--pay__block--cash h2 {
-    font-size: 13px;
-    position: relative;
-    right: 20px;
-  }
-  #basket .basket--pay__block--terminal h2 {
-    position: relative;
-    right: 20px;
-  }
-  #basket .basket--btn button {
-    width: 122px;
-    height: 35px;
   }
   #basket .basket .basket--card__img {
     width: 100px;
@@ -1228,8 +1398,8 @@
     height: 150px;
   }
   #basket .basket--total h2 {
-    font-size: 15px;
-    width: 133px;
+    font-size: 14px;
+    //width: 133px;
   }
   #basket .basket--total h1 {
     top: 46px;
@@ -1247,32 +1417,6 @@
   #basket .basket--total {
     width: 87%;
     height: 50px;
-  }
-  #basket .basket--pay__block--terminal {
-    width: 166px;
-  }
-  #basket .basket--btn button {
-    width: 127px;
-    height: 29px;
-  }
-  #basket .basket--pay__block--cash {
-    width: 172px;
-  }
-  #basket .basket--status__general .active {
-    width: 83px;
-  }
-  #basket .basket--status__general--here h2 {
-    font-size: 16px;
-    line-height: 17px;
-    width: 89px;
-  }
-  #basket .basket--status__general--with h2 {
-    font-size: 16px;
-    line-height: 17px;
-  }
-  #basket .basket--status__general .active h2 {
-    font-size: 14px;
-    width: 65px;
   }
   #basket .basket .basket--card__word .desc .close {
     width: 16px;
@@ -1300,6 +1444,83 @@
     font-size: 14px;
     width: 20px;
     margin: -4px -8px 0 -4px;
+  }
+  #basket{
+    .basket{
+      &--pay{
+        &__text{
+          h1{
+            font-size: 21px;
+          }
+        }
+        &__block{
+          position: relative;
+          right: 1px;
+          &--cash{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 190px;
+            height: 45px;
+            h2{
+              padding-left: 0;
+              font-size: 19px;
+            }
+          }
+          &--terminal{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 190px;
+            height: 45px;
+            h2{
+              padding-left: 0;
+              font-size: 19px;
+            }
+          }
+          .active{
+            width: 190px;
+            height: 45px;
+            h2{
+              font-size: 19px;
+            }
+          }
+        }
+      }
+      &--status{
+        &__title{
+          font-size: 1.2rem;
+        }
+        &__general{
+          width: 100%;
+          height: 68px;
+          &--with{
+            width: 130px;
+            font-size: 12px;
+          }
+          &--here{
+            width: 130px;
+            font-size: 12px;
+          }
+          .active{
+            width: 130px;
+          }
+        }
+      }
+      &--btn{
+        button{
+          width: 177px;
+          height: 45px;
+        }
+      }
+      &--status{
+        &__general{
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+      }
+    }
   }
 }
 
@@ -1330,42 +1551,10 @@
     width: 88%;
     padding: 29px 0 0 0;
   }
-  #basket .basket--pay__block {
-    right: 43px;
-    position: relative;
-  }
-  #basket .basket--pay__block--cash {
-    width: 208px;
-  }
-  #basket .basket--pay__block--terminal {
-    width: 167px;
-  }
-  #basket .basket--status__general .active {
-    width: 45px;
-  }
   #basket .no-basket {
     margin: 50px auto 10px auto;
     width: 235px;
     height: 292px;
-
-    #basket .basket--status__general--with h2 {
-      font-size: 15px;
-    }
-
-    #basket .basket--status__general--here h2 {
-      font-size: 15px;
-    }
-
-    #basket .basket--pay__block--cash h2 {
-      padding-left: 15px;
-      font-size: 15px;
-    }
-
-    #basket .basket--pay__block--terminal h2 {
-      padding-left: 15px;
-      font-size: 15px;
-    }
-
     #basket .basket--pay__block--terminal input {
       height: 15px;
     }
@@ -1374,32 +1563,11 @@
       height: 15px;
     }
   }
-  #basket .basket--status__title h1 {
-    font-size: 19px;
-  }
-  #basket .basket--pay__text h1 {
-    font-size: 19px;
-    position: relative;
-    right: 19px;
-  }
-  #basket .basket--status__general .active h2 {
-    font-size: 11px;
-    width: 100px;
-  }
   #basket .basket--pay__block {
     right: 85px;
     position: relative;
   }
-  #basket .basket--pay__block--cash {
-    width: 170px;
-  }
-  #basket .basket--status__general--with h2 {
-    font-size: 14px;
-    line-height: 18px;
-  }
-  #basket .basket--pay__block .active {
-    width: 160px;
-  }
+
   #basket .basket--status__general--here h2 {
     font-size: 14px;
     line-height: 18px;
@@ -1414,5 +1582,94 @@
     width:80px;
     height: 85px;
     margin: 10px 0 20px 12px;
+  }
+  #basket{
+    .basket{
+      &--pay{
+        &__text{
+          h1{
+            font-size: 19px;
+          }
+        }
+        &__block{
+          position: relative;
+          right: 1px;
+          &--cash{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 175px;
+            height: 45px;
+            h2{
+              padding-left: 0;
+              padding-right: 20px;
+              font-size: 14px;
+            }
+            &__radus{
+              width: 11px;
+              height: 11px;
+            }
+          }
+          &--terminal{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 175px;
+            height: 45px;
+            h2{
+              padding-left: 0;
+              padding-right: 20px;
+              font-size: 14px;
+            }
+            &__radus{
+              width: 11px;
+              height: 11px;
+            }
+          }
+          .active{
+            width: 175px;
+            height: 45px;
+            h2{
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      &--status{
+        &__title{
+          font-size: 1rem;
+        }
+        &__general{
+          width: 100%;
+          height: 68px;
+          &--with{
+            width: 130px;
+            font-size: 10px;
+          }
+          &--here{
+            width: 130px;
+            h2{
+              font-size: 15px;
+            }
+          }
+          .active{
+            width: 130px;
+          }
+        }
+      }
+      &--btn{
+        button{
+          width: 167px;
+          height: 45px;
+        }
+      }
+      &--status{
+        &__general{
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+      }
+    }
   }
 }
