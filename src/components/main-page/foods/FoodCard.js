@@ -65,18 +65,19 @@ const FoodCard = ({el}) => {
                             <div>
                             </div>
                         </div>
+                        {
+                            found  ?
+                                <div onClick={() => getNav()} className="blockZ">
+                                    <BsBasket3Fill className={"icon1"}/>
+                                </div>
+                                :
+                                <div className="blockZ" onClick={() => getBasket(el)}>
+                                    <BiBasket className='icon2'/>
+                                </div>
+                        }
+
                     </div>
 
-                    {
-                        found  ?
-                            <div onClick={() => getNav()} className="blockZ">
-                                <BsBasket3Fill className={"icon1"}/>
-                            </div>
-                            :
-                            <div className="blockZ" onClick={() => getBasket(el)}>
-                                <BiBasket className='icon2'/>
-                            </div>
-                    }
 
             </div>
             : <div>error</div>
