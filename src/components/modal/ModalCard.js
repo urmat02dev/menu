@@ -57,11 +57,8 @@ const ModalCard = ({el}) => {
                     <img src={el.image} alt=""/>
                 </div>
                 <div className="modal--desc">
-                    <h2 className="modal--desc__h2">{el.title }</h2>
-                    <p className='modal--desc__h3'>{el.desc}</p>
-                    <h4>{el.mass}г.</h4>
-                    <h2>{getTitle(el)}</h2>
-                    <h3>{getDesc(el)}</h3>
+                    <h2 className="modal--desc__h2">{getTitle(el)}</h2>
+                    <h3 className='modal--desc__h3'>{getDesc(el)}</h3>
                     <h4>{el.gram}г.</h4>
                     <h5>Цена:<span>{el.price}c</span></h5>
                 </div>

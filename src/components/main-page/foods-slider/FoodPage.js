@@ -5,9 +5,7 @@ import {GET_BASKET, GET_BASKET_CARD, GET_DETAIL, GET_MODAL, MODAL} from "../../.
 import {useDispatch, useSelector} from "react-redux";
 import {NavLink, useNavigate, useParams} from "react-router-dom";
 import "./FoodPage.scss"
-import basket from "../../basket/Basket";
 import {BsBasket3Fill} from "react-icons/bs";
-import {AiOutlineArrowRight} from "react-icons/ai";
 import axios from "axios";
 
 const FoodPage = ({el}) => {
@@ -16,6 +14,13 @@ const FoodPage = ({el}) => {
     const {basket,cardId} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
     const foundProduct = basket.some(e => e.dish.id === el.id)
+    // const foundProduct = (el) => {
+    //     if (basket.some(e => e.dish.id === el.id)){
+    //         return el
+    //     }else {
+    //         return el
+    //     }
+    // }
 
     const [back , setBack] = useState([])
     const getTitle = (el) => {
@@ -61,8 +66,8 @@ const FoodPage = ({el}) => {
 
     }
 useEffect(() => {
-
-},[basket])
+   // foundProduct(el)
+},[foundProduct])
     return (
         <div className="foods--one" key={el.id}>
                 <img src={el.image} alt="" onClick={() =>  getWindow(el)}/>
