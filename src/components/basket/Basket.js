@@ -74,16 +74,13 @@ const Basket = () => {
       },2000)
     }
   }
-  const getMenu = () => {
-    nav(`/${ids}/main/`)
-  }
+
 
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
   useEffect(() => {
   },[])
-  console.log(cardId)
 
   return basket.length ?
     <>
@@ -93,8 +90,7 @@ const Basket = () => {
           <h2 className={"title"}>{t("basket.h1")}</h2>
           <div className="basket">
             {
-              loader ? <Loader/> :
-              basket.map(el => (<BasketCard el={el}/>))
+              basket.map(el => (<BasketCard el={el} key={el.id}/>))
             }
             <div>
               <div className="basket--total">
