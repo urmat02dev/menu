@@ -6,6 +6,8 @@ import Search from "./Search";
 import {useTranslation} from "react-i18next";
 import Card from "./Card";
 import foods from "../foods/Foods";
+import Modal from "../../modal/Modal";
+import ModalSearch from "../../modal/modalSearch";
 
 const SearchResult = () => {
     const {t} = useTranslation()
@@ -16,6 +18,7 @@ const SearchResult = () => {
     <>
       <Header/>
       <Search />
+        <ModalSearch/>
         <div className="container">
             {
                 res.length ?
