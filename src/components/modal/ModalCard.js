@@ -32,7 +32,6 @@ const ModalCard = ({el}) => {
     const  getPlus = (el) => {
         dispatch({type:MODAL_PLUS,payload:el})
     }
-    console.log(el.title)
     const getTitle = (el) => {
         if (lang === "en") {
             return el.name_en

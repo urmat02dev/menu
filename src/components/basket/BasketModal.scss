@@ -7,7 +7,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top: 23%;
+      padding-top: 10%;
       animation: sad 1s ease-out ;
       @keyframes sad {
         0%{
@@ -18,8 +18,8 @@
         }
       }
       &--block{
-        width: 342px;
-        height: 337px;
+        width: 500px;
+        height: 500px;
         background: #DFE2FF;
         border-radius: 20px;
         &__ich{

@@ -4,25 +4,32 @@ import logos from "../../assets/img/logos.svg"
 import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
 import {NavLink, useNavigate} from "react-router-dom";
-import {useSelector} from "react-redux";
-import {ran} from "../starts/random";
+import {useDispatch, useSelector} from "react-redux";
+import {ids, ran} from "../starts/random";
+import axios from "axios";
+import {CARD_ID, GET_BASKET} from "../../redux/Reducer/ActionTypes";
 const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
   const {i18n} = useTranslation()
-  const {basket,params} = useSelector(state => state)
+    const dispatch = useDispatch()
+  const {basket,cartId,foods} = useSelector(state => state)
     const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
   const nav = useNavigate()
-    useEffect(() => {
-
-    },[basket])
-    console.log(params)
+    async function getCreateTable () {
+        const url = await axios.post("https://aitenir.pythonanywhere.com/api/carts/",{
+            "table": ran
+        })
+        dispatch({type:GET_BASKET,payload:url.data.items})
+        console.log(url)
+    }
+    console.log(cartId)
   return (
     <div id='header'>
         <div className="container">
           <div className="header">
-              <NavLink to={`/${ran}/main`}>
+              <NavLink to={`/${ids}/main`}>
                 <img src={logos} alt=""/>
               </NavLink>
               <div className="header--end">
@@ -34,7 +41,7 @@ const Header = () => {
                     >
                       <sup>{basket.length  ? basket.length : "none" }</sup>
                     </div>
-                      <BiBasket className='header--end__one--icon'/>
+                      <BiBasket className='header--end__one--icon' onClick={() => getCreateTable()}/>
                   </div>
                   <div className="header--end__two">
                     <select onChange={(e) => changeLanguage(e.target.value)} defaultValue={lang}>

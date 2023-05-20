@@ -9,22 +9,21 @@ import {useDispatch, useSelector} from "react-redux";
 import "./MainPage.scss"
 import {useParams} from "react-router-dom";
 import {GET_PARAMS} from "../../redux/Reducer/ActionTypes";
+import Loader from "../loader/Loader";
 
 
 const MainPage = () => {
     const {id} = useParams()
     const dispatch = useDispatch()
+    const {cardId} = useSelector(state => state)
+
     const [active, setActive] = useState(0)
     const [best, setBest] = useState(true)
-    useEffect(() => {
-
-    },[])
     return (
         <div>
-
             <Header/>
-            <Search/>
             <Modal/>
+            <Search/>
             <Category active={active}
                       setActive={setActive}
                       best={best}
@@ -37,7 +36,6 @@ const MainPage = () => {
             <Foods
                 active={active}
                 setActive={setActive}/>
-            <Modal/>
         </div>
     );
 };

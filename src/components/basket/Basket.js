@@ -7,12 +7,17 @@ import {useTranslation} from "react-i18next";
 import BasketCard from "./BasketCard";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
+import {GET_BASKET} from "../../redux/Reducer/ActionTypes";
+import {ids} from "../starts/random";
+import Loader from "../loader/Loader";
 const Basket = () => {
+
   const nav = useNavigate()
   const {t} = useTranslation()
   const dispatch = useDispatch()
   const {basket} = useSelector(s => s)
-  const {foods} = useSelector(s => s)
+  console.log("Basket",basket)
+  const [loader, setLoader] = useState(false)
   const [here,setHere] = useState(false)
   const [s,setS] = useState(false)
   const [order,setOrder] = useState(false)
@@ -21,8 +26,9 @@ const Basket = () => {
   const [tern,setTern] = useState(false)
   const [btn,setBtn] = useState(false)
   const [cash2, setCash2]  = useState(false)
-  const [cart, setCart]  = useState([])
 
+  const [cart, setCart]  = useState([])
+  const {cardId} = useSelector(state => state)
 
   function getHere() {
     setHere(!here) || setS(false)
@@ -54,7 +60,8 @@ const Basket = () => {
   }
   const getModal = () => {
     if (order && pay) {
-      return basket.splice(0, basket.length) && nav("/main/print")
+      return basket.splice(0, basket.length) && nav(`/${ids}/main/print`)
+
     }
     else if (order === false && pay === false){
       setTimeout(() => {
@@ -62,20 +69,13 @@ const Basket = () => {
       },2000)
     }
   }
-  const getBack = async () => {
-    const url = await axios.get("https://aitenir.pythonanywhere.com/api/carts")
-    const {data} = url
-    setCart(data.items)
-  }
-  const back = foods.filter(el => el.id === "cc2a1ed5-8d14-4e6a-be7c-046c423d1832")
+
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
   useEffect(() => {
-    getBack()
   },[])
-  console.log(cart)
-  console.log(back)
+  console.log(cardId)
 
   return basket.length ?
     <>
@@ -85,7 +85,8 @@ const Basket = () => {
           <h2 className={"title"}>{t("basket.h1")}</h2>
           <div className="basket">
             {
-              basket.map(el => <BasketCard el={el}/>)
+              loader ? <Loader/> :
+              basket.map(el => (<BasketCard el={el}/>))
             }
             <div>
               <div className="basket--total">

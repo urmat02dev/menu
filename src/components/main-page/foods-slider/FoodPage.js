@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
-import {GET_BASKET, GET_DETAIL, GET_MODAL, MODAL} from "../../../redux/Reducer/ActionTypes";
+import {GET_BASKET, GET_BASKET_CARD, GET_DETAIL, GET_MODAL, MODAL} from "../../../redux/Reducer/ActionTypes";
 import {useDispatch, useSelector} from "react-redux";
 import {NavLink, useNavigate, useParams} from "react-router-dom";
 import "./FoodPage.scss"
@@ -15,7 +15,8 @@ const FoodPage = ({el}) => {
     const nav = useNavigate()
     const {basket,cardId} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
-    const foundProduct = basket.some(e => e.id === el.id)
+    const foundProduct = basket.some(e => e.dish.id === el.id)
+
     const [back , setBack] = useState([])
     const getTitle = (el) => {
         if (lang === "en"){
@@ -47,17 +48,21 @@ const FoodPage = ({el}) => {
         }
 
     async function getBasket (el) {
-        dispatch({type:GET_BASKET,payload:el})
-        const url = await axios.post("https://aitenir.pythonanywhere.com/api/cart-item/",
+        console.log("dishId",el.id)
+        console.log("CardId",cardId)
+        const url = await axios.post(`https://aitenir.pythonanywhere.com/api/carts/${cardId}/add_to_cart/`,
             {
-            "quantity":el.quantity,
+            "quantity":1,
             "dish":el.id,
-            "cart":cardId
         })
+
         console.log(url)
         console.log(cardId)
-    }
 
+    }
+useEffect(() => {
+
+},[basket])
     return (
         <div className="foods--one" key={el.id}>
                 <img src={el.image} alt="" onClick={() =>  getWindow(el)}/>
