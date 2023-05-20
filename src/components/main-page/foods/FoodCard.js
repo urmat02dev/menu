@@ -11,11 +11,10 @@ import axios from "axios";
 const FoodCard = ({el}) => {
     const {t} = useTranslation()
     const nav = useNavigate()
-    const {basket, cardId, modal} = useSelector(state => state)
+    const {basket, modal} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
     const dispatch = useDispatch()
-    const found = basket.some(e => e.dish.id === el.id)
-    console.log(basket.dish)
+    const found = basket.some(e => e.id === el.id)
     const getTitle = (el) => {
         if (lang === "en") {
             return el.name_en
@@ -42,14 +41,8 @@ const FoodCard = ({el}) => {
         }
     }
 
-    async function getBasket(el) {
-        const url = await axios.post(`https://aitenir.pythonanywhere.com/api/carts/${cardId}/add_to_cart/`,
-            {
-                "quantity": 1,
-                "dish": el.id,
-            })
-        console.log(url)
-
+     function getBasket(el) {
+        dispatch({type: GET_BASKET, payload: el})
     }
 
     function getNav() {

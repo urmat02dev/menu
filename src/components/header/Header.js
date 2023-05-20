@@ -5,12 +5,12 @@ import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
 import {NavLink, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {ids, ran} from "../starts/random";
+import {ids} from "../starts/random";
 const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
   const {i18n} = useTranslation()
     const dispatch = useDispatch()
-  const {basket,cartId,foods} = useSelector(state => state)
+  const {basket} = useSelector(state => state)
     const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };

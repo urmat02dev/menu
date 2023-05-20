@@ -15,7 +15,7 @@ import {ran} from "../starts/random";
 
 const Modal = () => {
     const {modal} = useSelector(state => state)
-    const {detail,params} =  useSelector(state => state)
+    const {detail} =  useSelector(state => state)
 
     const nav = useNavigate()
     const dispatch = useDispatch()

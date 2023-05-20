@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import "./Foods.scss"
 import {useTranslation} from "react-i18next";
 import {data} from "../../fake-backend/backend";
 import FoodCard from "./FoodCard";
-import axios from "axios";
 import {useSelector} from "react-redux";
 
 
@@ -41,15 +40,6 @@ const Foods = ({active,setActive,modal,setModal}) => {
   const desert = foods.filter(el => el.category === "f38b8b75-991c-4ad2-9e19-13443e1c3708")
   const juice = foods.filter(el => el.category === "1b7274d6-badd-41e4-8fca-d7db7d724f0b")
   const drink = foods.filter(el => el.category === "fcd8d1c2-797e-4b22-a875-85987bda7e93")
-  const [back, setBack] = useState([])
-  const getBack = async () => {
-    const url = await axios("https://aitenir.pythonanywhere.com/api/dishes/")
-    const {data} = url
-    setBack(data)
-  }
-  useEffect(() => {
-    getBack()
-  },[])
   return (
     <div id="food">
       <div className="container">

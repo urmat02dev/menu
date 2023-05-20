@@ -5,7 +5,6 @@ import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 import { SEARCH} from "../../../redux/Reducer/ActionTypes";
 import {useNavigate} from "react-router-dom";
-import {data} from "../../fake-backend/backend";
 import {HiOutlineSearch} from "react-icons/hi";
 const Search = ({setModal,modal}) => {
   const {t} = useTranslation()
@@ -13,7 +12,7 @@ const Search = ({setModal,modal}) => {
 
   const dispatch = useDispatch()
   const nav = useNavigate()
-  const {search,foods} = useSelector(s => s)
+  const {foods} = useSelector(s => s)
   const [value , setValue] = useState("")
   function getSearch (e) {
     setValue(e.target.value.toLowerCase())
