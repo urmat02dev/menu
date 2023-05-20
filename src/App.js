@@ -24,13 +24,13 @@ function App() {
 
     useEffect(()=>{
         getFoods()
-
+        nav("/1")
     },[])
   return (
    <>
      <Routes>
-       <Route path={`/${ids}`} element={<Starts/>}/>
-       <Route path={`/${ids}/main/`} element={<MainPage/>}/>
+       <Route path={`/:${ids}/`} element={<Starts/>}/>
+       <Route path={`/:${ids}/main/`} element={<MainPage/>}/>
        <Route path="/basket" element={<Basket/>}/>
        <Route path="/search" element={<SearchResult/>}/>
        <Route path="/1/main/print" element={<BasketModal/>}/>
