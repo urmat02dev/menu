@@ -1,7 +1,7 @@
 import {
   CARD_ID,
   DELETE, GET_BACK_BASKET,
-  GET_BASKET, GET_BASKET_CARD, GET_DETAIL, GET_FOODS, GET_PARAMS,
+  GET_BASKET, GET_BASKET_CARD, GET_CHECK, GET_DETAIL, GET_FOODS, GET_PARAMS,
   MINUS,
   MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET, PLUS,
   SEARCH
@@ -16,6 +16,7 @@ const initialState ={
   search:"",
   cardId:"",
   params:"",
+  check:[]
 
 
 }
@@ -28,6 +29,9 @@ export const MainReducer = (state = initialState, action) => {
     }
     case CARD_ID: {
       return {...state, cardId: action.payload}
+    }
+    case GET_CHECK: {
+      return {...state, check: action.payload}
     }
     case GET_BASKET : {
       return {...state, basket: action.payload}
