@@ -1,10 +1,4 @@
 @media (max-width: 992px) {
-  #food .food h1 {
-    font-family: "Armin Grotesk,", sans-serif;
-    font-weight: 600;
-    font-size: 41px;
-    margin: 0 0 0 36px;
-  }
   #food {
     display: flex;
     align-items: center;
@@ -69,6 +63,110 @@
         }
       }
     }
+
+  }
+}
+
+@media (max-width: 884px) {
+  #food{
+    .food--card {
+      background: #FFFFFF;
+      display: flex;
+      position: relative;
+      width: 700px;
+      height: 300px;
+      right: 10px;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 20px;
+      margin: 50px 0 50px 55px;
+
+      &__img {
+        width: 210px;
+        height: 190px;
+        position: relative;
+        left: -5px;
+        margin: 20px 0 20px 50px;
+        border-radius: 30px;
+      }
+
+      &__word {
+        margin-top: 50px;
+        width: 449px;
+        position: relative;
+        left: 30px;
+        height: 250px;
+        text-align: left;
+
+        h2 {
+          font-family: 'Armin Grotesk', sans-serif;
+          font-weight: 600;
+          font-size: 27px;
+          width: 265px;
+        }
+
+        p {
+          font-family: 'Armin Grotesk', sans-serif;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 22px;
+          width: 300px;
+          margin: 20px 0;
+        }
+
+        &--order {
+          display: flex;
+          align-items: center;
+          width: 350px;
+
+          h4 {
+            font-family: 'Armin Grotesk', sans-serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 19px;
+            color: #000000;
+          }
+
+          &__icon1 {
+            background: #DFE2FF;
+            border-radius: 15px;
+            width: 70px;
+            height: 35px;
+            right: 101px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            .icon {
+              font-size: 30px;
+              color: #0256d3;
+
+            }
+          }
+          &__icon2 {
+            background: #DFE2FF;
+            border-radius: 15px;
+            width: 70px;
+            height: 35px;
+            right: 101px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            .icon {
+              font-size: 30px;
+              color: #0256d3;
+
+            }
+          }
+
+
+        }
+      }
+    }
     .blockZ {
       position: absolute;
       right: 10%;
@@ -89,111 +187,7 @@
         color: #0256d3;
       }
     }
-  }
-  .foods--one__basket--icon {
-    width: 58px;
-    height: 39px;
-  }
-}
 
-@media (max-width: 884px) {
-  .food--card {
-    background: #FFFFFF;
-    display: flex;
-    position: relative;
-    width: 700px;
-    height: 300px;
-    right: 10px;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
-    margin: 50px 0 50px 55px;
-
-    &__img {
-      width: 210px;
-      height: 190px;
-      position: relative;
-      left: -5px;
-      margin: 20px 0 20px 50px;
-      border-radius: 30px;
-    }
-
-    &__word {
-      margin-top: 50px;
-      width: 449px;
-      position: relative;
-      left: 30px;
-      height: 250px;
-      text-align: left;
-
-      h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 600;
-        font-size: 27px;
-        width: 265px;
-      }
-
-      p {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 22px;
-        width: 300px;
-        margin: 20px 0;
-      }
-
-      &--order {
-        display: flex;
-        align-items: center;
-        width: 350px;
-
-        h4 {
-          font-family: 'Armin Grotesk', sans-serif;
-          font-style: italic;
-          font-weight: 400;
-          font-size: 22px;
-          line-height: 19px;
-          color: #000000;
-        }
-
-        &__icon1 {
-          background: #DFE2FF;
-          border-radius: 15px;
-          width: 70px;
-          height: 35px;
-          right: 101px;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 10;
-          .icon {
-            font-size: 30px;
-            color: #0256d3;
-
-          }
-        }
-        &__icon2 {
-          background: #DFE2FF;
-          border-radius: 15px;
-          width: 70px;
-          height: 35px;
-          right: 101px;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 10;
-          .icon {
-            font-size: 30px;
-            color: #0256d3;
-
-          }
-        }
-
-
-      }
-    }
   }
 
 }
