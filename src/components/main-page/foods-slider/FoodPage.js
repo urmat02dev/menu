@@ -6,18 +6,12 @@ import {useDispatch, useSelector} from "react-redux";
 import { useNavigate} from "react-router-dom";
 import "./FoodPage.scss"
 import {BsBasket3Fill} from "react-icons/bs";
-import axios from "axios";
-
 
 const FoodPage = ({el}) => {
     const {t } = useTranslation()
     const nav = useNavigate()
     const {basket} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
-    const foundProduct = basket.some(e => e.dish.id === el.id)
-  
-
-    const [back , setBack] = useState([])
     const foundProduct = basket.some(e => e.id === el.id)
     const getTitle = (el) => {
         if (lang === "en"){
@@ -51,9 +45,6 @@ const FoodPage = ({el}) => {
     function getBasket (el) {
         dispatch({type:GET_BASKET, payload : el})
     }
-useEffect(() => {
-  
-},[foundProduct])
 
     return (
         <div className="foods--one" key={el.id}>
