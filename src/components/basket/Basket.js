@@ -7,7 +7,7 @@ import {useTranslation} from "react-i18next";
 import BasketCard from "./BasketCard";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
-import {GET_BASKET} from "../../redux/Reducer/ActionTypes";
+import {GET_BASKET, GET_CHECK} from "../../redux/Reducer/ActionTypes";
 import {ids} from "../starts/random";
 import Loader from "../loader/Loader";
 const Basket = () => {
@@ -58,10 +58,15 @@ const Basket = () => {
     }
     else setPay(false)
   }
-  const getModal = () => {
+  const getModal = async () => {
     if (order && pay) {
+      const url = await axios.post(`https://aitenir.pythonanywhere.com/api/carts/${cardId}/checkout/`,{
+        "payment":1,
+        "is_takeaway":1
+      })
+      console.log(url)
+      dispatch({type:GET_CHECK,payload:url.data})
       return basket.splice(0, basket.length) && nav(`/${ids}/main/print`)
-
     }
     else if (order === false && pay === false){
       setTimeout(() => {
@@ -70,12 +75,12 @@ const Basket = () => {
     }
   }
 
+
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
   useEffect(() => {
   },[])
-  console.log(cardId)
 
   return basket.length ?
     <>
@@ -85,8 +90,7 @@ const Basket = () => {
           <h2 className={"title"}>{t("basket.h1")}</h2>
           <div className="basket">
             {
-              loader ? <Loader/> :
-              basket.map(el => (<BasketCard el={el}/>))
+              basket.map(el => (<BasketCard el={el} key={el.id}/>))
             }
             <div>
               <div className="basket--total">

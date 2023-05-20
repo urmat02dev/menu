@@ -12,6 +12,8 @@ import {GET_BASKET, GET_PARAMS} from "../../redux/Reducer/ActionTypes";
 import Loader from "../loader/Loader";
 import axios from "axios";
 import {ran} from "../starts/random";
+import {CARD_ID, GET_BASKET} from "../../redux/Reducer/ActionTypes";
+import axios from "axios";
 
 
 const MainPage = () => {
@@ -31,6 +33,10 @@ const MainPage = () => {
     useEffect(() => {
         getCreateTable()
     },[])
+    const {cardId, basket} = useSelector(state => state)
+    const [active, setActive] = useState(0)
+    const [best, setBest] = useState(true)
+
     return (
         <div>
             <Header/>

@@ -1,5 +1,6 @@
 export const GET_BASKET = "GET_BASKET"
 export const GET_FOODS = "GET_FOODS"
+export const GET_CHECK = "GET_CHECK"
 export const GET_BACK_BASKET = "GET_BACK_BASKET"
 export const GET_BASKET_CARD = "GET_BASKET_CARD"
 export const CARD_ID = "CARD_ID"

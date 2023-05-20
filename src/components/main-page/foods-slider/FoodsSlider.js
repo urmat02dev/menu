@@ -1,7 +1,6 @@
 import React from 'react';
 import "./FoodsSlider.scss"
 import Slider from "react-slick";
-import {data} from "../../fake-backend/backend";
 import FoodPage from "./FoodPage";
 import {useTranslation} from "react-i18next";
 import {useSelector} from "react-redux";
