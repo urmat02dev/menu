@@ -3,19 +3,36 @@ import "./Basket.scss"
 import {IoMdClose} from "react-icons/io";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {useDispatch, useSelector} from "react-redux";
-import {DELETE, GET_BASKET, MINUS, PLUS} from "../../redux/Reducer/ActionTypes";
+import {CARD_ID, DELETE, GET_BASKET, MINUS, PLUS} from "../../redux/Reducer/ActionTypes";
 import {useTranslation} from "react-i18next";
 import axios from "axios";
-import Loader from "../loader/Loader";
 
 const BasketCard = ({el}) => {
     const lang = localStorage.getItem("i18nextLng")
     const dispatch = useDispatch()
     const {cardId} = useSelector(state => state)
     const [loader, setLoader] = useState(false)
+    const [count , setCount] = useState(el.quantity)
     const {t} = useTranslation()
     const food = el.dish
+    console.log(count)
+    const handleIncrement = () =>{
+        const newCount = count + 1
+        changeCount(el,newCount)
+    }
+    const handleDecrement = () =>{
+        if (el.quantity > 1) {
+            const newCount = count - 1
+            changeCount(el,newCount)
+        }
+    }
+    const getBack =async () => {
+        const url =  await axios.get(`https://aitenir.pythonanywhere.com/api/carts/${cardId}/`)
+        dispatch({type:CARD_ID, payload:url.data.id})
+        dispatch({type:GET_BASKET,payload:url.data.items})
 
+        console.log(url)
+    }
     const getTitle = (food) => {
         if (lang === "en") {
             return food.name_en
@@ -26,20 +43,22 @@ const BasketCard = ({el}) => {
         }
     }
 
-    const changeCount = async (el, quantity,action) => {
+    const changeCount = async (el,newCount) => {
+        setCount(newCount)
         setLoader(true)
-        if ( el.quantity > 1) {
-           const url =  await axios.post(`https://aitenir.pythonanywhere.com/api/carts/${cardId}/${action}/`,
+        console.log("NEwCount",newCount)
+           const url =  await axios.post(`https://aitenir.pythonanywhere.com/api/carts/${cardId}/add_to_card/`,
                 {
-                    "quantity": quantity,
+                    "quantity": newCount,
                     "dish": el.dish.id,
                 })
-            dispatch({type:GET_BASKET, payload:url.data.items})
+
             setLoader(false)
+            dispatch({type:GET_BASKET,payload:url.data.items})
             console.log(url)
             console.log(cardId)
-        }
     }
+
 
     const [del, setDel] = useState(false)
     const getDelete = (el) => {
@@ -54,12 +73,13 @@ const BasketCard = ({el}) => {
         }
     }
 
-
     useEffect(() => {
+        getBack()
         changeCount()
     }, [])
 
     console.log(cardId)
+    console.log(count)
     return (
 
             <div className="basket--card" key={el.id} style={{translateY: del ? '-400px' : ''}}>
@@ -82,9 +102,9 @@ const BasketCard = ({el}) => {
 
                     <div className={"count"}>
                         <span style={{color: `${el.quantity > 1 ? "" : "#FFFFFF80"}`}}
-                              onClick={() => changeCount(el, -1,"add_to_cart")}><AiOutlineMinus/></span>
+                              onClick={handleDecrement}><AiOutlineMinus/></span>
                         <p>{el.quantity}</p>
-                        <span onClick={() => changeCount(el, 1,"add_to_cart")}> <AiOutlinePlus/></span>
+                        <span onClick={handleIncrement}> <AiOutlinePlus/></span>
                     </div>
 
                 </div>

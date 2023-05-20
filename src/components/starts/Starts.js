@@ -30,13 +30,16 @@ const Starts = () => {
       "table": ran
     })
     dispatch({type:CARD_ID,payload:url.data.id})
-    nav(`/${ids}/main`)
+
     console.log(url)
   }
 
   console.log(cardId)
+  useEffect(() => {
+    getCreateTable()
+  })
   return (
-    <div id={"start"} onClick={() => getCreateTable()}>
+    <div id={"start"}  onClick={() => nav(`/${ids}/main`)}>
       <div className="container">
         <div className="start">
           <div className="slider">
@@ -73,7 +76,7 @@ const Starts = () => {
               </div>
             </Slider>
           </div>
-          <div className={"btn"} onClick={() => nav(`/main/${ran}`) }>
+          <div className={"btn"} onClick={() => nav(`/${ids}/main/`) }>
             <button  >Открыть меню</button>
           </div>
         </div>
