@@ -6,8 +6,6 @@ import {useTranslation} from "react-i18next";
 import {NavLink, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {ids, ran} from "../starts/random";
-import axios from "axios";
-import {CARD_ID, GET_BASKET} from "../../redux/Reducer/ActionTypes";
 const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
   const {i18n} = useTranslation()
@@ -17,14 +15,9 @@ const Header = () => {
     i18n.changeLanguage(language);
   };
   const nav = useNavigate()
-    async function getCreateTable () {
-        const url = await axios.post("https://aitenir.pythonanywhere.com/api/carts/",{
-            "table": ran
-        })
-        dispatch({type:GET_BASKET,payload:url.data.items})
-        console.log(url)
+    const getNav = () => {
+      nav("/basket")
     }
-    console.log(cartId)
   return (
     <div id='header'>
         <div className="container">
@@ -41,7 +34,7 @@ const Header = () => {
                     >
                       <sup>{basket.length  ? basket.length : "none" }</sup>
                     </div>
-                      <BiBasket className='header--end__one--icon' onClick={() => getCreateTable()}/>
+                      <BiBasket className='header--end__one--icon' onClick={() => getNav()}/>
                   </div>
                   <div className="header--end__two">
                     <select onChange={(e) => changeLanguage(e.target.value)} defaultValue={lang}>

@@ -8,17 +8,17 @@ import Modal from "../modal/Modal";
 import {useDispatch, useSelector} from "react-redux";
 import "./MainPage.scss"
 import {useParams} from "react-router-dom";
-import {GET_PARAMS} from "../../redux/Reducer/ActionTypes";
-import Loader from "../loader/Loader";
+import {CARD_ID, GET_BASKET} from "../../redux/Reducer/ActionTypes";
+import axios from "axios";
 
 
 const MainPage = () => {
     const {id} = useParams()
     const dispatch = useDispatch()
-    const {cardId} = useSelector(state => state)
-
+    const {cardId, basket} = useSelector(state => state)
     const [active, setActive] = useState(0)
     const [best, setBest] = useState(true)
+
     return (
         <div>
             <Header/>

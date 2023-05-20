@@ -24,7 +24,6 @@ function App() {
 
     useEffect(()=>{
         getFoods()
-        nav("/1")
     },[])
   return (
    <>

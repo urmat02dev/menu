@@ -17,7 +17,6 @@ const Search = ({setModal,modal}) => {
   const [value , setValue] = useState("")
   function getSearch (e) {
     setValue(e.target.value.toLowerCase())
-    console.log(e.target.value.toLowerCase())
     if (value !== "") {
       if (e.key === "Enter") {
         dispatch({type: SEARCH, payload: value})

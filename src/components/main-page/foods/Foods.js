@@ -4,8 +4,6 @@ import {useTranslation} from "react-i18next";
 import {data} from "../../fake-backend/backend";
 import FoodCard from "./FoodCard";
 import axios from "axios";
-import BasketCard from "../../basket/BasketCard";
-import BackCard from "./BackCard";
 import {useSelector} from "react-redux";
 
 
@@ -82,7 +80,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
           {
             active === 3 ?
               food.map(el => {
-                return <BackCard el={el}/>
+                return <FoodCard el={el}/>
               }) : ''
           }
           {

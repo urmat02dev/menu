@@ -37,7 +37,7 @@ const Starts = () => {
   console.log(cardId)
   useEffect(() => {
     getCreateTable()
-  })
+  },[])
   return (
     <div id={"start"}  onClick={() => nav(`/${ids}/main`)}>
       <div className="container">
