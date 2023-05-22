@@ -24,6 +24,9 @@ const FoodsSlider = ({modal,setModal,best}) => {
             },
             {
                 breakpoint: 768,
+                settings: {
+                  
+               }
 
             },
             {

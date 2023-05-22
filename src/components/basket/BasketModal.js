@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 import print from "../../assets/img/Vector.svg"
 import "./BasketModal.scss"
@@ -21,6 +22,7 @@ const BasketModal = () => {
                             <div onClick={() => nav(`/${ids}/main/`)} className={"modalBasket--block__ich--close"}>
                                 <p>&times;</p>
                             </div>
+
                             <div className={"check"}>
                             <div className={"check--total"}>
                                 <h1>Итого:{check.total_price}</h1>
@@ -36,8 +38,6 @@ const BasketModal = () => {
                                     ))
                                 }
                             </div>
-
-
                             </div>
                         </div>
                     </div>

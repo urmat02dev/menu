@@ -24,6 +24,9 @@ const ModalCard = ({el}) => {
     const lang = localStorage.getItem("i18nextLng")
 
     const  getBasket = (el) => {
+        let basket = JSON.parse(localStorage.getItem("backend"))|| []
+        basket = [...basket, {...el,quantity: el.quantity}]
+        localStorage.setItem("backend",JSON.stringify(basket))
         dispatch({type:MODAL_TO_BASKET, payload: el})
     }
     const getMinus = (el) =>{
