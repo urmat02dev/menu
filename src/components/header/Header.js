@@ -22,7 +22,7 @@ const Header = () => {
     <div id='header'>
         <div className="container">
           <div className="header">
-              <NavLink to={`/${ids}/main`}>
+              <NavLink to={`/1/main`}>
                 <img src={logos} alt=""/>
               </NavLink>
               <div className="header--end">

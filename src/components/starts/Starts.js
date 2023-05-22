@@ -26,23 +26,20 @@ const Starts = () => {
   };
   const {cardId} = useSelector(state => state)
   async function getCreateTable () {
-    const url = await axios.post("https://aitenir.pythonanywhere.com/api/orders",{
-      "table":2,
-        "items": [
+    // const url = await axios.post("https://aitenir.pythonanywhere.com/api/orders",{
+    //   "table":2,
+    //     "items": [
+    //
+    // ]
+    // })
 
-    ]
-    })
-    dispatch({type:CARD_ID,payload:url.data.id})
-
-    console.log(url)
+    // console.log(url)
   }
-
-  console.log(cardId)
   useEffect(() => {
     getCreateTable()
   },[])
   return (
-    <div id={"start"}  onClick={() => nav(`/${ids}/main`)}>
+    <div id={"start"}  onClick={() => nav(`/1/main`)}>
       <div className="container">
         <div className="start">
           <div className="slider">
@@ -79,7 +76,7 @@ const Starts = () => {
               </div>
             </Slider>
           </div>
-          <div className={"btn"} onClick={() => nav(`/${ids}/main/`) }>
+          <div className={"btn"} onClick={() => nav(`/1/main/`) }>
             <button  >Открыть меню</button>
           </div>
         </div>
