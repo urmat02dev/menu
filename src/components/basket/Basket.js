@@ -18,8 +18,8 @@ const Basket = () => {
   const {basket} = useSelector(s => s)
   console.log("Basket",basket)
   const [loader, setLoader] = useState(false)
-  const [here,setHere] = useState(false)
-  const [s,setS] = useState(false)
+  const [here,setHere] = useState(0)
+  const [s,setS] = useState(0)
   const [order,setOrder] = useState(false)
   const [pay,setPay] = useState(false)
   const [cash,setCash] = useState(false)
@@ -60,9 +60,14 @@ const Basket = () => {
   }
   const getModal = async () => {
     if (order && pay) {
-      const url = await axios.post(`https://aitenir.pythonanywhere.com/api/carts/${cardId}/checkout/`,{
-        "payment":1,
-        "is_takeaway":1
+      const url = await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
+        table:1,
+          items:[
+        {
+          dish:"53d81ef8-2870-4353-b5d0-f375f2c01649",
+          quantity:1
+        }
+      ]
       })
       console.log(url)
       dispatch({type:GET_CHECK,payload:url.data})
