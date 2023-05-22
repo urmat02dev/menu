@@ -25,7 +25,9 @@ const FoodsSlider = ({modal,setModal,best}) => {
             {
                 breakpoint: 768,
                 settings: {
+                  
                }
+
             },
             {
                 breakpoint: 576,
@@ -68,10 +70,7 @@ const FoodsSlider = ({modal,setModal,best}) => {
         ]
     };
     const bests = foods.filter(el => el.category_name === "Bestseller")
-    console.log(foods.filter(el => el.category_name ))
-useEffect(() => {
 
-})
   return (
     <div id='foods' style={{
         display:best ? "flex" : "none"

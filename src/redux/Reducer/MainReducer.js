@@ -14,6 +14,7 @@ const initialState ={
   detail: JSON.parse(localStorage.getItem("back"))|| {},
   search:"",
   cardId:"",
+  element:{},
   check:[]
 
 
