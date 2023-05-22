@@ -26,8 +26,11 @@ const Starts = () => {
   };
   const {cardId} = useSelector(state => state)
   async function getCreateTable () {
-    const url = await axios.post("https://aitenir.pythonanywhere.com/api/carts/",{
-      "table": ran
+    const url = await axios.post("https://aitenir.pythonanywhere.com/api/orders",{
+      "table":2,
+        "items": [
+
+    ]
     })
     dispatch({type:CARD_ID,payload:url.data.id})
 

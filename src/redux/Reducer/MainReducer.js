@@ -14,6 +14,7 @@ const initialState ={
   detail:{},
   search:"",
   cardId:"",
+  element:{},
   check:[]
 
 

@@ -17,18 +17,17 @@ const Basket = () => {
   const dispatch = useDispatch()
   const {basket} = useSelector(s => s)
   console.log("Basket",basket)
+  const basketID = basket.map(el => el.id)
+  console.log(basketID)
   const [loader, setLoader] = useState(false)
-  const [here,setHere] = useState(0)
-  const [s,setS] = useState(0)
+  const [here,setHere] = useState(false)
+  const [s,setS] = useState(false)
   const [order,setOrder] = useState(false)
   const [pay,setPay] = useState(false)
   const [cash,setCash] = useState(false)
   const [tern,setTern] = useState(false)
   const [btn,setBtn] = useState(false)
   const [cash2, setCash2]  = useState(false)
-
-  const [cart, setCart]  = useState([])
-  const {cardId} = useSelector(state => state)
 
   function getHere() {
     setHere(!here) || setS(false)
@@ -58,16 +57,20 @@ const Basket = () => {
     }
     else setPay(false)
   }
-  const getModal = async () => {
+  const getModal = async (el) => {
     if (order && pay) {
       const url = await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
-        table:1,
-          items:[
-        {
-          dish:"53d81ef8-2870-4353-b5d0-f375f2c01649",
-          quantity:1
-        }
-      ]
+        table: ids,
+        is_takeaway:1,
+        payment: 1,
+        items: basket.map((el) => {
+          return {
+            "dish": el.id,
+            "quantity": el.quantity
+
+          }
+        })
+
       })
       console.log(url)
       dispatch({type:GET_CHECK,payload:url.data})
