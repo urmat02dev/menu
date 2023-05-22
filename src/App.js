@@ -6,9 +6,9 @@ import Basket from "./components/basket/Basket";
 import React, {useEffect} from "react";
 import SearchResult from "./components/main-page/search/SearchResult";
 import BasketModal from "./components/basket/BasketModal";
-import {getData, ids, ran} from "./components/starts/random";
-import {CARD_ID, GET_BASKET, GET_FOODS, GET_PARAMS} from "./redux/Reducer/ActionTypes";
-import {useDispatch, useSelector} from "react-redux";
+import {ids} from "./components/starts/random";
+import {GET_FOODS} from "./redux/Reducer/ActionTypes";
+import {useDispatch} from "react-redux";
 import axios from "axios";
 
 

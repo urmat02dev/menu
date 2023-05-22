@@ -9,9 +9,9 @@ import {
 
 const initialState ={
   foods:[],
-  basket: localStorage.getItem("basket") || [],
+  basket:  JSON.parse(localStorage.getItem("backend"))|| [],
   modal:false,
-  detail:{},
+  detail: JSON.parse(localStorage.getItem("back"))|| {},
   search:"",
   cardId:"",
   check:[]
