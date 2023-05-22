@@ -9,7 +9,7 @@ import {
 
 const initialState ={
   foods:[],
-  basket: localStorage.getItem("basket") || [],
+  basket: localStorage.getItem("backend") || [],
   modal:false,
   detail:{},
   search:"",

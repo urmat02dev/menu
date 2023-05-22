@@ -40,6 +40,9 @@ const FoodPage = ({el}) => {
                 if (!foundProduct){
                     dispatch({type:MODAL,payload:true}) && dispatch({type: GET_DETAIL,payload:el})
                 }
+                else {
+                    nav('/basket')
+                }
         }
 
     function getBasket (el) {
