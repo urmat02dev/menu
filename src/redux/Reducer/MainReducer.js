@@ -6,7 +6,6 @@ import {
   MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET,
   SEARCH
 } from "./ActionTypes";
-import basket from "../../components/basket/Basket";
 
 const initialState ={
   foods:[],

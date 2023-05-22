@@ -17,9 +17,9 @@ function App() {
     const dispatch = useDispatch()
 
     async  function getFoods () {
-        const url = await axios.get("https://aitenir.pythonanywhere.com/api/dishes/")
-        const {data} = url
-        dispatch({type:GET_FOODS,payload:data})
+        const url = await axios.get("https://aitenir.pythonanywhere.com/dishes/")
+        const {data} = await  url
+         await dispatch({type:GET_FOODS,payload:data})
     }
 
     useEffect(()=>{

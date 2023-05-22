@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./FoodsSlider.scss"
 import Slider from "react-slick";
 import FoodPage from "./FoodPage";
 import {useTranslation} from "react-i18next";
 import {useSelector} from "react-redux";
-const FoodsSlider = ({modal,setModal,best,setBest}) => {
+const FoodsSlider = ({modal,setModal,best}) => {
     const {t} = useTranslation()
     const {foods} = useSelector(state => state)
     let settings = {
@@ -71,8 +71,11 @@ const FoodsSlider = ({modal,setModal,best,setBest}) => {
             },
         ]
     };
-    const bests = foods.filter(el => el.category === "c53cb4dc-fd24-461f-99c1-2ad2e932e237")
+    const bests = foods.filter(el => el.category_name === "Bestseller")
+    console.log(foods.filter(el => el.category_name ))
+useEffect(() => {
 
+})
   return (
     <div id='foods' style={{
         display:best ? "flex" : "none"

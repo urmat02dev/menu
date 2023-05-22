@@ -33,13 +33,13 @@ const Foods = ({active,setActive,modal,setModal}) => {
   }
 
   }
-  const breakfast = foods.filter(el => el.category === "b06e5329-2fe7-4a57-a0d7-cf1b3005d740")
-  const salad = foods.filter(el => el.category === "bfdd05bb-6744-42e7-b884-8271769e773c")
-  const food = foods.filter(el => el.category === "b733d72f-3026-4c05-9d3b-ba72a1269258")
-  const pizza = foods.filter(el => el.category === "5e61b742-d303-4daa-bddf-3fae745f0959")
-  const desert = foods.filter(el => el.category === "f38b8b75-991c-4ad2-9e19-13443e1c3708")
-  const juice = foods.filter(el => el.category === "1b7274d6-badd-41e4-8fca-d7db7d724f0b")
-  const drink = foods.filter(el => el.category === "fcd8d1c2-797e-4b22-a875-85987bda7e93")
+  const breakfast = foods.filter(el => el.category_name === "Breakfast")
+  const salad = foods.filter(el => el.category_name === "Salads")
+  const food = foods.filter(el => el.category_name === "Dishes")
+  const pizza = foods.filter(el => el.category_name === "Pizza")
+  const desert = foods.filter(el => el.category_name === "Dessert")
+  const juice = foods.filter(el => el.category_name === "Potables")
+  const drink = foods.filter(el => el.category_name === "Hot")
   return (
     <div id="food">
       <div className="container">
