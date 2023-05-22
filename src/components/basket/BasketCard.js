@@ -5,6 +5,7 @@ import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {useDispatch, useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
 import axios from "axios";
+import {DELETE, GET_BASKET, MINUS} from "../../redux/Reducer/ActionTypes";
 
 const BasketCard = ({el}) => {
     const lang = localStorage.getItem("i18nextLng")
@@ -13,10 +14,27 @@ const BasketCard = ({el}) => {
     const [loader, setLoader] = useState(false)
     const {t} = useTranslation()
     const handleIncrement = () =>{
-
+        let basket = JSON.parse(localStorage.getItem("backend")) || []
+        let found = basket.find(e => e.id === el.id)
+        if (found){
+            basket = basket.map(e => e.id === el.id ? {...e,quantity: e.quantity + 1}: e)
+        }else {
+            basket = [...basket, {...el,quantity: 1}]
+        }
+        localStorage.setItem("backend",JSON.stringify(basket))
+        dispatch({type:GET_BASKET, payload: el})
     }
     const handleDecrement = () =>{
-
+        let basket = JSON.parse(localStorage.getItem("backend")) || []
+        basket = basket.map(e => {
+            if (e.id === el.id){
+                if (e.quantity > 1){
+                    return {...e,quantity: e.quantity - 1}
+                }else return e
+            }else return e
+        })
+        localStorage.setItem("backend",JSON.stringify(basket))
+        dispatch({type:MINUS, payload: el})
     }
     const getTitle = (food) => {
         if (lang === "en") {
@@ -29,8 +47,11 @@ const BasketCard = ({el}) => {
     }
 
     const [del, setDel] = useState(false)
-    const getDelete = (el) => {
-        setDel(!del)
+    const getDelete = () => {
+        let basket = JSON.parse(localStorage.getItem("backend")) || []
+        basket = basket.filter(e => e.id !== el.id)
+        localStorage.setItem("backend",JSON.stringify(basket))
+        dispatch({type: DELETE, payload: el})
     }
 
 
@@ -44,7 +65,7 @@ const BasketCard = ({el}) => {
                     <div className="close" onClick={() => {
 
                     }}>
-                        <IoMdClose onClick={() => getDelete(el)} className={"icon"}/>
+                        <IoMdClose onClick={getDelete} className={"icon"}/>
                     </div>
                 </div>
                 <p>{el.gram}г.</p>

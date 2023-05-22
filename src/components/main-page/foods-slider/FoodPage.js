@@ -46,7 +46,15 @@ const FoodPage = ({el}) => {
         }
 
     function getBasket (el) {
-        dispatch({type:GET_BASKET, payload : el})
+        let basket = JSON.parse(localStorage.getItem("backend")) || []
+        let found = basket.find(e => e.id === el.id)
+        if (found){
+            basket = basket.map(e => e.id === el.id ? {...e,quantity: e.quantity + 1}: e)
+        }else {
+            basket = [...basket, {...el,quantity: 1}]
+        }
+        localStorage.setItem("backend",JSON.stringify(basket))
+        dispatch({type:GET_BASKET, payload: el})
     }
 
     return (

@@ -22,13 +22,12 @@ const BasketModal = () => {
                             <div onClick={() => nav(`/${ids}/`)} className={"modalBasket--block__ich--close"}>
                                 <p>&times;</p>
                             </div>
+
                             <div className={"check"}>
                             <div className={"check--total"}>
                                 <h1>Итого:</h1>
                                 <h1>{check.total_price}</h1>
                             </div>
-
-
                             </div>
                         </div>
                     </div>
