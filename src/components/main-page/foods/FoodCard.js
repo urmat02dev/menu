@@ -6,7 +6,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {GET_BASKET, GET_DETAIL, MODAL} from "../../../redux/Reducer/ActionTypes";
 import {BiBasket} from "react-icons/bi";
 import {useNavigate} from "react-router-dom";
-import axios from "axios";
 
 const FoodCard = ({el}) => {
     const {t} = useTranslation()
@@ -14,7 +13,6 @@ const FoodCard = ({el}) => {
     const {basket, modal} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
     const dispatch = useDispatch()
-    const found = basket.some(e => e.id === el.id)
     const getTitle = (el) => {
         if (lang === "en") {
             return el.name_en
@@ -27,23 +25,21 @@ const FoodCard = ({el}) => {
 
     function getDesc(el) {
         if (lang === "en") {
-            return el.description_en
+            return el.description_en.slice(0,80)
         } else if (lang === "ru") {
-            return el.description_ru
+            return el.description_ru.slice(0,80)
         } else if (lang === "kg") {
-            return el.description_kg
+            return el.description_kg.slice(0,80)
         }
     }
 
     function getWindow(el) {
-        if (!found) {
             dispatch({type: MODAL, payload: true}) && dispatch({type: GET_DETAIL, payload: el})
-        }
     }
 
      function getBasket(el) {
         dispatch({type: GET_BASKET, payload: el})
-    }
+     }
 
     function getNav() {
         dispatch({type: MODAL, payload: false})
@@ -62,21 +58,10 @@ const FoodCard = ({el}) => {
                         <p>{getDesc(el)}</p>
                         <div className="food--card__word--order">
                             <h4>{el.price}c.</h4>
-
+                                    <div className="food--card__word--order__blockZ" onClick={() => getWindow(el)}>
+                                        <BiBasket className='icon2'/>
+                                    </div>
                         </div>
-
-                        {
-                            found ?
-                                <div onClick={() => getNav()} className="food--card__word--order__blockZ">
-                                    <BsBasket3Fill className={"icon1"}/>
-                                </div>
-                                :
-                                <div className="food--card__word--order__blockZ" style={{
-                                    zIndex: modal ? "-1" : "1"
-                                }} onClick={() => getBasket(el)}>
-                                    <BiBasket className='icon2'/>
-                                </div>
-                        }
                         <div>
                         </div>
                     </div>
