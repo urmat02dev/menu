@@ -22,7 +22,7 @@ const Modal = () => {
     const lang = localStorage.getItem("i18nextLng")
     const getClose = async () => {
         await dispatch({type:MODAL,payload:false})
-        nav(`/${ran}/main`)
+        nav(`/1/main`)
     }
 
   return (

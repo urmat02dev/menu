@@ -16,9 +16,6 @@ const Basket = () => {
   const {t} = useTranslation()
   const dispatch = useDispatch()
   const {basket} = useSelector(s => s)
-  console.log("Basket",basket)
-  const basketID = basket.map(el => el.id)
-  console.log(basketID)
   const [loader, setLoader] = useState(false)
   const [here,setHere] = useState(false)
   const [s,setS] = useState(false)
@@ -74,7 +71,7 @@ const Basket = () => {
       })
       console.log(url)
       dispatch({type:GET_CHECK,payload:url.data})
-      return basket.splice(0, basket.length) && nav(`/${ids}/main/print`)
+      return basket.splice(0, basket.length) && nav(`/1/main/print`)
     }
     else if (order === false && pay === false){
       setTimeout(() => {

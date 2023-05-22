@@ -58,7 +58,7 @@ const Search = ({setModal,modal}) => {
                 <div className="search--block">
             {
               foods.map(el => (
-                  <div>
+                  <div key={el.id}>
                     {
                       value !=="" && <div className={"search--block__modal"}>{el.name_kg.toLowerCase().includes(value) || el.name_ru.toLowerCase().includes(value) ||  el.name_en.toLowerCase().includes(value) ?
                             <p onClick={() =>  {
