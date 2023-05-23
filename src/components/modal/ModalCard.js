@@ -56,6 +56,7 @@ const ModalCard = ({el}) => {
 
     return (
         <>
+
                 <div className={"modal--img"}>
                     <img src={el.image} alt=""/>
                 </div>
@@ -65,36 +66,36 @@ const ModalCard = ({el}) => {
                     <h4>{el.gram}г.</h4>
                     <h5>Цена:<span>{el.price}c</span></h5>
                 </div>
-            <div className="modal--basket">
-                {
-                    found ?
-                        <div className="basket"
-                             onClick={() => nav("/basket") || dispatch({type:MODAL, payload:false})}>
-                            <h1 className='basket--were'>Добавить</h1>
-                            <div className="icon-block" >
-                                <div  className="foods--one__basket--icon"><BsBasket3Fill className='icon'/></div>
+                <div className="modal--basket">
+                    {
+                        found ?
+                            <div className="basket"
+                                 onClick={() => nav("/basket") || dispatch({type:MODAL, payload:false})}>
+                                <h1 className='basket--were'>Добавить</h1>
+                                <div className="icon-block" >
+                                    <div  className="foods--one__basket--icon"><BsBasket3Fill className='icon'/></div>
+                                </div>
                             </div>
-                        </div>
-                        :
-                        <div className="basket" onClick={() => getBasket(el)}>
-                            <h1 className='basket--were'>Добавить</h1>
-                            <div className="icon-block" >
-                                <div className="foods--one__basket--icon" >
-                                    <BiBasket className='icon'/></div>
+                            :
+                            <div className="basket" onClick={() => getBasket(el)}>
+                                <h1 className='basket--were'>Добавить</h1>
+                                <div className="icon-block" >
+                                    <div className="foods--one__basket--icon" >
+                                        <BiBasket className='icon'/></div>
+                                </div>
                             </div>
-                        </div>
-                }
-                <div className="count">
+                    }
+                    <div className="count">
                     <span style={{
 
                     }}
-                        onClick={() => getMinus(el)}><AiOutlineMinus className={"ico"} style={{
+                          onClick={() => getMinus(el)}><AiOutlineMinus className={"ico"} style={{
                         color:`${el.quantity > 1 ? "" : "rgba(10,10,10,0.39)" }`
                     }}/></span>
-                    <p>{el.quantity}</p>
-                    <span onClick={() => getPlus(el)}><AiOutlinePlus className={"ico"}/></span>
+                        <p>{el.quantity}</p>
+                        <span onClick={() => getPlus(el)}><AiOutlinePlus className={"ico"}/></span>
+                    </div>
                 </div>
-            </div>
         </>
     );
 };

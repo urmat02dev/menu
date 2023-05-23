@@ -5,7 +5,7 @@ import "./Card.scss"
 import {useDispatch, useSelector} from "react-redux";
 import {GET_BASKET, GET_DETAIL, MODAL} from "../../../redux/Reducer/ActionTypes";
 import {BiBasket} from "react-icons/bi";
-import { useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const Card = ({el}) => {
     const {t} = useTranslation()
@@ -35,42 +35,31 @@ const Card = ({el}) => {
     }
 
     function getWindow(el) {
-        if (!found){
-            dispatch({type:MODAL,payload:true}) && dispatch({type: GET_DETAIL,payload:el})
-        }
-    }
-    function getBasket(el) {
-        dispatch({type:GET_BASKET,payload:el})
+            dispatch({type: MODAL, payload: true}) && dispatch({type: GET_DETAIL, payload: el})
 
     }
-    function getNav() {
-        dispatch({type:MODAL,payload:false})
-        nav("/basket")
+
+    function getBasket(el) {
+        dispatch({type: GET_BASKET, payload: el})
+
     }
+
 
 
     return (el.id ?
             <div id='card'>
                 <div className="card--card">
-                    <div className={"img"} onClick={() =>  getWindow(el)}>
+                    <div className={"img"} onClick={() => getWindow(el)}>
                         <img className="card--card__img" src={el.image} alt=""/>
                     </div>
-                    <div className="card--card__word" onClick={() =>  getWindow(el)}>
+                    <div className="card--card__word" onClick={() => getWindow(el)}>
                         <h2>{getTitle(el)}</h2>
                         <p>{getDesc(el)}</p>
                         <div className="card--card__word--order">
                             <h4>{el.price}c.</h4>
-                            {
-                                found  ?
-                                    <div onClick={() => getNav()} className="card--card__word--order__icon1">
-                                        <BsBasket3Fill className={"icon1"}/>
-                                    </div>
-                                    :
-                                    <div className="card--card__word--order__icon1" onClick={() => getBasket(el)}>
-                                        <BiBasket className='icon2'/>
-                                    </div>
-                            }
-
+                            <div className="card--card__word--order__icon1" onClick={() => getWindow(el)}>
+                                <BiBasket className='icon2'/>
+                            </div>
                         </div>
                         <div>
                         </div>
