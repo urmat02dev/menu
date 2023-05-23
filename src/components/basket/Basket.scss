@@ -197,28 +197,29 @@
             }
 
             .count {
-              //width: 35%;
-              //height: 55px;
-              padding: 10px 2%;
+              width: 170px;
+              height: 50px;
               background: #004FC7;
               border-radius: 40px;
               display: flex;
               align-items: center;
-              //justify-content: center;
+              justify-content: space-around;
 
-              p {
+              .quantity{
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 color: white;
                 font-size: 22px;
-                width: 20px;
-                margin: 0 40px;
+                width: 40px;
+                font-weight: 400;
               }
 
-              span {
+              span{
+                //width: 50px;
                 font-weight: 700;
-                margin: 0 5px;
                 color: white;
                 font-size: 22px;
-                text-align: center;
               }
             }
 
@@ -407,12 +408,6 @@
   #basket .basket .basket--card {
     height: 268px;
   }
-  #basket .basket .basket--card__word--order .count {
-    width: 180px;
-    height: 28px;
-    position: relative;
-    right: 10px;
-  }
   #basket .basket--total {
     margin: 0 0 60px 0;
   }
@@ -439,10 +434,6 @@
 @media (max-width: 834px) {
   #basket .basket .basket--card {
     height: 268px;
-  }
-  #basket .basket .basket--card__word--order .count {
-    width: 170px;
-    height: 20px;
   }
 
   #basket .basket--total {
@@ -491,10 +482,6 @@
   #basket .basket .basket--card__word--order {
     width: 388px;
     height: 60px;
-  }
-  #basket .basket .basket--card__word--order .count {
-    width: 156px;
-    height: 19px;
   }
   #basket .basket .basket--card__word .desc {
     width: 82%;
@@ -606,11 +593,6 @@
     width: 91%;
     height: 69px;
   }
-  #basket .basket .basket--card__word--order .count {
-    width: 150px;
-    height: 14px;
-    margin-right: 6px;
-  }
   #basket .basket--btn button {
     width: 189px;
     height: 52px;
@@ -653,12 +635,6 @@
     position: relative;
     left: 14px;
   }
-  #basket .basket .basket--card__word--order .count p {
-    color: white;
-    font-size: 19px;
-    width: 5px;
-    margin: 0 22px;
-  }
   #basket{
     .basket{
       &--pay{
@@ -669,6 +645,7 @@
         }
       }
       &--status{
+
         &__title{
           font-size: 1rem;
         }
@@ -684,6 +661,17 @@
           display: flex;
           align-items: center;
           justify-content: space-around;
+        }
+      }
+      .basket--card{
+        &__word{
+          &--order{
+            .count{
+              margin-right: 10px;
+              height: 40px;
+              width: 140px;
+            }
+          }
         }
       }
     }
@@ -727,12 +715,6 @@
     height: 40px;
     top: -8px;
     left: -5px;
-  }
-  #basket .basket .basket--card__word--order .count p {
-    color: white;
-    font-size: 20px;
-    width: 20px;
-    margin: 0 4px;
   }
   #basket .basket .basket--card__word p {
     width: 183px;
@@ -789,17 +771,6 @@
     height: 20px;
     position: relative;
     left: -10px;
-  }
-  #basket .basket .basket--card__word--order .count p {
-    font-size: 16px;
-  }
-    #basket .basket .basket--card__word--order .count span {
-    font-size: 16px;
-  }
-  #basket .basket .basket--card__word--order .count {
-    height: 9px;
-    width: 140px;
-    margin-right: 1px;
   }
   #basket{
     .basket{
@@ -869,10 +840,18 @@
           justify-content: space-around;
         }
       }
-      &--card{
+      .basket--card{
         &__word{
-          &--oreder{
-            height: 8px;
+          &--order{
+            .count{
+              height: 30px;
+              span{
+                font-size: 16px;
+              }
+              .quantity{
+                font-size: 16px;
+              }
+            }
           }
         }
       }
@@ -927,13 +906,6 @@
   #basket .basket--btn button {
     width: 123px;
     height: 37px;
-  }
-  #basket .basket .basket--card__word--order .count {
-    width: 136px;
-    height: 8px;
-  }
-  #basket .basket .basket--card__word--order .count p{
-   font-size: 16px;
   }
   #basket .basket .basket--card__word .desc .close {
     width: 22px;
@@ -1013,6 +985,21 @@
           display: flex;
           align-items: center;
           justify-content: space-around;
+        }
+      }
+      .basket--card{
+        &__word{
+          &--order{
+            .count{
+              height: 28px;
+              span{
+                font-size: 16px;
+              }
+              .quantity{
+                font-size: 16px;
+              }
+            }
+          }
         }
       }
     }
@@ -1216,17 +1203,6 @@
     font-size: 16px;
     width: 259px;
   }
-  #basket .basket .basket--card__word--order .count {
-    width: 108px;
-    height: 8px;
-  }
-  #basket .basket .basket--card__word--order .count span {
-    font-weight: 700;
-    margin: 0 5px;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-  }
   #basket .basket .basket--card__word--order {
     height: 40px;
     top: -34px;
@@ -1267,11 +1243,6 @@
   }
   #basket .basket .basket--card__word--order .price h4 {
     font-size: 14px;
-  }
-  #basket .basket .basket--card__word--order .count p {
-    font-size: 15px;
-    position: relative;
-    left: 5px;
   }
   #basket{
     .basket{
@@ -1348,6 +1319,21 @@
           justify-content: space-around;
         }
       }
+      .basket--card{
+        &__word{
+          &--order{
+            .count{
+              height: 30px;
+              span{
+                font-size: 16px;
+              }
+              .quantity{
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -1382,7 +1368,7 @@
     font-size: 16px;
   }
   #basket .basket .basket--card__word--order .count {
-    width: 135px;
+    width: 140px;
     height: 4px;
   }
   #basket .basket .basket--card__word {
@@ -1431,6 +1417,25 @@
     height: 150px;
     border-radius: 25px;
   }
+  #basket{
+    .basket{
+      .basket--card{
+        &__word{
+          &--order{
+            .count{
+              height: 30px;
+              span{
+                font-size: 16px;
+              }
+              .quantity{
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 360px) {
@@ -1444,12 +1449,6 @@
     font-size: 15px;
     position: relative;
     left: 2px;
-  }
-  #basket .basket .basket--card__word--order .count p {
-    color: white;
-    font-size: 16px;
-    width: 20px;
-    margin: -4px -8px 0 4px;
   }
   #basket .basket .basket--card__word--order {
     height: 32px;
@@ -1492,23 +1491,6 @@
     position: relative;
     left: 2px;
     top: -0px;
-  }
-  #basket .basket .basket--card__word--order .count span {
-    font-weight: 700;
-    margin: 0 5px;
-    color: white;
-    font-size: 16px;
-    text-align: center;
-  }
-  #basket .basket .basket--card__word--order .count {
-    width: 120px;
-    height: 1px;
-  }
-  #basket .basket .basket--card__word--order .count p {
-    color: white;
-    font-size: 14px;
-    width: 20px;
-    margin: -4px -8px 0 -4px;
   }
   #basket{
     .basket{
@@ -1585,6 +1567,21 @@
           justify-content: space-around;
         }
       }
+      .basket--card{
+        &__word{
+          &--order{
+            .count{
+              height: 26px;
+              span{
+                font-size: 16px;
+              }
+              .quantity{
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -1624,10 +1621,6 @@
     position: relative;
     left: 1px;
   }
-  #basket .basket .basket--card__word--order .count{
-    height: 5px;
-  }
-
   #basket .basket--status__general--here h2 {
     font-size: 14px;
     line-height: 18px;
@@ -1730,6 +1723,22 @@
           justify-content: space-around;
         }
       }
+      .basket--card{
+        &__word{
+          &--order{
+            .count{
+              height: 26px;
+              width: 65px;
+              span{
+                font-size: 14px;
+              }
+              .quantity{
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
     }
     .no-basket {
       width: 235px;
@@ -1757,5 +1766,6 @@
         font-size: 16px;
       }
     }
+
   }
 }

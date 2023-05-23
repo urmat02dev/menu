@@ -78,7 +78,7 @@ const BasketCard = ({el}) => {
                     <div className={"count"}>
                         <span style={{color: `${el.quantity > 1 ? "" : "#FFFFFF80"}`}}
                               onClick={handleDecrement}><AiOutlineMinus/></span>
-                        <p>{el.quantity}</p>
+                        <span className={'quantity'}>{el.quantity}</span>
                         <span onClick={handleIncrement}> <AiOutlinePlus/></span>
                     </div>
 
