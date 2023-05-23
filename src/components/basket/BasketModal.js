@@ -31,7 +31,7 @@ const BasketModal = () => {
                                 <h4>Оплата:{check.payment === 0 && "cash" || check.payment === 1 && "term" }</h4>
                                 {
                                     check.items.map(el => (
-                                        <div>
+                                        <div key={el.id}>
                                             <h1>{el.dish}</h1>
                                             <p>{el.quantity}</p>
                                         </div>

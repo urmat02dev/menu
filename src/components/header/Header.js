@@ -5,7 +5,7 @@ import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
 import {NavLink, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {ids} from "../starts/random";
+import {ids, parametr} from "../starts/random";
 const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
   const {i18n} = useTranslation()
@@ -22,7 +22,7 @@ const Header = () => {
     <div id='header'>
         <div className="container">
           <div className="header">
-              <NavLink to={`/1/main`}>
+              <NavLink to={`/${parametr}/main`}>
                 <img src={logos} alt=""/>
               </NavLink>
               <div className="header--end">

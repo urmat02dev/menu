@@ -11,9 +11,9 @@
     }
 
     .no-basket {
-      margin: 90px auto 20px auto;
+      margin: 30px auto 20px auto;
       width: 600px;
-      height: 600px;
+      height: 550px;
       border-radius: 20px;
       background: white;
       display: flex;
@@ -28,6 +28,7 @@
         img {
           width: 250px;
           height: 250px;
+          object-fit: contain;
         }
 
         h1 {
@@ -521,6 +522,57 @@
     position: relative;
     left: 21px;
   }
+  #basket{
+    .no-basket {
+      margin: 10px auto 20px auto;
+      width: 550px;
+      height: 500px;
+      border-radius: 20px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          width: 250px;
+          height: 250px;
+          object-fit: contain;
+        }
+
+        h1 {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          text-align: center;
+          width: 300px;
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 31px;
+          line-height: 34px;
+          color: #004FC7;
+
+        }
+
+        p {
+          width: 200px;
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 19px;
+          line-height: 22px;
+          text-align: center;
+          color: rgba(0, 79, 199, 0.5);
+        }
+
+      }
+    }
+  }
+
 }
 
 @media (max-width: 576px) {
@@ -577,18 +629,17 @@
     border: none;
   }
   #basket .no-basket {
-    margin: 40px auto 20px auto;
+    margin: 0 auto 20px auto;
     width: 417px;
     height: 411px;
   }
   #basket .no-basket .block img {
     width: 158px;
-    height: 250px;
+    height: 175px;
   }
   #basket .no-basket .block h1 {
     font-weight: 600;
     font-size: 25px;
-    text-align: start;
   }
   #basket .btn button {
     width: 382px;
@@ -706,29 +757,25 @@
     margin: 0 0 10px 0;
   }
   #basket .no-basket {
-    margin: 40px auto 20px auto;
+    margin: 0 auto 20px auto;
     width: 304px;
     height: 320px;
   }
   #basket .no-basket .block h1 {
     font-weight: 600;
-    font-size: 17px;
-    position: relative;
-    left: 40px;
-    bottom: 50px;
+    font-size: 19px;
+
   }
   #basket .no-basket .block p {
     width: 160px;
-    font-size: 11px;
-    line-height: 16px;
-    position: relative;
-    bottom: 57px;
+    font-size: 16px;
+
   }
   #basket .btn button {
-    width: 200px;
+    width: 300px;
     margin: 0 0 20px 0;
-    height: 36px;
-    font-size: 15px;
+    height: 50px;
+    font-size: 18px;
   }
   #basket .basket--btn button {
     width: 140px;
@@ -963,6 +1010,23 @@
       }
     }
   }
+  #basket {
+    .no-basket {
+
+      width: 304px;
+      height: 320px;
+      img{
+        width: 175px;
+        height: 175px;
+      }
+    }
+    .btn {
+      button {
+        width: 290px;
+        font-size: 17px;
+      }
+    }
+  }
 
 }
 
@@ -973,7 +1037,6 @@
     }
 
     .no-basket {
-      margin: 90px auto 10px auto;
       width: 300px;
       height: 330px;
 
@@ -1018,20 +1081,11 @@
     }
   }
   #basket .no-basket .block h1 {
-    margin-top: 52px;
-    font-size: 20px;
-    margin-left: -68px;
   }
   #basket .no-basket .block p {
-    font-size: 13px;
-    line-height: 12px;
-    text-align: center;
-    margin-top: 20px;
   }
   #basket .btn button {
-    width: 206px;
-    height: 42px;
-    font-size: 17px;
+    height: 45px;
   }
   #basket .basket .basket--card__img {
     width: 124px;
@@ -1300,7 +1354,6 @@
     margin: 10px 0 20px 12px;
   }
   #basket .no-basket {
-    margin: 30px auto 10px auto;
     width: 300px;
     height: 330px;
   }
@@ -1338,7 +1391,7 @@
 @media (max-width: 376px) {
   #basket {
     .no-basket {
-      margin: 50px auto 10px auto;
+
     }
   }
   #basket .basket .basket--card__word--order .price h4 {
@@ -1551,18 +1604,6 @@
     width: 88%;
     padding: 29px 0 0 0;
   }
-  #basket .no-basket {
-    margin: 50px auto 10px auto;
-    width: 235px;
-    height: 292px;
-    #basket .basket--pay__block--terminal input {
-      height: 15px;
-    }
-
-    #basket .basket--pay__block--cash input {
-      height: 15px;
-    }
-  }
   #basket .basket--pay__block {
     right: 85px;
     position: relative;
@@ -1669,6 +1710,32 @@
           align-items: center;
           justify-content: space-around;
         }
+      }
+    }
+    .no-basket {
+      width: 235px;
+      height: 292px;
+      .block{
+        h1{
+          font-size: 19px;
+        }
+        p{
+          font-size: 15px;
+        }
+      }
+      #basket .basket--pay__block--terminal input {
+        height: 15px;
+      }
+
+      #basket .basket--pay__block--cash input {
+        height: 15px;
+      }
+    }
+    .btn{
+      button{
+        width: 230px;
+        height: 45px;
+        font-size: 16px;
       }
     }
   }

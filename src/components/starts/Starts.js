@@ -1,30 +1,26 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import Slider from "react-slick"
 import "./Starts.scss"
 import start1 from "../../assets/img/start1.png"
 import start2 from "../../assets/img/start2.png"
 import start3 from "../../assets/img/start3.png"
 import {useNavigate} from "react-router-dom";
-import {ids, ran} from "./random";
-import axios from "axios";
-import {useDispatch, useSelector} from "react-redux";
-import {CARD_ID, GET_BASKET} from "../../redux/Reducer/ActionTypes";
+import {parametr} from "./random";
+import {useDispatch} from "react-redux";
 
 const Starts = () => {
   const nav = useNavigate()
-
   const dispatch = useDispatch()
   const settings = {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 500,
     scroll:true,
     autoplaySpeed: 1000,
     cssEase: "ease",
   };
-  const {cardId} = useSelector(state => state)
   async function getCreateTable () {
     // const url = await axios.post("https://aitenir.pythonanywhere.com/api/orders",{
     //   "table":2,
@@ -39,7 +35,7 @@ const Starts = () => {
     getCreateTable()
   },[])
   return (
-    <div id={"start"}  onClick={() => nav(`/1/main`)}>
+    <div id={"start"}  onClick={() => nav(`/${parametr}/main`)}>
       <div className="container">
         <div className="start">
           <div className="slider">
@@ -76,7 +72,7 @@ const Starts = () => {
               </div>
             </Slider>
           </div>
-          <div className={"btn"} onClick={() => nav(`/1/main/`) }>
+          <div className={"btn"} onClick={() => nav(`/${parametr}/main/`) }>
             <button  >Открыть меню</button>
           </div>
         </div>
