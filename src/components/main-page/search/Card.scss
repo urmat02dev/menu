@@ -67,7 +67,6 @@
           }
 
           &__icon1 {
-            position: absolute;
             right: 10%;
             background: #DFE2FF;
             border-radius: 15px;
@@ -76,7 +75,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 1;
             .icon1 {
               font-size: 26px;
               color: #0256d3;
@@ -163,7 +161,6 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          z-index: 10;
           .icon {
             font-size: 30px;
             color: #0256d3;
@@ -296,7 +293,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 451px) {
   #card .card--card__img {
     width: 120px;
     height: 120px;
@@ -365,7 +362,7 @@
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 415px) {
   #card .card--card__word h2 {
     width: 207px;
     font-size: 15px;

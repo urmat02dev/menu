@@ -27,7 +27,7 @@ const ModalSearch = () => {
             }}/>
             <div className="modal"  style={{
                 top:modal ? "" : "100%",
-                zIndex:modal ? "2" : "-1"
+                zIndex:modal ? "99" : "-1"
             }}>
                 <div className="modal--close" onClick={() => getClose()}>
                     <IoMdClose className={"icon"}/>

@@ -261,11 +261,19 @@
 @media (max-width: 401px) {
   #food {
     .food--card {
+      .img {
+        img {
+          width: 110px;
+          height: 100px;
+        }
+      }
       &__word {
         width: 200px;
+        margin-left: 10px;
         p {
-          width: 190px;
-          font-size: 13px;
+          width: 180px;
+          font-size: 11px;
+          line-height: 20px;
         }
         &--order {
           width: 170px;
@@ -292,13 +300,14 @@
       .img {
         img {
           width: 110px;
-          height: 110px;
+          height: 100px;
         }
       }
       &__word {
+        margin-left: 20px;
         p {
           width: 170px;
-          font-size: 14px;
+          font-size: 11px;
           line-height: 15px;
         }
         &--order {
@@ -318,11 +327,48 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 361px) {
   #food {
     .food--card {
       height: 150px;
+      .img {
+        img {
+          width: 110px;
+          height: 100px;
+        }
+      }
+      &__word {
+        margin-left: 20px;
+        p {
+          width: 150px;
+          font-size: 11px;
+          line-height: 15px;
+        }
+        h2 {
+          font-size: 15px;
+        }
+        &--order {
+          width: 160px;
+          h4 {
+          }
+          &__blockZ {
+            width: 50px;
+            height: 35px;
+            .icon2 {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
+@media (max-width: 321px) {
+  #food {
+    .food--card {
+      height: 150px;
+      width: 280px;
       .img {
         img {
           width: 100px;
@@ -331,15 +377,15 @@
       }
       &__word {
         h2 {
-          font-size: 16px;
+          font-size: 14px;
         }
         p {
-          width: 150px;
           font-size: 12px;
           line-height: 15px;
+          width: 130px;
         }
         &--order {
-          width: 140px;
+          width: 130px;
           h4 {
           }
           &__blockZ {
