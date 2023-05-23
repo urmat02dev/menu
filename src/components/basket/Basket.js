@@ -8,7 +8,7 @@ import BasketCard from "./BasketCard";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import {GET_BASKET, GET_CHECK} from "../../redux/Reducer/ActionTypes";
-import {ids} from "../starts/random";
+import {ids, parametr} from "../starts/random";
 import Loader from "../loader/Loader";
 const Basket = () => {
 
@@ -57,21 +57,20 @@ const Basket = () => {
   const getModal = async (el) => {
     if (order && pay) {
       const url = await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
-        table: ids,
+        table: parametr,
         is_takeaway:1,
         payment: 1,
         items: basket.map((el) => {
           return {
             "dish": el.id,
             "quantity": el.quantity
-
           }
         })
 
       })
       console.log(url)
       dispatch({type:GET_CHECK,payload:url.data})
-      return basket.splice(0, basket.length) && nav(`/1/main/print`)
+      return basket.splice(0, basket.length) && nav(`/${parametr}/main/print`)
     }
     else if (order === false && pay === false){
       setTimeout(() => {
@@ -157,7 +156,7 @@ const Basket = () => {
             </div>
 
           </div>
-          <div className={"btn"} onClick={() => nav("/main") }>
+          <div className={"btn"} onClick={() => nav(`/${parametr}/main`) }>
             <button>{t("basket.btn")}</button>
           </div>
         </div>

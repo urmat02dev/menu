@@ -15,6 +15,7 @@
            margin: 0 auto;
            width: 800px;
            height: 1000px;
+           border-radius: 30px;
          }
          h1{
            position: absolute;
@@ -122,7 +123,7 @@
             height: 900px;
           }
           h1{
-            left: 120px;
+            left: 150px;
             bottom:200px;
             font-size: 50px;
           }
@@ -197,6 +198,7 @@
   #start{
     background: #F4F3FF;
     .start{
+      height: 100vh;
       .slider{
         padding: 5% 0 2% 0;
         .item{
@@ -276,7 +278,7 @@
   #start{
     background: #F4F3FF;
     .start{
-      height: 110%;
+      height: 100vh;
       .slider{
         .item{
           width: 90%;
@@ -286,13 +288,13 @@
             height: 620px;
           }
           h1{
-            left: 9%;
-            bottom:30%;
+            left: 18%;
+            bottom:25%;
             font-size: 40px;
           }
           p{
             left: 26%;
-            bottom: 25%;
+            bottom: 20%;
             font-size: 19px;
           }
           .lines{
@@ -336,7 +338,7 @@
   #start{
     background: #F4F3FF;
     .start{
-      height: 110%;
+      height: 100vh;
       .slider{
         .item{
           width: 90%;
@@ -351,7 +353,7 @@
             font-size: 38px;
           }
           p{
-            left: 24%;
+            left: 22%;
             bottom: 25%;
             font-size: 19px;
           }
@@ -396,8 +398,8 @@
   #start{
     background: #F4F3FF;
     .start{
-      padding-top: 15%;
-      height: 750px;
+      margin-top: 14%;
+      height: 100vh;
       .slider{
         .item{
           width: 95%;
@@ -407,12 +409,12 @@
             height: 550px;
           }
           h1{
-            bottom:30%;
+            bottom:25%;
             font-size: 36px;
           }
           p{
             left: 24%;
-            bottom: 25%;
+            bottom: 20%;
             font-size: 17px;
           }
           .lines{
@@ -444,6 +446,7 @@
 
     }
     .btn{
+      margin-top: 7%;
       button{
         width: 70%;
         height: 50px;
@@ -456,24 +459,22 @@
   #start{
     background: #F4F3FF;
     .start{
-      padding-top: 10%;
       height: 100vh;
       .slider{
         .item{
           width: 95%;
-          height: 520px;
+          height: 500px;
           img {
             width: 95%;
-            height: 520px;
+            height: 500px;
           }
           h1{
-            left: 0;
-            bottom:25%;
+
+            bottom:22%;
             font-size: 36px;
           }
           p{
-            left: 24%;
-            bottom: 20%;
+            bottom: 17%;
             font-size: 17px;
           }
           .lines{
@@ -505,6 +506,7 @@
 
     }
     .btn{
+      margin-top: 10%;
       button{
         width: 70%;
         height: 50px;
@@ -517,24 +519,20 @@
   #start{
     background: #F4F3FF;
     .start{
-      padding-top: 10%;
-      height: 100vh;
       .slider{
         .item{
           width: 95%;
-          height: 520px;
+          height: 500px;
           img {
             width: 95%;
-            height: 520px;
+            height: 500px;
           }
           h1{
-            left: 45px;
-            bottom:25%;
+            left: 13%;
             font-size: 36px;
           }
           p{
-            left: 24%;
-            bottom: 20%;
+            left: 20%;
             font-size: 17px;
           }
           .lines{
@@ -578,7 +576,7 @@
   #start{
     background: #F4F3FF;
     .start{
-      padding-top: 10%;
+      margin-top: 3%;
       height: 100vh;
       .slider{
         .item{
@@ -589,12 +587,9 @@
             height: 520px;
           }
           h1{
-            bottom:25%;
-            font-size: 36px;
+            font-size: 33px;
           }
           p{
-            left: 24%;
-            bottom: 20%;
             font-size: 17px;
           }
           .lines{
@@ -626,6 +621,7 @@
 
     }
     .btn{
+      margin-top: 3%;
       button{
         width: 70%;
         height: 50px;
@@ -638,7 +634,6 @@
   #start{
     background: #F4F3FF;
     .start{
-      padding-top: 5%;
       height: 100vh;
       .slider{
         .item{
@@ -649,14 +644,10 @@
             height: 500px;
           }
           h1{
-
-            bottom:20%;
-            font-size: 34px;
+            bottom: 17%;
           }
           p{
-            left: 22%;
-            bottom: 15%;
-            font-size: 17px;
+            bottom: 12%;
           }
           .lines{
             .one{
@@ -698,43 +689,44 @@
 @media (max-width: 360px) {
   #start{
     .start{
-      padding-top: 10%;
+      margin-top: 13%;
       height: 100vh;
       .slider{
         .item{
           width: 98%;
-          height: 490px;
+          height: 530px;
           img {
             width: 98%;
-            height: 490px;
+            height: 530px;
           }
           h1{
-            bottom:25%;
-            font-size: 32px;
+            left: 11%;
+            bottom: 20%;
+            font-size: 34px;
           }
           p{
-            left: 20%;
-            bottom: 20%;
-            font-size: 16px;
+
+            bottom: 15%;
+            font-size: 17px;
           }
           .lines{
             .one{
               width: 68px;
               height: 4px;
               left: 16%;
-              bottom: 50px;
+              bottom:30px;
             }
             .two{
               width: 68px;
               height: 4px;
               left: 39%;
-              bottom: 50px;
+              bottom:30px;
             }
             .three{
               width: 68px;
               height: 4px;
               left: 62%;
-              bottom: 50px;
+              bottom:30px;
             }
             .line{
               background: white;
@@ -756,21 +748,22 @@
 @media (max-width: 320px) {
   #start{
     .start{
-      padding-top: 10%;
+      margin-top: 5px;
       .slider{
         .item{
+          height: 350px;
+          width: 90%;
           img {
             width: 90%;
-            height: 480px;
+            height: 350px;
           }
           h1{
-            bottom:23%;
-            font-size: 28px;
+            font-size: 25px;
+            left: 17%;
           }
           p{
-            left: 23%;
-            bottom: 18%;
             font-size: 13px;
+            left: 22%;
           }
           .lines{
             .one{

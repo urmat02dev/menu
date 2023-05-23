@@ -6,7 +6,7 @@ import Basket from "./components/basket/Basket";
 import React, {useEffect} from "react";
 import SearchResult from "./components/main-page/search/SearchResult";
 import BasketModal from "./components/basket/BasketModal";
-import {ids, ran} from "./components/starts/random";
+import {ids, parametr, ran} from "./components/starts/random";
 import {GET_FOODS} from "./redux/Reducer/ActionTypes";
 import {useDispatch} from "react-redux";
 import axios from "axios";
@@ -24,16 +24,16 @@ function App() {
 
     useEffect(()=>{
         getFoods()
-        nav(`/1`)
+        nav(`/${parametr}`)
     },[])
   return (
    <>
      <Routes>
-       <Route path={`/1/`} element={<Starts/>}/>
-       <Route path={`/1/main/`} element={<MainPage/>}/>
+       <Route path={`/${parametr}/`} element={<Starts/>}/>
+       <Route path={`/${parametr}/main/`} element={<MainPage/>}/>
        <Route path="/basket" element={<Basket/>}/>
        <Route path="/search" element={<SearchResult/>}/>
-       <Route path={`/1/main/print`} element={<BasketModal/>}/>
+       <Route path={`/${parametr}/main/print`} element={<BasketModal/>}/>
 
      </Routes>
    </>
