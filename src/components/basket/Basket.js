@@ -55,20 +55,22 @@ const Basket = () => {
     else setPay(false)
   }
   const getModal = async (el) => {
+
     if (order && pay) {
       const url = await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
         table: parametr,
-        is_takeaway:1,
-        payment: 1,
+        is_takeaway:here ? 0 : "" || s ? 1 : "",
+        payment:cash ? 0 : "" || tern ? 1 : "" ,
         items: basket.map((el) => {
           return {
             "dish": el.id,
             "quantity": el.quantity
           }
         })
-
       })
       console.log(url)
+
+
       dispatch({type:GET_CHECK,payload:url.data})
       return basket.splice(0, basket.length) && nav(`/${parametr}/main/print`)
     }
@@ -78,7 +80,6 @@ const Basket = () => {
       },2000)
     }
   }
-
 
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity

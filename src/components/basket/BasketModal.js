@@ -22,21 +22,15 @@ const BasketModal = () => {
                             <div onClick={() => nav(`/1/main/`)} className={"modalBasket--block__ich--close"}>
                                 <p>&times;</p>
                             </div>
-
                             <div className={"check"}>
                             <div className={"check--total"}>
-                                <h1>Итого:{check.total_price}</h1>
-                                <p>Стол№{check.table}</p>
-                                <h3>Время:{check.time_created}</h3>
-                                <h4>Оплата:{check.payment === 0 && "cash" || check.payment === 1 && "term" }</h4>
-                                {
-                                    check.items.map(el => (
-                                        <div key={el.id}>
-                                            <h1>{el.dish}</h1>
-                                            <p>{el.quantity}</p>
-                                        </div>
-                                    ))
-                                }
+                                <h5>Ваш чек</h5>
+                                <h3>Дата:{check.time_created}</h3>
+                                <h1>Итого:{check.total_price}c.</h1>
+                                <p>Стол №{check.table}</p>
+
+                                <h4>Оплата:{check.payment === 0 ? "Наличный"  : "" || check.payment === 1 ? "Терминал" : ""}</h4>
+                                <h4>Заказ статуса:{check.is_takeaway === 0 ? "Здесь" : "" || check.payment === 1 ?  "С собой" : "" }</h4>
                             </div>
                             </div>
                         </div>
