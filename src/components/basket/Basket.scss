@@ -413,9 +413,6 @@
     position: relative;
     right: 10px;
   }
-  #basket .basket--total h2 {
-    margin-left: 33px;
-  }
   #basket .basket--total {
     margin: 0 0 60px 0;
   }
@@ -447,9 +444,7 @@
     width: 170px;
     height: 20px;
   }
-  #basket .basket--total h2 {
-    margin-left: 33px;
-  }
+
   #basket .basket--total {
     margin: 0 0 60px 0;
   }
@@ -699,6 +694,8 @@
   #basket .basket .basket--card__word .desc .close .icon {
     font-size: 18px;
     color: white;
+      position: relative;
+    left: 1px;
 
   }
   #basket .basket .basket--card__word--order .price h4 {
@@ -782,10 +779,6 @@
     height: 38px;
     border-radius: 18px;
   }
-  #basket .basket--total {
-    width: 88%;
-    height: 53px;
-  }
   #basket .basket--total h1 {
     width: 77px;
     height: 25px;
@@ -795,13 +788,17 @@
     width: 20px;
     height: 20px;
     position: relative;
-    left: 1px;
+    left: -10px;
   }
-  #basket .basket .basket--card__word--order .count span {
-    font-size: 19px;
+  #basket .basket .basket--card__word--order .count p {
+    font-size: 16px;
+  }
+    #basket .basket .basket--card__word--order .count span {
+    font-size: 16px;
   }
   #basket .basket .basket--card__word--order .count {
-    height: 5px;
+    height: 9px;
+    width: 140px;
     margin-right: 1px;
   }
   #basket{
@@ -872,6 +869,16 @@
           justify-content: space-around;
         }
       }
+      &--card{
+        &__word{
+          &--oreder{
+            height: 8px;
+          }
+        }
+      }
+      &--total{
+        padding: 0  20px;
+      }
     }
   }
 }
@@ -922,17 +929,17 @@
     height: 37px;
   }
   #basket .basket .basket--card__word--order .count {
-    width: 157px;
-    height: 5px;
+    width: 136px;
+    height: 8px;
   }
   #basket .basket .basket--card__word--order .count p{
-   font-size: 18px;
+   font-size: 16px;
   }
   #basket .basket .basket--card__word .desc .close {
     width: 22px;
     height: 21px;
     position: relative;
-    left: 1px;
+    left: -10px;
   }
   #basket{
     .basket{
@@ -1211,7 +1218,7 @@
   }
   #basket .basket .basket--card__word--order .count {
     width: 108px;
-    height: 4px;
+    height: 8px;
   }
   #basket .basket .basket--card__word--order .count span {
     font-weight: 700;
@@ -1244,6 +1251,8 @@
   #basket .basket .basket--card__word .desc .close .icon {
     font-size: 14px;
     color: white;
+    position: relative;
+    left: 2px;
   }
   #basket .basket .basket--card__word--order .count span {
     font-weight: 700;
@@ -1480,6 +1489,9 @@
   #basket .basket .basket--card__word .desc .close .icon {
     font-size: 13px;
     color: white;
+    position: relative;
+    left: 2px;
+    top: -0px;
   }
   #basket .basket .basket--card__word--order .count span {
     font-weight: 700;
@@ -1582,7 +1594,7 @@
     width: 150px;
     font-size: 13px;
     position: relative;
-    left: -2px;
+    left: -1px;
   }
   #basket .basket .basket--card {
     height: 149px;
@@ -1607,6 +1619,13 @@
   #basket .basket--pay__block {
     right: 85px;
     position: relative;
+  }
+  #basket .basket .basket--card__word .desc .close .icon{
+    position: relative;
+    left: 1px;
+  }
+  #basket .basket .basket--card__word--order .count{
+    height: 5px;
   }
 
   #basket .basket--status__general--here h2 {
