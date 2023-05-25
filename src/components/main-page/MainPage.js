@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from "../header/Header";
 import Search from "./search/Search";
 import Category from "./category/Category";
@@ -14,7 +14,10 @@ const MainPage = () => {
     const dispatch = useDispatch()
     const [active, setActive] = useState(0)
     const [best, setBest] = useState(true)
+    let lang  = localStorage.getItem("backend")
+    useEffect(() => {
 
+    },[lang])
     return (
         <div>
             <Header/>
