@@ -5,14 +5,17 @@ import "./BasketModal.scss"
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import {ids, parametr, ran} from "../starts/random";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {FaPencilAlt} from "react-icons/fa";
 import axios from "axios";
-import {AiOutlineCheck} from "react-icons/ai";
+import {AiOutlineCheck, AiOutlineCloseCircle} from "react-icons/ai";
+import {EMPTY_BASKET, GET_BASKET} from "../../redux/Reducer/ActionTypes";
 const BasketModal = () => {
     const nav = useNavigate()
     const {t} = useTranslation()
+    const dispatch = useDispatch()
     const {check,basket} = useSelector(state => state)
+    const [items, setItems] = useState([])
     const getNav = () => {
         window.scrollTo({
             top:0,
@@ -23,6 +26,7 @@ const BasketModal = () => {
     }
     const getPost = async () => {
         setTimeout(async () => {
+            let basket = JSON.parse(localStorage.getItem("backend")) || []
             nav(`/1/main/`)
             const url = await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
                 table: parametr,
@@ -36,12 +40,13 @@ const BasketModal = () => {
                 })
             })
             console.log(url)
-            return basket.splice(0,basket.length)
-        },30000000)
+            return dispatch({type:EMPTY_BASKET, payload:items}) && localStorage.setItem("backend",JSON.stringify(items))
+        },3000)
 
 
     }
     const getSpeed = async () => {
+        let basket = JSON.parse(localStorage.getItem("backend")) || []
         nav(`/1/main/`)
         const url = await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
             table: parametr,
@@ -55,41 +60,43 @@ const BasketModal = () => {
             })
         })
         console.log(url)
-        return basket.splice(0,basket.length)
+        return dispatch({type:EMPTY_BASKET, payload:items}) && localStorage.setItem("backend",JSON.stringify(items))
     }
+    const total = basket.reduce((acc,e) => {
+        return acc + e.price * e.quantity
+    },0)
     useEffect(() => {
         getPost()
-    },[])
+
+    },[items])
+
     return (
         <section id={"modalBasket"}>
-            <img src="https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg"  alt="" style={{
-                position:"relative",
-                left:"0",
-                top:"0",
-                width:"100%",
-                height:"100vh",
-            }}/>
             <div className={'container'}>
-                <div className={"modalBasket"}>
+                 <div className={"modalBasket"}>
                     <div className={"modalBasket--block"}>
                         <div className={'modalBasket--block__ich'}>
                             <img src={print} alt=""/>
                             <h1>{t("order.zak")}</h1>
                             <div onClick={() => nav(`/1/main/`)} className={"modalBasket--block__ich--close"}>
-                                <AiOutlineCheck/>
+                                <AiOutlineCloseCircle/>
                             </div>
                             <div>
                                 {
                                     basket.map(el => (
-                                        <div><p>{el.name_ru}</p></div>
+                                        <div>
+                                            <p className={'zak'}>{el.name_ru} <div className={'syz'}></div><span>{el.quantity * el.price}</span> </p>
+
+                                        </div>
+
                                     ))
                                 }
+                                <h4 className={'zakk'}>Total <div className='syzz'></div>{total}</h4>
                             </div>
 
                             <div className={"check"}>
-                                <span className={"change"} onClick={() => getNav()}><FaPencilAlt/> Изменить</span>
-                                <span className={"change"} onClick={() => getSpeed()}><AiOutlineCheck/> {t("basket.cont")}</span>
-
+                                <span className={"change"} onClick={() => getNav()}><FaPencilAlt className={'icon11'}/>{t("order.change")}</span>
+                                <span className={"change"} onClick={() => getSpeed()}><AiOutlineCheck className={'icon11'}/> {t("basket.cont")}</span>
                             </div>
                         </div>
                     </div>

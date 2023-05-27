@@ -1,22 +1,11 @@
 
 @media (max-width: 992px) {
   #modalBasket{
-    height: 100vh;
-    //background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover ;
-    position: relative;
+    background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover ;
     .modalBasket{
-      background: rgba(10, 10, 10, 0.2);
-      backdrop-filter: blur(7px);
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      //lef/t: 200px;
-      top: 0;
-      right: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      //padding-top: 3%;
       animation: sad 1s ease-out ;
       @keyframes sad {
         0%{
@@ -29,7 +18,6 @@
       &--block{
         margin-top: 10%;
         width: 500px;
-        height: 550px;
         background: #DFE2FF;
         border-radius: 20px;
         &__ich{
@@ -61,6 +49,7 @@
             border-radius: 50%;
             height: 30px;
             width: 30px;
+            color: white;
             p{
               font-size: 30px;
               color: #FFFFFF;
@@ -73,10 +62,42 @@
             margin-top: 200px;
             width: 400px;
             height: 100px;
-            background: #004FC7;
             .change{
-              margin: 0 10px;
+              margin: 0 15px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 140px;
+              height: 40px;
+              background: #004FC7;
+              border-radius: 10px;
+              color: white;
+              .icon11{
+                margin: 0 5px;
+              }
             }
+          }
+          .syz{
+            width: 100%;
+            margin: 0 10px;
+            border: 1.5px dashed black;
+          }
+          .syzz{
+            width: 225px;
+            height: 1px;
+            background: black;
+          }
+          .zakk{
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+
+
+          }
+          .zak{
+            display: flex;
+            align-items: center;
+
           }
         }
       }

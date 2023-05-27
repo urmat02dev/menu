@@ -1,17 +1,18 @@
 import {
   CARD_ID,
-  DELETE,
+  DELETE, EMPTY_BASKET,
   GET_BASKET, GET_CHECK, GET_DETAIL, GET_FOODS, GET_PARAMS,
   MINUS,
   MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET,
   SEARCH
 } from "./ActionTypes";
+import basket from "../../components/basket/Basket";
 
 const initialState ={
   foods:[],
-  basket:  JSON.parse(localStorage.getItem("backend"))|| [],
+  basket:  JSON.parse(localStorage.getItem("backend")) || [],
   modal:false,
-  detail: JSON.parse(localStorage.getItem("back"))|| {},
+  detail: {},
   search:"",
   cardId:"",
   element:{},
@@ -39,6 +40,9 @@ export const MainReducer = (state = initialState, action) => {
       }else{
         return {...state, basket: [...state.basket, {...action.payload,quantity: 1}]} }
 
+    }
+    case EMPTY_BASKET: {
+      return {...state, basket:action.payload}
     }
     case MODAL_TO_BASKET : {
       return {...state, basket: [...state.basket, {...action.payload, quantity: action.payload.quantity}]}

@@ -8,9 +8,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {ids, parametr} from "../starts/random";
 const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
+  // const basket = JSON.parse(localStorage.getItem("backend"))
+    const {basket} = useSelector(state => state)
   const {i18n} = useTranslation()
     const dispatch = useDispatch()
-  const {basket} = useSelector(state => state)
     const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
@@ -18,6 +19,10 @@ const Header = () => {
     const getNav = () => {
       nav("/basket")
     }
+    useEffect(() => {
+
+    },[basket])
+    console.log(basket)
   return (
     <div id='header'>
         <div className="container">
@@ -32,7 +37,7 @@ const Header = () => {
                            display: basket.length  ?  "flex" : "none"
                          }}
                     >
-                      <sup>{basket.length  ? basket.length : "none" }</sup>
+                      <sup>{basket  ? basket.length : "none" }</sup>
                     </div>
                       <BiBasket className='header--end__one--icon' onClick={() => getNav()}/>
                   </div>
