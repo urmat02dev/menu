@@ -16,6 +16,7 @@ const Basket = () => {
   const {t} = useTranslation()
   const dispatch = useDispatch()
   const {basket} = useSelector(s => s)
+  // const basket = JSON.parse(localStorage.getItem("backend"))
   const [loader, setLoader] = useState(false)
   const [here,setHere] = useState(false)
   const [s,setS] = useState(false)
@@ -62,7 +63,7 @@ const Basket = () => {
     else if (order === false && pay === false){
       setTimeout(() => {
         setBtn(false)
-      },2000)
+      },1000)
     }
   }
 
@@ -70,7 +71,8 @@ const Basket = () => {
     return acc + e.price * e.quantity
   },0)
   useEffect(() => {
-  },[])
+  },[basket])
+  console.log(basket)
 
   return basket.length ?
     <>

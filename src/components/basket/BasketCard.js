@@ -4,7 +4,6 @@ import {IoMdClose} from "react-icons/io";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {useDispatch, useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
-import axios from "axios";
 import {DELETE, GET_BASKET, MINUS} from "../../redux/Reducer/ActionTypes";
 
 const BasketCard = ({el}) => {

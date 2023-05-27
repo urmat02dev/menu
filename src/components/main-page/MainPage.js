@@ -14,10 +14,10 @@ const MainPage = () => {
     const dispatch = useDispatch()
     const [active, setActive] = useState(0)
     const [best, setBest] = useState(true)
-    let lang  = localStorage.getItem("backend")
+    let basket  = JSON.parse(localStorage.getItem("backend"))
     useEffect(() => {
 
-    },[lang])
+    },[basket])
     return (
         <div>
             <Header/>

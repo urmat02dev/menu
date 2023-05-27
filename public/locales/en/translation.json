@@ -38,7 +38,8 @@
     "8": "Hot"
 },
   "order":{
-    "zak": "Your order has been accepted!"
+    "zak": "Your order has been accepted!",
+    "change" : "Сhange"
   }
 
 }
