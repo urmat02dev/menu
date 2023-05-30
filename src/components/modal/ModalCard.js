@@ -63,8 +63,10 @@ const ModalCard = ({el}) => {
                 <div className="modal--desc">
                     <h2 className="modal--desc__h2">{getTitle(el)}</h2>
                     <h3 className='modal--desc__h3'>{getDesc(el)}</h3>
-                    <h4>{el.gram}г.</h4>
-                    <h5>Цена:<span>{el.price}c</span></h5>
+                    <div className="modal--desc__price">
+                        <h5>Цена:<span>{el.price}c</span></h5>
+                        <h4>{el.gram}г.</h4>
+                    </div>
                 </div>
                 <div className="modal--basket">
                     {
