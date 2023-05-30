@@ -1,6 +1,7 @@
 
 @media (max-width: 992px) {
   #modalBasket{
+    height: 1000px;
     background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover ;
     .modalBasket{
       display: flex;
@@ -55,70 +56,65 @@
               color: #FFFFFF;
             }
           }
-          .check{
+        }
+        .check{
+          display: flex;
+          align-items: start;
+          justify-content: center;
+          margin-top: 30px;
+          width: 500px;
+          height: 100px;
+          .change{
+            margin: 0 15px;
             display: flex;
-            align-items: start;
+            align-items: center;
             justify-content: center;
-            margin-top: 200px;
-            width: 400px;
-            height: 100px;
-            .change{
-              margin: 0 15px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: 140px;
-              height: 40px;
-              background: #004FC7;
-              border-radius: 10px;
-              color: white;
-              .icon11{
-                margin: 0 5px;
-              }
+            width: 120px;
+            font-size: 13px;
+            height: 35px;
+            background: #004FC7;
+            border-radius: 10px;
+            color: white;
+            .icon11{
+              margin: 0 5px;
             }
           }
-          .syz{
-            width: 100%;
-            margin: 0 10px;
-            border: 1.5px dashed black;
-          }
-          .syzz{
-            width: 225px;
-            height: 1px;
-            background: black;
-          }
-          .zakk{
-            margin-top: 10px;
-            display: flex;
-            align-items: center;
+        }
+        .syz{
+          width: 100%;
+          margin: 0 10px;
+          border: 1.5px dashed black;
+        }
+        .syzz{
+          width: 225px;
+          margin: 0 5px;
+          height: 1px;
+          background: black;
+        }
+        .zakk{
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          font-weight: bold;
 
+        }
+        .zak{
+          display: flex;
+          align-items: center;
 
-          }
-          .zak{
-            display: flex;
-            align-items: center;
-
-          }
         }
       }
     }
   }
 }
-@media (max-width: 824px) {
-
-}
-@media (max-width: 768px) {
-
-}
 @media (max-width: 576px) {
   #modalBasket{
-    height: 100vh;
+    height: 800px;
     background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover;
     .modalBasket{
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top: 32%;
       animation: sad 1s ease-out ;
       @keyframes sad {
         0%{
@@ -129,17 +125,15 @@
         }
       }
       &--block{
-        width: 342px;
-        height: 337px;
         background: #DFE2FF;
         border-radius: 20px;
         &__ich{
-          position: relative;
           display: flex;
           flex-direction: column;
           align-items: center;
           img{
-            margin-top: 20%;
+            width: 130px;
+            margin-top: 10%;
           }
           h1{
             margin: 15px 0;
@@ -174,69 +168,98 @@
 
 }
 @media (max-width: 450px) {
+  #modalBasket{
+    height: 700px;
+    .modalBasket{
+      &--block{
+        margin-top: 10%;
+        width: 400px;
+        //height: 500px;
+        &__ich{
+          img{
+            width: 120px;
+          }
+        }
+        .check{
+          width: 400px;
+        }
+        .zak{
+          font-size: 13px;
+        }
+        .zakk{
+          font-size: 14px;
+        }
+      }
+    }
+  }
 
 }
 @media (max-width: 428px) {
 
 
 }
-@media (max-width: 360px) {
+
+
+@media (max-width: 400px) {
   #modalBasket{
-    height: 100vh;
-    background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover;
+    height: 600px;
     .modalBasket{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 32%;
-      animation: sad 1s ease-out ;
-      @keyframes sad {
-        0%{
-          transform: translateX(-400px);
+      &--block{
+        margin-top: 10%;
+        width: 350px;
+        //height: 500px;
+        &__ich{
+          img {
+            width: 110px;
+          }
         }
-        30%{
-          transform: rotateY(200deg);
+        .check{
+          width: 350px;
+        }
+        .zak{
+          font-size: 13px;
+        }
+        .zakk{
+          //margin: 0 2px;
+          font-size: 13px;
+          //line-height: -40px;
+        }
+        .syzz{
+          width: 140px;
         }
       }
+    }
+  }
+
+}
+@media (max-width: 360px) {
+  #modalBasket{
+    height: 550px;
+    .modalBasket{
       &--block{
-        width: 342px;
-        height: 337px;
-        background: #DFE2FF;
-        border-radius: 20px;
+        margin-top: 10%;
+        width: 330px;
+        //height: 500px;
         &__ich{
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          img{
-            margin-top: 20%;
-          }
           h1{
-            margin: 15px 0;
-            font-weight: 600;
-            font-size: 20px;
-            line-height: 34px;
-            color: #004FC7;
+            font-size: 18px;
           }
-          &--close{
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 10px;
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(40, 49, 255, 0.3);
-            font-size: 40px;
-            border-radius: 50%;
-            height: 30px;
-            width: 30px;
-            p{
-              font-size: 20px;
-              color: #FFFFFF;
-            }
-          }
+        }
+        .check{
+          width: 300px;
+        }
+        .zak{
+          display: flex;
+          align-items: center;
+          font-size: 13px;
+        }
+        .zakk{
+          //margin: 0 2px;
+          font-size: 13px;
+          //line-height: -40px;
+        }
+        .syzz{
+          width: 130px;
         }
       }
     }
@@ -245,13 +268,12 @@
 }
 @media (max-width: 320px) {
   #modalBasket{
-    height: 100vh;
     background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover;
     .modalBasket{
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top: 39%;
+      //padding-top: 39%;
       animation: sad 1s ease-out ;
       @keyframes sad {
         0%{
@@ -262,8 +284,8 @@
         }
       }
       &--block{
-        width: 330px;
-        height: 317px;
+        //height: 317px;
+        width: 320px;
         background: #DFE2FF;
         border-radius: 20px;
         &__ich{
@@ -301,10 +323,37 @@
             }
           }
         }
+        .check{
+          width: 300px;
+          .change{
+            width: 110px;
+            height: 35px;
+            font-size: 13px;
+          }
+        }
+        .syz{
+          width: 100%;
+          margin: 0 10px;
+          border: 1.5px dashed black;
+          font-size: 10px;
+        }
+        .zakk{
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          font-size: 12px;
+
+
+        }
+        .zak{
+          display: flex;
+          align-items: center;
+          font-size: 12px;
+        }
+        .syzz{
+          width: 150px;
+        }
       }
     }
   }
-}
-@media (max-width: 320px) {
-
 }
