@@ -16,6 +16,16 @@ const BasketModal = () => {
     const dispatch = useDispatch()
     const {check,basket} = useSelector(state => state)
     const [items, setItems] = useState([])
+    const lang = localStorage.getItem("i18nextLng")
+    const getTitle = (el) => {
+        if (lang === "en") {
+            return el.name_en
+        } else if (lang === "ru") {
+            return el.name_ru
+        } else if (lang === "kg") {
+            return el.name_kg
+        }
+    }
     const getNav = () => {
         window.scrollTo({
             top:0,
@@ -41,7 +51,7 @@ const BasketModal = () => {
             })
             console.log(url)
             return dispatch({type:EMPTY_BASKET, payload:items}) && localStorage.setItem("backend",JSON.stringify(items))
-        },300000000)
+        },300000)
 
 
     }
@@ -85,13 +95,13 @@ const BasketModal = () => {
                                 {
                                     basket.map(el => (
                                         <div>
-                                            <p className={'zak'}>{el.name_ru} <div className={'syz'}></div><span>{el.quantity * el.price}</span> </p>
+                                            <p className={'zak'}>{getTitle(el)} <div className={'syz'}></div><span>{el.quantity * el.price}{t("basket.s")}</span> </p>
 
                                         </div>
 
                                     ))
                                 }
-                                <h4 className={'zakk'}>Total <div className='syzz'></div>{total}</h4>
+                                <h4 className={'zakk'}>{t("basket.sum")} <div className='syzz'></div>{total}{t("basket.s")}</h4>
                             </div>
                         </div>
                         <div className={"check"}>

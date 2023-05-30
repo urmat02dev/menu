@@ -27,15 +27,16 @@
     z-index: 99;
 
     &--img {
-      padding-top: 90px;
+      padding-top: 50px;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: start;
+      justify-content: start;
       position: relative;
 
       img {
-        width: 600px;
-        border-radius: 50px;
+        width: 530px;
+        height: 380px;
+        border-radius: 10px;
       }
 
     }
@@ -44,7 +45,7 @@
       width: 60%;
       padding: 0 30px;
       display: flex;
-      align-items: start;
+      align-items: center;
       justify-content: center;
       flex-direction: column;
       z-index: 15;
@@ -66,38 +67,44 @@
         font-weight: 400;
         font-size: 25px;
         line-height: 30px;
+        width: 91%;
         color: rgba(0, 0, 0, 0.7);
       }
 
-      h4 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-style: italic;
-        font-weight: 400;
-        font-size: 26px;
-        line-height: 22px;
-        color: rgba(0, 0, 0, 0.7);
-        margin-top: 10px;
-        margin-bottom: 16px;
-      }
+      &__price {
+        width: 91%;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
 
-      h5 {
-        margin-top: 5px;
-        font-family: 'Armin Grotesk', sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 26px;
-        line-height: 23px;
-        color: #121212;
-
-        span {
+        h4 {
           font-family: 'Armin Grotesk', sans-serif;
-          font-weight: 600;
-          margin-left: 10px;
+          font-weight: 400;
           font-size: 26px;
           line-height: 22px;
-          color: #000000;
+          color: rgba(0, 0, 0, 0.7);
+        }
+
+        h5 {
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 26px;
+          line-height: 23px;
+          color: #121212;
+
+          span {
+            font-family: 'Armin Grotesk', sans-serif;
+            font-weight: 600;
+            margin-left: 10px;
+            font-size: 26px;
+            line-height: 22px;
+            color: #000000;
+          }
         }
       }
+
+
     }
 
     &--basket {
@@ -105,8 +112,8 @@
       align-items: center;
       justify-content: space-between;
       width: 60%;
-      margin-top: 50px;
-      margin-bottom: 150px;
+      margin-top: 30px;
+      margin-bottom: 60px;
 
       .basket {
         width: 290px;
@@ -206,28 +213,38 @@
   .modal {
     &--img {
       img {
-        width: 500px;
-        border-radius: 20px;
-        height: 500px;
+        width: 400px;
+        height: 300px;
       }
     }
 
     &--desc {
       padding: 0 0;
-      width: 65%;
+      width: 56%;
+
+      &__h2 {
+        font-size: 27px;
+        padding: 0;
+        margin-top: 20px;
+      }
     }
 
     &--basket {
-      width: 65%;
+      width: 56%;
 
       .basket {
-        width: 230px;
-        padding-left: 20px;
+        width: 200px;
+        padding-left: 8px;
 
         .icon-block {
           margin-left: 10px;
+          width: 60px;
         }
       }
+    }
+
+    .count {
+      width: 180px;
     }
   }
 }
@@ -236,14 +253,29 @@
   .modal {
     &--img {
       img {
-        width: 400px;
-        height: 400px;
-        border-radius: 20px;
+        width: 320px;
+        height: 240px;
+        border-radius: 10px;
       }
     }
 
     &--desc {
       width: 70%;
+
+      &__h2 {
+        font-size: 25px;
+        padding: 0 0;
+        margin-top: 10px;
+      }
+
+      &__h3 {
+        padding: 10px 0;
+        font-size: 23px;
+      }
+
+      h4 {
+        font-size: 22px;
+      }
     }
 
     &--basket {
@@ -280,11 +312,11 @@
 @media (max-width: 451px) {
   .modal {
     .modal--img {
-      padding-top: 50px;
+      padding-top: 40px;
+
       img {
-        width: 320px;
-        height: 280px;
-        border-radius: 20px;
+        width: 280px;
+        height: 240px;
       }
     }
 
@@ -300,32 +332,43 @@
         font-size: 20px;
         padding: 0 0;
       }
-      h4 {
-        font-size: 23px;
-      }
-      h5 {
-        font-size: 23px;
-        span {
-          font-size: 25px;
+
+      &__price {
+        margin-top: 15px;
+
+        h4 {
+          font-size: 23px;
+        }
+
+        h5 {
+          font-size: 23px;
+
+          span {
+            font-size: 25px;
+          }
         }
       }
     }
 
     &--basket {
-      width: 80%;
+      width: 70%;
+      margin-bottom: 40px;
+      margin-top: 20px;
 
       .basket {
-        width: 180px;
-        padding-left: 10px;
-        height: 60px;
+        width: 160px;
+        padding-left: 6px;
+        height: 55px;
+
         &--were {
           font-size: 18px;
         }
 
         .icon-block {
           margin-left: 10px;
-          width: 57px;
-          height: 40px;
+          width: 50px;
+          height: 42px;
+          border-radius: 20px;
 
           &--icon {
             .icon {
@@ -336,7 +379,8 @@
       }
 
       .count {
-        width: 130px;
+        width: 120px;
+        height: 55px;
       }
     }
 
@@ -344,6 +388,7 @@
       width: 35px;
       height: 35px;
       top: 20px;
+
       .icon {
         font-size: 26px;
       }
@@ -353,15 +398,11 @@
 
 @media (max-width: 415px) {
   .modal {
-    border-radius: 20px;
-
     .modal--img {
-      padding-top: 60px;
-
+      padding-top: 30px;
       img {
         width: 290px;
         height: 250px;
-        border-radius: 20px;
       }
     }
 
@@ -377,7 +418,7 @@
     }
 
     &--desc {
-      width: 70%;
+      width: 74%;
 
       &__h2 {
         font-size: 20px;
@@ -385,7 +426,6 @@
       }
 
       &__h3 {
-        width: 300px;
         font-size: 18px;
         padding: 10px 0;
       }
@@ -443,10 +483,9 @@
 
 @media (max-width: 401px) {
   .modal {
-    border-radius: 20px;
 
     .modal--img {
-      padding-top: 60px;
+      padding-top: 30px;
 
       img {
         width: 290px;
@@ -467,7 +506,7 @@
     }
 
     &--desc {
-      width: 70%;
+      width: 80%;
 
       &__h2 {
         font-size: 20px;
@@ -475,8 +514,8 @@
       }
 
       &__h3 {
-        width: 300px;
         font-size: 18px;
+        line-height: 25px;
         padding: 10px 0;
       }
 
@@ -494,9 +533,8 @@
     }
 
     &--basket {
-      width: 73%;
-      margin-bottom: 100px;
-      margin-top: 30px;
+      width: 77%;
+
       .basket {
         width: 150px;
         height: 56px;
@@ -534,8 +572,6 @@
 
 @media (max-width: 391px) {
   .modal {
-    border-radius: 20px;
-
     &--close {
       top: 20px;
       right: 20px;
@@ -548,7 +584,7 @@
     }
 
     .modal--img {
-      padding-top: 50px;
+      padding-top: 30px;
 
       img {
         width: 230px;
@@ -558,6 +594,7 @@
     }
 
     &--desc {
+      width: 81%;
       &__h2 {
         font-size: 19px;
       }
@@ -582,9 +619,7 @@
     }
 
     &--basket {
-      margin-top: 35px;
-      margin-bottom: 110px;
-      width: 70%;
+      width: 79%;
 
       .basket {
         width: 130px;
@@ -683,6 +718,7 @@
         }
       }
     }
+
     .icon-block {
       width: 30px;
       height: 27px;
@@ -694,6 +730,7 @@
         }
       }
     }
+
     .count {
       height: 40px;
       font-size: 18px;
@@ -713,17 +750,20 @@
 }
 
 @media (max-width: 321px) {
-  .modal{
-    .modal--img{
+  .modal {
+    .modal--img {
       padding-top: 40px;
-      img{
+
+      img {
         width: 200px;
         height: 170px;
         border-radius: 10px;
       }
     }
+
     &--desc {
       width: 70%;
+
       h3 {
         width: 95%;
         margin: 2px 0;

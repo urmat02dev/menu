@@ -76,7 +76,7 @@ const FoodsSlider = ({modal,setModal,best}) => {
         display:best ? "flex" : "none"
     }}>
       <div className="container">
-          <h2>{t('category.1')}</h2>
+          <h2 title="PLease Update Foods our restaurnat">{t('category.1')}</h2>
         <div className="foods">
             <Slider {...settings}>
                 {
