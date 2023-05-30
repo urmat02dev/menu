@@ -103,11 +103,10 @@ const BasketModal = () => {
                                 }
                                 <h4 className={'zakk'}>{t("basket.sum")} <div className='syzz'></div>{total}{t("basket.s")}</h4>
                             </div>
-
-                            <div className={"check"}>
-                                <span className={"change"} onClick={() => getNav()}><FaPencilAlt className={'icon11'}/>{t("order.change")}</span>
-                                <span className={"change"} onClick={() => getSpeed()}><AiOutlineCheck className={'icon11'}/> {t("basket.cont")}</span>
-                            </div>
+                        </div>
+                        <div className={"check"}>
+                            <span className={"change"} onClick={() => getNav()}><FaPencilAlt className={'icon11'}/>{t("order.change")}</span>
+                            <span className={"change"} onClick={() => getSpeed()}><AiOutlineCheck className={'icon11'}/> {t("basket.cont")}</span>
                         </div>
                     </div>
                 </div>
