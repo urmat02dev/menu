@@ -101,7 +101,7 @@ const BasketModal = () => {
 
                                     ))
                                 }
-                                <h4 className={'zakk'}>{t("basket.sum")} <div className='syzz'></div>{total}{t("basket.s")}</h4>
+                                <div className={'zakk'}>{t("basket.sum")} <div className='syzz'></div>{total}{t("basket.s")}</div>
                             </div>
                         </div>
                         <div className={"check"}>

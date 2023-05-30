@@ -87,7 +87,7 @@
         }
         .syzz{
           width: 225px;
-          margin: 0 7px;
+          margin: 0 5px;
           height: 1px;
           background: black;
         }
@@ -95,7 +95,7 @@
           margin-top: 10px;
           display: flex;
           align-items: center;
-
+          font-weight: bold;
 
         }
         .zak{
@@ -186,6 +186,9 @@
         .zak{
           font-size: 13px;
         }
+        .zakk{
+          font-size: 14px;
+        }
       }
     }
   }
@@ -199,7 +202,7 @@
 
 @media (max-width: 400px) {
   #modalBasket{
-    height: 700px;
+    height: 600px;
     .modalBasket{
       &--block{
         margin-top: 10%;
@@ -216,6 +219,14 @@
         .zak{
           font-size: 13px;
         }
+        .zakk{
+          //margin: 0 2px;
+          font-size: 13px;
+          //line-height: -40px;
+        }
+        .syzz{
+          width: 140px;
+        }
       }
     }
   }
@@ -223,42 +234,32 @@
 }
 @media (max-width: 360px) {
   #modalBasket{
-    height: 700px;
+    height: 550px;
     .modalBasket{
       &--block{
         margin-top: 10%;
-        width: 350px;
+        width: 330px;
         //height: 500px;
         &__ich{
-
+          h1{
+            font-size: 18px;
+          }
         }
         .check{
-          width: 350px;
-        }
-        .syz{
-          width: 100%;
-          margin: 0 10px;
-          border: 1.5px dashed black;
-          font-size: 10px;
-        }
-        .syzz{
-          width: 225px;
-          height: 1px;
-          background: black;
-          font-size: 10px;
-        }
-        .zakk{
-          margin-top: 10px;
-          display: flex;
-          align-items: center;
-          font-size: 15px;
-
-
+          width: 300px;
         }
         .zak{
           display: flex;
           align-items: center;
           font-size: 13px;
+        }
+        .zakk{
+          //margin: 0 2px;
+          font-size: 13px;
+          //line-height: -40px;
+        }
+        .syzz{
+          width: 130px;
         }
       }
     }
@@ -336,17 +337,11 @@
           border: 1.5px dashed black;
           font-size: 10px;
         }
-        .syzz{
-          width: 225px;
-          height: 1px;
-          background: black;
-          font-size: 10px;
-        }
         .zakk{
           margin-top: 10px;
           display: flex;
           align-items: center;
-          font-size: 10px;
+          font-size: 12px;
 
 
         }
@@ -354,6 +349,9 @@
           display: flex;
           align-items: center;
           font-size: 12px;
+        }
+        .syzz{
+          width: 150px;
         }
       }
     }
