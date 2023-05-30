@@ -10,6 +10,7 @@ import axios from "axios";
 import {GET_BASKET, GET_CHECK} from "../../redux/Reducer/ActionTypes";
 import {ids, parametr} from "../starts/random";
 import Loader from "../loader/Loader";
+import BasketModal from "./BasketModal";
 const Basket = () => {
 
   const nav = useNavigate()
@@ -58,7 +59,7 @@ const Basket = () => {
   const getModal = async (el) => {
 
     if (order && pay) {
-      return basket && nav(`/${parametr}/main/print`)
+      return basket && nav(`/${parametr}/main/print`) && here && cash
     }
     else if (order === false && pay === false){
       setTimeout(() => {
@@ -70,13 +71,18 @@ const Basket = () => {
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
-  useEffect(() => {
-  },[basket])
-  console.log(basket)
 
   return basket.length ?
     <>
       <Header/>
+      <div style={{display:"none"}}>
+        <BasketModal
+            here={here}
+            s={s}
+            cash={cash}
+            tern={tern}
+        />
+      </div>
       <div id={"basket"}>
         <div className="container">
           <h2 className={"title"}>{t("basket.h1")}</h2>

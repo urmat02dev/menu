@@ -40,6 +40,9 @@
   "order":{
     "zak": "Your order has been accepted!",
     "change" : "Сhange"
+  },
+  "detail": {
+    "add": "Add",
+    "to_basket": "Added"
   }
-
 }
