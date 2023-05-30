@@ -37,6 +37,7 @@ const Modal = () => {
                   <IoMdClose className={"icon"}/>
               </div>
               <ModalCard el={detail}/>
+              <h1>{detail.name_en}</h1>
           </div>
 
       </>

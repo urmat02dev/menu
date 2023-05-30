@@ -1,13 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./Modal.scss"
 import {
-    GET_BASKET,
-    MINUS,
     MODAL,
     MODAL_MINUS,
     MODAL_PLUS,
     MODAL_TO_BASKET,
-    PLUS
 } from "../../redux/Reducer/ActionTypes";
 import {useDispatch, useSelector} from "react-redux";
 import {BiBasket} from "react-icons/bi";
@@ -15,14 +12,20 @@ import {useNavigate} from "react-router-dom";
 import {BsBasket3Fill} from "react-icons/bs";
 import { AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import modal from "./Modal";
+import {useTranslation} from "react-i18next";
 
 const ModalCard = ({el}) => {
     const dispatch = useDispatch()
     const nav = useNavigate()
-    const {basket} = useSelector(state => state)
+    const {basket, foods} = useSelector(state => state)
     const found  = basket.some(e => e.id === el.id)
     const lang = localStorage.getItem("i18nextLng")
-
+    const {t} = useTranslation()
+    const [adding,setAdding] = useState(false)
+    const foundAdd = el.available_additives.some(el => el.id)
+    const getAdd = (add) => {
+        setAdding(!adding)
+    }
     const  getBasket = (el) => {
         let basket = JSON.parse(localStorage.getItem("backend"))|| []
         basket = [...basket, {...el,quantity: el.quantity}]
@@ -53,6 +56,9 @@ const ModalCard = ({el}) => {
             return el.description_kg
         }
     }
+    // let element1 = foods.available_additivesel[1];
+
+    console.log( el.id)
 
     return (
         <>
@@ -68,19 +74,28 @@ const ModalCard = ({el}) => {
                         <h4>{el.gram}г.</h4>
                     </div>
                 </div>
+                <div className="modal--additives">
+                        {
+                            el.available_additives ?
+                            el.available_additives.map(el => (
+                                        <button key={el.id} className={ el.id  ? "added" : "add"} onClick={(add) => getAdd(add)}>
+                                        {getTitle(el)}
+                                    </button>)) : ""
+                        }
+                </div>
                 <div className="modal--basket">
                     {
                         found ?
                             <div className="basket"
                                  onClick={() => nav("/basket") || dispatch({type:MODAL, payload:false})}>
-                                <h1 className='basket--were'>Добавить</h1>
+                                <h1 className='basket--were'>{t("detail.to_basket")}</h1>
                                 <div className="icon-block" >
                                     <div  className="foods--one__basket--icon"><BsBasket3Fill className='icon'/></div>
                                 </div>
                             </div>
                             :
                             <div className="basket" onClick={() => getBasket(el)}>
-                                <h1 className='basket--were'>Добавить</h1>
+                                <h1 className='basket--were'>{t("detail.add")}</h1>
                                 <div className="icon-block" >
                                     <div className="foods--one__basket--icon" >
                                         <BiBasket className='icon'/></div>

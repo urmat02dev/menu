@@ -10,7 +10,7 @@ import {FaPencilAlt} from "react-icons/fa";
 import axios from "axios";
 import {AiOutlineCheck, AiOutlineCloseCircle} from "react-icons/ai";
 import {EMPTY_BASKET, GET_BASKET} from "../../redux/Reducer/ActionTypes";
-const BasketModal = () => {
+const BasketModal = ({here,tern,cash,s}) => {
     const nav = useNavigate()
     const {t} = useTranslation()
     const dispatch = useDispatch()
@@ -34,51 +34,38 @@ const BasketModal = () => {
       nav("/basket")
 
     }
-    const getPost = async () => {
-        setTimeout(async () => {
-            let basket = JSON.parse(localStorage.getItem("backend")) || []
-            nav(`/1/main/`)
-            const url = await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
-                table: parametr,
-                is_takeaway:1,
-                payment:0 ,
-                items: basket.map((el) => {
-                    return {
-                        "dish": el.id,
-                        "quantity": el.quantity
-                    }
-                })
-            })
-            console.log(url)
-            return dispatch({type:EMPTY_BASKET, payload:items}) && localStorage.setItem("backend",JSON.stringify(items))
-        },300000)
-
-
-    }
     const getSpeed = async () => {
         let basket = JSON.parse(localStorage.getItem("backend")) || []
         nav(`/1/main/`)
         const url = await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
             table: parametr,
-            is_takeaway:1,
-            payment:0 ,
+            is_takeaway:here ? 0 : 1,
+            payment:cash ? 0 : 1 ,
             items: basket.map((el) => {
                 return {
                     "dish": el.id,
-                    "quantity": el.quantity
+                    "quantity": el.quantity,
+                    "additives":el.available_additivesel
                 }
+
             })
+
         })
         console.log(url)
+
         return dispatch({type:EMPTY_BASKET, payload:items}) && localStorage.setItem("backend",JSON.stringify(items))
+    }
+    const getClose = () => {
+        nav(`/1/main/`)
     }
     const total = basket.reduce((acc,e) => {
         return acc + e.price * e.quantity
     },0)
     useEffect(() => {
-        getPost()
 
     },[items])
+    console.log("Here", here)
+    console.log("With", s)
 
     return (
         <section id={"modalBasket"}>
@@ -88,14 +75,14 @@ const BasketModal = () => {
                         <div className={'modalBasket--block__ich'}>
                             <img src={print} alt=""/>
                             <h1>{t("order.zak")}</h1>
-                            <div onClick={() => nav(`/1/main/`)} className={"modalBasket--block__ich--close"}>
+                            <div onClick={() => getClose()} className={"modalBasket--block__ich--close"}>
                                 <AiOutlineCloseCircle/>
                             </div>
                             <div>
                                 {
                                     basket.map(el => (
-                                        <div>
-                                            <p className={'zak'}>{getTitle(el)} <div className={'syz'}></div><span>{el.quantity * el.price}{t("basket.s")}</span> </p>
+                                        <div key={el.id}>
+                                            <div className={'zak'}>{getTitle(el)} <div className={'syz'}></div><span>{el.quantity * el.price}{t("basket.s")}</span> </div>
 
                                         </div>
 

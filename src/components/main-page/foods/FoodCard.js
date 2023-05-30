@@ -48,7 +48,7 @@ const FoodCard = ({el}) => {
 
 
     return (el.id ?
-            <div id='food'>
+            <div id='food' key={el.id}>
                 <div className="food--card" onClick={() => getWindow(el)}>
                     <div className={"img"}>
                         <img className="food--card__img" src={el.image} alt=""/>
