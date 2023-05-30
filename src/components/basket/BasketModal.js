@@ -41,7 +41,7 @@ const BasketModal = () => {
             })
             console.log(url)
             return dispatch({type:EMPTY_BASKET, payload:items}) && localStorage.setItem("backend",JSON.stringify(items))
-        },3000)
+        },300000000)
 
 
     }
@@ -93,11 +93,10 @@ const BasketModal = () => {
                                 }
                                 <h4 className={'zakk'}>Total <div className='syzz'></div>{total}</h4>
                             </div>
-
-                            <div className={"check"}>
-                                <span className={"change"} onClick={() => getNav()}><FaPencilAlt className={'icon11'}/>{t("order.change")}</span>
-                                <span className={"change"} onClick={() => getSpeed()}><AiOutlineCheck className={'icon11'}/> {t("basket.cont")}</span>
-                            </div>
+                        </div>
+                        <div className={"check"}>
+                            <span className={"change"} onClick={() => getNav()}><FaPencilAlt className={'icon11'}/>{t("order.change")}</span>
+                            <span className={"change"} onClick={() => getSpeed()}><AiOutlineCheck className={'icon11'}/> {t("basket.cont")}</span>
                         </div>
                     </div>
                 </div>
