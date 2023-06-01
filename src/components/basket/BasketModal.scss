@@ -1,7 +1,7 @@
 
 @media (max-width: 992px) {
   #modalBasket{
-    height: 1000px;
+    height: 700px;
     background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover ;
     .modalBasket{
       display: flex;
@@ -105,6 +105,12 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  #modalBasket{
+    height: 670px;
   }
 }
 @media (max-width: 576px) {
