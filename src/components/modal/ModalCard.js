@@ -22,7 +22,6 @@ const ModalCard = ({el}) => {
     const lang = localStorage.getItem("i18nextLng")
     const {t} = useTranslation()
     const [adding,setAdding] = useState(false)
-    const foundAdd = el.available_additives.some(el => el.id)
     const getAdd = (add) => {
         setAdding(!adding)
     }
