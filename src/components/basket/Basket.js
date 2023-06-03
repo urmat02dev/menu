@@ -57,11 +57,12 @@ const Basket = () => {
   const getModal = async (el) => {
 
     if (order && pay) {
-      return basket && nav(`/${parametr}/main/print`) && here && cash &&
-          window.scroll({
+
+      return   nav(`/${parametr}/main/print`) || window.scroll({
         top:0,
-        behavior:"smooth"
-      })
+        behavior:"smooth"})
+
+
     }
     else if (order === false && pay === false){
       setTimeout(() => {
