@@ -1,12 +1,13 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Slider from "react-slick"
 import "./Starts.scss"
 import start1 from "../../assets/img/start1.png"
 import start2 from "../../assets/img/start2.png"
 import start3 from "../../assets/img/start3.png"
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {parametr} from "./random";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {GET_PARAMS} from "../../redux/Reducer/ActionTypes";
 
 const Starts = () => {
   const nav = useNavigate()
@@ -21,19 +22,18 @@ const Starts = () => {
     autoplaySpeed: 1000,
     cssEase: "ease",
   };
-  async function getCreateTable () {
-    // const url = await axios.post("https://aitenir.pythonanywhere.com/api/orders",{
-    //   "table":2,
-    //     "items": [
-    //
-    // ]
-    // })
-
-    // console.log(url)
-  }
+  const {id}  = useParams()
+  const {params} = useSelector(state => state)
+  const [param,setParam] = useState("")
+  const getParams = () => {
+    setParam(id)
+      dispatch({type: GET_PARAMS, payload: id})
+    }
   useEffect(() => {
-    getCreateTable()
+    getParams()
   },[])
+  console.log(parametr)
+  console.log(params)
   return (
     <div id={"start"}  onClick={() => nav(`/${parametr}/main`)}>
       <div className="container">
