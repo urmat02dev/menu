@@ -14,7 +14,7 @@ const BasketModal = ({here,tern,cash,s}) => {
     const nav = useNavigate()
     const {t} = useTranslation()
     const dispatch = useDispatch()
-    const {check,basket} = useSelector(state => state)
+    const {check,basket,add} = useSelector(state => state)
     const [items, setItems] = useState([])
     const lang = localStorage.getItem("i18nextLng")
     const getTitle = (el) => {
@@ -45,11 +45,15 @@ const BasketModal = ({here,tern,cash,s}) => {
                 return {
                     "dish": el.id,
                     "quantity": el.quantity,
-                    "additives":el.available_additivesel
+                    "additives":add.map(el => el.id)
                 }
 
             })
 
+        },{
+            headers:{
+                "Authorization":"Token 37025ecd3fb018453f2f65d41bba31ad213d1ae0"
+            }
         })
         console.log(url)
 
