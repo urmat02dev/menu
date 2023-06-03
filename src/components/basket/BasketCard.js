@@ -71,7 +71,7 @@ const BasketCard = ({el}) => {
                 <div className="basket--card__word--order">
 
                     <div className={"price"}>
-                        <h4>{el.price * el.quantity}{t("basket.s")}.</h4>
+                        <h4>{el.price * el.quantity}{t("basket.s")}</h4>
                     </div>
 
                     <div className={"count"}>

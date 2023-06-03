@@ -50,14 +50,19 @@
       flex-direction: column;
       z-index: 15;
 
-      &__h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 35px;
-        line-height: 34px;
-        padding: 20px 0;
-        color: #121212;
+      &--add {
+        p{
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 35px;
+          line-height: 34px;
+          padding: 20px 0;
+          color: #121212;
+        }
+        span{
+          color: #004FC7;
+        }
       }
 
       &__h3 {

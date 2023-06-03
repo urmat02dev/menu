@@ -1,23 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import "./Basket.scss"
 import Header from "../header/Header";
-import {Link, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import group from "../../assets/img/Group.svg"
 import {useTranslation} from "react-i18next";
 import BasketCard from "./BasketCard";
 import {useDispatch, useSelector} from "react-redux";
-import axios from "axios";
-import {GET_BASKET, GET_CHECK} from "../../redux/Reducer/ActionTypes";
-import {ids, parametr} from "../starts/random";
-import Loader from "../loader/Loader";
+import { parametr} from "../starts/random";
 import BasketModal from "./BasketModal";
+import {ADD_DELETE} from "../../redux/Reducer/ActionTypes";
 const Basket = () => {
 
   const nav = useNavigate()
+  let item = []
   const {t} = useTranslation()
   const dispatch = useDispatch()
   const {basket} = useSelector(s => s)
-  // const basket = JSON.parse(localStorage.getItem("backend"))
   const [loader, setLoader] = useState(false)
   const [here,setHere] = useState(false)
   const [s,setS] = useState(false)
@@ -59,7 +57,11 @@ const Basket = () => {
   const getModal = async (el) => {
 
     if (order && pay) {
-      return basket && nav(`/${parametr}/main/print`) && here && cash
+      return basket && nav(`/${parametr}/main/print`) && here && cash &&
+          window.scroll({
+        top:0,
+        behavior:"smooth"
+      })
     }
     else if (order === false && pay === false){
       setTimeout(() => {
@@ -71,6 +73,10 @@ const Basket = () => {
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
+  useEffect(() => {
+
+    dispatch({type:ADD_DELETE,payload:item})
+  },[])
 
   return basket.length ?
     <>
@@ -138,7 +144,6 @@ const Basket = () => {
     : (
     <>
     <Header/>
-
       <div id={"basket"}>
         <div className="container">
           <h2 className={"title"} >{t("basket.h1")}</h2>
