@@ -9,7 +9,7 @@ import {DELETE, GET_BASKET, MINUS} from "../../redux/Reducer/ActionTypes";
 const BasketCard = ({el}) => {
     const lang = localStorage.getItem("i18nextLng")
     const dispatch = useDispatch()
-    const {cardId} = useSelector(state => state)
+    const {add} = useSelector(state => state)
     const [loader, setLoader] = useState(false)
     const {t} = useTranslation()
     const handleIncrement = () =>{
@@ -44,6 +44,15 @@ const BasketCard = ({el}) => {
             return food.name_kg
         }
     }
+    const getAddTitle = (el) => {
+        if (lang === "en") {
+            return  `(${el.name_en})`
+        } else if (lang === "ru") {
+            return `(${el.name_ru})`
+        } else if (lang === "kg") {
+            return `(${el.name_kg})`
+        }
+    }
 
     const [del, setDel] = useState(false)
     const getDelete = () => {
@@ -53,14 +62,18 @@ const BasketCard = ({el}) => {
         dispatch({type: DELETE, payload: el})
     }
 
-
+    const title =  add.map(el => getAddTitle(el))
     return (
 
             <div className="basket--card" key={el.id} style={{translateY: del ? '-400px' : ''}}>
             <img className="basket--card__img" src={el.image} alt=""/>
             <div className="basket--card__word">
                 <div className={"desc"}>
-                    <h2>{getTitle(el)}</h2>
+                    <div className="modal--desc--add">{
+                        add ? <h2 >{getTitle(el)}{add}  </h2>
+                            : <h2>{getTitle(el)}{add}</h2>
+                    }
+                    </div>
                     <div className="close" onClick={() => {
 
                     }}>

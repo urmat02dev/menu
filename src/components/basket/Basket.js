@@ -8,7 +8,6 @@ import BasketCard from "./BasketCard";
 import {useDispatch, useSelector} from "react-redux";
 import { parametr} from "../starts/random";
 import BasketModal from "./BasketModal";
-import {ADD_DELETE} from "../../redux/Reducer/ActionTypes";
 const Basket = () => {
 
   const nav = useNavigate()
@@ -76,7 +75,6 @@ const Basket = () => {
   },0)
   useEffect(() => {
 
-    dispatch({type:ADD_DELETE,payload:item})
   },[])
 
   return basket.length ?

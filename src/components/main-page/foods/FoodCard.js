@@ -13,6 +13,8 @@ const FoodCard = ({el}) => {
     const {basket, modal} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
     const dispatch = useDispatch()
+    const foundProduct = basket.some(e => e.id === el.id)
+
     const getTitle = (el) => {
         if (lang === "en") {
             return el.name_en
@@ -34,17 +36,17 @@ const FoodCard = ({el}) => {
     }
 
     function getWindow(el) {
-            dispatch({type: MODAL, payload: true}) && dispatch({type: GET_DETAIL, payload: el})
+        if (foundProduct){
+            dispatch({type: MODAL, payload: false})
+            nav("/basket")
+        }
+        else dispatch({type: MODAL, payload: true}) && dispatch({type: GET_DETAIL, payload: el})
     }
 
      function getBasket(el) {
         dispatch({type: GET_BASKET, payload: el})
      }
 
-    function getNav() {
-        dispatch({type: MODAL, payload: false})
-        nav("/basket")
-    }
 
 
     return (el.id ?
@@ -58,9 +60,14 @@ const FoodCard = ({el}) => {
                         <p>{getDesc(el)}</p>
                         <div className="food--card__word--order">
                             <h4>{el.price}c.</h4>
-                                    <div className="food--card__word--order__blockZ" onClick={() => getWindow(el)}>
-                                        <BiBasket className='icon2'/>
-                                    </div>
+                            {
+                                foundProduct ? <div className="food--card__word--order__blockZ" onClick={() => getWindow(el)}>
+                                    <BsBasket3Fill className='icon2'/>
+                                </div> : <div className="food--card__word--order__blockZ" onClick={() => getWindow(el)}>
+                                    <BiBasket className='icon2'/>
+                                </div>
+                            }
+
                         </div>
                         <div>
                         </div>

@@ -17,27 +17,20 @@ import SignUp from "./components/admin/signUp/SignUp";
 function App() {
     const nav = useNavigate()
     const dispatch = useDispatch()
-
-    async function getFoods() {
-    const {params} = useSelector(state => state)
     async  function getFoods () {
         const url = await axios.get("https://aitenir.pythonanywhere.com/dishes/")
         const {data} = await url
         await dispatch({type: GET_FOODS, payload: data})
     }
-    function getNav() {
-        if (!parametr){
-            nav(`/${parametr}`)
-        }
-    }
+
     useEffect(() => {
         getFoods()
-        getNav()
-    }, [])
+    })
+
     return (
         <>
             <Routes>
-                <Route path={`/${parametr}/`} element={<Starts/>}/>
+                <Route path={`/`} element={<Starts/>}/>
                 <Route path={`/${parametr}/main/`} element={<MainPage/>}/>
                 <Route path="/basket" element={<Basket/>}/>
                 <Route path="/search" element={<SearchResult/>}/>
@@ -47,27 +40,6 @@ function App() {
             </Routes>
         </>
     );
-    function getNav () {
-            nav(`/${parametr}`)
-    }
-
-    useEffect(()=>{
-        getFoods()
-        getNav()
-    },[parametr])
-    console.log(parametr)
-  return (
-   <>
-     <Routes>
-       <Route path={`/${parametr}/`} element={<Starts/>}/>
-       <Route path={`/${parametr}/main/`} element={<MainPage/>}/>
-       <Route path="/basket" element={<Basket/>}/>
-       <Route path="/search" element={<SearchResult/>}/>
-       <Route path={`/${parametr}/main/print`} element={<BasketModal/>}/>
-
-     </Routes>
-   </>
-  );
 }
 
 export default App;

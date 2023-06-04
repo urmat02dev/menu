@@ -1,14 +1,10 @@
 import {
   ADD, ADD_DELETE,
-  ADD_ID,
-  CARD_ID,
   DELETE, EMPTY_BASKET,
   GET_BASKET, GET_CHECK, GET_DETAIL, GET_FOODS, GET_PARAMS,
   MINUS,
-  MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET,
-  SEARCH, TOKEN_ID
+  SEARCH, TOKEN_ID,
   MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET, MODAL_TO_PRICE,
-  SEARCH
 } from "./ActionTypes";
 import basket from "../../components/basket/Basket";
 
@@ -21,7 +17,7 @@ const initialState ={
   add:[],
   element:{},
   check:[],
-  token_Id: ''
+  token_Id: '',
   orders: [],
   price: "",
   params:""
@@ -62,18 +58,18 @@ export const MainReducer = (state = initialState, action) => {
     case MODAL_TO_BASKET : {
 
       return {...state, basket: [...state.basket,
-          {...action.payload, quantity: action.payload.quantity,add:state.add}]}
+          {...action.payload, quantity: action.payload.quantity,add:action.payload.quantity}]}
     }
     case MODAL_TO_PRICE : {
       const total = state.add.reduce((acc,e) => {return acc + e.price},0)
       return {...state, basket: [...state.basket,
           {...action.payload, quantity: action.payload.quantity,
             price:total + action.payload.price * action.payload.quantity,
-
+            add:action.payload.quantity
           }]}
     }
     case GET_DETAIL : {
-
+      console.log(state.add)
       return {...state, detail: {...action.payload,quantity: 1,price:action.payload.price}}
     }
     case MINUS : {
