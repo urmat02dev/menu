@@ -1,0 +1,72 @@
+#sign {
+
+  .signn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+   .sign {
+     width: 700px;
+     height: 400px;
+     border: 1px solid;
+     &--text {
+       margin-top: 10%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       h1 {
+         margin-bottom: 20px;
+       }
+     }
+     &--input {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;
+      &__dirty {
+        position: absolute;
+        top: 16rem;
+      }
+       input {
+         position: relative;
+         width: 60%;
+         height: 40px;
+         padding: 0 20px;
+         border: none;
+         border-radius: 10px;
+         margin: 20px 0;
+         font-size: 20px;
+         outline: none;
+       }
+     }
+
+     &--btn {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       margin-top: 20px;
+       button {
+         display: flex;
+         align-items: center;
+         width: 100px;
+         padding: 10px 20px;
+         background: #1f7db7;
+         color: white;
+         font-size: 18px;
+         border-radius: 20px;
+         border: none;
+         outline: none;
+         transform: scale(1);
+         transition: .4s;
+         box-shadow: 0 10px 30px black;
+       }
+
+       :hover {
+         //transform: scale(1.1);
+         transition: .4s;
+
+       }
+     }
+   }
+  }
+}

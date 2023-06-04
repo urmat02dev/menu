@@ -10,34 +10,41 @@ import {ids, parametr, ran} from "./components/starts/random";
 import {GET_FOODS} from "./redux/Reducer/ActionTypes";
 import {useDispatch} from "react-redux";
 import axios from "axios";
+import Admin from "./components/admin/Admin";
+import SignUp from "./components/admin/signUp/SignUp";
 
 
 function App() {
     const nav = useNavigate()
     const dispatch = useDispatch()
 
-    async  function getFoods () {
+    async function getFoods() {
         const url = await axios.get("https://aitenir.pythonanywhere.com/dishes/")
-        const {data} = await  url
-         await dispatch({type:GET_FOODS,payload:data})
+        const {data} = await url
+        await dispatch({type: GET_FOODS, payload: data})
     }
-
-    useEffect(()=>{
+    function getNav() {
+        if (!parametr){
+            nav(`/${parametr}`)
+        }
+    }
+    useEffect(() => {
         getFoods()
-        nav(`/${parametr}`)
-    },[])
-  return (
-   <>
-     <Routes>
-       <Route path={`/${parametr}/`} element={<Starts/>}/>
-       <Route path={`/${parametr}/main/`} element={<MainPage/>}/>
-       <Route path="/basket" element={<Basket/>}/>
-       <Route path="/search" element={<SearchResult/>}/>
-       <Route path={`/${parametr}/main/print`} element={<BasketModal/>}/>
-
-     </Routes>
-   </>
-  );
+        getNav()
+    }, [])
+    return (
+        <>
+            <Routes>
+                <Route path={`/${parametr}/`} element={<Starts/>}/>
+                <Route path={`/${parametr}/main/`} element={<MainPage/>}/>
+                <Route path="/basket" element={<Basket/>}/>
+                <Route path="/search" element={<SearchResult/>}/>
+                <Route path={`/${parametr}/main/print`} element={<BasketModal/>}/>
+                <Route path="/sign" element={<SignUp/>}/>
+                <Route path={`/admin`} element={<Admin/>}/>
+            </Routes>
+        </>
+    );
 }
 
 export default App;

@@ -4,7 +4,7 @@ import {
   GET_BASKET, GET_CHECK, GET_DETAIL, GET_FOODS, GET_PARAMS,
   MINUS,
   MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET,
-  SEARCH
+  SEARCH, TOKEN_ID
 } from "./ActionTypes";
 import basket from "../../components/basket/Basket";
 
@@ -16,7 +16,8 @@ const initialState ={
   search:"",
   cardId:"",
   element:{},
-  check:[]
+  check:[],
+  token_Id: ''
 
 
 }
@@ -79,6 +80,9 @@ export const MainReducer = (state = initialState, action) => {
     }
     case GET_PARAMS : {
       return {...state,params: action.payload}
+    }
+    case TOKEN_ID: {
+      return {...state,token_Id: action.payload}
     }
     default :
       return state
