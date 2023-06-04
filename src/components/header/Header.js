@@ -21,10 +21,6 @@ const Header = () => {
     const getNav = () => {
       nav("/basket")
     }
-    useEffect(() => {
-
-    },[basket])
-    console.log(basket)
   return (
     <div id='header'>
         <div className="container">

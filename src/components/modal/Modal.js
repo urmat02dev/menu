@@ -1,6 +1,7 @@
 import {useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {
+    ADD_DELETE,
     GET_BASKET,
     GET_MODAL,
     MINUS, MODAL, MODAL_MINUS, MODAL_PLUS,
@@ -21,7 +22,10 @@ const Modal = () => {
     const dispatch = useDispatch()
     const lang = localStorage.getItem("i18nextLng")
     const getClose = async () => {
-        await dispatch({type:MODAL,payload:false})
+        let item= []
+        dispatch({type:ADD_DELETE,payload:item})
+        dispatch({type:MODAL,payload:false})
+
         nav(`/1/main`)
     }
 
@@ -36,7 +40,7 @@ const Modal = () => {
               <div className="modal--close" onClick={() => getClose()}>
                   <IoMdClose className={"icon"}/>
               </div>
-              <ModalCard el={detail}/>
+              <ModalCard el={detail} key={detail.id}/>
           </div>
 
       </>
