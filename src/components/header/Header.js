@@ -3,9 +3,11 @@ import "./Header.scss"
 import logos from "../../assets/img/logos.svg"
 import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
-import {NavLink, useNavigate} from "react-router-dom";
+import {NavLink, Route, Routes, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {ids, parametr} from "../starts/random";
+import SignUp from "../admin/signUp/SignUp";
+import Admin from "../admin/Admin";
 const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
   // const basket = JSON.parse(localStorage.getItem("backend"))
