@@ -24,13 +24,10 @@ const Starts = () => {
   };
   const {id}  = useParams()
   const {params} = useSelector(state => state)
-  const [param,setParam] = useState("")
-  const getParams = () => {
-    setParam(id)
-      dispatch({type: GET_PARAMS, payload: id})
-    }
+
+
   useEffect(() => {
-    getParams()
+
   },[])
   console.log(parametr)
   console.log(params)

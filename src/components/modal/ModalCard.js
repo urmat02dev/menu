@@ -85,7 +85,6 @@ const ModalCard = ({el}) => {
             <div className={"modal--img"} >
                 <img src={el.image} alt=""/>
             </div>
-            <div className="modal--desc">
                 <div className="modal--desc--add">{
                     add ? <p className={"title"}>{getTitle(el)}  <span className={"added"}>{title.length ? "+" : ""} {title}</span> </p>
                         : <p className={"title"}>{getTitle(el)}</p>
