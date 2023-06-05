@@ -12,7 +12,7 @@ import {IoMdClose} from "react-icons/io";
 import React from "react";
 import "./Modal.scss"
 import ModalCard from "./ModalCard";
-import {ran} from "../starts/random";
+import {parametr, ran} from "../starts/random";
 
 const Modal = () => {
     const {modal} = useSelector(state => state)
@@ -26,7 +26,7 @@ const Modal = () => {
         dispatch({type:ADD_DELETE,payload:item})
         dispatch({type:MODAL,payload:false})
 
-        nav(`/1/main`)
+        nav(`/${parametr}/main`)
     }
 
   return (
