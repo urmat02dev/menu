@@ -45,18 +45,13 @@ const SignUp = () => {
             dispatch({type: TOKEN_ID, payload: res.data.token})
             setAdmin(res.data.token)
             setLoader(false)
-            nav("/admin")
+            nav("/orders")
             console.log(res)
         } catch (e) {
             setError(e)
         }
 
     }
-    console.log("Username", value)
-    console.log("Password", value2)
-    console.log(admin)
-    console.log(error)
-    console.log(token_Id)
     return (
         <div id='sign'>
             <div className="container">

@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Modal.scss"
 import {
-    ADD, ADD_DELETE,
+    ADD,
     MODAL,
     MODAL_MINUS,
     MODAL_PLUS,
@@ -24,21 +24,26 @@ const ModalCard = ({el}) => {
     const {t} = useTranslation()
     const mers = basket
     const getAdd = (a) => {
+        const found = el.add.find(el => el.id)
+
         dispatch({type:ADD,payload:a})
     }
     const getBasket = (el) => {
-        if (add.length){
-            let item= []
+        if (el.add.length){
             dispatch({type: MODAL_TO_PRICE, payload: el})
-            dispatch({type:ADD_DELETE,payload:item})
+            window.scrollTo({
+                top:"0"
+            })
         }
         else {
             let item= []
             let basket = JSON.parse(localStorage.getItem("backend")) || []
-            basket = [...basket, {...el, quantity: el.quantity, price:el.price}]
+            basket = [...basket, {...el, quantity: el.quantity, price:el.price, add:el.add}]
             localStorage.setItem("backend", JSON.stringify(basket))
             dispatch({type: MODAL_TO_BASKET, payload: el})
-            dispatch({type:ADD_DELETE,payload:item})
+            window.scrollTo({
+                top:"0"
+            })
         }
 
 
@@ -78,29 +83,25 @@ const ModalCard = ({el}) => {
         }
     }
 
-    const total = add.reduce((acc,e) => {return acc + e.price},0)
-    const title =  add.map(el => getAddTitle(el))
+    const total = el.add && el.add.reduce((acc,e) => {return acc + e.price},0)
+    const title = el.add && el.add.map(el => getAddTitle(el))
     return (
         <>
 
             <div className={"modal--img"} >
                 <img src={el.image} alt=""/>
             </div>
-                <div className="modal--desc--add">{
-                    add ? <p className={"title"}>{getTitle(el)}  <span className={"added"}>{title.length ? "+" : ""} {title}</span> </p>
-                        : <p className={"title"}>{getTitle(el)}</p>
-                }
-                </div>
+
                 <div className="modal--desc">
-                    <h2 className="modal--desc__h2">{getTitle(el)}</h2>
-                    <h3 className='modal--desc__h3'>{getDesc(el)}</h3>
-                    <div className="modal--desc__price">
-                        <h4>{el.gram}г.</h4>
-                        <h5>Цена:<span>{el.price}c</span></h5>
+                    <div className="modal--desc--add">
+                        {
+                            el.add ? <p className={"title"}>{getTitle(el)}  <span className={"added"}>{title.length ? "+" : ""} {title}</span> </p>
+                                : <p className={"title"}>{getTitle(el)}</p>
+                        }
                     </div>
                 <h3 className='modal--desc__h3'>{getDesc(el)}</h3>
                 <div className="modal--desc__price">
-                    <h5>Цена:<span>{add.length ? total + el.price * el.quantity : el.price * el.quantity}c</span></h5>
+                    <h5>Цена:<span>{el.add && el.add.length ? total + el.price * el.quantity : el.price * el.quantity}c</span></h5>
                     <h4>{el.gram}г.</h4>
                 </div>
             </div>
@@ -111,7 +112,7 @@ const ModalCard = ({el}) => {
                     <div key={a.id}>
                             {
                                 <button key={a.id}
-                                           className={add && add.some(el => el.id === a.id) ? "added" : "add"}
+                                           className={el.add.some(el => el.id === a.id) ? "added" : "add"}
                                            onClick={() => getAdd(a)}>
                                 {getTitle(a)}
                             </button>

@@ -35,8 +35,8 @@ function App() {
                 <Route path="/basket" element={<Basket/>}/>
                 <Route path="/search" element={<SearchResult/>}/>
                 <Route path={`/${parametr}/main/print`} element={<BasketModal/>}/>
-                <Route path="/sign" element={<SignUp/>}/>
-                <Route path={`/admin`} element={<Admin/>}/>
+                <Route path="/admin" element={<SignUp/>}/>
+                <Route path={`/orders`} element={<Admin/>}/>
             </Routes>
         </>
     );
