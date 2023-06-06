@@ -50,14 +50,20 @@
       flex-direction: column;
       z-index: 15;
 
-      &__h2 {
-        font-family: 'Armin Grotesk', sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 35px;
-        line-height: 34px;
-        padding: 20px 0;
-        color: #121212;
+      &--add {
+        p{
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 35px;
+          line-height: 34px;
+          padding: 20px 0;
+          color: #121212;
+        }
+        span{
+          font-size: 35px;
+          color: #004FC7;
+        }
       }
 
       &__h3 {
@@ -103,8 +109,6 @@
           }
         }
       }
-
-
     }
 
     &--basket {
@@ -112,7 +116,7 @@
       align-items: center;
       justify-content: space-between;
       width: 60%;
-      margin-top: 30px;
+      margin-top: 40px;
       margin-bottom: 60px;
 
       .basket {
@@ -206,12 +210,51 @@
         color: white;
       }
     }
+
+    &--additives{
+      display: flex;
+      width: 65%;
+      justify-content: space-around;
+      margin: 50px 0 20px 0;
+      .add{
+        width: 175px;
+        height: 35px;
+        background: #ffffff;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        color: #004FC7;
+        border: 1px solid #004FC7;
+      }
+      .added{
+        width: 175px;
+        height: 35px;
+        background: #004FC7;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+      }
+
+    }
   }
 }
 
 @media (max-width: 768px) {
   .modal {
-    &--img {
+    &--img
+    {
       img {
         width: 400px;
         height: 300px;
@@ -221,6 +264,21 @@
     &--desc {
       padding: 0 0;
       width: 56%;
+      &--add {
+        p{
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 34px;
+          padding: 20px 0;
+          color: #121212;
+        }
+        span{
+          font-size: 24px;
+          color: #004FC7;
+        }
+      }
 
       &__h2 {
         font-size: 27px;
@@ -234,8 +292,10 @@
 
       .basket {
         width: 200px;
-        padding-left: 8px;
-
+        padding-left: 3px;
+        &--were {
+          font-size: 20px;
+        }
         .icon-block {
           margin-left: 10px;
           width: 60px;
@@ -246,6 +306,45 @@
     .count {
       width: 180px;
     }
+
+    &--additives{
+      display: flex;
+      width: 63%;
+      justify-content: space-around;
+      margin: 50px 0 20px 0;
+      .add{
+        width: 150px;
+        height: 35px;
+        background: #ffffff;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        color: #004FC7;
+        border: 1px solid #004FC7;
+      }
+      .added{
+        width: 150px;
+        height: 35px;
+        background: #004FC7;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+      }
+
+    }
+
   }
 }
 
@@ -305,6 +404,70 @@
         width: 160px;
       }
     }
+    &--additives{
+      display: flex;
+      width: 70%;
+      justify-content: space-around;
+      margin: 50px 0 20px 0;
+      .add{
+        width: 130px;
+        height: 35px;
+        background: #ffffff;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        color: #004FC7;
+        border: 1px solid #004FC7;
+      }
+      .added{
+        width: 130px;
+        height: 35px;
+        background: #004FC7;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+      }
+
+    }
+    &--desc {
+      padding: 0 0;
+      width: 56%;
+      &--add {
+        p{
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 34px;
+          padding: 20px 0;
+          color: #121212;
+        }
+        span{
+          font-size: 24px;
+          color: #004FC7;
+        }
+      }
+
+      &__h2 {
+        font-size: 27px;
+        padding: 0;
+        margin-top: 20px;
+      }
+    }
+
+
 
   }
 }
@@ -393,6 +556,70 @@
         font-size: 26px;
       }
     }
+    &--desc {
+      padding: 0 0;
+      width: 56%;
+      &--add {
+        p{
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 19px;
+          line-height: 34px;
+          padding: 20px 0;
+          color: #121212;
+        }
+        span{
+          font-size: 19px;
+          color: #004FC7;
+        }
+      }
+
+      &__h2 {
+        font-size: 27px;
+        padding: 0;
+        margin-top: 20px;
+      }
+    }
+    &--additives{
+      display: flex;
+      width: 70%;
+      justify-content: space-around;
+      margin: 50px 0 20px 0;
+      .add{
+        width: 100px;
+        height: 35px;
+        background: #ffffff;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        color: #004FC7;
+        border: 1px solid #004FC7;
+      }
+      .added{
+        width: 100px;
+        height: 35px;
+        background: #004FC7;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+      }
+
+    }
+
+
   }
 }
 
@@ -414,31 +641,6 @@
 
       .icon {
         font-size: 23px;
-      }
-    }
-
-    &--desc {
-      width: 74%;
-
-      &__h2 {
-        font-size: 20px;
-        padding: 5px 0;
-      }
-
-      &__h3 {
-        font-size: 18px;
-      }
-
-      h4 {
-        font-size: 23px;
-      }
-
-      h5 {
-        font-size: 20px;
-
-        span {
-          font-size: 22px;
-        }
       }
     }
 
@@ -476,6 +678,68 @@
           }
         }
       }
+    }
+    &--desc {
+      padding: 0 0;
+      width: 56%;
+      &--add {
+        p{
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 34px;
+          padding: 10px 0 0 0;
+          color: #121212;
+        }
+        span{
+          font-size: 16px;
+          color: #004FC7;
+        }
+      }
+      &__h3 {
+        font-size: 30px;
+        padding: 0;
+        margin-top: 20px;
+      }
+
+    }
+    &--additives{
+      display: flex;
+      width: 70%;
+      justify-content: space-around;
+      margin: 50px 0 20px 0;
+      .add{
+        width: 80px;
+        height: 35px;
+        background: #ffffff;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: #004FC7;
+        border: 1px solid #004FC7;
+      }
+      .added{
+        width: 80px;
+        height: 35px;
+        background: #004FC7;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+      }
+
     }
   }
 }
@@ -515,6 +779,7 @@
       &__h3 {
         font-size: 18px;
         line-height: 25px;
+        padding: 10px 0;
       }
 
       h4 {
@@ -599,6 +864,7 @@
 
       &__h3 {
         font-size: 17px;
+        margin: 5px 0;
       }
 
       h4 {
@@ -757,14 +1023,67 @@
         border-radius: 10px;
       }
     }
-
     &--desc {
-      width: 70%;
-
-      h3 {
-        width: 95%;
-        margin: 2px 0;
+      padding: 0 0;
+      width: 56%;
+      &--add {
+        p{
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 34px;
+          padding: 10px 0 0 0;
+          color: #121212;
+        }
+        span{
+          font-size: 13px;
+          color: #004FC7;
+        }
       }
+      &__h3 {
+        font-size: 30px;
+        padding: 0;
+        margin-top: 20px;
+      }
+
+    }
+    &--additives{
+      display: flex;
+      width: 70%;
+      justify-content: space-around;
+      margin: 50px 0 20px 0;
+      .add{
+        width: 70px;
+        height: 35px;
+        background: #ffffff;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        color: #004FC7;
+        border: 1px solid #004FC7;
+      }
+      .added{
+        width: 70px;
+        height: 35px;
+        background: #004FC7;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+      }
+
     }
   }
 }
