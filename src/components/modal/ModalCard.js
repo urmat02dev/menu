@@ -22,6 +22,7 @@ const ModalCard = ({el}) => {
     const found = basket.some(e => e.id === el.id)
     const lang = localStorage.getItem("i18nextLng")
     const {t} = useTranslation()
+    const mers = basket
     const getAdd = (a) => {
         dispatch({type:ADD,payload:a})
     }
