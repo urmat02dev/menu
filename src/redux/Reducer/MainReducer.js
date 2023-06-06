@@ -1,12 +1,11 @@
 import {
-  ADD, ADD_DELETE,
+  ADD,
   DELETE, EMPTY_BASKET,
   GET_BASKET, GET_CHECK, GET_DETAIL, GET_FOODS, GET_PARAMS,
   MINUS,
   SEARCH, TOKEN_ID,
   MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET, MODAL_TO_PRICE,
 } from "./ActionTypes";
-import basket from "../../components/basket/Basket";
 
 const initialState ={
   foods:[],
@@ -14,7 +13,6 @@ const initialState ={
   modal:false,
   detail: {},
   search:"",
-  add:[],
   element:{},
   check:[],
   token_Id: '',
@@ -31,15 +29,13 @@ export const MainReducer = (state = initialState, action) => {
       return {...state,foods: action.payload}
     }
     case ADD: {
-      const found = state.add.find(el => el.id === action.payload.id)
+      const found = state.detail.add.find(el => el.id === action.payload.id)
       if (found){
-        return {...state, add: state.add.filter(el => el.id !== action.payload.id)}
+        return {...state, detail:{...state.detail, add:state.detail.add.filter(el => el.id !== action.payload.id)}}
       }
-      else return {...state, add:[...state.add,{...action.payload}]}
+      else
+      return {...state, detail:{...state.detail,add:[...state.detail.add,{...action.payload}]}}
 
-    }
-    case ADD_DELETE : {
-      return {...state, add:action.payload }
     }
     case GET_CHECK: {
       return {...state, check: action.payload}
@@ -58,19 +54,18 @@ export const MainReducer = (state = initialState, action) => {
     case MODAL_TO_BASKET : {
 
       return {...state, basket: [...state.basket,
-          {...action.payload, quantity: action.payload.quantity,add:action.payload.quantity}]}
+          {...action.payload, quantity: action.payload.quantity,add:[...state.detail.add]}]}
     }
     case MODAL_TO_PRICE : {
-      const total = state.add.reduce((acc,e) => {return acc + e.price},0)
+      const total = state.detail && state.detail.add.reduce((acc,e) => {return acc + e.price},0)
       return {...state, basket: [...state.basket,
           {...action.payload, quantity: action.payload.quantity,
             price:total + action.payload.price * action.payload.quantity,
-            add:action.payload.quantity
+            add:[...state.detail.add]
           }]}
     }
     case GET_DETAIL : {
-      console.log(state.add)
-      return {...state, detail: {...action.payload,quantity: 1,price:action.payload.price}}
+      return {...state, detail: {...action.payload, quantity: 1,price:action.payload.price,add:[]}}
     }
     case MINUS : {
       return{...state, basket: state.basket.map(el => {
