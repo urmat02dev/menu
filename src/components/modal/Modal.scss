@@ -292,8 +292,10 @@
 
       .basket {
         width: 200px;
-        padding-left: 8px;
-
+        padding-left: 3px;
+        &--were {
+          font-size: 20px;
+        }
         .icon-block {
           margin-left: 10px;
           width: 60px;
