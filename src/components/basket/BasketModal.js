@@ -45,7 +45,7 @@ const BasketModal = ({here,tern,cash,s}) => {
                 return {
                     "dish": el.id,
                     "quantity": el.quantity,
-                    "additives":add.map(el => el.id)
+                    "additives":el.add && el.add.map(el => el.id)
                 }
 
             })
@@ -55,21 +55,18 @@ const BasketModal = ({here,tern,cash,s}) => {
                 "Authorization":"Token 37025ecd3fb018453f2f65d41bba31ad213d1ae0"
             }
         })
-        console.log(url)
+        console.log(url.data)
 
         return dispatch({type:EMPTY_BASKET, payload:items}) && localStorage.setItem("backend",JSON.stringify(items))
     }
+    console.log(basket)
     const getClose = () => {
         nav(`/${parametr}/main/`)
     }
     const total = basket.reduce((acc,e) => {
         return acc + e.price * e.quantity
     },0)
-    useEffect(() => {
 
-    },[items])
-    console.log("Here", here)
-    console.log("With", s)
 
     return (
         <section id={"modalBasket"}>
@@ -86,7 +83,8 @@ const BasketModal = ({here,tern,cash,s}) => {
                                 {
                                     basket.map(el => (
                                         <div key={el.id}>
-                                            <div className={'zak'}>{getTitle(el)} <div className={'syz'}></div><span>{el.quantity * el.price}{t("basket.s")}</span> </div>
+                                            <div className={'zak'}>{getTitle(el)}
+                                                <div className={'syz'}></div><span>{el.quantity * el.price}{t("basket.s")}</span> </div>
 
                                         </div>
 

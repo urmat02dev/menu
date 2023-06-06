@@ -62,7 +62,7 @@ const BasketCard = ({el}) => {
         dispatch({type: DELETE, payload: el})
     }
 
-    const title =  add.map(el => getAddTitle(el))
+    const title =el.add && el.add.map(el => getAddTitle(el))
     return (
 
             <div className="basket--card" key={el.id} style={{translateY: del ? '-400px' : ''}}>
@@ -70,7 +70,7 @@ const BasketCard = ({el}) => {
             <div className="basket--card__word">
                 <div className={"desc"}>
                     <div className="modal--desc--add">{
-                        add ? <h2 >{getTitle(el)}{add}  </h2>
+                        el.add ? <h2 >{getTitle(el)}{add} <span className={"added"}>{title.length ? "+" : ""} {title}</span> </h2>
                             : <h2>{getTitle(el)}{add}</h2>
                     }
                     </div>
