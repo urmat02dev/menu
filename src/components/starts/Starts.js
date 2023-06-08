@@ -7,11 +7,9 @@ import start3 from "../../assets/img/start3.png"
 import {useNavigate, useParams} from "react-router-dom";
 import {parametr} from "./random";
 import {useDispatch, useSelector} from "react-redux";
-import {GET_PARAMS} from "../../redux/Reducer/ActionTypes";
 
 const Starts = () => {
   const nav = useNavigate()
-  const dispatch = useDispatch()
   const settings = {
     infinite: true,
     slidesToShow: 1,
@@ -22,15 +20,7 @@ const Starts = () => {
     autoplaySpeed: 1000,
     cssEase: "ease",
   };
-  const {id}  = useParams()
-  const {params} = useSelector(state => state)
 
-
-  useEffect(() => {
-
-  },[])
-  console.log(parametr)
-  console.log(params)
   return (
     <div id={"start"}  onClick={() => nav(`/${parametr}/main`)}>
       <div className="container">
