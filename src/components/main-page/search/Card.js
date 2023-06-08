@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {BsBasket3Fill} from "react-icons/bs";
 import {useTranslation} from "react-i18next";
 import "./Card.scss"
@@ -6,10 +6,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {GET_BASKET, GET_DETAIL, MODAL} from "../../../redux/Reducer/ActionTypes";
 import {BiBasket} from "react-icons/bi";
 import {useNavigate} from "react-router-dom";
+import {parametr} from "../../starts/random";
 
 const Card = ({el}) => {
     const {t} = useTranslation()
-    const nav = useNavigate()
     const {basket} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
     const dispatch = useDispatch()
@@ -39,15 +39,11 @@ const Card = ({el}) => {
 
     }
 
-    function getBasket(el) {
-        dispatch({type: GET_BASKET, payload: el})
-
-    }
 
 
 
     return (el.id ?
-            <div id='card'>
+            <div id='card' key={el.id}>
                 <div className="card--card">
                     <div className={"img"} onClick={() => getWindow(el)}>
                         <img className="card--card__img" src={el.image} alt=""/>
