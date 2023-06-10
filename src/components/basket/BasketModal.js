@@ -35,43 +35,27 @@ const BasketModal = ({here,tern,cash,s}) => {
 
     }
     const getSpeed = async () => {
-        let basket = JSON.parse(localStorage.getItem("backend")) || []
         nav(`/${parametr}/main/`)
-        const url = await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
+        const data = {
             table: parametr,
             is_takeaway:here ? 0 : 1,
             payment:cash ? 0 : 1 ,
             items: basket.map((el) => {
-
-                return {
-                    "additives":el.add.map(item => item.id),
+                return  {
                     "dish": el.id,
-                    "quantity": el.quantity
-
+                    "quantity": el.quantity,
+                    "additives":el.add.map(item => item.id),
                 }
 
-            })
+            },)
 
         }
-
-        ,{
-            headers:{
-                "Authorization":"Token 37025ecd3fb018453f2f65d41bba31ad213d1ae0"
-            }
-        }).then(res => console.log(res.data)).catch(err => console.log(err))
-
-
-        return dispatch({type:EMPTY_BASKET, payload:items}) && localStorage.setItem("backend",JSON.stringify(items))
+           await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,data)
+            .then(res => console.log(res.data)).catch(err => console.log(err))
+        return dispatch({type:EMPTY_BASKET, payload:items})
+            && localStorage.setItem("backend",JSON.stringify(items))
     }
-    console.log("POST",basket.map((el) => {
-        return {
-            "dish": el.id,
-            "quantity": el.quantity,
-            "additives":[el.add.map(item => item.id).slice(0,3)][0],
-        }
 
-
-    }))
 
     const getClose = () => {
         nav(`/basket/`)
@@ -79,7 +63,6 @@ const BasketModal = ({here,tern,cash,s}) => {
     const total = basket.reduce((acc,e) => {
         return acc + e.price * e.quantity
     },0)
-
 
     return (
         <section id={"modalBasket"}>
