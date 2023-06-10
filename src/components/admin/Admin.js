@@ -37,16 +37,29 @@ const Admin = () => {
     }
     let orders = admin.map(order =>
         order.items.map(orderItem =>
-            foods.filter(food => food.id === orderItem.dish)))
-    // console.log("Orders", orders.map(order => order.map(el => el.map(e => e.name_en))))
-    // console.log("Admin", admin)
-    // console.log("orders", orders)
+            foods.find(food => food.id === orderItem.dish)))
+    let quantity = admin.map(order => order.items.map(el => <tr>{el.quantity}</tr>))
+    let quan = admin.map(order => order.items.map(el => el.quantity ))
+    let total = orders.map(item => item.map(el => el))
+
+    console.log("Admin", admin)
+    console.log("orders", orders)
+    console.log("total", total)
+    console.log("quan", quan)
     // console.log(error)
-    let table = admin.map(admin => admin.table)
+
+    function compareByTimeCreated(admin, b) {
+        const dateA = new Date(admin.time_created);
+        const dateB = new Date(b.time_created);
+        return  dateB - dateA;
+    }
+    admin.sort(compareByTimeCreated)
     useEffect(() => {
+
         getAdmin()
         getNav()
     }, [admin,error])
+
 
     return (
         <div id='admin'>
@@ -62,32 +75,49 @@ const Admin = () => {
                     <div className="admin--hero">
 
                         {
-                            admin.map(admin => (
-                                <div>
-                                    <p style={{
+                            admin.map((admin) => (
+                                <div className={"table"}>
+                                    <h3 style={{
                                         textAlign:"center"
-                                    }}>Стол №{admin.table}</p>
-                                    <p style={{
+                                    }}>Столик №{admin.table}</h3>
+                                    <h3 style={{
                                         textAlign:"center"
-                                    }}>{admin.time_created}</p>
+                                    }}>Дата :{admin.time_created.slice(0,10)}</h3>
+                                    <h3 style={{
+                                        textAlign:"center"
+                                    }}>Время :{admin.time_created.slice(10,20)}</h3>
                                     <table>
+                                        <thead>
                                         <tr>
                                             <th>Название</th>
                                             <th>Цена</th>
                                             <th>Количество</th>
                                             <th>Итого</th>
                                         </tr>
+                                        </thead>
+                                        <tbody>
                                         <tr>
-                                            <td>{admin.items.map(item => foods.filter(food => food.id === item.dish)[0].name_ru)}</td>
-                                            <td>{admin.items.map(item => foods.filter(food => food.id === item.dish)[0].price)}</td>
-                                            <td>{admin.items.map(item => item.quantity)}</td>
-                                            <td>{admin.items.map(item => item.quantity) * admin.items.map(item => foods.filter(food => food.id === item.dish)[0].price)}</td>
+                                            <td>{orders.map(el => el.map(a => {
+                                                return <tr>
+                                                    {a.name_ru}
+                                                </tr>
+                                            }))}</td>
+                                            <td>{orders.map(el => el.map(a => <tr>{a.price}</tr>))}</td>
+                                            <td>{quantity}</td>
+                                            <td>{}</td>
                                         </tr>
+                                        </tbody>
                                     </table>
+                                    <div>
+                                        <p>{admin.is_takeaway ? "С собой" : "Здесь"}</p>
+                                        <p>{admin.payment ? "Терминал" : "Наличка"}</p>
+                                        <h4>Общая сумма : {admin.total_price}</h4>
+                                    </div>
                                 </div>
                             ))
                         }
                     </div>
+
                 </div>
             </div>
         </div>
