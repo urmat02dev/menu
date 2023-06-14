@@ -23,7 +23,7 @@ const Admin = () => {
                 }
             })
             setAdmin(url.data)
-            // console.log(url)
+            console.log(url)
             setLoader(false)
         } catch (e) {
             setError(e)
@@ -33,16 +33,16 @@ const Admin = () => {
         if (error) {
             nav("/admin")
         }
-
     }
-    let orders = admin.map(order =>
-        order.items.map(orderItem =>
-            foods.filter(food => food.id === orderItem.dish)))
-    // console.log("Orders", orders.map(order => order.map(el => el.map(e => e.name_en))))
-    // console.log("Admin", admin)
-    // console.log("orders", orders)
-    // console.log(error)
-    let table = admin.map(admin => admin.table)
+    function compareByTimeCreated(a, b) {
+        const dateA = new Date(a.time_created);
+        const dateB = new Date(b.time_created);
+        return   dateB - dateA;
+    }
+    admin.sort(compareByTimeCreated);
+
+    console.log("Admin", admin)
+
     useEffect(() => {
         getAdmin()
         getNav()
@@ -60,33 +60,57 @@ const Admin = () => {
                         </div>
                     </div>
                     <div className="admin--hero">
-
-                        {
-                            admin.map(admin => (
-                                <div>
-                                    <p style={{
-                                        textAlign:"center"
-                                    }}>Стол №{admin.table}</p>
-                                    <p style={{
-                                        textAlign:"center"
-                                    }}>{admin.time_created}</p>
-                                    <table>
-                                        <tr>
-                                            <th>Название</th>
-                                            <th>Цена</th>
-                                            <th>Количество</th>
-                                            <th>Итого</th>
-                                        </tr>
-                                        <tr>
-                                            <td>{admin.items.map(item => foods.filter(food => food.id === item.dish)[0].name_ru)}</td>
-                                            <td>{admin.items.map(item => foods.filter(food => food.id === item.dish)[0].price)}</td>
-                                            <td>{admin.items.map(item => item.quantity)}</td>
-                                            <td>{admin.items.map(item => item.quantity) * admin.items.map(item => foods.filter(food => food.id === item.dish)[0].price)}</td>
-                                        </tr>
-                                    </table>
+                        {admin.map(item => (
+                            <div className={"tables"}>
+                                <div className={"tables--title"} style={{
+                                    textAlign:"center"
+                                }}>
+                                    <h4>Столик №{item.table}</h4>
+                                    <h5>Дата:{item.time_created.slice(0,10)}</h5>
+                                    <h5>Время:{item.time_created.slice(11,19)}</h5>
                                 </div>
-                            ))
-                        }
+                                <div className={"table"}>
+                                    <div className={"title"}>
+                                        <h2>Название</h2>
+                                        <h2>Цена</h2>
+                                        <h2>Количество</h2>
+                                        <h2>Итого</h2>
+                                    </div>
+                                    <div className={"product"}>
+                                        <div className={"name"}>
+                                            {item.items.map(el => {
+                                                return <div> {el.dish.name_ru} </div>
+                                            })}
+
+                                        </div>
+                                        <div className={"price"}>
+                                            {item.items.map(el => {
+                                                return <div> {el.dish.price} </div>
+                                            })}
+                                        </div>
+                                        <td className={"quantity"}>
+                                            { item.items.map(el => {
+                                                return <tr> {el.quantity} </tr>
+                                            })}
+                                        </td>
+                                        <td className={"total"}>
+                                            { item.items.map(el => {
+                                                return <tr> {el.dish.price * el.quantity} </tr>
+                                            })}
+                                        </td>
+                                    </div>
+                                    <div className={"footer"}>
+                                        <p>{item.is_takeaway ? "С собой" : "Здесь"}</p>
+                                        <p>{item.payment ? "Терминал" : "Наличка"}</p>
+                                        <p>Общая сумма: {item.total_price}</p>
+                                        <button>Выдать чек</button>
+                                        <button>Завершить заказ</button>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

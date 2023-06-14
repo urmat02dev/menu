@@ -35,7 +35,6 @@ const BasketModal = ({here,tern,cash,s}) => {
 
     }
     const getSpeed = async () => {
-        let basket = JSON.parse(localStorage.getItem("backend")) || []
         nav(`/${parametr}/main/`)
         const url = await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
             table: parametr,
@@ -44,7 +43,7 @@ const BasketModal = ({here,tern,cash,s}) => {
             items: basket.map((el) => {
 
                 return {
-                    "additives":el.add.map(item => item.id),
+                    "additives": el.add &&  el.add.map(item => item.id),
                     "dish": el.id,
                     "quantity": el.quantity
 
@@ -63,14 +62,12 @@ const BasketModal = ({here,tern,cash,s}) => {
 
         return dispatch({type:EMPTY_BASKET, payload:items}) && localStorage.setItem("backend",JSON.stringify(items))
     }
-    console.log("POST",basket.map((el) => {
+    console.log("POST", basket.map(item => {
         return {
-            "dish": el.id,
-            "quantity": el.quantity,
-            "additives":[el.add.map(item => item.id).slice(0,3)][0],
+            "dish": item.id,
+            "quantity": item.quantity,
+            "additives":item.add && item.add.map(el => el.id)
         }
-
-
     }))
 
     const getClose = () => {
