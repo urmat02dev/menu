@@ -41,10 +41,11 @@ const BasketModal = ({here,tern,cash,s}) => {
             is_takeaway:here ? 0 : 1,
             payment:cash ? 0 : 1 ,
             items: basket.map((el) => {
-                return  {
+                return {
+                    "additives": el.add ?  el.add.map(item => item.id) : [],
                     "dish": el.id,
                     "quantity": el.quantity,
-                    "additives":el.add.map(item => item.id),
+
                 }
 
             },)
@@ -55,6 +56,8 @@ const BasketModal = ({here,tern,cash,s}) => {
         return dispatch({type:EMPTY_BASKET, payload:items})
             && localStorage.setItem("backend",JSON.stringify(items))
     }
+
+
 
 
     const getClose = () => {
