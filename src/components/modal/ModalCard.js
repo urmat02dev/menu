@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Modal.scss"
+import "./ModalCard.scss"
 import {
     ADD,
     MODAL,
@@ -87,11 +87,9 @@ const ModalCard = ({el}) => {
     const title = el.add && el.add.map(el => getAddTitle(el))
     return (
         <>
-
             <div className={"modal--img"} >
                 <img src={el.image} alt=""/>
             </div>
-
                 <div className="modal--desc">
                     <div className="modal--desc--add">
                         {
@@ -115,7 +113,7 @@ const ModalCard = ({el}) => {
                                            className={el.add.some(el => el.id === a.id) ? "added" : "add"}
                                            onClick={() => getAdd(a)}>
                                 {getTitle(a)}
-                            </button>
+                                </button>
 
 
                             }
@@ -131,14 +129,14 @@ const ModalCard = ({el}) => {
                              onClick={() => nav("/basket") || dispatch({type: MODAL, payload: false})}>
                             <h1 className='basket--were'>{t("detail.to_basket")}</h1>
                             <div className="icon-block">
-                                <div className="foods--one__basket--icon"><BsBasket3Fill className='icon'/></div>
+                                <div className="icon-block--icon"><BsBasket3Fill className='icon'/></div>
                             </div>
                         </div>
                         :
                         <div className="basket" onClick={() => getBasket(el)}>
                             <h1 className='basket--were'>{t("detail.add")}</h1>
                             <div className="icon-block">
-                                <div className="foods--one__basket--icon">
+                                <div className="icon-block--icon">
                                     <BiBasket className='icon'/></div>
                             </div>
                         </div>
