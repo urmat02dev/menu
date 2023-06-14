@@ -6,7 +6,7 @@ import {
 
 import {IoMdClose} from "react-icons/io";
 import React from "react";
-import "./modalSearch.scss"
+import "./Modal.scss"
 import ModalCard from "./ModalCard";
 
 const ModalSearch = () => {
