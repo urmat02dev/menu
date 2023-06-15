@@ -4,7 +4,7 @@ import {
   GET_BASKET, GET_CHECK, GET_DETAIL, GET_FOODS, GET_PARAMS,
   MINUS,
   SEARCH, TOKEN_ID,
-  MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET, MODAL_TO_PRICE,
+  MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET, MODAL_TO_PRICE, HERE, WITH, CASH, TERMINAL,
 } from "./ActionTypes";
 
 const initialState ={
@@ -18,8 +18,11 @@ const initialState ={
   token_Id: '',
   orders: [],
   price: "",
-  params:""
-
+  params:"",
+  here:false,
+  withT:false,
+  terminal:false,
+  cash:false
 }
 
 
@@ -99,6 +102,18 @@ export const MainReducer = (state = initialState, action) => {
     }
     case TOKEN_ID: {
       return {...state,token_Id: action.payload}
+    }
+    case HERE : {
+      return {...state, here:action.payload}
+    }
+    case WITH : {
+      return {...state, withT :action.payload}
+    }
+    case CASH : {
+      return {...state, cash:action.payload}
+    }
+    case TERMINAL : {
+      return {...state, terminal:action.payload}
     }
     default :
       return state

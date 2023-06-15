@@ -10,11 +10,12 @@ import {FaPencilAlt} from "react-icons/fa";
 import axios from "axios";
 import {AiOutlineCheck, AiOutlineCloseCircle} from "react-icons/ai";
 import {EMPTY_BASKET, GET_BASKET} from "../../redux/Reducer/ActionTypes";
-const BasketModal = ({here,tern,cash,s}) => {
+const BasketModal = () => {
     const nav = useNavigate()
     const {t} = useTranslation()
     const dispatch = useDispatch()
     const {check,basket,add} = useSelector(state => state)
+    const {here,withT,terminal,cash} = useSelector(s => s)
     const [items, setItems] = useState([])
     const lang = localStorage.getItem("i18nextLng")
     const getTitle = (el) => {
@@ -66,6 +67,10 @@ const BasketModal = ({here,tern,cash,s}) => {
     const total = basket.reduce((acc,e) => {
         return acc + e.price * e.quantity
     },0)
+    console.log("Здесь",here)
+    console.log("Собой",withT)
+    console.log("Наличный",cash)
+    console.log("Терминал",terminal)
 
     return (
         <section id={"modalBasket"}>

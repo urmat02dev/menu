@@ -6,7 +6,7 @@ import setting from "../../assets/img/setting.svg";
 import axios from "axios";
 import {useSelector} from "react-redux";
 import foods from "../main-page/foods/Foods";
-import {useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 
 const Admin = () => {
     const [admin, setAdmin] = useState([])
@@ -34,6 +34,7 @@ const Admin = () => {
             nav("/admin")
         }
     }
+
     function compareByTimeCreated(a, b) {
         const dateA = new Date(a.time_created);
         const dateB = new Date(b.time_created);
@@ -45,6 +46,11 @@ const Admin = () => {
         getAdmin()
         getNav()
     }, [admin,error])
+    console.log("admin", admin.map(item => item.items.map(el => el.additives.reduce((a,b) => {
+        return a.price + b.price
+    },0))))
+    console.log("price", admin.map(item => item.items.map(el => el.additives.map(el => el.price))))
+
 
 
     return (
@@ -52,10 +58,15 @@ const Admin = () => {
             <div className="container">
                 <div className="admin">
                     <div className="admin--header">
+
                         <img className='admin--header__logos' src={logos} alt=""/>
                         <div className='admin--header__end'>
+                            <NavLink to={"https://aitenir.pythonanywhere.com/admin/cafe/dish/"} target={"_blank"}>
+                                <button className={"btn"}>Добавить еду</button>
+                            </NavLink>
                             <img src={burger} alt=""/>
                             <img src={setting} alt=""/>
+
                         </div>
                     </div>
                     <div className="admin--hero">
@@ -70,33 +81,43 @@ const Admin = () => {
                                 </div>
                                 <div className={"table"}>
                                     <div className={"title"}>
-                                        <h2>Название</h2>
-                                        <h2>Цена</h2>
-                                        <h2>Количество</h2>
-                                        <h2>Итого</h2>
+                                        <div className={"title--name"}>Название</div>
+                                        <div className={"title--price"}>Цена</div>
+                                        <div className={"title--quan"}>Количество</div>
+                                        <div className={"title--total"}>Итого</div>
                                     </div>
                                     <div className={"product"}>
                                         <div className={"name"}>
                                             {item.items.map(el => {
-                                                return <div> {el.dish.name_ru} </div>
+                                                return <div className={"name--title"}> {el.dish.name_ru}<p>{el.additives.map(text => {
+                                                    return <span>({text.name_ru})</span>
+                                                })}</p></div>
                                             })}
 
                                         </div>
                                         <div className={"price"}>
                                             {item.items.map(el => {
-                                                return <div> {el.dish.price} </div>
+                                                return <div> {el.dish.price}
+                                                    <p>{el.additives.map(text => {
+                                                        return <span>+({text.price})</span>
+                                                    })}</p>
+                                                </div>
                                             })}
                                         </div>
-                                        <td className={"quantity"}>
+                                        <div className={"quantity"}>
                                             { item.items.map(el => {
-                                                return <tr> {el.quantity} </tr>
+                                                return <div> {el.quantity} </div>
                                             })}
-                                        </td>
-                                        <td className={"total"}>
+                                        </div>
+                                        <div className={"total"}>
                                             { item.items.map(el => {
-                                                return <tr> {el.dish.price * el.quantity} </tr>
+                                                return <div> {el.dish.price * el.quantity}
+                                                    <p>{el.additives.reduce((a, b) => {
+                                                        return <span>+({a.price})</span>
+                                                    },0)}</p>
+                                                </div>
                                             })}
-                                        </td>
+                                        </div>
                                     </div>
                                     <div className={"footer"}>
                                         <p>{item.is_takeaway ? "С собой" : "Здесь"}</p>
