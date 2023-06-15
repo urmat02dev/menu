@@ -23,7 +23,6 @@ const Admin = () => {
                 }
             })
             setAdmin(url.data)
-            console.log(url)
             setLoader(false)
         } catch (e) {
             setError(e)
@@ -40,12 +39,15 @@ const Admin = () => {
         return   dateB - dateA;
     }
     admin.sort(compareByTimeCreated);
-
+    const addId =  admin.map(item => item.items.map(ite => ite.additives.map(el => el)))
+    let title = admin.map(item => item.items.map(ite => ite.dish.available_additives.filter(el => el.id === "3a245686-41fe-4835-b5b4-85b18dd536b5")))
     useEffect(() => {
         getAdmin()
         getNav()
-    }, [admin,error])
-
+    }, [admin.length,error])
+    console.log("Admin", admin)
+    console.log("Title", title)
+    console.log("AddId", addId)
 
     return (
         <div id='admin'>
@@ -78,7 +80,7 @@ const Admin = () => {
                                     <div className={"product"}>
                                         <div className={"name"}>
                                             {item.items.map(el => {
-                                                return <div> {el.dish.name_ru} </div>
+                                                return <div> {el.dish.name_ru}{el.dish.available_additives[0].name_ru} </div>
                                             })}
 
                                         </div>
