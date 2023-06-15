@@ -74,10 +74,8 @@ const BasketCard = ({el}) => {
                             : <h2>{getTitle(el)}{add}</h2>
                     }
                     </div>
-                    <div className="close" onClick={() => {
-
-                    }}>
-                        <IoMdClose onClick={getDelete} className={"icon"}/>
+                    <div className="close" onClick={() => {getDelete()}}>
+                        <IoMdClose className={"icon"}/>
                     </div>
                 </div>
                 <p>{el.gram}г.</p>

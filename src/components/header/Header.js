@@ -14,9 +14,9 @@ const Header = () => {
     const {basket} = useSelector(state => state)
   const {i18n} = useTranslation()
     const dispatch = useDispatch()
-    const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-  };
+        const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+      };
   const nav = useNavigate()
     const getNav = () => {
       nav("/basket")

@@ -1,5 +1,6 @@
 #admin {
   background: #F4F3FF;
+
   .admin {
     &--header {
       display: flex;
@@ -7,13 +8,16 @@
       justify-content: space-between;
       text-align: center;
       height: 100px;
+
       &__logos {
         width: 80px;
       }
+
       &__end {
         display: flex;
         align-items: center;
         justify-content: center;
+
         img {
           margin-left: 40px;
         }
@@ -21,20 +25,81 @@
     }
 
     &--hero {
-      table {
-        width: 100%;
-        background: #2bd5af;
-        padding: 10px 20px;
-        border-radius: 20px;
-        margin: 20px 0;
 
-        tr {
-          td {
+      .tables {
+        background: #2bd5af;
+
+        &--title {
+          padding-top: 20px;
+
+          h4 {
             font-size: 25px;
-            padding: 10px 0;
+            font-weight: 600;
+          }
+
+          h5 {
+            font-size: 20px;
+            color: black;
+            font-weight: 500;
+          }
+
+          h6 {
+            font-size: 20px;
+            color: black;
+            font-weight: 500;
+          }
+        }
+
+        .table {
+          width: 100%;
+          background: rgba(0, 79, 199, 0.47);
+          padding: 10px 0;
+          border-radius: 20px;
+          margin: 20px 0;
+          .title {
+            width: 90%;
+            padding: 5px 10px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            h2{
+              font-size: 20px;
+              font-weight: bold;
+            }
+          }
+          .product {
+            width: 90%;
+            padding: 5px 10px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .name{
+              font-size: 20px;
+              padding-right: 1px;
+            }
+            .price{
+              padding-right: 2%;
+            }
+            .quantity{
+            font-size: 20px;
+              padding-right: 10%;
+          }
+          .total{
+          padding-right: 25px;
+          }
+
+          }
+          .footer{
+            padding: 5px 10px 0 20px;
+
+            p{
+              color: rgba(0, 0, 0, 0.78);
+              font-size: 22px;
+            }
           }
         }
       }
+
     }
     .table{
       background: #2bd5af;
