@@ -178,7 +178,7 @@
     height: 800px;
     .modalBasket{
       &--block{
-        margin-top: 10%;
+        margin-top: 30%;
         width: 400px;
         //height: 500px;
         &__ich{
@@ -208,7 +208,7 @@
     height: 800px;
     .modalBasket{
       &--block{
-        margin-top: 10%;
+        margin-top: 30%;
         width: 400px;
         //height: 500px;
         &__ich{
@@ -239,7 +239,7 @@
     height: 800px;
     .modalBasket{
       &--block{
-        margin-top: 10%;
+        margin-top: 35%;
         width: 350px;
         //height: 500px;
         &__ich{
@@ -271,7 +271,7 @@
     height: 800px;
     .modalBasket{
       &--block{
-        margin-top: 10%;
+        margin-top: 40%;
         width: 330px;
         //height: 500px;
         &__ich{
@@ -302,7 +302,7 @@
 }
 @media (max-width: 320px) {
   #modalBasket{
-    height: 550px;
+    height: 700px;
     background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover;
     .modalBasket{
       display: flex;
