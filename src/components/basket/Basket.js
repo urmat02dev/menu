@@ -109,6 +109,7 @@ const Basket = () => {
                   <h2>{t("basket.with")}</h2>
                 </div>
               </div>
+              <div className={'signal'}></div>
             </div>
             <div className='basket--pay'>
               <div className='basket--pay__text'>
