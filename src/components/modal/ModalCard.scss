@@ -1,5 +1,5 @@
 @media (max-width: 992px) {
-  .modal{
+  .modal {
     &--img {
       padding-top: 50px;
       display: flex;
@@ -14,6 +14,7 @@
       }
 
     }
+
     &--desc {
       width: 60%;
       padding: 0 30px;
@@ -24,7 +25,7 @@
       z-index: 15;
 
       &--add {
-        p{
+        p {
           font-family: 'Armin Grotesk', sans-serif;
           font-style: normal;
           font-weight: 600;
@@ -33,7 +34,8 @@
           padding: 20px 0;
           color: #121212;
         }
-        span{
+
+        span {
           font-size: 35px;
           color: #004FC7;
         }
@@ -83,6 +85,7 @@
         }
       }
     }
+
     &--basket {
       display: flex;
       align-items: center;
@@ -162,12 +165,14 @@
         }
       }
     }
-    &--additives{
+
+    &--additives {
       display: flex;
       width: 65%;
       justify-content: space-around;
       margin: 50px 0 20px 0;
-      .add{
+
+      .add {
         width: 175px;
         height: 35px;
         background: #ffffff;
@@ -182,7 +187,8 @@
         color: #004FC7;
         border: 1px solid #004FC7;
       }
-      .added{
+
+      .added {
         width: 175px;
         height: 35px;
         background: #004FC7;
@@ -201,8 +207,9 @@
     }
   }
 }
+
 @media (max-width: 768px) {
-  .modal{
+  .modal {
     &--img {
       img {
         width: 400px;
@@ -213,8 +220,9 @@
     &--desc {
       padding: 0 0;
       width: 56%;
+
       &--add {
-        p{
+        p {
           font-family: 'Armin Grotesk', sans-serif;
           font-style: normal;
           font-weight: 600;
@@ -223,7 +231,8 @@
           padding: 20px 0;
           color: #121212;
         }
-        span{
+
+        span {
           font-size: 24px;
           color: #004FC7;
         }
@@ -242,9 +251,11 @@
       .basket {
         width: 200px;
         padding-left: 3px;
+
         &--were {
           font-size: 20px;
         }
+
         .icon-block {
           margin-left: 10px;
           width: 60px;
@@ -256,12 +267,13 @@
       width: 180px;
     }
 
-    &--additives{
+    &--additives {
       display: flex;
       width: 63%;
       justify-content: space-around;
       margin: 50px 0 20px 0;
-      .add{
+
+      .add {
         width: 150px;
         height: 35px;
         background: #ffffff;
@@ -276,7 +288,8 @@
         color: #004FC7;
         border: 1px solid #004FC7;
       }
-      .added{
+
+      .added {
         width: 150px;
         height: 35px;
         background: #004FC7;
@@ -354,12 +367,14 @@
         width: 160px;
       }
     }
-    &--additives{
+
+    &--additives {
       display: flex;
       width: 70%;
       justify-content: space-around;
       margin: 50px 0 20px 0;
-      .add{
+
+      .add {
         width: 130px;
         height: 35px;
         background: #ffffff;
@@ -374,7 +389,8 @@
         color: #004FC7;
         border: 1px solid #004FC7;
       }
-      .added{
+
+      .added {
         width: 130px;
         height: 35px;
         background: #004FC7;
@@ -391,11 +407,13 @@
       }
 
     }
+
     &--desc {
       padding: 0 0;
       width: 56%;
+
       &--add {
-        p{
+        p {
           font-family: 'Armin Grotesk', sans-serif;
           font-style: normal;
           font-weight: 600;
@@ -404,7 +422,8 @@
           padding: 20px 0;
           color: #121212;
         }
-        span{
+
+        span {
           font-size: 24px;
           color: #004FC7;
         }
@@ -416,7 +435,6 @@
         margin-top: 20px;
       }
     }
-
 
 
   }
@@ -505,8 +523,9 @@
     &--desc {
       padding: 0 0;
       width: 56%;
+
       &--add {
-        p{
+        p {
           font-family: 'Armin Grotesk', sans-serif;
           font-style: normal;
           font-weight: 600;
@@ -515,7 +534,8 @@
           padding: 20px 0;
           color: #121212;
         }
-        span{
+
+        span {
           font-size: 19px;
           color: #004FC7;
         }
@@ -527,12 +547,14 @@
         margin-top: 20px;
       }
     }
-    &--additives{
+
+    &--additives {
       display: flex;
       width: 70%;
       justify-content: space-around;
       margin: 50px 0 20px 0;
-      .add{
+
+      .add {
         width: 100px;
         height: 35px;
         background: #ffffff;
@@ -547,7 +569,8 @@
         color: #004FC7;
         border: 1px solid #004FC7;
       }
-      .added{
+
+      .added {
         width: 100px;
         height: 35px;
         background: #004FC7;
@@ -649,8 +672,9 @@
     &--desc {
       padding: 0 0;
       width: 56%;
+
       &--add {
-        p{
+        p {
           font-family: 'Armin Grotesk', sans-serif;
           font-style: normal;
           font-weight: 600;
@@ -659,7 +683,8 @@
           padding: 20px 0;
           color: #121212;
         }
-        span{
+
+        span {
           font-size: 19px;
           color: #004FC7;
         }
@@ -671,12 +696,14 @@
         margin-top: 20px;
       }
     }
-    &--additives{
+
+    &--additives {
       display: flex;
       width: 70%;
       justify-content: space-around;
       margin: 50px 0 20px 0;
-      .add{
+
+      .add {
         width: 90px;
         height: 35px;
         background: #ffffff;
@@ -691,7 +718,8 @@
         color: #004FC7;
         border: 1px solid #004FC7;
       }
-      .added{
+
+      .added {
         width: 90px;
         height: 35px;
         background: #004FC7;
@@ -793,8 +821,9 @@
     &--desc {
       padding: 0 0;
       width: 56%;
+
       &--add {
-        p{
+        p {
           font-family: 'Armin Grotesk', sans-serif;
           font-style: normal;
           font-weight: 600;
@@ -803,7 +832,8 @@
           padding: 20px 0;
           color: #121212;
         }
-        span{
+
+        span {
           font-size: 19px;
           color: #004FC7;
         }
@@ -815,12 +845,14 @@
         margin-top: 20px;
       }
     }
-    &--additives{
+
+    &--additives {
       display: flex;
       width: 70%;
       justify-content: space-around;
       margin: 50px 0 20px 0;
-      .add{
+
+      .add {
         width: 90px;
         height: 35px;
         background: #ffffff;
@@ -835,7 +867,8 @@
         color: #004FC7;
         border: 1px solid #004FC7;
       }
-      .added{
+
+      .added {
         width: 90px;
         height: 35px;
         background: #004FC7;
@@ -868,6 +901,7 @@
         border-radius: 20px;
       }
     }
+
     &--desc {
       width: 66%;
 
@@ -895,6 +929,7 @@
         }
       }
     }
+
     &--basket {
       width: 75%;
 
@@ -945,6 +980,7 @@
 
     &--desc {
       width: 55%;
+
       &__h2 {
         font-size: 19px;
       }
@@ -1030,6 +1066,7 @@
         height: 32px;
         border-radius: 8px;
         margin: 0 7px;
+
         .foods--one__basket--icon {
           .icon {
             font-size: 20px;
@@ -1054,12 +1091,14 @@
         }
       }
     }
-    &--additives{
+
+    &--additives {
       display: flex;
       width: 70%;
       justify-content: space-around;
       margin: 50px 0 20px 0;
-      .add{
+
+      .add {
         width: 80px;
         height: 35px;
         background: #ffffff;
@@ -1074,7 +1113,8 @@
         color: #004FC7;
         border: 1px solid #004FC7;
       }
-      .added{
+
+      .added {
         width: 80px;
         height: 35px;
         background: #004FC7;
@@ -1120,7 +1160,8 @@
         height: 30px;
         margin: 0px 8px;
         border-radius: 8px;
-        .icon{
+
+        .icon {
           font-size: 17px;
         }
 
@@ -1148,12 +1189,14 @@
         }
       }
     }
-    &--additives{
+
+    &--additives {
       display: flex;
       width: 70%;
       justify-content: space-around;
       margin: 50px 0 20px 0;
-      .add{
+
+      .add {
         width: 70px;
         height: 35px;
         background: #ffffff;
@@ -1168,7 +1211,8 @@
         color: #004FC7;
         border: 1px solid #004FC7;
       }
-      .added{
+
+      .added {
         width: 70px;
         height: 35px;
         background: #004FC7;

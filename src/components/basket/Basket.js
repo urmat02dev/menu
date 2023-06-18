@@ -109,11 +109,11 @@ const Basket = () => {
                 <div onClick={() => getHere()}  className={ here ? "basket--status__general--here active" :"basket--status__general--here"}>
                   <h2>{t("basket.here")}</h2>
                 </div>
+                <div className={'signal'}></div>
                 <div onClick={() => getS()}  className={ s ? "basket--status__general--with active" :"basket--status__general--with"}>
                   <h2>{t("basket.with")}</h2>
                 </div>
               </div>
-              <div className={'signal'}></div>
             </div>
             <div className='basket--pay'>
               <div className='basket--pay__text'>
