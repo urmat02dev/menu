@@ -12,28 +12,28 @@ const BasketCard = ({el}) => {
     const {add} = useSelector(state => state)
     const [loader, setLoader] = useState(false)
     const {t} = useTranslation()
-    const handleIncrement = () =>{
+    const handleIncrement = () => {
         let basket = JSON.parse(localStorage.getItem("backend")) || []
         let found = basket.find(e => e.id === el.id)
-        if (found){
-            basket = basket.map(e => e.id === el.id ? {...e,quantity: e.quantity + 1}: e)
-        }else {
-            basket = [...basket, {...el,quantity: 1}]
+        if (found) {
+            basket = basket.map(e => e.id === el.id ? {...e, quantity: e.quantity + 1} : e)
+        } else {
+            basket = [...basket, {...el, quantity: 1}]
         }
-        localStorage.setItem("backend",JSON.stringify(basket))
-        dispatch({type:GET_BASKET, payload: el})
+        localStorage.setItem("backend", JSON.stringify(basket))
+        dispatch({type: GET_BASKET, payload: el})
     }
-    const handleDecrement = () =>{
+    const handleDecrement = () => {
         let basket = JSON.parse(localStorage.getItem("backend")) || []
         basket = basket.map(e => {
-            if (e.id === el.id){
-                if (e.quantity > 1){
-                    return {...e,quantity: e.quantity - 1}
-                }else return e
-            }else return e
+            if (e.id === el.id) {
+                if (e.quantity > 1) {
+                    return {...e, quantity: e.quantity - 1}
+                } else return e
+            } else return e
         })
-        localStorage.setItem("backend",JSON.stringify(basket))
-        dispatch({type:MINUS, payload: el})
+        localStorage.setItem("backend", JSON.stringify(basket))
+        dispatch({type: MINUS, payload: el})
     }
     const getTitle = (food) => {
         if (lang === "en") {
@@ -46,7 +46,7 @@ const BasketCard = ({el}) => {
     }
     const getAddTitle = (el) => {
         if (lang === "en") {
-            return  `(${el.name_en})`
+            return `(${el.name_en})`
         } else if (lang === "ru") {
             return `(${el.name_ru})`
         } else if (lang === "kg") {
@@ -58,23 +58,26 @@ const BasketCard = ({el}) => {
     const getDelete = () => {
         let basket = JSON.parse(localStorage.getItem("backend")) || []
         basket = basket.filter(e => e.id !== el.id)
-        localStorage.setItem("backend",JSON.stringify(basket))
+        localStorage.setItem("backend", JSON.stringify(basket))
         dispatch({type: DELETE, payload: el})
     }
 
-    const title =el.add && el.add.map(el => getAddTitle(el))
+    const title = el.add && el.add.map(el => getAddTitle(el))
     return (
 
-            <div className="basket--card" key={el.id} style={{translateY: del ? '-400px' : ''}}>
+        <div className="basket--card" key={el.id} style={{translateY: del ? '-400px' : ''}}>
             <img className="basket--card__img" src={el.image} alt=""/>
             <div className="basket--card__word">
                 <div className={"desc"}>
-                    <div className="modal--desc--add">{
-                        el.add ? <h2 >{getTitle(el)}{add} <span className={"added"}>{title.length ? "+" : ""} {title}</span> </h2>
-                            : <h2>{getTitle(el)}{add}</h2>
+                    <div className="basket--desc--add">{
+                        el.add ? <p className={"title"}>{getTitle(el)}{add} <span
+                                className={"basketAdded"}>{title.length ? "+" : ""} {title}</span></p>
+                            : <p className={"title"}>{getTitle(el)}{add}</p>
                     }
                     </div>
-                    <div className="close" onClick={() => {getDelete()}}>
+                    <div className="close" onClick={() => {
+                        getDelete()
+                    }}>
                         <IoMdClose className={"icon"}/>
                     </div>
                 </div>

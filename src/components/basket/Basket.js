@@ -65,6 +65,8 @@ const Basket = () => {
       return   nav(`/${parametr}/main/print`) || window.scroll({
         top:0,
         behavior:"smooth"})
+
+
     }
     else if (order === false && pay === false){
       setTimeout(() => {
