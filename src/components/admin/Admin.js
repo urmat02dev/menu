@@ -6,7 +6,7 @@ import setting from "../../assets/img/setting.svg";
 import axios from "axios";
 import {useSelector} from "react-redux";
 import foods from "../main-page/foods/Foods";
-import {useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 
 const Admin = () => {
     const [admin, setAdmin] = useState([])
@@ -23,6 +23,7 @@ const Admin = () => {
                 }
             })
             setAdmin(url.data)
+            console.log(url)
             setLoader(false)
         } catch (e) {
             setError(e)
@@ -33,31 +34,39 @@ const Admin = () => {
             nav("/admin")
         }
     }
+
     function compareByTimeCreated(a, b) {
         const dateA = new Date(a.time_created);
         const dateB = new Date(b.time_created);
         return   dateB - dateA;
     }
     admin.sort(compareByTimeCreated);
-    const addId =  admin.map(item => item.items.map(ite => ite.additives.map(el => el)))
-    let title = admin.map(item => item.items.map(ite => ite.dish.available_additives.filter(el => el.id === "3a245686-41fe-4835-b5b4-85b18dd536b5")))
+
     useEffect(() => {
         getAdmin()
         getNav()
-    }, [admin.length,error])
-    console.log("Admin", admin)
-    console.log("Title", title)
-    console.log("AddId", addId)
+    }, [admin,error])
+    console.log("admin", admin.map(item => item.items.map(el => el.additives.reduce((a,b) => {
+        return a.price + b.price
+    },0))))
+    console.log("price", admin.map(item => item.items.map(el => el.additives.map(el => el.price))))
+
+
 
     return (
         <div id='admin'>
             <div className="container">
                 <div className="admin">
                     <div className="admin--header">
+
                         <img className='admin--header__logos' src={logos} alt=""/>
                         <div className='admin--header__end'>
+                            <NavLink to={"https://aitenir.pythonanywhere.com/admin/cafe/dish/"} target={"_blank"}>
+                                <button className={"btn"}>Добавить еду</button>
+                            </NavLink>
                             <img src={burger} alt=""/>
                             <img src={setting} alt=""/>
+
                         </div>
                     </div>
                     <div className="admin--hero">
@@ -72,33 +81,43 @@ const Admin = () => {
                                 </div>
                                 <div className={"table"}>
                                     <div className={"title"}>
-                                        <h2>Название</h2>
-                                        <h2>Цена</h2>
-                                        <h2>Количество</h2>
-                                        <h2>Итого</h2>
+                                        <div className={"title--name"}>Название</div>
+                                        <div className={"title--price"}>Цена</div>
+                                        <div className={"title--quan"}>Количество</div>
+                                        <div className={"title--total"}>Итого</div>
                                     </div>
                                     <div className={"product"}>
                                         <div className={"name"}>
                                             {item.items.map(el => {
-                                                return <div> {el.dish.name_ru}{el.dish.available_additives[0].name_ru} </div>
+                                                return <div className={"name--title"}> {el.dish.name_ru}<p>{el.additives.map(text => {
+                                                    return <span>({text.name_ru})</span>
+                                                })}</p></div>
                                             })}
 
                                         </div>
                                         <div className={"price"}>
                                             {item.items.map(el => {
-                                                return <div> {el.dish.price} </div>
+                                                return <div> {el.dish.price}
+                                                    <p>{el.additives.map(text => {
+                                                        return <span>+({text.price})</span>
+                                                    })}</p>
+                                                </div>
                                             })}
                                         </div>
-                                        <td className={"quantity"}>
+                                        <div className={"quantity"}>
                                             { item.items.map(el => {
-                                                return <tr> {el.quantity} </tr>
+                                                return <div> {el.quantity} </div>
                                             })}
-                                        </td>
-                                        <td className={"total"}>
+                                        </div>
+                                        <div className={"total"}>
                                             { item.items.map(el => {
-                                                return <tr> {el.dish.price * el.quantity} </tr>
+                                                return <div> {el.dish.price * el.quantity}
+                                                    <p>{el.additives.reduce((a, b) => {
+                                                        return <span>+({a.price})</span>
+                                                    },0)}</p>
+                                                </div>
                                             })}
-                                        </td>
+                                        </div>
                                     </div>
                                     <div className={"footer"}>
                                         <p>{item.is_takeaway ? "С собой" : "Здесь"}</p>

@@ -17,7 +17,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
+        .btn{
+          width: 130px;
+          height: 40px;
+          background: #ffffff;
+          border: 1px solid #004FC7;
+          color: #004FC7;
+          border-radius: 5px;
+          font-size: 14px;
+        }
         img {
           margin-left: 40px;
         }
@@ -57,35 +65,71 @@
           border-radius: 20px;
           margin: 20px 0;
           .title {
-            width: 90%;
-            padding: 5px 10px 0 20px;
+            //padding: 5px 10px 0 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            h2{
-              font-size: 20px;
-              font-weight: bold;
+            font-size: 21px;
+            font-weight: 600;
+            &--name{
+              margin-left: 20px;
+              width: 37.5%;
             }
+            &--price{
+              width: 25.5%;
+            }
+            &--quan{
+              width: 23%;
+            }
+
           }
           .product {
-            width: 90%;
             padding: 5px 10px 0 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            color: rgb(255, 255, 255);
+
             .name{
               font-size: 20px;
-              padding-right: 1px;
+              width: 38.5%;
+              &--title{
+                margin: 4px 0;
+                display: flex;
+                align-items: center;
+              }
+              p{
+                margin-left: 5px;
+                font-weight: bold;
+                font-size: 16px;
+              }
             }
             .price{
-              padding-right: 2%;
+              font-size: 20px;
+              width: 26.3%;
+
+              div{
+                margin: 4px 0;
+                display: flex;
+                p{
+                  margin-left: 5px;
+                  font-weight: bold;
+                  font-size: 17px;
+                }
+              }
             }
             .quantity{
             font-size: 20px;
-              padding-right: 10%;
+              width: 23.4%;
+              div{
+                margin: 4px 0;
+
+              }
           }
           .total{
-          padding-right: 25px;
+            font-size: 20px;
+            div{
+              margin: 4px 0;
+
+            }
           }
 
           }

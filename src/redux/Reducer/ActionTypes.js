@@ -18,4 +18,8 @@ export const MODAL = "MODAL"
 export const MODAL_PLUS = "MODAL_PLUS"
 export const MODAL_MINUS = "MODAL_MINUS"
 export const SEARCH = "SEARCH"
+export const HERE = "HERE"
+export const WITH = "WITH"
+export const CASH = "CASH"
+export const TERMINAL = "TERMINAL"
 
