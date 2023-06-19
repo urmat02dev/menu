@@ -47,9 +47,7 @@ const Admin = () => {
         getAdmin()
         getNav()
     }, [admin.length,error])
-    console.log("admin", admin.map(item => item.items.map(el => el.additives.reduce((a,b) => {
-        return a.price + b.price
-    },0))))
+    console.log("admin", admin)
     console.log("price", admin.map(item => item.items.map(el => el.additives.reduce((acc,el) => {
         return acc + el.price
     },0))))
@@ -115,15 +113,14 @@ const Admin = () => {
                                         <div className={"total"}>
                                             { item.items.map(el => {
                                                 return <div>
-                                                    <p>{el.dish.price * el.quantity}</p>
-                                                    <p>{el.additives.reduce((acc, e) => {
-                                                        // return <span>{acc + e.price ?  +({acc + e.price}) : "" }</span>
-                                                    },0)
+                                                   <p>{el.additives.reduce((acc, e) => {
+                                                        return acc + e.price
+                                                    },0) + (el.dish.price * el.quantity)
                                                     }
                                                     </p>
                                                 </div>
                                             })}
-                                        </div>
+ 8890                                       </div>
                                     </div>
                                     <div className={"footer"}>
                                         <p>{item.is_takeaway ? "С собой" : "Здесь"}</p>

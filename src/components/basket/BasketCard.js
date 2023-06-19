@@ -71,8 +71,8 @@ const BasketCard = ({el}) => {
                 <div className={"desc"}>
                     <div className="basket--desc--add">{
                         el.add ? <p className={"title"}>{getTitle(el)}{add} <span
-                                className={"basketAdded"}>{title.length ? "+" : ""} {title}</span></p>
-                            : <p className={"title"}>{getTitle(el)}{add}</p>
+                                className={"basketAdded"}> <br/> {title.length ? "+" : ""} {title}</span></p>
+                            : <p className={"title--dd"}>{getTitle(el)}{add}</p>
                     }
                     </div>
                     <div className="close" onClick={() => {
