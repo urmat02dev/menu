@@ -15,71 +15,46 @@ const Basket = () => {
   const {t} = useTranslation()
   const dispatch = useDispatch()
   const {basket} = useSelector(s => s)
-  const {here,withT,terminal,cash} = useSelector(s => s)
+  const {here,withT,terminal,cash,order,pay} = useSelector(s => s)
   const [loader, setLoader] = useState(false)
-  // const [here,setHere] = useState(false)
-  // const [s,setS] = useState(false)
-  const [order,setOrder] = useState(false)
-  const [pay,setPay] = useState(false)
-  // const [cash,setCash] = useState(false)
-  // const [tern,setTern] = useState(false)
   const [btn,setBtn] = useState(false)
   const [cash2, setCash2]  = useState(false)
 
   function getHere() {
-    dispatch({type:HERE,payload:true}) && dispatch({type:WITH,payload:false})
-    // setHere(!here) || setS(false)
-    if (!here){
-      setOrder(true)
-    }
-    else setOrder(false)
+    dispatch({type:HERE,payload:!here}) && dispatch({type:WITH,payload:false})
+
   }
   function getS() {
-    dispatch({type:WITH,payload:true}) && dispatch({type:HERE,payload:false})
-    // setS(!withT) || setHere(false)
-    if (!withT){
-      setOrder(true)
-    }
-    else setOrder(false)
+    dispatch({type:WITH,payload:!withT}) && dispatch({type:HERE,payload:false})
   }
   function getCash() {
-    dispatch({type:CASH,payload:true}) && dispatch({type:TERMINAL,payload:false})
-    // setCash(!cash) || setTern(false)
-    if (!cash){
-      setPay(true)
-    }
-    else setPay(false)
+    dispatch({type:CASH,payload:!cash}) && dispatch({type:TERMINAL,payload:false})
   }
   function getTerm() {
-    dispatch({type:TERMINAL,payload:true}) && dispatch({type:CASH,payload:false})
-    // setTern(!tern) || setCash(false)
-    if (!terminal){
-      setPay(true)
-    }
-    else setPay(false)
+    dispatch({type:TERMINAL,payload:!terminal}) && dispatch({type:CASH,payload:false})
   }
-  const getModal = async (el) => {
 
-    if (order && pay) {
-
-      return   nav(`/${parametr}/main/print`) || window.scroll({
-        top:0,
-        behavior:"smooth"})
+  const getModal = async () => {
+    if ((here || withT)  && (cash || terminal) ) {
+      return nav(`/${parametr}/main/print`)
     }
-    else if (order === false && pay === false){
+    else {
       setTimeout(() => {
         setBtn(false)
-      },1000)
+      },2000)
     }
   }
 
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
-  console.log("Здесь",here)
-  console.log("Собой",withT)
-  console.log("Наличный",cash)
-  console.log("Терминал",terminal)
+  useEffect(() => {
+    dispatch({type:HERE,payload:false})
+    dispatch({type:WITH,payload:false})
+    dispatch({type:CASH,payload:false})
+    dispatch({type:TERMINAL,payload:false})
+
+  },[basket.length])
 
   return basket.length ?
     <>
@@ -126,11 +101,11 @@ const Basket = () => {
                 </div>
               </div>
             </div>
-            <div className='basket--btn' onClick={() => getModal()} style={{
+            <div className='basket--btn' onClick={() =>getModal() } style={{
 
             }}>
                 <button onClick={() => setBtn(true)} style={{
-                  background: btn ? !order || !pay  ? "red" : "#004FC7" : "#004FC7"
+                  background: btn ? (!here || !withT) || (!cash || !terminal)  ? "red" : "#004FC7" : "#004FC7"
                 }}>{t("basket.cont")}</button>
             </div>
           </div>

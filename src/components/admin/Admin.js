@@ -14,6 +14,7 @@ const Admin = () => {
     const [error, setError] = useState(false)
     const {token_Id, foods} = useSelector(s => s)
     const nav = useNavigate()
+
     const getAdmin = async () => {
         try {
             setLoader(true)
@@ -45,11 +46,13 @@ const Admin = () => {
     useEffect(() => {
         getAdmin()
         getNav()
-    }, [admin,error])
+    }, [admin.length,error])
     console.log("admin", admin.map(item => item.items.map(el => el.additives.reduce((a,b) => {
         return a.price + b.price
     },0))))
-    console.log("price", admin.map(item => item.items.map(el => el.additives.map(el => el.price))))
+    console.log("price", admin.map(item => item.items.map(el => el.additives.reduce((acc,el) => {
+        return acc + el.price
+    },0))))
 
 
 
@@ -111,10 +114,13 @@ const Admin = () => {
                                         </div>
                                         <div className={"total"}>
                                             { item.items.map(el => {
-                                                return <div> {el.dish.price * el.quantity}
-                                                    <p>{el.additives.reduce((a, b) => {
-                                                        return <span>+({a.price})</span>
-                                                    },0)}</p>
+                                                return <div>
+                                                    <p>{el.dish.price * el.quantity}</p>
+                                                    <p>{el.additives.reduce((acc, e) => {
+                                                        // return <span>{acc + e.price ?  +({acc + e.price}) : "" }</span>
+                                                    },0)
+                                                    }
+                                                    </p>
                                                 </div>
                                             })}
                                         </div>
@@ -123,8 +129,6 @@ const Admin = () => {
                                         <p>{item.is_takeaway ? "С собой" : "Здесь"}</p>
                                         <p>{item.payment ? "Терминал" : "Наличка"}</p>
                                         <p>Общая сумма: {item.total_price}</p>
-                                        <button>Выдать чек</button>
-                                        <button>Завершить заказ</button>
 
                                     </div>
 

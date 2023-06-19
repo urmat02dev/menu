@@ -4,7 +4,7 @@ import {
   GET_BASKET, GET_CHECK, GET_DETAIL, GET_FOODS, GET_PARAMS,
   MINUS,
   SEARCH, TOKEN_ID,
-  MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET, MODAL_TO_PRICE, HERE, WITH, CASH, TERMINAL,
+  MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET, MODAL_TO_PRICE, HERE, WITH, CASH, TERMINAL, PAY, ORDER,
 } from "./ActionTypes";
 
 const initialState ={
@@ -22,7 +22,7 @@ const initialState ={
   here:false,
   withT:false,
   terminal:false,
-  cash:false
+  cash:false,
 }
 
 

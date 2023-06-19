@@ -1,42 +1,47 @@
-
 @media (max-width: 992px) {
-  #modalBasket{
+  #modalBasket {
     height: 700px;
-    background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover ;
-    .modalBasket{
+    background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover;
+
+    .modalBasket {
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: sad 1s ease-out ;
+      animation: sad 1s ease-out;
       @keyframes sad {
-        0%{
+        0% {
           transform: translateX(-400px);
         }
-        30%{
+        30% {
           transform: rotateY(200deg);
         }
       }
-      &--block{
+
+      &--block {
         margin-top: 10%;
         width: 500px;
         background: #DFE2FF;
         border-radius: 20px;
-        &__ich{
+
+        &__ich {
           position: relative;
           display: flex;
           flex-direction: column;
           align-items: center;
-          img{
+
+          img {
             margin-top: 10%;
           }
-          h1{
+
+          h1 {
             margin: 15px 0;
             font-weight: 600;
             font-size: 22px;
             line-height: 34px;
             color: #004FC7;
           }
-          &--close{
+
+          &--close {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -51,20 +56,23 @@
             height: 30px;
             width: 30px;
             color: white;
-            p{
+
+            p {
               font-size: 30px;
               color: #FFFFFF;
             }
           }
         }
-        .check{
+
+        .check {
           display: flex;
           align-items: start;
           justify-content: center;
           margin-top: 30px;
           width: 500px;
           height: 100px;
-          .change{
+
+          .change {
             margin: 0 15px;
             display: flex;
             align-items: center;
@@ -75,30 +83,51 @@
             background: #004FC7;
             border-radius: 10px;
             color: white;
-            .icon11{
+
+            .icon11 {
               margin: 0 5px;
             }
           }
         }
-        .syz{
+        .seconds{
+          margin-bottom: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          div{
+            border: 1px solid #004FC7;
+            width: 75px;
+            height: 35px;
+            color: red;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        .syz {
           width: 100%;
           margin: 0 10px;
           border: 1.5px dashed black;
         }
-        .syzz{
+
+        .syzz {
           width: 225px;
           margin: 0 5px;
           height: 1px;
           background: black;
         }
-        .zakk{
+
+        .zakk {
           margin-top: 10px;
           display: flex;
           align-items: center;
           font-weight: bold;
 
         }
-        .zak{
+
+        .zak {
           display: flex;
           align-items: center;
 
@@ -109,46 +138,53 @@
 }
 
 @media (max-width: 768px) {
-  #modalBasket{
+  #modalBasket {
     height: 670px;
   }
 }
+
 @media (max-width: 576px) {
-  #modalBasket{
+  #modalBasket {
     height: 800px;
     background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover;
-    .modalBasket{
+
+    .modalBasket {
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: sad 1s ease-out ;
+      animation: sad 1s ease-out;
       @keyframes sad {
-        0%{
+        0% {
           transform: translateX(-400px);
         }
-        30%{
+        30% {
           transform: rotateY(200deg);
         }
       }
-      &--block{
+
+      &--block {
         background: #DFE2FF;
         border-radius: 20px;
-        &__ich{
+
+        &__ich {
           display: flex;
           flex-direction: column;
           align-items: center;
-          img{
+
+          img {
             width: 130px;
             margin-top: 10%;
           }
-          h1{
+
+          h1 {
             margin: 15px 0;
             font-weight: 600;
             font-size: 22px;
             line-height: 34px;
             color: #004FC7;
           }
-          &--close{
+
+          &--close {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -162,7 +198,8 @@
             border-radius: 50%;
             height: 30px;
             width: 30px;
-            p{
+
+            p {
               font-size: 30px;
               color: #FFFFFF;
             }
@@ -173,29 +210,42 @@
   }
 
 }
+
 @media (max-width: 450px) {
-  #modalBasket{
+  #modalBasket {
     height: 800px;
-    .modalBasket{
-      &--block{
+
+    .modalBasket {
+      &--block {
         margin-top: 30%;
         width: 400px;
         //height: 500px;
-        &__ich{
-          img{
+        &__ich {
+          img {
             width: 120px;
           }
         }
-        .check{
+
+        .check {
           width: 400px;
+          height: 70px;
+
         }
-        .zak{
+        .seconds{
+          div{
+            border-radius: 2px;
+          }
+        }
+
+        .zak {
           font-size: 13px;
         }
-        .zakk{
+
+        .zakk {
           font-size: 14px;
         }
-        .syzz{
+
+        .syzz {
           width: 170px;
         }
       }
@@ -203,29 +253,42 @@
   }
 
 }
+
 @media (max-width: 428px) {
-  #modalBasket{
+  #modalBasket {
     height: 800px;
-    .modalBasket{
-      &--block{
+
+    .modalBasket {
+      &--block {
         margin-top: 30%;
         width: 400px;
         //height: 500px;
-        &__ich{
-          img{
+        &__ich {
+          img {
             width: 120px;
           }
         }
-        .check{
+
+        .check {
           width: 400px;
         }
-        .zak{
+        .seconds{
+          div{
+            width: 70px;
+            height: 30px;
+            font-size: 18px;
+          }
+        }
+
+        .zak {
           font-size: 13px;
         }
-        .zakk{
+
+        .zakk {
           font-size: 14px;
         }
-        .syzz{
+
+        .syzz {
           width: 170px;
         }
       }
@@ -235,30 +298,35 @@
 
 
 @media (max-width: 400px) {
-  #modalBasket{
+  #modalBasket {
     height: 800px;
-    .modalBasket{
-      &--block{
+
+    .modalBasket {
+      &--block {
         margin-top: 35%;
         width: 350px;
         //height: 500px;
-        &__ich{
+        &__ich {
           img {
             width: 110px;
           }
         }
-        .check{
+
+        .check {
           width: 350px;
         }
-        .zak{
+
+        .zak {
           font-size: 13px;
         }
-        .zakk{
+
+        .zakk {
           //margin: 0 2px;
           font-size: 13px;
           //line-height: -40px;
         }
-        .syzz{
+
+        .syzz {
           width: 140px;
         }
       }
@@ -266,33 +334,45 @@
   }
 
 }
+
 @media (max-width: 360px) {
-  #modalBasket{
+  #modalBasket {
     height: 800px;
-    .modalBasket{
-      &--block{
+
+    .modalBasket {
+      &--block {
         margin-top: 40%;
         width: 330px;
         //height: 500px;
-        &__ich{
-          h1{
+        &__ich {
+          h1 {
             font-size: 18px;
           }
         }
-        .check{
+
+        .check {
           width: 300px;
         }
-        .zak{
+        .seconds{
+          div{
+            width: 60px;
+            height: 25px;
+            font-size: 16px;
+          }
+        }
+        .zak {
           display: flex;
           align-items: center;
           font-size: 13px;
         }
-        .zakk{
+
+        .zakk {
           //margin: 0 2px;
           font-size: 13px;
           //line-height: -40px;
         }
-        .syzz{
+
+        .syzz {
           width: 130px;
         }
       }
@@ -300,44 +380,51 @@
   }
 
 }
+
 @media (max-width: 320px) {
-  #modalBasket{
+  #modalBasket {
     height: 700px;
     background: url("https://foodddy.ru/post/tiser/3851c3620e9ed1e4dc258d1ab02475da.jpg") no-repeat right/cover;
-    .modalBasket{
+
+    .modalBasket {
       display: flex;
       align-items: center;
       justify-content: center;
       //padding-top: 39%;
-      animation: sad 1s ease-out ;
+      animation: sad 1s ease-out;
       @keyframes sad {
-        0%{
+        0% {
           transform: translateX(-400px);
         }
-        30%{
+        30% {
           transform: rotateY(200deg);
         }
       }
-      &--block{
+
+      &--block {
         //height: 317px;
         background: #DFE2FF;
         border-radius: 20px;
-        &__ich{
+
+        &__ich {
           position: relative;
           display: flex;
           flex-direction: column;
           align-items: center;
-          img{
+
+          img {
             margin-top: 20%;
           }
-          h1{
+
+          h1 {
             margin: 15px 0;
             font-weight: 600;
             font-size: 18px;
             line-height: 34px;
             color: #004FC7;
           }
-          &--close{
+
+          &--close {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -351,27 +438,39 @@
             border-radius: 50%;
             height: 30px;
             width: 30px;
-            p{
+
+            p {
               font-size: 30px;
               color: #FFFFFF;
             }
           }
         }
-        .check{
+
+        .check {
           width: 300px;
-          .change{
+          height: 60px;
+          .change {
             width: 110px;
             height: 35px;
             font-size: 13px;
           }
         }
-        .syz{
+        .seconds{
+          div{
+            width: 55px;
+            height: 20px;
+            font-size: 16px;
+          }
+        }
+
+        .syz {
           width: 100%;
           margin: 0 10px;
           border: 1.5px dashed black;
           font-size: 10px;
         }
-        .zakk{
+
+        .zakk {
           margin-top: 10px;
           display: flex;
           align-items: center;
@@ -379,12 +478,14 @@
 
 
         }
-        .zak{
+
+        .zak {
           display: flex;
           align-items: center;
           font-size: 12px;
         }
-        .syzz{
+
+        .syzz {
           width: 100px;
         }
       }

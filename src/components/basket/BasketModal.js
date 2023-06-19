@@ -17,6 +17,7 @@ const BasketModal = () => {
     const {check,basket,add} = useSelector(state => state)
     const {here,withT,terminal,cash} = useSelector(s => s)
     const [items, setItems] = useState([])
+    const [seconds, setSeconds] = useState(3);
     const lang = localStorage.getItem("i18nextLng")
     const getTitle = (el) => {
         if (lang === "en") {
@@ -28,38 +29,59 @@ const BasketModal = () => {
         }
     }
     const getNav = () => {
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        })
-      nav("/basket")
+        if(seconds > 0 ){
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            })
+            nav("/basket")
+        }
 
     }
     const getSpeed = async () => {
-        nav(`/${parametr}/main/`)
-        const data = {
-            table: parametr,
-            is_takeaway:here ? 0 : 1,
-            payment:cash ? 0 : 1 ,
-            items: basket.map((el) => {
-                return {
-                    "additives": el.add ?  el.add.map(item => item.id) : [],
-                    "dish": el.id,
-                    "quantity": el.quantity,
+            nav(`/${parametr}/main/`)
+            const data = {
+                table: parametr,
+                is_takeaway:here ? 0 : 1,
+                payment:cash ? 0 : 1 ,
+                items: basket.map((el) => {
+                    return {
+                        "additives": el.add ?  el.add.map(item => item.id) : [],
+                        "dish": el.id,
+                        "quantity": el.quantity,
 
-                }
+                    }
 
-            },)
+                },)
 
+            }
+            await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,data)
+                .then(res => console.log(res.data)).catch(err => console.log(err))
+            return dispatch({type:EMPTY_BASKET, payload:items})
+                && localStorage.setItem("backend",JSON.stringify(items))
         }
-           await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,data)
-            .then(res => console.log(res.data)).catch(err => console.log(err))
-        return dispatch({type:EMPTY_BASKET, payload:items})
-            && localStorage.setItem("backend",JSON.stringify(items))
+    const getBackend = async () => {
+        if (seconds  === -2){
+            nav(`/${parametr}/main/`)
+            await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
+                table: parametr,
+                is_takeaway:here ? 0 : 1,
+                payment:cash ? 0 : 1 ,
+                items: basket.map((el) => {
+                    return {
+                        "additives": el.add ?  el.add.map(item => item.id) : [],
+                        "dish": el.id,
+                        "quantity": el.quantity,
+
+                    }
+
+                },)
+            })
+                .then(res => console.log(res.data)).catch(err => console.log(err))
+            return dispatch({type:EMPTY_BASKET, payload:items})
+                && localStorage.setItem("backend",JSON.stringify(items))
+        }
     }
-
-
-
 
     const getClose = () => {
         nav(`/basket/`)
@@ -67,10 +89,21 @@ const BasketModal = () => {
     const total = basket.reduce((acc,e) => {
         return acc + e.price * e.quantity
     },0)
-    console.log("Здесь",here)
-    console.log("Собой",withT)
-    console.log("Наличный",cash)
-    console.log("Терминал",terminal)
+
+
+    useEffect(() => {
+        window.scroll({top:50, behavior:"smooth"})
+        getBackend()
+        const timeout = setTimeout(() => {
+            setSeconds(seconds - 1);
+        }, 1000);
+
+        return () => {
+            clearTimeout(seconds === -1);
+        };
+
+    }, [seconds]);
+
 
     return (
         <section id={"modalBasket"}>
@@ -80,9 +113,6 @@ const BasketModal = () => {
                         <div className={'modalBasket--block__ich'}>
                             <img src={print} alt=""/>
                             <h1>{t("order.zak")}</h1>
-                            <div onClick={() => getClose()} className={"modalBasket--block__ich--close"}>
-                                <AiOutlineCloseCircle/>
-                            </div>
                             <div>
                                 {
                                     basket.map(el => (
@@ -98,8 +128,16 @@ const BasketModal = () => {
                             </div>
                         </div>
                         <div className={"check"}>
-                            <span className={"change"} onClick={() => getNav()}><FaPencilAlt className={'icon11'}/>{t("order.change")}</span>
+                            <div className={"change"} style={{
+                                background:seconds  <1 ? "red" : ""
+                            }} onClick={() => getNav()}><FaPencilAlt className={'icon11'}/>{t("order.change")}</div>
                             <span className={"change"} onClick={() => getSpeed()}><AiOutlineCheck className={'icon11'}/> {t("basket.cont")}</span>
+                        </div>
+                        <div className={"seconds"}>
+                            {
+                                seconds > 0 && <div>{seconds > 0 ? seconds+"s" : ""}</div>
+                            }
+
                         </div>
                     </div>
                 </div>
