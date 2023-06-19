@@ -14,7 +14,7 @@ const Basket = () => {
   let item = []
   const {t} = useTranslation()
   const dispatch = useDispatch()
-  const {basket} = useSelector(s => s)
+  const {basket,params} = useSelector(s => s)
   const {here,withT,terminal,cash,order,pay} = useSelector(s => s)
   const [loader, setLoader] = useState(false)
   const [btn,setBtn] = useState(false)
@@ -36,7 +36,7 @@ const Basket = () => {
 
   const getModal = async () => {
     if ((here || withT)  && (cash || terminal) ) {
-      return nav(`/${parametr}/main/print`)
+      return nav(`/${params}/main/print`)
     }
     else {
       setTimeout(() => {
@@ -80,11 +80,12 @@ const Basket = () => {
                 <div onClick={() => getHere()}  className={ here ? "basket--status__general--here active" :"basket--status__general--here"}>
                   <h2>{t("basket.here")}</h2>
                 </div>
+                <div className={'signal'}></div>
                 <div onClick={() => getS()}  className={ withT ? "basket--status__general--with active" :"basket--status__general--with"}>
                   <h2>{t("basket.with")}</h2>
                 </div>
               </div>
-              <div className={'signal'}></div>
+
             </div>
             <div className='basket--pay'>
               <div className='basket--pay__text'>
@@ -126,7 +127,7 @@ const Basket = () => {
             </div>
 
           </div>
-          <div className={"btn"} onClick={() => nav(`/${parametr}/main`) }>
+          <div className={"btn"} onClick={() => nav(`/${params}/main`) }>
             <button>{t("basket.btn")}</button>
           </div>
         </div>

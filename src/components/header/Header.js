@@ -11,7 +11,7 @@ import Admin from "../admin/Admin";
 const Header = () => {
   const lang = localStorage.getItem("i18nextLng")
   // const basket = JSON.parse(localStorage.getItem("backend"))
-    const {basket} = useSelector(state => state)
+    const {basket,params} = useSelector(state => state)
   const {i18n} = useTranslation()
     const dispatch = useDispatch()
         const changeLanguage = (language) => {
@@ -25,7 +25,7 @@ const Header = () => {
     <div id='header'>
         <div className="container">
           <div className="header">
-              <NavLink to={`/${parametr}/main`}>
+              <NavLink to={`/${params}/main`}>
                 <img src={logos} alt=""/>
               </NavLink>
               <div className="header--end">

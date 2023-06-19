@@ -7,9 +7,11 @@ import axios from "axios";
 import {useSelector} from "react-redux";
 import foods from "../main-page/foods/Foods";
 import {NavLink, useNavigate} from "react-router-dom";
+import {BACKEND_GET_URL} from "../starts/random";
 
 const Admin = () => {
     const [admin, setAdmin] = useState([])
+    const [order, setOrder] = useState([])
     const [loader, setLoader] = useState(false)
     const [error, setError] = useState(false)
     const {token_Id, foods} = useSelector(s => s)
@@ -18,9 +20,9 @@ const Admin = () => {
     const getAdmin = async () => {
         try {
             setLoader(true)
-            const url = await axios.get(`https://aitenir.pythonanywhere.com/api/orders-get`, {
+            const url = await axios.get(`${BACKEND_GET_URL}api/orders-get`, {
                 headers: {
-                    "Authorization": `Token ${token_Id}`
+                    "Authorization": `Token 37025ecd3fb018453f2f65d41bba31ad213d1ae0`
                 }
             })
             setAdmin(url.data)
@@ -35,22 +37,34 @@ const Admin = () => {
             nav("/admin")
         }
     }
+    const getStatus = async (item) => {
+        console.log("item", item.id)
+        try {
+            setLoader(true)
+            const url = await axios.put(`${BACKEND_GET_URL}/api/order/${item.id}/status`, {},{
+                headers: {
+                    "Authorization": `Token 37025ecd3fb018453f2f65d41bba31ad213d1ae0`
+                }
 
+            })
+
+            setOrder(url.data)
+            console.log(url)
+            setLoader(false)
+        } catch (e) {
+        }
+    }
     function compareByTimeCreated(a, b) {
         const dateA = new Date(a.time_created);
         const dateB = new Date(b.time_created);
         return   dateB - dateA;
     }
     admin.sort(compareByTimeCreated);
-
     useEffect(() => {
         getAdmin()
-        getNav()
-    }, [admin.length,error])
-    console.log("admin", admin)
-    console.log("price", admin.map(item => item.items.map(el => el.additives.reduce((acc,el) => {
-        return acc + el.price
-    },0))))
+    }, [admin])
+    // console.log("admin", admin)
+
 
 
 
@@ -120,13 +134,13 @@ const Admin = () => {
                                                     </p>
                                                 </div>
                                             })}
- 8890                                       </div>
+                                        </div>
                                     </div>
                                     <div className={"footer"}>
                                         <p>{item.is_takeaway ? "С собой" : "Здесь"}</p>
                                         <p>{item.payment ? "Терминал" : "Наличка"}</p>
                                         <p>Общая сумма: {item.total_price}</p>
-
+                                        <button onClick={() => getStatus(item)}>Заверщит заказ</button>
                                     </div>
 
                                 </div>

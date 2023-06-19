@@ -4,7 +4,7 @@ import print from "../../assets/img/Vector.svg"
 import "./BasketModal.scss"
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
-import {ids, parametr, ran} from "../starts/random";
+import {ids, param, ran} from "../starts/random";
 import {useDispatch, useSelector} from "react-redux";
 import {FaPencilAlt} from "react-icons/fa";
 import axios from "axios";
@@ -14,10 +14,10 @@ const BasketModal = () => {
     const nav = useNavigate()
     const {t} = useTranslation()
     const dispatch = useDispatch()
-    const {check,basket,add} = useSelector(state => state)
+    const {check,basket,add,params} = useSelector(state => state)
     const {here,withT,terminal,cash} = useSelector(s => s)
     const [items, setItems] = useState([])
-    const [seconds, setSeconds] = useState(3);
+    const [seconds, setSeconds] = useState(30);
     const lang = localStorage.getItem("i18nextLng")
     const getTitle = (el) => {
         if (lang === "en") {
@@ -39,9 +39,9 @@ const BasketModal = () => {
 
     }
     const getSpeed = async () => {
-            nav(`/${parametr}/main/`)
+            nav(`/${params}/main/`)
             const data = {
-                table: parametr,
+                table: params,
                 is_takeaway:here ? 0 : 1,
                 payment:cash ? 0 : 1 ,
                 items: basket.map((el) => {
@@ -62,9 +62,9 @@ const BasketModal = () => {
         }
     const getBackend = async () => {
         if (seconds  === -2){
-            nav(`/${parametr}/main/`)
+            nav(`/${params}/main/`)
             await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
-                table: parametr,
+                table: params,
                 is_takeaway:here ? 0 : 1,
                 payment:cash ? 0 : 1 ,
                 items: basket.map((el) => {
