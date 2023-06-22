@@ -33,7 +33,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
   }
 
   }
-  const breakfast = foods.filter(el => el.category_name === "Breakfast")
+  const breakfast = foods.filter(el => el.category_name === "Вторые блюда из баранины")
   const salad = foods.filter(el => el.category_name === "Salads")
   const food = foods.filter(el => el.category_name === "Dishes")
   const pizza = foods.filter(el => el.category_name === "Pizza")

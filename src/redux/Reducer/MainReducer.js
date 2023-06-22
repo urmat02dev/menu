@@ -4,7 +4,7 @@ import {
   GET_BASKET, GET_CHECK, GET_DETAIL, GET_FOODS, GET_PARAMS,
   MINUS,
   SEARCH, TOKEN_ID,
-  MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET, MODAL_TO_PRICE, HERE, WITH, CASH, TERMINAL, PAY, ORDER,
+  MODAL, MODAL_MINUS, MODAL_PLUS, MODAL_TO_BASKET, MODAL_TO_PRICE, HERE, WITH, CASH, TERMINAL, PAY, ORDER, BURGER_MENU,
 } from "./ActionTypes";
 
 const initialState ={
@@ -13,7 +13,7 @@ const initialState ={
   modal:false,
   detail: {},
   search:"",
-  element:{},
+  burgerMenu:false,
   check:[],
   token_Id: '',
   orders: [],
@@ -113,6 +113,9 @@ export const MainReducer = (state = initialState, action) => {
     }
     case TERMINAL : {
       return {...state, terminal:action.payload}
+    }
+    case BURGER_MENU: {
+      return {...state, burgerMenu: action.payload}
     }
     default :
       return state

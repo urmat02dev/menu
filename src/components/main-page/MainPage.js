@@ -8,6 +8,7 @@ import Modal from "../modal/Modal";
 import {useDispatch} from "react-redux";
 import "./MainPage.scss"
 import {useParams} from "react-router-dom";
+import BurgerMenu from "../header/BurgerMenu";
 
 const MainPage = () => {
     const {id} = useParams()
@@ -22,6 +23,10 @@ const MainPage = () => {
         <div>
             <Header/>
             <Modal/>
+            <BurgerMenu active={active}
+                        setActive={setActive}
+                        best={best}
+                        setBest={setBest}/>
             <Search/>
             <Category active={active}
                       setActive={setActive}

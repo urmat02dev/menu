@@ -12,6 +12,7 @@ import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import Admin from "./components/admin/Admin";
 import SignUp from "./components/admin/signUp/SignUp";
+import {data} from "./components/fake-backend/backend";
 
 
 function App() {
@@ -20,13 +21,18 @@ function App() {
 
     async  function getFoods () {
         const url = await axios.get(`${BACKEND_GET_URL}dishes`)
-        const {data} = await url
+        const {data} = url
+        console.log("URL",url)
         dispatch({type: GET_FOODS, payload: data})
+    }
+    const getBack = () => {
+      dispatch({type:GET_FOODS, payload:JSON.parse(data)})
     }
 
     useEffect(() => {
         getFoods()
     })
+
 
     return (
         <>

@@ -1,32 +1,45 @@
 import React, {useEffect} from 'react';
 import "./Header.scss"
 import logos from "../../assets/img/logos.svg"
+import img from "../../assets/img/uluu_too_2.svg"
 import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
 import {NavLink, Route, Routes, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
+
+import spoon from "./../../assets/img/spoon.png";
+import fork from "./../../assets/img/fork.png";
+import knife from "./../../assets/img/knife.png";
+
 import {ids, parametr} from "../starts/random";
 import SignUp from "../admin/signUp/SignUp";
 import Admin from "../admin/Admin";
+import i18n from "i18next";
+import {BURGER_MENU} from "../../redux/Reducer/ActionTypes";
+
+
 const Header = () => {
-  const lang = localStorage.getItem("i18nextLng")
-  // const basket = JSON.parse(localStorage.getItem("backend"))
-    const {basket,params} = useSelector(state => state)
-  const {i18n} = useTranslation()
+    const lang = localStorage.getItem("i18nextLng")
+    const {basket,params,burgerMenu} = useSelector(state => state)
+    const {i18n} = useTranslation()
     const dispatch = useDispatch()
-        const changeLanguage = (language) => {
+    const changeLanguage = (language) => {
         i18n.changeLanguage(language);
-      };
+    };
   const nav = useNavigate()
     const getNav = () => {
       nav("/basket")
     }
+    const getBurgerMenu = () => {
+      dispatch({type:BURGER_MENU, payload:!burgerMenu})
+    }
+    console.log("burgerMenu",burgerMenu)
   return (
     <div id='header'>
         <div className="container">
           <div className="header">
               <NavLink to={`/${params}/main`}>
-                <img src={logos} alt=""/>
+                <img src={img} alt=""/>
               </NavLink>
               <div className="header--end">
                   <div className="header--end__one" onClick={() => nav("/basket")}>
@@ -39,12 +52,18 @@ const Header = () => {
                     </div>
                       <BiBasket className='header--end__one--icon' onClick={() => getNav()}/>
                   </div>
-                  <div className="header--end__two">
-                    <select onChange={(e) => changeLanguage(e.target.value)} defaultValue={lang}>
-                      <option value={"ru"}>РУС</option>
-                      <option value={"kg"}>КЫР</option>
-                      <option value={"en"}>ENG</option>
-                    </select>
+                  <div className="header--end__two" onClick={getBurgerMenu}>
+                    <div className="burger one">
+                        <img src={spoon} alt="img"/>
+                    </div>
+                    <div className="burger two">
+                        <img src={knife} alt="img"/>
+
+                    </div>
+                    <div className="burger three">
+                        <img src={fork} alt="img"/>
+
+                    </div>
                   </div>
               </div>
           </div>
