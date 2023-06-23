@@ -5,6 +5,7 @@ import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {TOKEN_ID} from "../../../redux/Reducer/ActionTypes";
 import LoaderSignUp from "../../loader/LoaderSignUp";
+import {BACKEND_GET_URL} from "../../starts/random";
 
 const SignUp = () => {
     const [value, setValue] = useState('')
@@ -38,7 +39,7 @@ const SignUp = () => {
     const getSignUp = async () => {
         try {
             setLoader(true)
-            const res = await axios.post(`https://aitenir.pythonanywhere.com/api-token-auth/`, {
+            const res = await axios.post(`${BACKEND_GET_URL}api-token-auth/`, {
                 "username": value,
                 "password": value2,
             })
@@ -46,7 +47,6 @@ const SignUp = () => {
             setAdmin(res.data.token)
             setLoader(false)
             nav("/orders")
-            console.log(res)
         } catch (e) {
             setError(e)
         }

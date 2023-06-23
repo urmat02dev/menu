@@ -137,23 +137,24 @@
             padding: 5px 10px 0 20px;
 
             p{
+              font-weight: 600;
               color: rgba(0, 0, 0, 0.78);
               font-size: 22px;
+            }
+            button{
+              background: rgba(255, 0, 0, 0.84);
+              margin: 10px 0;
+              padding: 10px 30px 10px 30px;
+              border-radius: 5px;
+              border: solid #1f7db7;
+              color: white;
+              font-weight: 600;
             }
           }
         }
       }
 
     }
-    .table{
-      background: #2bd5af;
-      table {
-        width: 100%;
-        color: black;
-        font-size: 20px;
-        background: rgba(2, 86, 211, 0.73);
 
-      }
-    }
   }
 }

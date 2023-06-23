@@ -79,7 +79,7 @@ const FoodsSlider = ({modal,setModal,best}) => {
             },
         ]
     };
-    const bests = foods.filter(el => el.category_name === "Bestseller")
+    const bests = foods.filter(el => el.category_name === "Холодные закуски")
 
   return (
     <div id='foods' style={{

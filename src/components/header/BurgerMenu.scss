@@ -1,0 +1,216 @@
+#blur {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.burger-menu {
+  top: 0;
+  position: fixed;
+  transition: all .5s linear;
+  background: #DFE2FF;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+
+  &--top {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 50px;
+
+    &__select {
+      margin-right: 15px;
+      .select {
+        border-radius: 5px;
+        background: #0256d3;
+        border: 1px solid white;
+        padding: 0 20px;
+        color: #FFFFFF;
+        outline: white;
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+        .options{
+          border-radius: 5px;
+          background: #0256d3;
+          border: 1px solid white;
+          color: #FFFFFF;
+          font-size: 16px;
+          width: 200px;
+          padding: 0 30px;
+        }
+      }
+    }
+
+    &--close {
+      font-size: 50px;
+      background: #DFE2FF;
+      color: #101221;
+
+      .one {
+        rotate: 50deg;
+
+        img {
+          width: 26px;
+        }
+      }
+
+      .two {
+        rotate: -50deg;
+
+        img {
+          width: 26px;
+        }
+
+      }
+
+      .three {
+        rotate: 90deg;
+
+        img {
+          width: 26px;
+        }
+
+      }
+
+      .burger {
+        display: flex;
+        align-items: center;
+        background: none;
+      }
+    }
+  }
+
+  &--category {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 11%;
+    color: #1f7db7;
+
+    .category-one {
+      align-items: center;
+      margin-top: 30px;
+      padding-bottom: 10px;
+
+      &__1 {
+        display: flex;
+
+        h3 {
+          margin-left: 30px;
+          font-size: 32px;
+        }
+      }
+
+      .slet {
+        margin-left: 20%;
+        transition: all ease 4s;
+        h3 {
+          width: 300px;
+          font-size: 20px;
+          padding: 10px 0;
+        }
+      }
+    }
+
+    .category-two {
+      padding: 20px 0;
+
+      &__2 {
+        display: flex;
+
+        h3 {
+          margin-left: 30px;
+          font-size: 30px;
+        }
+      }
+
+      .salads {
+        margin-left: 20%;
+
+        h3 {
+          width: 300px;
+          font-size: 20px;
+          padding: 10px 0;
+        }
+      }
+    }
+
+    .category-three {
+      align-items: center;
+      padding: 20px 0;
+
+      &__3 {
+        display: flex;
+
+        h3 {
+          margin-left: 30px;
+          font-size: 30px;
+        }
+      }
+      .drinks {
+        margin-left: 20%;
+        h3 {
+          width: 300px;
+          font-size: 20px;
+          padding: 10px 0;
+        }
+      }
+
+
+    }
+
+    .category-five {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+
+      h3 {
+        margin-left: 30px;
+        font-size: 30px;
+      }
+    }
+
+    .category-one4 {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+
+      h3 {
+        margin-left: 30px;
+        font-size: 30px;
+      }
+    }
+
+    .category-one5 {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+
+      h3 {
+        margin-left: 30px;
+        font-size: 30px;
+      }
+    }
+
+    .category-one6 {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+
+      h3 {
+        margin-left: 30px;
+        font-size: 30px;
+      }
+    }
+  }
+}

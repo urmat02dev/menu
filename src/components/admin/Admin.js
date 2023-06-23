@@ -7,19 +7,22 @@ import axios from "axios";
 import {useSelector} from "react-redux";
 import foods from "../main-page/foods/Foods";
 import {NavLink, useNavigate} from "react-router-dom";
+import {BACKEND_GET_URL} from "../starts/random";
 
 const Admin = () => {
     const [admin, setAdmin] = useState([])
+    const [order, setOrder] = useState([])
     const [loader, setLoader] = useState(false)
     const [error, setError] = useState(false)
     const {token_Id, foods} = useSelector(s => s)
     const nav = useNavigate()
+
     const getAdmin = async () => {
         try {
             setLoader(true)
-            const url = await axios.get(`https://aitenir.pythonanywhere.com/api/orders-get`, {
+            const url = await axios.get(`${BACKEND_GET_URL}api/orders-get`, {
                 headers: {
-                    "Authorization": `Token ${token_Id}`
+                    "Authorization": `Token c15ab63cdee5111ea539872482469e5d3313acf0`
                 }
             })
             setAdmin(url.data)
@@ -34,22 +37,34 @@ const Admin = () => {
             nav("/admin")
         }
     }
+    const getStatus = async (item) => {
+        console.log("item", item.id)
+        try {
+            setLoader(true)
+            const url = await axios.put(`${BACKEND_GET_URL}/api/order/${item.id}/status`, {},{
+                headers: {
+                    "Authorization": `Token c15ab63cdee5111ea539872482469e5d3313acf0`
+                }
 
+            })
+
+            setOrder(url.data)
+            console.log(url)
+            setLoader(false)
+        } catch (e) {
+        }
+    }
     function compareByTimeCreated(a, b) {
         const dateA = new Date(a.time_created);
         const dateB = new Date(b.time_created);
         return   dateB - dateA;
     }
     admin.sort(compareByTimeCreated);
-
     useEffect(() => {
         getAdmin()
-        getNav()
-    }, [admin,error])
-    console.log("admin", admin.map(item => item.items.map(el => el.additives.reduce((a,b) => {
-        return a.price + b.price
-    },0))))
-    console.log("price", admin.map(item => item.items.map(el => el.additives.map(el => el.price))))
+    }, [admin])
+    // console.log("admin", admin)
+
 
 
 
@@ -111,10 +126,12 @@ const Admin = () => {
                                         </div>
                                         <div className={"total"}>
                                             { item.items.map(el => {
-                                                return <div> {el.dish.price * el.quantity}
-                                                    <p>{el.additives.reduce((a, b) => {
-                                                        return <span>+({a.price})</span>
-                                                    },0)}</p>
+                                                return <div>
+                                                   <p>{el.additives.reduce((acc, e) => {
+                                                        return acc + e.price
+                                                    },0) + (el.dish.price * el.quantity)
+                                                    }
+                                                    </p>
                                                 </div>
                                             })}
                                         </div>
@@ -123,9 +140,7 @@ const Admin = () => {
                                         <p>{item.is_takeaway ? "С собой" : "Здесь"}</p>
                                         <p>{item.payment ? "Терминал" : "Наличка"}</p>
                                         <p>Общая сумма: {item.total_price}</p>
-                                        <button>Выдать чек</button>
-                                        <button>Завершить заказ</button>
-
+                                        <button onClick={() => getStatus(item)}>Заверщит заказ</button>
                                     </div>
 
                                 </div>

@@ -5,13 +5,36 @@
   },
   "category": {
     "1": "Bestseller",
-    "2": "Breakfasts",
-    "3": "Salads",
-    "4": "Dishes",
-    "5": "Pizza",
-    "6": "Dessert",
-    "7": "Potables",
-    "8": "Hot"
+    "foods": {
+      "main": "Dishes",
+      "one": "First meal",
+      "two":"General Dishes",
+      "three": "Second courses of chicken",
+      "four": "Second courses of beef",
+      "five": "Second courses of lamb",
+      "six": "Second fish dishes",
+      "seven": "Banquet",
+      "eight": "Lamb to order"
+
+    },
+    "salads": {
+      "main": "Salads",
+      "one": "Salads with mayonnaise",
+      "two":"Salads with vegetable oil",
+      "three": "spicy salads"
+    } ,
+    "drinks": {
+      "main": "Beverages",
+      "one": "Hot drinks",
+        "two": "Cold drinks"
+    },
+    "5": "Children's menu",
+    "6": "Flour",
+    "7": "Gorniers",
+    "8": "kebabs",
+    "9": "Rolls",
+    "10": "Rolls Set",
+    "11": "Cold snacks"
   },
     "basket": {
       "h1": "Basket",

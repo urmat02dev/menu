@@ -7,7 +7,11 @@
       padding: 20px 0;
 
       img {
-        width: 70px;
+        //border: 1px solid #004FC7;
+        //border-radius: 10px;
+        width: 65px;
+        //height: 65px;
+        //margin-left: 20px;
       }
 
       &--end {
@@ -18,6 +22,7 @@
           margin-right: 20px;
           font-size: 22px;
           position: relative;
+
           .sup {
             position: absolute;
             right: 25px;
@@ -45,17 +50,29 @@
         }
 
         &__two {
-          select {
-            border-radius: 5px;
-            border: none;
-            background: royalblue;
-            padding: 9px 8px 8px 8px;
-            color: #FFFFFF;
+          display: flex;
+          flex-direction: column;
 
-            option {
-              margin: 10px 0 0 0;
-              font-size: 10px;
+          .one {
+            rotate: 90deg;
+            &--bus {
+              width: 8px;
+              background: #c9cdf5;
+              border-radius: 20px;
+              height: 50px;
+              margin: 0 5px;
+
             }
+          }
+
+          .burger {
+            display: flex;
+            align-items: center;
+            //flex-direction: column;
+            background: none;
+
+
+
           }
         }
       }
@@ -117,7 +134,9 @@
       padding: 20px 0;
 
       img {
-        width: 60px;
+        margin-top: 5px;
+        width: 50px;
+        height: 50px;
       }
 
       &--end {
@@ -173,7 +192,8 @@
       padding: 20px 0;
 
       img {
-        width: 60px;
+        width: 45px;
+        height: 45px;
       }
 
       &--end {
@@ -236,7 +256,8 @@
         &__one {
           margin-right: 20px;
           font-size: 22px;
-          &--icon{
+
+          &--icon {
             font-size: 31px;
           }
 
@@ -356,6 +377,11 @@
       justify-content: space-between;
       padding: 20px 0;
 
+      img {
+        width: 40px;
+        height: 40px;
+      }
+
       &--end {
         display: flex;
         align-items: center;
@@ -392,7 +418,7 @@
         }
 
         &__two {
-         select {
+          select {
             border: none;
             outline: none;
             margin-bottom: 5px;

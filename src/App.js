@@ -6,34 +6,40 @@ import Basket from "./components/basket/Basket";
 import React, {useEffect} from "react";
 import SearchResult from "./components/main-page/search/SearchResult";
 import BasketModal from "./components/basket/BasketModal";
-import { parametr } from "./components/starts/random";
+import {BACKEND_GET_URL} from "./components/starts/random";
 import {GET_FOODS} from "./redux/Reducer/ActionTypes";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import Admin from "./components/admin/Admin";
 import SignUp from "./components/admin/signUp/SignUp";
+import {data} from "./components/fake-backend/backend";
 
 
 function App() {
     const dispatch = useDispatch()
-    async  function getFoods () {
-        const url = await axios.get("https://aitenir.pythonanywhere.com/dishes/")
-        const {data} = await url
+    const {params} = useSelector(state => state)
+
+    async function getFoods() {
+        const url = await axios.get(`${BACKEND_GET_URL}dishes`)
+        const {data} = url
+        dispatch({type: GET_FOODS, payload: data})
+    }
+
+    const getFakeFoods = () => {
         dispatch({type: GET_FOODS, payload: data})
     }
 
     useEffect(() => {
-        getFoods()
-    })
-
+        getFakeFoods()
+    }, [])
     return (
         <>
             <Routes>
-                <Route path={`/`} element={<Starts/>}/>
-                <Route path={`/${parametr}/main/`} element={<MainPage/>}/>
+                <Route path={`/:id`} element={<Starts/>}/>
+                <Route path={`/${params}/main/`} element={<MainPage/>}/>
                 <Route path="/basket" element={<Basket/>}/>
                 <Route path="/search" element={<SearchResult/>}/>
-                <Route path={`/${parametr}/main/print`} element={<BasketModal/>}/>
+                <Route path={`/${params}/main/print`} element={<BasketModal/>}/>
                 <Route path="/admin" element={<SignUp/>}/>
                 <Route path={`/orders`} element={<Admin/>}/>
             </Routes>
