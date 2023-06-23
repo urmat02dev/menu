@@ -28,11 +28,7 @@ const MainPage = () => {
                         best={best}
                         setBest={setBest}/>
             <Search/>
-            <Category active={active}
-                      setActive={setActive}
-                      best={best}
-                      setBest={setBest}
-            />
+
             <FoodsSlider
                 best={best}
                 setBest={setBest}
