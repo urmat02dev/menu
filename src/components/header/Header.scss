@@ -54,26 +54,15 @@
           flex-direction: column;
 
           .one {
-            rotate: 50deg;
-            img{
-              width: 26px;
+            rotate: 90deg;
+            &--bus {
+              width: 8px;
+              background: #c9cdf5;
+              border-radius: 20px;
+              height: 50px;
+              margin: 0 5px;
+
             }
-          }
-          .two{
-            rotate: -50deg;
-
-            img{
-              width: 26px;
-            }
-
-          }
-           .three{
-             rotate: 90deg;
-
-             img{
-               width: 26px;
-             }
-
           }
 
           .burger {

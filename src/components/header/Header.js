@@ -6,15 +6,6 @@ import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
 import {NavLink, Route, Routes, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-
-import spoon from "./../../assets/img/spoon.png";
-import fork from "./../../assets/img/fork.png";
-import knife from "./../../assets/img/knife.png";
-
-import {ids, parametr} from "../starts/random";
-import SignUp from "../admin/signUp/SignUp";
-import Admin from "../admin/Admin";
-import i18n from "i18next";
 import {BURGER_MENU} from "../../redux/Reducer/ActionTypes";
 
 
@@ -54,15 +45,9 @@ const Header = () => {
                   </div>
                   <div className="header--end__two" onClick={getBurgerMenu}>
                     <div className="burger one">
-                        <img src={spoon} alt="img"/>
-                    </div>
-                    <div className="burger two">
-                        <img src={knife} alt="img"/>
-
-                    </div>
-                    <div className="burger three">
-                        <img src={fork} alt="img"/>
-
+                        <div className="one--bus"></div>
+                        <div className="one--bus"></div>
+                        <div className="one--bus"></div>
                     </div>
                   </div>
               </div>
