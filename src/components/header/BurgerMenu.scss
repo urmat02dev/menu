@@ -28,8 +28,7 @@
 
     &__select {
       margin-right: 15px;
-
-      select {
+      .select {
         border-radius: 5px;
         background: #0256d3;
         border: 1px solid white;
@@ -39,13 +38,14 @@
         width: 200px;
         height: 50px;
         font-size: 16px;
-
-        option {
-          overflow: scroll;
-          height: 20px;
-          font-size: 10px;
-          background: #ffffff;
-          color: black;
+        .options{
+          border-radius: 5px;
+          background: #0256d3;
+          border: 1px solid white;
+          color: #FFFFFF;
+          font-size: 16px;
+          width: 200px;
+          padding: 0 30px;
         }
       }
     }

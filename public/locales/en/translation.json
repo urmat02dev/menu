@@ -4,37 +4,37 @@
     "error": "There is no such food, drink or dessert!!"
   },
   "category": {
-    "1": "Хит продаж",
+    "1": "Bestseller",
     "foods": {
-      "main": "Блюда",
-      "one": "Первые блюда",
-      "two":"Общие",
-      "three": "Вторые блюда из курица",
-      "four": "Вторые блюда из говядина",
-      "five": "Вторые блюда из баранина",
-      "six": "Вторые блюда из рыбы",
-      "seven": "Банкетные",
-      "eight": "Баранины на заказ"
+      "main": "Dishes",
+      "one": "First meal",
+      "two":"General Dishes",
+      "three": "Second courses of chicken",
+      "four": "Second courses of beef",
+      "five": "Second courses of lamb",
+      "six": "Second fish dishes",
+      "seven": "Banquet",
+      "eight": "Lamb to order"
 
     },
     "salads": {
-      "main": "Салаты",
-      "one": "Салаты с майонезом",
-      "two":"Салаты с растительным маслом",
-      "three": "Острые салаты"
+      "main": "Salads",
+      "one": "Salads with mayonnaise",
+      "two":"Salads with vegetable oil",
+      "three": "spicy salads"
     } ,
     "drinks": {
-      "main": "Напитки",
-      "one": "Горячие",
-      "two": "Холодные"
+      "main": "Beverages",
+      "one": "Hot drinks",
+        "two": "Cold drinks"
     },
-    "5": "Детское меню",
-    "6": "Мучные",
-    "7": "Горниры",
-    "8": "Шашлыки",
-    "9": "Роллы",
-    "10": "Роллы Сет",
-    "11": "Холодные закузки"
+    "5": "Children's menu",
+    "6": "Flour",
+    "7": "Gorniers",
+    "8": "kebabs",
+    "9": "Rolls",
+    "10": "Rolls Set",
+    "11": "Cold snacks"
   },
     "basket": {
       "h1": "Basket",

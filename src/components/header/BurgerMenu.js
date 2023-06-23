@@ -37,15 +37,16 @@ const BurgerMenu = ({active,setActive,best,setBest}) => {
         <div id={"blur"} hidden={!burgerMenu} onClick={() => getClose()}/>
             <div style={{
                 left: burgerMenu ?  "40%" : "3000px",
-                zIndex:burgerMenu ? "99" : ""
+                zIndex:burgerMenu ? "99" : "",
+                cursor: "pointer"
 
             }} className={"burger-menu"}>
                 <div className="burger-menu--top">
                     <div className="burger-menu--top__select">
-                        <select onChange={(e) => changeLanguage(e.target.value)} defaultValue={lang}>
-                            <option value={"ru"}>РУС</option>
-                            <option value={"kg"}>КЫР</option>
-                            <option value={"en"}>ENG</option>
+                        <select className={'select'} onChange={(e) => changeLanguage(e.target.value)} defaultValue={lang}>
+                            <option  value={"ru"}>РУС</option>
+                            <option  value={"kg"}>КЫР</option>
+                            <option  value={"en"}>ENG</option>
                         </select>
                     </div>
                     <div className="burger-menu--top--close" onClick={() => getClose()}>

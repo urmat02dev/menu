@@ -22,7 +22,6 @@ const Basket = () => {
 
   function getHere() {
     dispatch({type:HERE,payload:!here}) && dispatch({type:WITH,payload:false})
-
   }
   function getS() {
     dispatch({type:WITH,payload:!withT}) && dispatch({type:HERE,payload:false})
