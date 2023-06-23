@@ -22,7 +22,7 @@ const Admin = () => {
             setLoader(true)
             const url = await axios.get(`${BACKEND_GET_URL}api/orders-get`, {
                 headers: {
-                    "Authorization": `Token 37025ecd3fb018453f2f65d41bba31ad213d1ae0`
+                    "Authorization": `Token c15ab63cdee5111ea539872482469e5d3313acf0`
                 }
             })
             setAdmin(url.data)
@@ -43,7 +43,7 @@ const Admin = () => {
             setLoader(true)
             const url = await axios.put(`${BACKEND_GET_URL}/api/order/${item.id}/status`, {},{
                 headers: {
-                    "Authorization": `Token 37025ecd3fb018453f2f65d41bba31ad213d1ae0`
+                    "Authorization": `Token c15ab63cdee5111ea539872482469e5d3313acf0`
                 }
 
             })

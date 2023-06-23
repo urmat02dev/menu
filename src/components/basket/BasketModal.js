@@ -4,7 +4,7 @@ import print from "../../assets/img/Vector.svg"
 import "./BasketModal.scss"
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
-import {ids, param, ran} from "../starts/random";
+import {BACKEND_GET_URL, ids, param, ran} from "../starts/random";
 import {useDispatch, useSelector} from "react-redux";
 import {FaPencilAlt} from "react-icons/fa";
 import axios from "axios";
@@ -55,7 +55,7 @@ const BasketModal = () => {
                 },)
 
             }
-            await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,data)
+            await axios.post(`${BACKEND_GET_URL}api/orders`,data)
                 .then(res => console.log(res.data)).catch(err => console.log(err))
             return dispatch({type:EMPTY_BASKET, payload:items})
                 && localStorage.setItem("backend",JSON.stringify(items))
@@ -63,11 +63,11 @@ const BasketModal = () => {
     const getBackend = async () => {
         if (seconds  === -2){
             nav(`/${params}/main/`)
-            await axios.post(`https://aitenir.pythonanywhere.com/api/orders`,{
+            await axios.post(`${BACKEND_GET_URL}/api/orders`,{
                 table: params,
                 is_takeaway:here ? 0 : 1,
                 payment:cash ? 0 : 1 ,
-                items: basket.map((el) => {
+                items: basket.map   ((el) => {
                     return {
                         "additives": el.add ?  el.add.map(item => item.id) : [],
                         "dish": el.id,

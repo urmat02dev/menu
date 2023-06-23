@@ -33,13 +33,28 @@ const Foods = ({active,setActive,modal,setModal}) => {
   }
 
   }
-  const breakfast = foods.filter(el => el.category_name === "Вторые блюда из баранины")
-  const salad = foods.filter(el => el.category_name === "Salads")
-  const food = foods.filter(el => el.category_name === "Dishes")
-  const pizza = foods.filter(el => el.category_name === "Pizza")
-  const desert = foods.filter(el => el.category_name === "Dessert")
-  const juice = foods.filter(el => el.category_name === "Potables")
-  const drink = foods.filter(el => el.category_name === "Hot")
+  const rolls = foods.filter(el => el.category_name === "Роллы")
+  // const rollsSet = foods.filter(el => el.category_name === "Salads")
+  const coldSnacks = foods.filter(el => el.category_name === "Холодные закуски")
+  const saladsMayonnaise = foods.filter(el => el.category_name === "Салаты с майонезом")
+  const saladsVegetableOil = foods.filter(el => el.category_name === "Салаты с растительным маслом")
+  const spicySalads = foods.filter(el => el.category_name === "Острые салаты (с соевым соусом)")
+  const firstMeal = foods.filter(el => el.category_name === "Первые блюда")
+  const secondCoursesOfChicken = foods.filter(el => el.category_name === "Вторые блюда из курицы")
+  const secondCoursesOfBeef = foods.filter(el => el.category_name === "Вторые блюда из говядины")
+  const secondCoursesOfFish = foods.filter(el => el.category_name === "Вторые блюда из рыбы")
+  const secondCoursesOfLamb = foods.filter(el => el.category_name === "Вторые блюда из баранины")
+  const generalDishes = foods.filter(el => el.category_name === "Общие блюда")
+  const banquetDishes = foods.filter(el => el.category_name === "Банкетные блюда")
+  const lambDishes = foods.filter(el => el.category_name === "Блюда из баранины на заказ")
+  const kebabs = foods.filter(el => el.category_name === "Шашлыки")
+  const childrensMenu = foods.filter(el => el.category_name === "Детское меню")
+  const sideDishes = foods.filter(el => el.category_name === "Гарниры")
+  const hotDrinks = foods.filter(el => el.category_name === "Горячие напитки")
+  const coldDrinks = foods.filter(el => el.category_name === "Холдные")
+  const flour = foods.filter(el => el.category_name === "Мучные")
+  console.log("FLour", coldDrinks)
+
   return (
     <div id="food">
       <div className="container">
@@ -48,7 +63,7 @@ const Foods = ({active,setActive,modal,setModal}) => {
 
             {
               active === 0 || active === 1 ?
-              breakfast.map(el =>{
+                  coldDrinks.map(el =>{
                 return <FoodCard el={el}
                                  key={el.id}
                                  modal={modal}
@@ -57,69 +72,6 @@ const Foods = ({active,setActive,modal,setModal}) => {
               })
                 : ""
             }
-          {
-            active === 2 ?
-              salad.map(el => {
-                return <FoodCard el={el}
-                                 key={el.id}
-                                 modal={modal}
-                                 setModal={setModal}
-                />
-              }) : ''
-          }
-          {
-            active === 3 ?
-              food.map(el => {
-                return <FoodCard el={el}/>
-              }) : ''
-          }
-          {
-            active === 4 ?
-              pizza.map(el => {
-                return <FoodCard el={el}
-                                 modal={modal}
-                                 setModal={setModal}
-                />
-              }) : ''
-          }
-          {
-            active === 5 ?
-              desert.map(el => {
-                return <FoodCard el={el}
-                                 key={el.id}
-                                 modal={modal}
-                                 setModal={setModal}
-                />
-              }) : ''
-          }
-          {
-            active === 6 ?
-              juice.map(el => {
-                return <FoodCard el={el}
-                                 key={el.id}
-                                 modal={modal}
-                                 setModal={setModal}
-                />
-              }) : ''
-          }
-          {
-            active === 7 ?
-              drink.map(el => {
-                return <FoodCard el={el}
-                                 key={el.id}
-                                 modal={modal}
-                                 setModal={setModal}/>
-              }) : ''
-          }
-          {
-            active === 8 ?
-              data[8].map(el => {
-                return <FoodCard el={el}
-                                 key={el.id}
-                                 modal={modal}
-                                 setModal={setModal}/>
-              }) : ''
-          }
 
         </div>
       </div>

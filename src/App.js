@@ -1,12 +1,12 @@
 import './App.scss';
-import {Route, Routes, useParams} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Starts from "./components/starts/Starts";
 import MainPage from "./components/main-page/MainPage";
 import Basket from "./components/basket/Basket";
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import SearchResult from "./components/main-page/search/SearchResult";
 import BasketModal from "./components/basket/BasketModal";
-import {BACKEND_GET_URL, parametr} from "./components/starts/random";
+import {BACKEND_GET_URL} from "./components/starts/random";
 import {GET_FOODS} from "./redux/Reducer/ActionTypes";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
@@ -19,24 +19,21 @@ function App() {
     const dispatch = useDispatch()
     const {params} = useSelector(state => state)
 
-    async  function getFoods () {
+    async function getFoods() {
         const url = await axios.get(`${BACKEND_GET_URL}dishes`)
         const {data} = url
-        console.log("URL",url)
         dispatch({type: GET_FOODS, payload: data})
     }
-    const getBack = () => {
-      dispatch({type:GET_FOODS, payload:JSON.parse(data)})
+
+    const getFakeFoods = () => {
+        dispatch({type: GET_FOODS, payload: data})
     }
 
     useEffect(() => {
-        getFoods()
-    })
-
-
+        getFakeFoods()
+    }, [])
     return (
         <>
-
             <Routes>
                 <Route path={`/:id`} element={<Starts/>}/>
                 <Route path={`/${params}/main/`} element={<MainPage/>}/>
