@@ -36,7 +36,7 @@ const BurgerMenu = ({active,setActive,best,setBest}) => {
         <>
         <div id={"blur"} hidden={!burgerMenu} onClick={() => getClose()}/>
             <div style={{
-                left: burgerMenu ?  "40%" : "3000px",
+                left: burgerMenu ?  "" : "3000px",
                 zIndex:burgerMenu ? "99" : "",
                 cursor: "pointer"
 
