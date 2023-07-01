@@ -41,7 +41,11 @@ const Search = ({setModal,modal}) => {
         nav("/search")
       }
   }
+  const fifa = foods.find(el => el.name_ru.toLowerCase().includes(value))
 
+  console.log("OP",value)
+  console.log("FAF",foods)
+  console.log("fifa",fifa)
 
 
 
@@ -55,12 +59,12 @@ const Search = ({setModal,modal}) => {
             <AiOutlineSearch className='icon' onClick={() => getSearchClick()}/>
             {
               value !== "" &&
-                <div className="search--block">
+                <div className="search--block" style={{display: fifa ? "block" : "none"}}>
             {
               foods.map(el => (
                   <div key={el.id}>
                     {
-                      value !=="" && <div className={"search--block__modal"}>{el.name_kg.toLowerCase().includes(value) || el.name_ru.toLowerCase().includes(value) ||  el.name_en.toLowerCase().includes(value) ?
+                      value !=="" &&  <div className={"search--block__modal"}>{el.name_kg.toLowerCase().includes(value) || el.name_ru.toLowerCase().includes(value) ||  el.name_en.toLowerCase().includes(value) ?
                             <p onClick={() =>  {
                           dispatch({type: SEARCH, payload: el.name_ru.toLowerCase() || el.name_kg.toLowerCase() || el.name_en.toLowerCase()})
                           nav(`/search`)
