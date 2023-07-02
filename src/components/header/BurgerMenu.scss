@@ -115,7 +115,8 @@
       }
 
       .slet {
-        margin-left: 20%;
+        position: relative;
+        left: 20%;
         transition: all ease 4s;
 
         h3 {
@@ -277,7 +278,7 @@
       &--close {
         font-size: 50px;
         background: #DFE2FF;
-        color: #101221;
+        color: red;
 
         .one {
           rotate: 50deg;
@@ -487,7 +488,7 @@
       &--close {
         font-size: 50px;
         background: #DFE2FF;
-        color: #101221;
+        color: red;
 
         .one {
           rotate: 50deg;
@@ -547,8 +548,7 @@
 
         .slet {
           margin-left: 20%;
-          transition: all ease 4s;
-          h3 {
+          li {
             width: 300px;
             font-size: 20px;
             padding: 10px 0;
@@ -571,7 +571,7 @@
         .salads {
           margin-left: 20%;
 
-          h3 {
+          li {
             width: 300px;
             font-size: 20px;
             padding: 10px 0;
@@ -593,7 +593,7 @@
         }
         .drinks {
           margin-left: 20%;
-          h3 {
+          li {
             width: 300px;
             font-size: 20px;
             padding: 10px 0;
@@ -706,7 +706,7 @@
       &--close {
         font-size: 50px;
         background: #DFE2FF;
-        color: #101221;
+        color: red;
 
         .one {
           rotate: 50deg;
@@ -765,9 +765,12 @@
         }
 
         .slet {
-          margin-left: 20%;
+          display: flex;
+          align-items: center;
+          margin: 0 10px;
+          flex-direction: column;
           transition: all ease 4s;
-          h3 {
+          li {
             width: 300px;
             font-size: 16px;
             padding: 10px 0;
@@ -788,11 +791,15 @@
         }
 
         .salads {
-          margin-left: 20%;
-
-          h3 {
+          margin: 0 10px;
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          flex-direction: column;
+          transition: all ease 4s;
+          li {
             width: 300px;
-            font-size: 14px;
+            font-size: 16px;
             padding: 10px 0;
           }
         }
@@ -811,10 +818,14 @@
           }
         }
         .drinks {
-          margin-left: 20%;
-          h3 {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          margin: 0 10px;
+          transition: all ease 4s;
+          li {
             width: 300px;
-            font-size: 20px;
+            font-size: 16px;
             padding: 10px 0;
           }
         }
@@ -914,7 +925,7 @@
       &--close {
         font-size: 50px;
         background: #DFE2FF;
-        color: #101221;
+        color: red;
 
         .one {
           rotate: 50deg;
@@ -973,11 +984,10 @@
         }
 
         .slet {
-          margin-left: 20%;
           transition: all ease 4s;
-          h3 {
+          li {
             width: 300px;
-            font-size: 12px;
+            font-size: 13px;
             padding: 10px 0;
           }
         }
@@ -996,11 +1006,10 @@
         }
 
         .salads {
-          margin-left: 20%;
-
-          h3 {
+          transition: all ease 4s;
+          li {
             width: 300px;
-            font-size: 10px;
+            font-size: 13px;
             padding: 10px 0;
           }
         }
@@ -1019,10 +1028,9 @@
           }
         }
         .drinks {
-          margin-left: 20%;
-          h3 {
+          li {
             width: 300px;
-            font-size: 20px;
+            font-size: 13px;
             padding: 10px 0;
           }
         }
@@ -1122,7 +1130,7 @@
       &--close {
         font-size: 50px;
         background: #DFE2FF;
-        color: #101221;
+        color: red;
 
         .one {
           rotate: 50deg;
@@ -1181,11 +1189,10 @@
         }
 
         .slet {
-          margin-left: 20%;
           transition: all ease 4s;
           h3 {
             width: 300px;
-            font-size: 12px;
+            font-size: 13px;
             padding: 10px 0;
           }
         }
@@ -1204,11 +1211,9 @@
         }
 
         .salads {
-          margin-left: 20%;
-
           h3 {
             width: 300px;
-            font-size: 10px;
+            font-size: 13px;
             padding: 10px 0;
           }
         }
@@ -1227,10 +1232,9 @@
           }
         }
         .drinks {
-          margin-left: 20%;
           h3 {
             width: 300px;
-            font-size: 20px;
+            font-size: 14px;
             padding: 10px 0;
           }
         }
@@ -1330,7 +1334,7 @@
       &--close {
         font-size: 50px;
         background: #DFE2FF;
-        color: #101221;
+        color: red;
 
         .one {
           rotate: 50deg;
@@ -1389,11 +1393,10 @@
         }
 
         .slet {
-          margin-left: 20%;
           transition: all ease 4s;
           h3 {
             width: 300px;
-            font-size: 12px;
+            font-size: 13px;
             padding: 10px 0;
           }
         }
@@ -1412,8 +1415,6 @@
         }
 
         .salads {
-          margin-left: 20%;
-
           h3 {
             width: 300px;
             font-size: 10px;
@@ -1435,10 +1436,9 @@
           }
         }
         .drinks {
-          margin-left: 20%;
           h3 {
             width: 300px;
-            font-size: 20px;
+            font-size: 14px;
             padding: 10px 0;
           }
         }
@@ -1538,7 +1538,7 @@
       &--close {
         font-size: 50px;
         background: #DFE2FF;
-        color: #101221;
+        color: red;
 
         .one {
           rotate: 50deg;
@@ -1597,11 +1597,10 @@
         }
 
         .slet {
-          margin-left: 20%;
           transition: all ease 4s;
-          h3 {
+          li {
             width: 300px;
-            font-size: 10px;
+            font-size: 12px;
             padding: 10px 0;
           }
         }
@@ -1620,11 +1619,9 @@
         }
 
         .salads {
-          margin-left: 20%;
-
-          h3 {
+          li {
             width: 300px;
-            font-size: 9px;
+            font-size: 12px;
             padding: 10px 0;
           }
         }
@@ -1643,7 +1640,6 @@
           }
         }
         .drinks {
-          margin-left: 20%;
           h3 {
             width: 300px;
             font-size: 12px;
@@ -1726,7 +1722,7 @@
     &--top {
       padding: 20px;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       width: 80%;
       height: 50px;
@@ -1758,7 +1754,7 @@
       &--close {
         font-size: 50px;
         background: #DFE2FF;
-        color: #101221;
+        color: red;
 
         .one {
           rotate: 50deg;
@@ -1799,7 +1795,7 @@
       display: flex;
       flex-direction: column;
       align-items: start;
-      margin-left: 15%;
+      justify-content: center;
       color: #1f7db7;
 
       .category-one {
@@ -1819,9 +1815,9 @@
         .slet {
           margin-left: 20%;
           transition: all ease 4s;
-          h3 {
+          li {
             width: 300px;
-            font-size: 15px;
+            font-size: 14px;
             padding: 10px 0;
           }
         }
@@ -1842,9 +1838,9 @@
         .salads {
           margin-left: 20%;
 
-          h3 {
+          li {
             width: 300px;
-            font-size: 12px;
+            font-size: 14px;
             padding: 10px 0;
           }
         }
@@ -1863,10 +1859,12 @@
           }
         }
         .drinks {
-          margin-left: 20%;
-          h3 {
-            width: 300px;
-            font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          li {
+            font-size: 15px;
             padding: 10px 0;
           }
         }
@@ -1924,6 +1922,224 @@
 @media (max-width: 360px) {
 }
 @media (max-width: 320px) {
+  #blur {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+  }
+
+  .burger-menu {
+    top: 0;
+    left: 0;
+    position: fixed;
+    transition: all .5s linear;
+    background: #DFE2FF;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+
+    &--top {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      height: 50px;
+
+      &__select {
+        margin-right: 15px;
+        .select {
+          border-radius: 5px;
+          background: #0256d3;
+          border: 1px solid white;
+          padding: 0 10px;
+          color: #FFFFFF;
+          outline: white;
+          width: 80px;
+          height: 35px;
+          font-size: 14px;
+          .options{
+            border-radius: 5px;
+            background: #0256d3;
+            border: 1px solid white;
+            color: #FFFFFF;
+            font-size: 16px;
+            width: 200px;
+            padding: 0 30px;
+          }
+        }
+      }
+
+      &--close {
+        font-size: 50px;
+        background: #DFE2FF;
+        color: red;
+
+        .one {
+          rotate: 50deg;
+
+          img {
+            width: 26px;
+          }
+        }
+
+        .two {
+          rotate: -50deg;
+
+          img {
+            width: 26px;
+          }
+
+        }
+
+        .three {
+          rotate: 90deg;
+
+          img {
+            width: 26px;
+          }
+
+        }
+
+        .burger {
+          display: flex;
+          align-items: center;
+          background: none;
+        }
+      }
+    }
+
+    &--category {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      color: #1f7db7;
+      .category-one {
+        align-items: center;
+        margin-top: 30px;
+        padding-bottom: 10px;
+
+        &__1 {
+          display: flex;
+
+          h3 {
+            margin-left: 30px;
+            font-size: 20px;
+          }
+        }
+
+        .slet {
+          margin-left: 20%;
+          transition: all ease 4s;
+          h3 {
+            width: 300px;
+            font-size: 14px;
+            padding: 10px 0;
+          }
+        }
+      }
+
+      .category-two {
+        padding: 20px 0;
+
+        &__2 {
+          display: flex;
+
+          h3 {
+            margin-left: 30px;
+            font-size: 20px;
+          }
+        }
+
+        .salads {
+          margin-left: 20%;
+
+          h3 {
+            width: 300px;
+            font-size: 14px;
+            padding: 10px 0;
+          }
+        }
+      }
+
+      .category-three {
+        align-items: center;
+        padding: 20px 0;
+
+        &__3 {
+          display: flex;
+
+          h3 {
+            margin-left: 30px;
+            font-size: 20px;
+          }
+        }
+        .drinks {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          h3 {
+            font-size: 15px;
+            padding: 10px 0;
+          }
+        }
+
+
+      }
+
+      .category-five {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+
+        h3 {
+          margin-left: 30px;
+          font-size: 20px;
+        }
+      }
+
+      .category-one4 {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+
+        h3 {
+          margin-left: 30px;
+          font-size: 20px;
+        }
+      }
+
+      .category-one5 {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+
+        h3 {
+          margin-left: 20px;
+          font-size: 20px;
+        }
+      }
+
+      .category-one6 {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+
+        h3 {
+          margin-left: 11px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }
 
 

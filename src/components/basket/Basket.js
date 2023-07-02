@@ -8,7 +8,6 @@ import BasketCard from "./BasketCard";
 import {useDispatch, useSelector} from "react-redux";
 import { parametr} from "../starts/random";
 import {CASH, HERE, TERMINAL, WITH} from "../../redux/Reducer/ActionTypes";
-import BurgerMenu from "../header/BurgerMenu";
 const Basket = () => {
 
   const nav = useNavigate()
@@ -59,7 +58,6 @@ const Basket = () => {
   return basket.length ?
     <>
       <Header/>
-      <BurgerMenu/>
       <div id={"basket"}>
         <div className="container">
           <h2 className={"title"}>{t("basket.h1")}</h2>
