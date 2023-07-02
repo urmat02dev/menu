@@ -1,21 +1,25 @@
 @media (max-width: 992px) {
   #foods {
+    margin-top: 7%;
+
     h2 {
       color: #004FC7;
-      margin-left: 15px;
+      text-align: center;
       font-size: 30px;
     }
+
     .foods {
       height: 300px;
       padding: 40px 0 50px 0;
     }
+
     .slick-prev:before,
-    .slick-next:before
-    {
+    .slick-next:before {
       display: none;
     }
   }
 }
+
 @media (max-width: 884px) {
   #foods {
     h2 {
@@ -23,17 +27,19 @@
       margin-left: 15px;
       font-size: 30px;
     }
+
     .foods {
       height: 300px;
       padding: 40px 0 50px 0;
     }
+
     .slick-prev:before,
-    .slick-next:before
-    {
+    .slick-next:before {
       display: none;
     }
   }
 }
+
 @media (max-width: 834px) {
   #foods {
     h2 {
@@ -41,17 +47,19 @@
       margin-left: 15px;
       font-size: 30px;
     }
+
     .foods {
       height: 300px;
       padding: 40px 0 50px 0;
     }
+
     .slick-prev:before,
-    .slick-next:before
-    {
+    .slick-next:before {
       display: none;
     }
   }
 }
+
 @media (max-width: 800px) {
   #foods {
     h2 {
@@ -59,41 +67,49 @@
       margin-left: 15px;
       font-size: 30px;
     }
+
     .foods {
       height: 300px;
       padding: 40px 0 50px 0;
     }
+
     .slick-prev:before,
-    .slick-next:before
-    {
+    .slick-next:before {
       display: none;
     }
   }
 }
+
 @media (max-width: 768px) {
   #foods {
     h2 {
       color: #004FC7;
       margin-left: 2px;
     }
+
     .foods {
       height: 300px;
       padding-top: 20px;
+
       &--one {
         padding: 0 10px;
+
         img {
           width: 180px;
           height: 200px;
         }
+
         h3 {
           font-weight: 400;
           padding-top: 2px;
         }
+
         p {
           color: rgba(0, 0, 0, 0.7);
           margin: 10px 0;
           font-size: 15px;
         }
+
         &__basket {
           display: flex;
           align-items: center;
@@ -104,6 +120,7 @@
           border-radius: 20px;
           margin-top: 20px;
           width: 145px;
+
           &--icon {
             color: #004FC7;
             width: 40px;
@@ -111,6 +128,7 @@
             height: 30px;
             border-radius: 20px;
           }
+
           h3 {
             font-size: 17px;
             padding-bottom: 3px;
@@ -121,31 +139,38 @@
     }
   }
 }
+
 @media (max-width: 576px) {
   #foods {
     h2 {
       color: #004FC7;
       margin-left: 2px;
     }
+
     .foods {
       height: 300px;
       padding-top: 20px;
+
       &--one {
         padding: 0 10px;
+
         img {
           width: 140px;
         }
+
         h3 {
           font-weight: 400;
           padding-top: 2px;
           font-size: 17px;
         }
+
         p {
           color: rgba(0, 0, 0, 0.7);
           margin: 10px 0;
           font-size: 15px;
           width: 160px;
         }
+
         &__basket {
           display: flex;
           align-items: center;
@@ -156,6 +181,7 @@
           border-radius: 20px;
           margin-top: 20px;
           width: 130px;
+
           &--icon {
             color: #004FC7;
             width: 40px;
@@ -163,6 +189,7 @@
             height: 20px;
             border-radius: 20px;
           }
+
           h3 {
             font-size: 17px;
             padding-bottom: 3px;
@@ -173,30 +200,37 @@
     }
   }
 }
+
 @media (max-width: 451px) {
   #foods {
     h2 {
       color: #004FC7;
       margin-left: 2px;
     }
+
     .foods {
       height: 300px;
       padding-top: 20px;
+
       &--one {
         padding: 0 10px;
+
         img {
           width: 180px;
         }
+
         h3 {
           font-weight: 400;
           padding-top: 2px;
         }
+
         p {
           color: rgba(0, 0, 0, 0.7);
           margin: 10px 0;
           font-size: 15px;
           width: 190px;
         }
+
         &__basket {
           display: flex;
           align-items: center;
@@ -207,6 +241,7 @@
           border-radius: 20px;
           margin-top: 20px;
           width: 145px;
+
           &--icon {
             color: #004FC7;
             width: 40px;
@@ -214,6 +249,7 @@
             height: 20px;
             border-radius: 20px;
           }
+
           h3 {
             font-size: 17px;
             padding-bottom: 3px;
@@ -224,6 +260,7 @@
     }
   }
 }
+
 @media (max-width: 428px) {
   #foods {
 
@@ -233,16 +270,19 @@
           width: 160px;
           height: 160px;
         }
+
         h3 {
           font-weight: 400;
           padding-top: 2px;
         }
+
         p {
           color: rgba(0, 0, 0, 0.7);
           margin: 10px 0;
           font-size: 15px;
           width: 170px;
         }
+
         &__basket {
           display: flex;
           align-items: center;
@@ -252,6 +292,7 @@
           background: #fff;
           border-radius: 20px;
           margin-top: 20px;
+
           &--icon {
             color: #004FC7;
             width: 40px;
@@ -259,6 +300,7 @@
             height: 20px;
             border-radius: 20px;
           }
+
           h3 {
             font-size: 17px;
             padding-bottom: 3px;
@@ -269,30 +311,37 @@
     }
   }
 }
+
 @media (max-width: 415px) {
   #foods {
     h2 {
       color: #004FC7;
       margin-left: 2px;
     }
+
     .foods {
       height: 300px;
       padding-top: 20px;
+
       &--one {
         padding: 0 10px;
+
         img {
           width: 160px;
         }
+
         h3 {
           font-weight: 400;
           padding-top: 2px;
         }
+
         p {
           color: rgba(0, 0, 0, 0.7);
           margin: 10px 0;
           font-size: 15px;
           width: 170px;
         }
+
         &__basket {
           display: flex;
           align-items: center;
@@ -302,6 +351,7 @@
           background: #fff;
           border-radius: 20px;
           margin-top: 20px;
+
           &--icon {
             color: #004FC7;
             width: 40px;
@@ -309,6 +359,7 @@
             height: 20px;
             border-radius: 20px;
           }
+
           h3 {
             font-size: 17px;
             padding-bottom: 3px;
@@ -319,30 +370,37 @@
     }
   }
 }
+
 @media (max-width: 401px) {
   #foods {
     h2 {
       color: #004FC7;
       margin-left: 2px;
     }
+
     .foods {
       height: 300px;
       padding-top: 20px;
+
       &--one {
         padding: 0 10px;
+
         img {
           width: 160px;
         }
+
         h3 {
           font-weight: 400;
           padding-top: 2px;
         }
+
         p {
           color: rgba(0, 0, 0, 0.7);
           margin: 10px 0;
           font-size: 15px;
           width: 170px;
         }
+
         &__basket {
           display: flex;
           align-items: center;
@@ -353,6 +411,7 @@
           border-radius: 20px;
           margin-top: 20px;
           width: 140px;
+
           &--icon {
             color: #004FC7;
             width: 40px;
@@ -360,6 +419,7 @@
             height: 20px;
             border-radius: 20px;
           }
+
           h3 {
             font-size: 17px;
             padding-bottom: 3px;
@@ -370,30 +430,37 @@
     }
   }
 }
+
 @media (max-width: 376px) {
   #foods {
     h2 {
       color: #004FC7;
       margin-left: 2px;
     }
+
     .foods {
       height: 300px;
       padding-top: 20px;
+
       &--one {
         padding: 0 10px;
+
         img {
           width: 140px;
         }
+
         h3 {
           font-weight: 400;
           padding-top: 2px;
         }
+
         p {
           color: rgba(0, 0, 0, 0.7);
           margin: 10px 0;
           font-size: 15px;
           width: 120px;
         }
+
         &__basket {
           display: flex;
           align-items: center;
@@ -404,6 +471,7 @@
           border-radius: 20px;
           margin-top: 20px;
           width: 125px;
+
           &--icon {
             color: #004FC7;
             width: 40px;
@@ -411,6 +479,7 @@
             height: 20px;
             border-radius: 20px;
           }
+
           h3 {
             font-size: 17px;
             padding-bottom: 3px;
@@ -421,30 +490,37 @@
     }
   }
 }
+
 @media (max-width: 360px) {
   #foods {
     h2 {
       color: #004FC7;
       margin-left: 2px;
     }
+
     .foods {
       height: 300px;
       padding-top: 20px;
+
       &--one {
         padding: 0 10px;
+
         img {
           width: 140px;
         }
+
         h3 {
           font-weight: 400;
           padding-top: 2px;
         }
+
         p {
           color: rgba(0, 0, 0, 0.7);
           margin: 10px 0;
           font-size: 15px;
           width: 120px;
         }
+
         &__basket {
           display: flex;
           align-items: center;
@@ -455,6 +531,7 @@
           border-radius: 20px;
           margin-top: 20px;
           width: 125px;
+
           &--icon {
             color: #004FC7;
             width: 40px;
@@ -462,6 +539,7 @@
             height: 20px;
             border-radius: 20px;
           }
+
           h3 {
             font-size: 17px;
             padding-bottom: 3px;
@@ -472,5 +550,6 @@
     }
   }
 }
+
 @media (max-width: 320px) {
 }

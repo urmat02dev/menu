@@ -61,6 +61,19 @@ const BasketCard = ({el}) => {
         localStorage.setItem("backend", JSON.stringify(basket))
         dispatch({type: DELETE, payload: el})
     }
+    const getGram = (el) => {
+        if (el.gram * el.quantity >= 1000){
+            if (el.category_name === "Горячие напитки" ||  el.category_name === "Холдные"){
+                return (el.gram / 1000) * el.quantity + "л"
+            }
+            else return (el.gram /1000) * el.quantity  + "кг"
+        }
+        else if (el.gram === ""){
+            return ""
+        }
+        else return  el.gram * el.quantity + "г"
+    }
+
 
     const title = el.add && el.add.map(el => getAddTitle(el))
     return (
@@ -81,7 +94,7 @@ const BasketCard = ({el}) => {
                         <IoMdClose className={"icon"}/>
                     </div>
                 </div>
-                <p>{el.gram}г.</p>
+                <p>{getGram(el)}</p>
                 <div className="basket--card__word--order">
 
                     <div className={"price"}>

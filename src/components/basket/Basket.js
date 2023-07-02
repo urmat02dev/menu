@@ -7,8 +7,7 @@ import {useTranslation} from "react-i18next";
 import BasketCard from "./BasketCard";
 import {useDispatch, useSelector} from "react-redux";
 import { parametr} from "../starts/random";
-import {BURGER_MENU, CASH, HERE, TERMINAL, WITH} from "../../redux/Reducer/ActionTypes";
-import BurgerMenu from "../header/BurgerMenu";
+import {CASH, HERE, TERMINAL, WITH} from "../../redux/Reducer/ActionTypes";
 const Basket = () => {
 
   const nav = useNavigate()
@@ -16,7 +15,7 @@ const Basket = () => {
   const {t} = useTranslation()
   const dispatch = useDispatch()
   const {basket,params} = useSelector(s => s)
-  const {here,withT,terminal,cash,burgerMenu} = useSelector(s => s)
+  const {here,withT,terminal,cash,order,pay} = useSelector(s => s)
   const [loader, setLoader] = useState(false)
   const [btn,setBtn] = useState(false)
   const [cash2, setCash2]  = useState(false)
@@ -53,6 +52,7 @@ const Basket = () => {
     dispatch({type:WITH,payload:false})
     dispatch({type:CASH,payload:false})
     dispatch({type:TERMINAL,payload:false})
+
   },[basket.length])
 
   return basket.length ?
