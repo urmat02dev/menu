@@ -57,18 +57,19 @@ export const MainReducer = (state = initialState, action) => {
     case MODAL_TO_BASKET : {
 
       return {...state, basket: [...state.basket,
-          {...action.payload, quantity: action.payload.quantity,add:[...state.detail.add]}]}
+          {...action.payload, quantity: action.payload.quantity,add:[...state.detail.add]}],gram:action.payload.gram * action.payload.quantity}
     }
     case MODAL_TO_PRICE : {
       const total = state.detail && state.detail.add.reduce((acc,e) => {return acc + e.price},0)
       return {...state, basket: [...state.basket,
           {...action.payload, quantity: action.payload.quantity,
             price:total + action.payload.price * action.payload.quantity,
-            add:[...state.detail.add]
+            add:[...state.detail.add],
+            gram:action.payload.gram * action.payload.quantity
           }]}
     }
     case GET_DETAIL : {
-      return {...state, detail: {...action.payload, quantity: 1,price:action.payload.price,add:[]}}
+      return {...state, detail: {...action.payload, quantity: 1,price:action.payload.price,add:[],gram:action.payload.gram}}
     }
     case MINUS : {
       return{...state, basket: state.basket.map(el => {

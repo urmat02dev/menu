@@ -80,6 +80,18 @@ const ModalCard = ({el}) => {
             return el.description_kg
         }
     }
+    const getGram = (el) => {
+      if (el.gram * el.quantity >= 1000){
+          if (el.category_name === "Горячие напитки" ||  el.category_name === "Холдные"){
+              return (el.gram / 1000) * el.quantity + "л"
+          }
+          else return (el.gram /1000) * el.quantity  + "кг"
+      }
+      else if (el.gram === ""){
+          return ""
+      }
+      else return  el.gram * el.quantity + "г"
+    }
 
     const total = el.add && el.add.reduce((acc, e) => {
         return acc + e.price
@@ -102,7 +114,7 @@ const ModalCard = ({el}) => {
                 <div className="modal--desc__price">
                     <h5>Цена:<span>{el.add && el.add.length ? total + el.price * el.quantity : el.price * el.quantity}c</span>
                     </h5>
-                    <h4>{el.gram}г.</h4>
+                    <h4>{getGram(el) }</h4>
                 </div>
             </div>
             <div className="modal--additives">

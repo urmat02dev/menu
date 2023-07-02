@@ -30,7 +30,6 @@ const BurgerMenu = ({active,setActive,best,setBest}) => {
 
     const getClose = async () => {
         dispatch({type:BURGER_MENU,payload:false})
-        nav(`/${params}/main`)
     }
     return (
         <>
