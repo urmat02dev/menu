@@ -56,10 +56,10 @@
           .one {
             rotate: 90deg;
             &--bus {
-              width: 8px;
-              background: #c9cdf5;
+              width: 4px;
+              background: #004FC7;
               border-radius: 20px;
-              height: 50px;
+              height: 40px;
               margin: 0 5px;
 
             }
@@ -176,6 +176,18 @@
               background: steelblue;
             }
           }
+          .one {
+            rotate: 90deg;
+            &--bus {
+              width: 2px;
+              background: #004FC7;
+              border-radius: 20px;
+              height: 33px;
+              margin: 0 5px;
+
+            }
+          }
+
 
         }
       }
@@ -234,6 +246,18 @@
               background: steelblue;
             }
           }
+          .one {
+            rotate: 90deg;
+            &--bus {
+              width: 2px;
+              background: #004FC7;
+              border-radius: 20px;
+              height: 30px;
+              margin: 0 5px;
+
+            }
+          }
+
 
         }
       }
@@ -337,7 +361,17 @@
         }
 
         &__two {
+          .one {
+            rotate: 90deg;
+            &--bus {
+              width: 2px;
+              background: #004FC7;
+              border-radius: 20px;
+              height: 30px;
+              margin: 0 5px;
 
+            }
+          }
         }
       }
     }
@@ -429,6 +463,19 @@
             position: relative;
             left: 10px;
           }
+          .one {
+            margin-left: 15px;
+            rotate: 90deg;
+            &--bus {
+              width: 1.5px;
+              background: #004FC7;
+              border-radius: 20px;
+              height: 30px;
+              margin: 0 5px;
+
+            }
+          }
+
         }
       }
     }
