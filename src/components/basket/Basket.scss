@@ -111,27 +111,27 @@
         }
       }
 
+
       .basket--card {
         background: #FFFFFF;
         display: flex;
-        width: 100%;
-        height: 300px;
+        width: 96%;
+        height: 260px;
         align-items: center;
         justify-content: space-between;
         border-radius: 20px;
         margin: 20px 0;
         animation: jan 1s ease-out;
+        padding: 20px 20px;
 
         &__img {
           width: 250px;
           height: 220px;
-          margin: 10px 0 20px 50px;
           border-radius: 30px;
         }
 
         &__word {
           position: relative;
-          right: 20px;
 
           .desc {
             position: relative;
@@ -157,11 +157,10 @@
               font-family: 'Armin Grotesk', sans-serif;
               font-style: normal;
               font-weight: bold;
-              //font-weight: 400;
               font-size: 29px;
               line-height: 39px;
               color: rgba(0, 0, 0, 0.7);
-              width: 100%;
+              width: 500px;
               margin: 10px 0;
 
               .basketAdded {
@@ -171,7 +170,8 @@
 
             .close {
               position: absolute;
-              left: 90%;
+              bottom: 71%;
+              left: 94%;
               border-radius: 50%;
               background: rgba(40, 49, 255, 0.3);
               width: 35px;
@@ -191,9 +191,11 @@
 
 
           }
+
           p {
             font-size: 25px;
           }
+
           &--order {
             width: 500px;
             height: 80px;
@@ -249,6 +251,7 @@
           }
         }
       }
+
 
       &--status {
         margin-top: 8%;
@@ -432,99 +435,143 @@
 }
 
 @media (max-width: 884px) {
-  #basket .basket .basket--card {
-    height: 268px;
-  }
-  #basket .basket--total {
-    margin: 0 0 60px 0;
-  }
-  #basket .basket .basket--card__word--order {
-    width: 423px;
-    height: 70px;
-  }
-  #basket .basket .basket--card__img {
-    width: 228px;
-    height: 204px;
-    margin: 10px 0 20px 36px;
-    border-radius: 30px;
-  }
-  #basket .title {
-    line-height: 121px;
-  }
+  //#basket .basket .basket--card {
+  //  height: 268px;
+  //}
+  //#basket .basket--total {
+  //  margin: 0 0 60px 0;
+  //}
+  //#basket .basket .basket--card__word--order {
+  //  width: 423px;
+  //  height: 70px;
+  //}
+  //#basket .basket .basket--card__img {
+  //  width: 228px;
+  //  height: 204px;
+  //  margin: 10px 0 20px 36px;
+  //  border-radius: 30px;
+  //}
+  //#basket .title {
+  //  line-height: 121px;
+  //}
 
 }
 
 @media (max-width: 834px) {
-  #basket .basket .basket--card {
-    height: 268px;
-  }
-
-  #basket .basket--total {
-    margin: 0 0 60px 0;
-  }
-  #basket .basket .basket--card__word {
-    position: relative;
-    right: 1px;
-  }
-  #basket .basket .basket--card__word--order {
-    width: 423px;
-    height: 60px;
-  }
-  #basket .basket .basket--card__img {
-    width: 228px;
-    height: 204px;
-    margin: 10px 0 20px 36px;
-    border-radius: 30px;
-  }
-  #basket .title {
-    line-height: 121px;
-  }
-  #basket .basket .basket--card__word .desc .close {
-    width: 34px;
-    height: 33px;
-  }
+  //#basket .basket .basket--card {
+  //  height: 268px;
+  //}
+  //
+  //#basket .basket--total {
+  //  margin: 0 0 60px 0;
+  //}
+  //#basket .basket .basket--card__word {
+  //  position: relative;
+  //  right: 1px;
+  //}
+  //#basket .basket .basket--card__word--order {
+  //  width: 423px;
+  //  height: 60px;
+  //}
+  //#basket .basket .basket--card__img {
+  //  width: 228px;
+  //  height: 204px;
+  //  margin: 10px 0 20px 36px;
+  //  border-radius: 30px;
+  //}
+  //#basket .title {
+  //  line-height: 121px;
+  //}
+  //#basket .basket .basket--card__word .desc .close {
+  //  width: 34px;
+  //  height: 33px;
+  //}
 }
 
 @media (max-width: 800px) {
-  #basket .basket .basket--card__img {
-    width: 200px;
-    height: 190px;
-    margin: 9px 0 20px 26px;
-  }
-  #basket .basket .basket--card__word p {
-    font-size: 20px;
-    margin: 16px 0;
-  }
+  //#basket .basket .basket--card__img {
+  //  width: 200px;
+  //  height: 190px;
+  //  margin: 9px 0 20px 26px;
+  //}
+  //#basket .basket .basket--card__word p {
+  //  font-size: 20px;
+  //  margin: 16px 0;
+  //}
 }
 
 @media (max-width: 768px) {
-  #basket .basket .basket--card {
-    height: 250px;
-  }
-  #basket .basket .basket--card__word--order {
-    width: 388px;
-    height: 60px;
-    margin-top: 30px;
-  }
-  #basket .basket .basket--card__word .desc {
-    width: 92%;
-  }
-  #basket .basket .basket--card__img {
-    width: 200px;
-    height: 185px;
-    margin: 10px 0 20px 29px;
-  }
-  #basket .basket .basket--card__word {
-    margin: 0 25px 0 0;
-  }
-  #basket .basket .basket--card__word .desc h2 {
-    font-size: 30px;
-    width: 304px;
-  }
-  #basket .basket .basket--card__word .desc .close {
-    margin-top: 15px;
-  }
   #basket {
+    .basket {
+      .basket--card {
+        &__img {
+          width: 160px;
+          height: 150px;
+        }
+
+        &__word {
+          width: 60%;
+          .desc {
+
+            .basket--desc--add {
+              .title {
+                width: 100%;
+                font-size: 27px;
+                padding-top: 20px;
+              }
+              h2 {
+
+              }
+
+
+            }
+
+            p {
+
+              .basketAdded {
+              }
+            }
+
+            .close {
+
+              .icon {
+
+              }
+            }
+
+
+          }
+
+          p {
+          }
+
+          &--order {
+            margin-top: 10%;
+            width: 100%;
+            .price {
+
+              h4 {
+
+              }
+            }
+
+            .count {
+
+              .quantity {
+
+              }
+
+              span {
+
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+
     .no-basket {
       margin: 10px auto 20px auto;
       width: 550px;
@@ -578,173 +625,303 @@
 }
 
 @media (max-width: 576px) {
-  #basket .basket .basket--card__img {
-    width: 160px;
-    height: 150px;
-    margin: 10px 0 20px 18px;
-  }
-  #basket .basket .basket--card {
-    height: 215px;
-  }
-  #basket .basket .basket--card__word .desc {
-    width: 100%;
-  }
-  #basket .basket .basket--card__word .desc h2 {
-    width: 250px;
-    font-size: 21px;
-    position: relative;
-    left: -6px;
-  }
-  #basket .basket .basket--card__word--order {
-    width: 289px;
-    height: 50px;
-  }
-  #basket .title {
-    font-size: 26px;
-    margin: -30px 0 -21px 19px;
-  }
-  #basket .basket .basket--card__word .desc p {
-    font-size: 20px;
-    line-height: 30px;
-    margin: 0;
-  }
-  #basket .basket .basket--card__word {
-    margin: 0 15px 0 0;
-  }
-  #basket .basket .basket--card__word p {
-    width: 100%;
-    margin: 0;
-  }
-  #basket .basket--total {
-    width: 91%;
-    height: 69px;
-  }
-  #basket .basket--btn button {
-    width: 189px;
-    height: 52px;
-    background: #004FC7;
-    margin: 0 0 20px 0;
-    border-radius: 20px;
-    font-size: 16px;
-    line-height: 23px;
-    font-weight: 600;
-    color: #FFFFFF;
-    border: none;
-  }
-  #basket .no-basket {
-    margin: 0 auto 20px auto;
-    width: 417px;
-    height: 411px;
-  }
-  #basket .no-basket .block img {
-    width: 158px;
-    height: 175px;
-  }
-  #basket .no-basket .block h1 {
-    font-weight: 600;
-    font-size: 25px;
-  }
-  #basket .btn button {
-    width: 382px;
-    margin: 0 0 20px 0;
-    height: 52px;
-  }
-  #basket .basket .basket--card__word .desc .close .icon {
-    font-size: 20px;
-  }
-  #basket .basket .basket--card__word .desc .close {
-    width: 25px;
-    height: 25px;
-    margin-right:10px;
-    margin-top: 0;
-  }
   #basket {
     .basket {
-      &--pay {
-        &__text {
-          h1 {
-            font-size: 30px;
-          }
-        }
-      }
-
-      &--status {
-
-        &__title {
-          font-size: 1rem;
-        }
-      }
-
-      &--btn {
-        button {
-          width: 217px;
-          height: 55px;
-        }
-      }
-
-      &--status {
-        &__general {
-          display: flex;
-          align-items: center;
-          justify-content: space-around;
-        }
-      }
-
       .basket--card {
+        height: 200px;
+        width: 92%;
+        &__img {
+          width: 160px;
+          height: 150px;;
+        }
+
         &__word {
-          &--order {
-            .count {
-              margin-right: 10px;
-              height: 40px;
-              width: 140px;
+          width: 60%;
+          .desc {
+
+            .basket--desc--add {
+              .title {
+                width: 100%;
+                font-size: 25px;
+                padding-top: 30px;
+                line-height: 30px;
+              }
+              h2 {
+
+              }
+
+
             }
+
+            p {
+
+              .basketAdded {
+              }
+            }
+
+            .close {
+
+              .icon {
+
+              }
+            }
+
+
+          }
+
+          p {
+          }
+
+          &--order {
+            margin-top: 10%;
+            width: 100%;
+            height: 50px;
+            .price {
+              h4 {
+
+              }
+            }
+
+            .count {
+              width: 160px;
+              margin: 0 10px;
+              height: 40px;
+              .quantity {
+
+              }
+
+              span {
+
+              }
+            }
+
+
           }
         }
       }
     }
+
+    .no-basket {
+      margin: 10px auto 20px auto;
+      width: 550px;
+      height: 500px;
+      border-radius: 20px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          width: 250px;
+          height: 250px;
+          object-fit: contain;
+        }
+
+        h1 {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          text-align: center;
+          width: 300px;
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 31px;
+          line-height: 34px;
+          color: #004FC7;
+
+        }
+
+        p {
+          width: 200px;
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 19px;
+          line-height: 22px;
+          text-align: center;
+          color: rgba(0, 79, 199, 0.5);
+        }
+
+      }
+    }
   }
+  #basket {
+        .basket {
+          &--pay {
+            &__text {
+              h1 {
+                font-size: 30px;
+              }
+            }
+          }
+
+          &--status {
+
+            &__title {
+              font-size: 1rem;
+            }
+          }
+
+          &--btn {
+            button {
+              width: 217px;
+              height: 55px;
+            }
+          }
+
+          &--status {
+            &__general {
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+            }
+          }
+
+          .basket--card {
+            &__word {
+              &--order {
+                .count {
+                  margin-right: 10px;
+                  height: 40px;
+                  width: 140px;
+                }
+              }
+            }
+          }
+        }
+      }
+    #basket .basket--total {
+      width: 91%;
+      height: 69px;
+    }
+    #basket .basket--btn button {
+      width: 189px;
+      height: 52px;
+      background: #004FC7;
+      margin: 0 0 20px 0;
+      border-radius: 20px;
+      font-size: 16px;
+      line-height: 23px;
+      font-weight: 600;
+      color: #FFFFFF;
+      border: none;
+    }
+    #basket .no-basket {
+      margin: 0 auto 20px auto;
+      width: 417px;
+      height: 411px;
+    }
+    #basket .no-basket .block img {
+      width: 158px;
+      height: 175px;
+    }
+    #basket .no-basket .block h1 {
+      font-weight: 600;
+      font-size: 25px;
+    }
+    #basket .btn button {
+      width: 382px;
+      margin: 0 0 20px 0;
+      height: 52px;
+    }
+    #basket .basket .basket--card__word .desc .close .icon {
+      font-size: 20px;
+    }
+    #basket .basket .basket--card__word .desc .close {
+      width: 25px;
+      height: 25px;
+      left: 95%;
+      bottom: 80%;
+    }
 }
 
 @media (max-width: 450px) {
-  #basket .basket .basket--card__word .desc p {
-    font-size: 17px;
-  }
-  #basket .basket .basket--card__word--order .price h4 {
-    font-size: 18px;
-  }
-  #basket .basket--total h2 {
-    font-size: 20px;
-  }
-  #basket .basket .basket--card__word .desc h2 {
-    width: 176px;
-    font-size: 17px;
-    position: relative;
-    left: 2px;
-  }
-  #basket .basket .basket--card__word .desc {
-    width: 100%;
-  }
-  #basket .basket .basket--card__img {
-    width: 135px;
-    height: 120px;
-    margin: 10px 0 20px 12px;
-  }
-  #basket .basket .basket--card {
-    height: 198px;
-  }
-  #basket .basket .basket--card__word--order {
-    width: 215px;
-    position: relative;
-    height: 40px;
-    top: -8px;
-    left: -5px;
-    border-radius: 8px;
-  }
-  #basket .basket .basket--card__word p {
-    width: 183px;
-    font-size: 17px;
+  #basket {
+    .basket {
+      .basket--card {
+        height: 180px;
+        width: 92%;
+        &__img {
+          width: 140px;
+          height: 130px;;
+        }
+
+        &__word {
+          width: 55%;
+          .desc {
+
+            .basket--desc--add {
+              display: flex;
+              align-items: start;
+              .title {
+                width: 95%;
+                font-size: 20px;
+                padding-top:10px;
+                line-height: 25px;
+              }
+              h2 {
+
+              }
+
+
+            }
+
+            p {
+              .basketAdded {
+              }
+            }
+
+            .close {
+
+              .icon {
+
+              }
+            }
+
+
+          }
+
+          p {
+            font-size: 18px;
+          }
+
+          &--order {
+            margin-top: 5%;
+            width: 100%;
+            height: 45px;
+            border-radius: 10px;
+            .price {
+              h4 {
+                font-size: 18px;
+              }
+            }
+
+            .count {
+              width: 160px;
+              margin: 0 10px;
+              height: 40px;
+              .quantity {
+
+              }
+
+              span {
+
+              }
+            }
+
+
+          }
+        }
+      }
+    }
 
   }
+
   #basket .basket--pay__text h1 {
     font-size: 22px;
     margin: 20px 20px 0 30px;
@@ -791,7 +968,7 @@
     font-size: 15px;
   }
   #basket .basket .basket--card__word .desc .close {
-    margin-right: 10px;
+    left: 90%;
   }
   #basket {
     .basket {
@@ -920,26 +1097,84 @@
 }
 
 @media (max-width: 428px) {
-  #basket .basket .basket--card__word .desc {
-    width: 100%;
-    padding: 13px 0 0 0;
+  #basket {
+    .basket {
+      .basket--card {
+        height: 160px;
+        width: 90%;
+        &__img {
+          width: 130px;
+          height: 120px;;
+        }
+
+        &__word {
+          width: 55%;
+          .desc {
+
+            .basket--desc--add {
+              .title {
+                width: 95%;
+                font-size: 18px;
+                line-height: 25px;
+              }
+              h2 {
+
+              }
+
+
+            }
+
+            p {
+
+              .basketAdded {
+              }
+            }
+
+            .close {
+
+              .icon {
+
+              }
+            }
+
+
+          }
+
+          p {
+          }
+
+          &--order {
+            margin-top: 5%;
+            width: 100%;
+            height: 40px;
+            border-radius: 10px;
+            .price {
+              h4 {
+                font-size: 16px;
+              }
+            }
+
+            .count {
+              width: 160px;
+              margin: 0 10px;
+              height: 40px;
+              .quantity {
+
+              }
+
+              span {
+
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+
   }
-  #basket .basket .basket--card__img {
-    width: 130px;
-    height: 130px;
-    margin: 10px 0 20px 12px;
-    border-radius: 10px;
-  }
-  #basket .basket .basket--card {
-    height: 179px;
-  }
-  #basket .basket .basket--card__word--order {
-    height: 40px;
-    top: -8px;
-    width: 202px;
-    position: relative;
-    left: 10px;
-  }
+
   #basket .basket--total {
     width: 89%;
     height: 50px;
@@ -949,12 +1184,12 @@
     height: 25px;
     left: 10px;
   }
-  #basket .basket .basket--card__word .desc h2 {
-    width: 190px;
-    font-size: 17px;
-    position: relative;
-    left: 2px;
-  }
+  //#basket .basket .basket--card__word .desc h2 {
+  //  width: 190px;
+  //  font-size: 17px;
+  //  position: relative;
+  //  left: 2px;
+  //}
   #basket .basket--pay__text h1 {
     font-size: 19px;
   }
@@ -1100,13 +1335,82 @@
 }
 
 @media (max-width: 414px) {
-  #basket .basket .basket--card__word .desc p {
-    font-size: 15px;
-    line-height: 25px;
-    margin-left: 10px;
-  }
-  #basket .basket .basket--card__word p {
-    margin-left: 10px;
+  #basket {
+    .basket {
+      .basket--card {
+        height: 160px;
+        width: 90%;
+        &__img {
+          width: 130px;
+          height: 120px;;
+        }
+
+        &__word {
+          width: 55%;
+          .desc {
+
+            .basket--desc--add {
+              .title {
+                width: 95%;
+                font-size: 18px;
+                line-height: 25px;
+              }
+              h2 {
+
+              }
+
+
+            }
+
+            p {
+
+              .basketAdded {
+              }
+            }
+
+            .close {
+
+              .icon {
+
+              }
+            }
+
+
+          }
+
+          p {
+          }
+
+          &--order {
+            margin-top: 5%;
+            width: 100%;
+            height: 40px;
+            border-radius: 10px;
+            .price {
+              h4 {
+                font-size: 16px;
+              }
+            }
+
+            .count {
+              width: 160px;
+              margin: 0 10px;
+              height: 30px;
+              .quantity {
+
+              }
+
+              span {
+
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+
   }
   #basket {
     .title {
@@ -1157,10 +1461,6 @@
       }
     }
   }
-  #basket .no-basket .block h1 {
-  }
-  #basket .no-basket .block p {
-  }
   #basket .btn button {
     height: 45px;
   }
@@ -1173,19 +1473,6 @@
     width: 123px;
     font-size: 14px;
     height: 37px;
-  }
-  #basket .basket .basket--card__word .desc h2 {
-    font-size: 16px;
-    width: 150px;
-  }
-  #basket .basket .basket--card__word--order {
-    height: 38px;
-    top: -20px;
-    position: relative;
-    right: 5px;
-  }
-  #basket .basket .basket--card__word .desc {
-    padding: 18px 0 0 0;
   }
   #basket {
     .basket {
@@ -1281,15 +1568,6 @@
 }
 
 @media (max-width: 400px) {
-  #basket .basket .basket--card__word .desc p {
-    font-size: 15px;
-    line-height: 18px;
-    margin-left: 3px;
-  }
-  #basket .basket .basket--card__word p {
-    margin-left: 10px;
-    padding: 5px 0;
-  }
   #basket .basket .basket--card__img {
     width: 105px;
     height: 100px;
@@ -1312,20 +1590,6 @@
     font-size: 16px;
     width: 259px;
   }
-  #basket .basket .basket--card__word--order {
-    height: 40px;
-    top: -34px;
-    left: 1px;
-    width: 200px;
-  }
-  #basket .basket .basket--card__word p {
-    width: 183px;
-    font-size: 15px;
-    margin: 0 0 34px 0;
-  }
-  #basket .basket .basket--card__word {
-    margin: 24px 15px 0 18px;
-  }
   #basket .basket .basket--card__word .desc .close {
     margin-right: 1px;
     width: 22px;
@@ -1334,19 +1598,9 @@
   #basket .basket .basket--card__word .desc .close .icon {
     font-size: 20px;
   }
-  #basket .basket .basket--card__word--order .count span {
-    font-weight: 700;
-    margin: 0 1px;
-    color: white;
-    font-size: 16px;
-    text-align: center;
-  }
   #basket .basket .basket--card {
     height: 159px;
     border-radius: 25px;
-  }
-  #basket .basket .basket--card__word--order .price h4 {
-    font-size: 14px;
   }
   #basket {
     .basket {
@@ -1460,17 +1714,54 @@
 }
 
 @media (max-width: 391px) {
-  #basket .basket .basket--card__word .desc h2 {
-    font-size: 16px;
-    width: 150px;
-  }
-  #basket .basket .basket--card__word .desc p {
-    //margin-left: 4px;
-  }
-  #basket .basket .basket--card__img {
-    width: 110px;
-    height: 105px;
-    margin: 10px 0 20px 12px;
+  #basket {
+    .basket {
+      .basket--card {
+        height: 150px;
+        width: 90%;
+        &__word {
+          .desc {
+
+            .basket--desc--add {
+              .title {
+                font-size: 15px;
+                line-height: 25px;
+              }
+            }
+          }
+          p {
+              font-size: 16px;
+          }
+          &--order {
+            margin-top: 5%;
+            width: 100%;
+            height: 38px;
+            border-radius: 10px;
+            .price {
+              h4 {
+                font-size: 14px;
+              }
+            }
+
+            .count {
+              width: 160px;
+              margin: 0 10px;
+              height: 30px;
+              .quantity {
+
+              }
+
+              span {
+
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+
   }
   #basket .no-basket {
     width: 300px;
@@ -1478,25 +1769,6 @@
   }
   #basket .basket--pay__text h1 {
     font-size: 20px;
-  }
-  #basket .basket .basket--card__word--order {
-    height: 39px;
-    top: -28px;
-    width: 184px;
-    left: -5px;
-  }
-  #basket .basket .basket--card__word--order .count p {
-    font-size: 16px;
-  }
-  #basket .basket .basket--card__word--order .price h4 {
-    font-size: 16px;
-  }
-  #basket .basket .basket--card__word--order .count {
-    width: 140px;
-    height: 31px;
-  }
-  #basket .basket .basket--card__word {
-    margin: 7px 10px 0 22px;
   }
   #basket .basket--pay__text h1 {
     font-size: 17px;
@@ -1505,14 +1777,51 @@
 }
 
 @media (max-width: 389px) {
-  #basket .basket .basket--card__word .desc h2 {
-    font-size: 16px;
-    width: 150px;
-  }
-  #basket .basket .basket--card__img {
-    width: 110px;
-    height: 105px;
-    margin: 10px 0 20px 12px;
+  #basket {
+    .basket {
+      .basket--card {
+        height: 150px;
+        width: 90%;
+        &__word {
+          .desc {
+
+            .basket--desc--add {
+              .title {
+                font-size: 15px;
+                line-height: 25px;
+              }
+            }
+          }
+          &--order {
+            margin-top: 5%;
+            width: 100%;
+            height: 38px;
+            border-radius: 10px;
+            .price {
+              h4 {
+                font-size: 14px;
+              }
+            }
+
+            .count {
+              width: 160px;
+              margin: 0 10px;
+              height: 30px;
+              .quantity {
+
+              }
+
+              span {
+
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+
   }
   #basket .no-basket {
     width: 300px;
@@ -1521,65 +1830,17 @@
   #basket .basket--pay__text h1 {
     font-size: 20px;
   }
-  #basket .basket .basket--card__word--order {
-    height: 39px;
-    top: -28px;
-    width: 184px;
-    left: -5px;
-  }
-
-  #basket .basket .basket--card__word--order .count p {
-    font-size: 16px;
-  }
-  #basket .basket .basket--card__word--order .price h4 {
-    font-size: 16px;
-  }
-  #basket .basket .basket--card__word--order .count {
-    width: 140px;
-    height: 30px;
-  }
-  #basket .basket .basket--card__word {
-    margin: 7px 10px 0 22px;
+  #basket .basket--pay__text h1 {
+    font-size: 17px;
   }
 
 }
 
 @media (max-width: 376px) {
-  #basket {
-    .no-basket {
-
-    }
-  }
-  #basket .basket .basket--card__word p {
-    padding-bottom: 10px;
-  }
-  #basket .basket .basket--card__word--order .price h4 {
-    font-size: 15px;
-  }
-  #basket .basket .basket--card__word .desc h2 {
-    width: 120px;
-    font-size: 16px;
-    position: relative;
-    left: 2px;
-  }
   #basket .basket .basket--card__img {
     width: 100px;
     height: 100px;
-    margin: 10px 0 20px 5px;
     border-radius: 15px;
-  }
-  #basket .basket .basket--card__word--order {
-    height: 39px;
-    top: -39px;
-    width: 184px;
-    left: -5px;
-  }
-  #basket .basket .basket--card__word {
-    margin: 28px 10px 0 22px;
-  }
-  #basket .basket .basket--card {
-    height: 150px;
-    border-radius: 25px;
   }
   #basket {
     .basket {
@@ -1608,21 +1869,11 @@
   #basket .basket .basket--card__img {
     width: 100px;
     height: 100px;
-    margin: 10px 0 20px 12px;
-  }
-  #basket .basket .basket--card__word .desc h2 {
-    width: 150px;
-    font-size: 15px;
-    position: relative;
-    left: 2px;
   }
   #basket .basket .basket--card__word--order {
     height: 32px;
     top: -33px;
     width: 174px;
-  }
-  #basket .basket .basket--card {
-    height: 150px;
   }
   #basket .basket--total h2 {
     font-size: 14px;
@@ -1632,9 +1883,6 @@
     top: 46px;
     height: 26px;
     font-size: 17px;
-  }
-  #basket .basket .basket--card__word {
-    margin: 7px 0 0 19px;
   }
   #basket .basket--total h1 {
     top: -6px;
@@ -1648,7 +1896,6 @@
   #basket .basket .basket--card__word .desc .close {
     width: 20px;
     height: 20px;
-    left: 80%;
   }
   #basket .basket .basket--card__word .desc .close .icon {
     font-size: 18px;
@@ -1765,51 +2012,75 @@
 }
 
 @media (max-width: 320px) {
-  #basket .basket .basket--card__word .desc h2 {
-    width: 100px;
-    font-size: 13px;
-    position: relative;
-    left: -1px;
-  }
-  #basket .basket .basket--card {
-    height: 149px;
-  }
-  #basket .basket .basket--card__word--order {
-    height: 34px;
-    top: -33px;
-    width: 160px;
-    left: -5px;
-  }
-  #basket .basket .basket--card__word {
-    margin: 4px 0 0 35px;
+  #basket {
+    .basket {
+      .basket--card {
+        height: 120px;
+        width: 86%;
+        &__word {
+          .desc {
+
+            .basket--desc--add {
+              .title {
+                font-size: 13px;
+                line-height: 20px;
+                width: 70%;
+              }
+            }
+          }
+          p {
+            font-size: 14px;
+          }
+          &--order {
+            margin-top: 5%;
+            width: 100%;
+            height: 34px;
+            border-radius: 10px;
+            .price {
+              h4 {
+                font-size: 13px;
+              }
+            }
+
+            .count {
+              width: 140px;
+              margin: 0 10px;
+              height: 30px;
+              .quantity {
+
+              }
+
+              span {
+
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+
   }
   #basket .basket--total {
     width: 85%;
     height: 50px;
   }
-  #basket .basket .basket--card__word .desc {
-    width: 85%;
-  }
   #basket .basket--pay__block {
     right: 85px;
     position: relative;
-  }
-  #basket .basket .basket--card__word .desc p {
-    font-size: 13px;
-    line-height: 20px;
   }
   #basket .basket--status__general--here h2 {
     width: 150px;
     font-size: 14px;
     line-height: 18px;
   }
-  #basket .basket .basket--card__word .desc .close {
-    top: 30%;
+  #basket .basket .basket--card__word .desc .close  {
+    top: 10%;
   }
   #basket .basket .basket--card__img {
     width: 80px;
     height: 85px;
-    margin: 10px 0 20px 12px;
   }
   #basket {
     .basket {

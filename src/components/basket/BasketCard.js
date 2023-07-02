@@ -94,7 +94,8 @@ const BasketCard = ({el}) => {
                         <IoMdClose className={"icon"}/>
                     </div>
                 </div>
-                <p>{getGram(el)}</p>
+                <p>{getGram(el)}
+                </p>
                 <div className="basket--card__word--order">
 
                     <div className={"price"}>

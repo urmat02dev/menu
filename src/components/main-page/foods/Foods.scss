@@ -82,13 +82,27 @@
 
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 376px) {
+    #food {
+      .food {
+        h1 {
+          font-size: 25px;
+        }
+      }
+    }
   }
 
   @media (max-width: 360px) {
 
   }
   @media (max-width: 320px) {
+    #food {
+      .food {
+        h1 {
+          font-size: 23px;
+        }
+      }
+    }
   }
 
 

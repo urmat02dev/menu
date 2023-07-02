@@ -27,11 +27,11 @@ const FoodCard = ({el}) => {
 
     function getDesc(el) {
         if (lang === "en") {
-            return el.description_en.slice(0,80)
+            return el.description_en.slice(0,50)
         } else if (lang === "ru") {
-            return el.description_ru.slice(0,80)
+            return el.description_ru.slice(0,50)
         } else if (lang === "kg") {
-            return el.description_kg.slice(0,80)
+            return el.description_kg.slice(0,50)
         }
     }
 

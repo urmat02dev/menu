@@ -26,13 +26,13 @@ const FoodPage = ({el}) => {
     }
     function getDesc(el) {
         if (lang === "en"){
-            return el.description_en.slice(0,30)
+            return el.description_en.slice(0,20)
         }
         else if (lang === "ru"){
-            return el.description_ru.slice(0,30)
+            return el.description_ru.slice(0,20)
         }
         else if (lang === "kg"){
-            return el.description_kg.slice(0,30)
+            return el.description_kg.slice(0,20)
         }
     }
     const dispatch = useDispatch()
