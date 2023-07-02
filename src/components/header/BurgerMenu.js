@@ -78,14 +78,14 @@ const BurgerMenu = ({active,setActive,best,setBest}) => {
                         <div className="slet" style={{
 
                         }}>
-                            {open && <h3 onClick={() => getClose() && setActive(1)}>{t('category.foods.one')}</h3>}
-                            {open && <h3 onClick={() => setActive(2) || getClose()}>{t('category.foods.two')}</h3>}
-                            {open && <h3 onClick={() => setActive(3) || getClose()}>{t('category.foods.three')}</h3>}
-                            {open && <h3 onClick={() => setActive(4) || getClose()}>{t('category.foods.four')}</h3>}
-                            {open && <h3 onClick={() => setActive(5) || getClose()}>{t('category.foods.five')}</h3>}
-                            {open && <h3 onClick={() => setActive(6) || getClose()}>{t('category.foods.six')}</h3>}
-                            {open && <h3 onClick={() => setActive(7) || getClose()}>{t('category.foods.seven')}</h3>}
-                            {open && <h3 onClick={() => setActive(8) || getClose()}>{t('category.foods.eight')}</h3>}
+                            {open && <li onClick={() => getClose() && setActive(1)}>{t('category.foods.one')}</li>}
+                            {open && <li onClick={() => setActive(2) || getClose()}>{t('category.foods.two')}</li>}
+                            {open && <li onClick={() => setActive(3) || getClose()}>{t('category.foods.three')}</li>}
+                            {open && <li onClick={() => setActive(4) || getClose()}>{t('category.foods.four')}</li>}
+                            {open && <li onClick={() => setActive(5) || getClose()}>{t('category.foods.five')}</li>}
+                            {open && <li onClick={() => setActive(6) || getClose()}>{t('category.foods.six')}</li>}
+                            {open && <li onClick={() => setActive(7) || getClose()}>{t('category.foods.seven')}</li>}
+                            {open && <li onClick={() => setActive(8) || getClose()}>{t('category.foods.eight')}</li>}
                         </div>
                     </div>
 
@@ -107,9 +107,9 @@ const BurgerMenu = ({active,setActive,best,setBest}) => {
                            }}>{t('category.salads.main')}</h3>
                        </div>
                         <div className="salads">
-                            {open2 && <h3 onClick={() => setActive(9) || getClose()}>{t('category.salads.one')}</h3>}
-                            {open2 && <h3 onClick={() => setActive(10) || getClose()}>{t('category.salads.two')}</h3>}
-                            {open2 && <h3 onClick={() => setActive(11) || getClose()}>{t('category.salads.three')}</h3>}
+                            {open2 && <li onClick={() => setActive(9) || getClose()}>{t('category.salads.one')}</li>}
+                            {open2 && <li onClick={() => setActive(10) || getClose()}>{t('category.salads.two')}</li>}
+                            {open2 && <li onClick={() => setActive(11) || getClose()}>{t('category.salads.three')}</li>}
                         </div>
                     </div>
 
@@ -132,8 +132,8 @@ const BurgerMenu = ({active,setActive,best,setBest}) => {
                             }}>{t('category.drinks.main')}</h3>
                         </div>
                         <div className="drinks">
-                            {open3 && <h3 onClick={() => setActive(12) || getClose()}>{t('category.drinks.one')}</h3>}
-                            {open3 && <h3 onClick={() => setActive(13) || getClose()}>{t('category.drinks.two')}</h3>}
+                            {open3 && <li onClick={() => setActive(12) || getClose()}>{t('category.drinks.one')}</li>}
+                            {open3 && <li onClick={() => setActive(13) || getClose()}>{t('category.drinks.two')}</li>}
                         </div>
 
                     </div>
