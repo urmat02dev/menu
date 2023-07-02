@@ -68,7 +68,6 @@ const Foods = ({active,setActive,modal,setModal}) => {
   } else if (active === 20){
     return t('category.11')
   }
-
   }
   const WindowClick = () => {
     window.scroll({top:400, behavior:"smooth"})
