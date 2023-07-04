@@ -351,18 +351,12 @@
           width: 180px;
         }
         &__basket {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 15px;
-          height: 40px;
-          background: #fff;
-          border-radius: 20px;
-          margin-top: 5px;
-          width: 145px;
+          border-radius: 10px;
           &--icon {
-              height: 35px;
-              font-size: 20px;
+            width: 47px;
+            border-radius: 10px;
+            height: 32px;
+            font-size: 20px;
           }
           h3 {
             font-size: 15px;
@@ -406,23 +400,9 @@
           width: 160px;
         }
         &__basket {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 15px;
-          height: 40px;
-          background: #fff;
-          border-radius: 20px;
-          margin-top: 5px;
-          margin-right: 10px;
           width: 120px;
           &--icon {
-            color: #004FC7;
-            width: 40px;
-            font-size: 10px;
-            background: #DFE2FF;
-            height: 28px;
-            border-radius: 20px;
+
           }
           h3 {
             font-size: 15px;
@@ -470,15 +450,7 @@
           width: 160px;
         }
         &__basket {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 15px;
-          height: 40px;
-          background: #fff;
-          border-radius: 20px;
-          margin-top: 5px;
-          width: 130px;
+
           h3 {
             font-size: 15px;
             padding-bottom: 3px;
@@ -535,6 +507,10 @@
   #foods .foods--one h3 {
     font-size: 14px;
     width: 153px;
+  }
+  #foods .foods--one__basket--icon {
+    width: 87px;
+    height: 30px;
   }
 }
 @media (max-width: 360px) {
