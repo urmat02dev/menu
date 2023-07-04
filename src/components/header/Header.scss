@@ -1,10 +1,17 @@
 @media (max-width: 992px) {
   #header {
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+    left: 0;
+    top: 0;
+    background: #DFE2FF;
+    border-radius: 10px;
     .header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 0;
+      padding: 5px 0;
 
       img {
         //border: 1px solid #004FC7;
@@ -201,7 +208,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 0;
+      padding: 2px 0;
 
       img {
         width: 45px;
@@ -271,7 +278,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 0;
+      padding: 2px 0;
 
       &--end {
         display: flex;
@@ -323,7 +330,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 0;
+      padding: 2px 0;
 
       &--end {
         display: flex;
@@ -349,7 +356,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 0;
+      padding: 2px 0;
 
       &--end {
         display: flex;
@@ -384,7 +391,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 0;
+      padding: 2px 0;
 
       &--end {
         display: flex;
@@ -409,7 +416,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 0;
+      padding: 2px 0;
 
       img {
         width: 40px;
@@ -440,7 +447,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 0;
+      padding: 2px 0;
 
       &--end {
         display: flex;

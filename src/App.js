@@ -1,5 +1,5 @@
 import './App.scss';
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useNavigate} from "react-router-dom";
 import Starts from "./components/starts/Starts";
 import MainPage from "./components/main-page/MainPage";
 import Basket from "./components/basket/Basket";
@@ -18,7 +18,7 @@ import {data} from "./components/fake-backend/backend";
 function App() {
     const dispatch = useDispatch()
     const {params} = useSelector(state => state)
-
+    const nav = useNavigate()
     async function getFoods() {
         const url = await axios.get(`${BACKEND_GET_URL}dishes`)
         const {data} = url
@@ -27,10 +27,11 @@ function App() {
 
     const getFakeFoods = () => {
         dispatch({type: GET_FOODS, payload: data})
+        nav("/1")
     }
 
     useEffect(() => {
-        getFakeFoods()
+        getFoods()
     }, [])
     return (
         <>

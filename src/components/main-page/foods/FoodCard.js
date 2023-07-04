@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {BsBasket3Fill} from "react-icons/bs";
 import {useTranslation} from "react-i18next";
 import "./FoodCard.scss"
@@ -47,10 +47,11 @@ const FoodCard = ({el}) => {
         dispatch({type: GET_BASKET, payload: el})
      }
 
+    const scroolRef = useRef(null)
 
 
     return (el.id ?
-            <div id='food' key={el.id}>
+            <div id='food' key={el.id} >
                 <div className="food--card" onClick={() => getWindow(el)}>
                     <div className={"img"}>
                         <img className="food--card__img" src={el.image} alt=""/>

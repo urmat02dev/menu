@@ -24,7 +24,6 @@ const Header = () => {
     const getBurgerMenu = () => {
       dispatch({type:BURGER_MENU, payload:!burgerMenu})
     }
-    console.log("burgerMenu",burgerMenu)
   return (
     <div id='header'>
         <div className="container">
@@ -37,8 +36,7 @@ const Header = () => {
                     <div className={"sup"}
                          style={{
                            display: basket.length  ?  "flex" : "none"
-                         }}
-                    >
+                         }}>
                       <sup>{basket  ? basket.length : "none" }</sup>
                     </div>
                       <BiBasket className='header--end__one--icon' onClick={() => getNav()}/>

@@ -43,9 +43,7 @@ const Search = ({setModal,modal}) => {
   }
   const fifa = foods.find(el => el.name_ru.toLowerCase().includes(value))
 
-  console.log("OP",value)
-  console.log("FAF",foods)
-  console.log("fifa",fifa)
+
 
 
 
