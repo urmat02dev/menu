@@ -1,13 +1,13 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import "./Foods.scss"
 import {useTranslation} from "react-i18next";
 import FoodCard from "./FoodCard";
 import {useSelector} from "react-redux";
 
 
-const Foods = ({active,setActive,modal,setModal}) => {
+const Foods = () => {
   const {t} = useTranslation()
-  const {foods,burgerMenu} = useSelector(state => state)
+  const {foods,burgerMenu,active} = useSelector(state => state)
   const getTitle = () => {
   if (active === 1){
     return t('category.foods.one')
@@ -70,8 +70,12 @@ const Foods = ({active,setActive,modal,setModal}) => {
   }
   }
   const WindowClick = () => {
-    window.scroll({top:400, behavior:"smooth"})
+    if (active || !burgerMenu) {
+      window.scrollTo({top:500, behavior:"smooth"})
+    }
+    else window.scrollTo({top:0, behavior:"smooth"})
   }
+  const scroolRef = useRef(null)
   const rolls = foods.filter(el => el.category_name === "Роллы")
   const coldSnacks = foods.filter(el => el.category_name === "Холодные закуски")
   const saladsMayonnaise = foods.filter(el => el.category_name === "Салаты с майонезом")
@@ -91,10 +95,11 @@ const Foods = ({active,setActive,modal,setModal}) => {
   const hotDrinks = foods.filter(el => el.category_name === "Горячие напитки")
   const coldDrinks = foods.filter(el => el.category_name === "Холдные")
   const flour = foods.filter(el => el.category_name === "Мучные")
-  console.log("Check",!burgerMenu && active === 1)
-useEffect(() => {
-  WindowClick()
-},[WindowClick])
+
+  useEffect(() => {
+    WindowClick()
+  },[active])
+  console.log("secondCoursesOfBeef",secondCoursesOfBeef)
 
   return (
     <div id="food">
@@ -102,46 +107,36 @@ useEffect(() => {
         <div className="food">
           <h1>{getTitle()}</h1>
             {
-              (!burgerMenu && active === 1)  ?
-                  WindowClick &&
+              active === 1  &&
                   firstMeal.map(el =>{
                 return <FoodCard el={el}
                                  key={el.id}
-                                 modal={modal}
-                                 setModal={setModal}
                 />
               })
-            : false
             }
           {
-            (!burgerMenu && active === 2) ? WindowClick &&
+            active === 2 ?
                 generalDishes.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
           }
           {
-            (!burgerMenu && active === 3) ? WindowClick &&
+             active === 3 ?
                 secondCoursesOfChicken.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
           }
           {
-            (!burgerMenu && active === 4) ? WindowClick &&
+            active === 4 ? WindowClick &&
                 secondCoursesOfBeef.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -151,8 +146,6 @@ useEffect(() => {
                 secondCoursesOfLamb.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -162,8 +155,6 @@ useEffect(() => {
                 secondCoursesOfFish.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -173,8 +164,6 @@ useEffect(() => {
                 banquetDishes.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -184,8 +173,6 @@ useEffect(() => {
                 lambDishes.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -195,8 +182,6 @@ useEffect(() => {
                 saladsMayonnaise.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -206,8 +191,6 @@ useEffect(() => {
                 saladsVegetableOil.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -217,8 +200,6 @@ useEffect(() => {
                 spicySalads.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -228,8 +209,6 @@ useEffect(() => {
                 hotDrinks.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -239,8 +218,6 @@ useEffect(() => {
                 coldDrinks.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -250,8 +227,6 @@ useEffect(() => {
                 childrensMenu.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -261,8 +236,6 @@ useEffect(() => {
                 flour.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -273,8 +246,6 @@ useEffect(() => {
                 sideDishes.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -285,8 +256,6 @@ useEffect(() => {
                 kebabs.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -297,8 +266,6 @@ useEffect(() => {
                 rolls.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false
@@ -308,8 +275,6 @@ useEffect(() => {
                 coldSnacks.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
-                                   modal={modal}
-                                   setModal={setModal}
                   />
                 })
                 : false

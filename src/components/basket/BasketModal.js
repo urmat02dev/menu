@@ -129,7 +129,7 @@ const BasketModal = () => {
                         </div>
                         <div className={"check"}>
                             <div className={"change"} style={{
-                                background:seconds  <1 ? "red" : ""
+                                background:seconds  < 1 ? "red" : ""
                             }} onClick={() => getNav()}><FaPencilAlt className={'icon11'}/>{t("order.change")}</div>
                             <span className={"change"} onClick={() => getSpeed()}><AiOutlineCheck className={'icon11'}/> {t("basket.cont")}</span>
                         </div>
