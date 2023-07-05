@@ -27,11 +27,10 @@ function App() {
 
     const getFakeFoods = () => {
         dispatch({type: GET_FOODS, payload: data})
-        nav("/1")
     }
 
     useEffect(() => {
-        getFoods()
+        getFakeFoods()
     }, [])
     return (
         <>
