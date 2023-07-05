@@ -32,13 +32,14 @@ function App() {
     useEffect(() => {
         getFakeFoods()
     }, [])
+    console.log("pa",params)
     return (
         <>
             <Routes>
                 <Route path={`/:id`} element={<Starts/>}/>
                 <Route path={`/${params}/main/`} element={<MainPage/>}/>
-                <Route path="/basket" element={<Basket/>}/>
-                <Route path="/search" element={<SearchResult/>}/>
+                <Route path={`/${params}/basket`} element={<Basket/>}/>
+                <Route path={`/${params}/search`} element={<SearchResult/>}/>
                 <Route path={`/${params}/main/print`} element={<BasketModal/>}/>
                 <Route path="/admin" element={<SignUp/>}/>
                 <Route path={`/orders`} element={<Admin/>}/>

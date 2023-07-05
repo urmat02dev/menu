@@ -71,13 +71,19 @@ const ModalCard = ({el}) => {
         }
     }
 
-    function getDesc(el) {
+    function  getDesc(el) {
         if (lang === "en") {
-            return el.description_en
+            return <p>{el.description_en.length >20 ? <p>{el.description_en.slice(0,el.description_en.length/2)} <br/>{el.description_en.slice(el.description_en.length/2, el.description_en.length)}
+            </p> : <p>{el.description_en}</p> }
+            </p>
         } else if (lang === "ru") {
-            return el.description_ru
+            return  <p>{el.description_ru && el.description_ru.length >20 ? <p>{el.description_ru.slice(0,25)} <br/>{el.description_ru.slice(25, el.description_ru.length)}
+            </p> : <p>{el.description_ru && el.description_ru.slice(0,30)}</p> }
+            </p>
         } else if (lang === "kg") {
-            return el.description_kg
+            return  <p>{el.description_kg.length >20 ? <p>{el.description_kg.slice(0,el.description_kg.length/2)} <br/>{el.description_kg.slice(el.description_kg.length/2, el.description_kg.length)}
+            </p> : <p>{el.description_kg}</p> }
+            </p>
         }
     }
     const getGram = (el) => {
@@ -110,7 +116,7 @@ const ModalCard = ({el}) => {
                             : <p className={"title"}>{getTitle(el)}</p>
                     }
                 </div>
-                <h3 className='modal--desc__h3'>{getDesc(el)}</h3>
+                <div style={{width:"200px" , fontSize:"15px"}}>{getDesc(el)}</div>
                 <div className="modal--desc__price">
                     <h5>Цена:<span>{el.add && el.add.length ? total + el.price * el.quantity : el.price * el.quantity}c</span>
                     </h5>

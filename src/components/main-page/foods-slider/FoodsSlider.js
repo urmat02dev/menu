@@ -18,7 +18,7 @@ const FoodsSlider = () => {
                 breakpoint: 992,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 1,
+                    slidesToScroll: 4,
                     infinite: true,
                 }
             },

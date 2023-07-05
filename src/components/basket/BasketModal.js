@@ -34,7 +34,7 @@ const BasketModal = () => {
                 top:0,
                 behavior:"smooth"
             })
-            nav("/basket")
+            nav(`/${params}/basket`)
         }
 
     }
@@ -83,9 +83,6 @@ const BasketModal = () => {
         }
     }
 
-    const getClose = () => {
-        nav(`/basket/`)
-    }
     const total = basket.reduce((acc,e) => {
         return acc + e.price * e.quantity
     },0)

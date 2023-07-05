@@ -10,6 +10,10 @@
         color: #004FC7;
         padding-left: 25px;
       }
+      .slick-prev,
+      .slick-next{
+        display: none;
+      }
         .active-tabsMeal{
           background: #004FC7;
           width: 280px;

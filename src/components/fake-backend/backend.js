@@ -411,9 +411,9 @@ export const data = [
         name_en: 'Деревенский',
         name_kg: 'Деревенский',
         name_ru: 'Деревенский',
-        description_en: '(Курин,груд,,огурцы,сыр,тильз.,опята марин.,яйцо,кукуруза)',
-        description_kg: '(Курин,груд,,огурцы,сыр,тильз.,опята марин.,яйцо,кукуруза)',
-        description_ru: '(Курин,груд,,огурцы,сыр,тильз.,опята марин.,яйцо,кукуруза)',
+        description_en: 'Курин,груд,,огурцы,сыр,тильз.,опята марин,яйцо,кукуруза)',
+        description_kg: 'Курин,груд,,огурцы,сыр,тильз.,опята марин,яйцо,кукуруза)',
+        description_ru: 'Курин,груд,,огурцы,сыр,тильз.,опята марин,яйцо,кукуруза)',
         price: 360,
         gram: '250',
         category_name: 'Салаты с майонезом',
@@ -599,7 +599,7 @@ export const data = [
         price: 310,
         gram: '',
         category_name: 'Шашлыки',
-        image: 'http://192.168.0.160:8000/media/dishes/D0B3D0BED0BBD0B5D0BDD18C-min-600x400.jpg',
+        image: 'https://steprecept.ru/wp-content/uploads/2020/11/%D0%B3%D0%BE%D0%BB%D0%B5%D0%BD%D1%8C-min-600x400.jpg',
         available_additives: []
     },
     {

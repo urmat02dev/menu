@@ -19,11 +19,12 @@ const Header = () => {
     };
   const nav = useNavigate()
     const getNav = () => {
-      nav("/basket")
+      nav(`/${params}/basket`)
     }
     const getBurgerMenu = () => {
       dispatch({type:BURGER_MENU, payload:!burgerMenu})
     }
+    console.log("PArams",params)
   return (
     <div id='header'>
         <div className="container">
@@ -32,7 +33,7 @@ const Header = () => {
                 <img src={img} alt=""/>
               </NavLink>
               <div className="header--end">
-                  <div className="header--end__one" onClick={() => nav("/basket")}>
+                  <div className="header--end__one" onClick={() =>       nav(`/${params}/basket`)}>
                     <div className={"sup"}
                          style={{
                            display: basket.length  ?  "flex" : "none"

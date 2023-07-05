@@ -10,7 +10,7 @@ import {BsBasket3Fill} from "react-icons/bs";
 const FoodPage = ({el}) => {
     const {t } = useTranslation()
     const nav = useNavigate()
-    const {basket} = useSelector(state => state)
+    const {basket, params} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
     const foundProduct = basket.some(e => e.id === el.id)
     const getTitle = (el) => {
@@ -41,7 +41,7 @@ const FoodPage = ({el}) => {
                     dispatch({type:MODAL,payload:true}) && dispatch({type: GET_DETAIL,payload:el})
                 }
                 else {
-                    nav('/basket')
+                    nav(`/${params}/basket`)
                 }
         }
 

@@ -25,7 +25,8 @@ const Starts = () => {
   };
   useEffect(() => {
     dispatch({type:GET_PARAMS, payload:id})
-  },[id])
+  },[])
+
 
   return (
     <div id={"start"}  onClick={() => nav(`/${id}/main`)}>

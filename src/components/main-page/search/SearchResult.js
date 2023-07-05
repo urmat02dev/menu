@@ -14,12 +14,12 @@ import {useNavigate} from "react-router-dom";
 const SearchResult = () => {
     const {t} = useTranslation()
     const nav = useNavigate()
-  const {search,foods} = useSelector(s => s)
+  const {search,foods,params} = useSelector(s => s)
   const [modal , setModal] = useState(false)
   const res = foods.filter(el  => el.name_ru.toLowerCase() === search.toLowerCase() || el.name_en.toLowerCase() === search.toLowerCase() || el.name_kg.toLowerCase() === search.toLowerCase() )
     function getNAv() {
         if (search === "") {
-            nav(`/${parametr}/main`)
+            nav(`/${params}/search`)
         }
     }
     useEffect(() => {

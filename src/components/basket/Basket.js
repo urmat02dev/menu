@@ -38,11 +38,6 @@ const Basket = () => {
     if ((here || withT)  && (cash || terminal) ) {
       return nav(`/${params}/main/print`)
     }
-    else {
-      setTimeout(() => {
-        setBtn(false)
-      },2000)
-    }
   }
 
   const total = basket.reduce((acc,e) => {
@@ -55,6 +50,7 @@ const Basket = () => {
     dispatch({type:TERMINAL,payload:false})
 
   },[basket.length])
+  console.log("BTN",btn)
 
   return basket.length ?
     <>
@@ -78,11 +74,17 @@ const Basket = () => {
                 <h1>{t("basket.status")}</h1>
               </div>
               <div  className='basket--status__general'>
-                <div onClick={() => getHere()}  className={ here ? "basket--status__general--here active" :"basket--status__general--here"}>
+                <div onClick={() => getHere()}  className={ here ? "basket--status__general--here active" :"basket--status__general--here"} style={{
+                  borderRadius: btn ? (!here && !withT) ?  "10px" : "none" : "",
+                  border: btn ? (!here && !withT) ?  "1px solid red" : "none" : ""
+                }}>
                   <h2>{t("basket.here")}</h2>
                 </div>
                 <div className={'signal'}></div>
-                <div onClick={() => getS()}  className={ withT ? "basket--status__general--with active" :"basket--status__general--with"}>
+                <div onClick={() => getS()}  className={ withT ? "basket--status__general--with active" :"basket--status__general--with"} style={{
+                  borderRadius: btn ? (!here && !withT) ?  "10px" : "none" : "",
+                  border: btn ? (!here && !withT) ?   "1px solid red" : "none" : ""
+                }}>
                   <h2>{t("basket.with")}</h2>
                 </div>
               </div>
@@ -93,12 +95,16 @@ const Basket = () => {
                 <h1>{t("basket.pay")}</h1>
               </div>
               <div className='basket--pay__block'>
-                <div className={cash ? "basket--pay__block--cash active" : "basket--pay__block--cash"} onClick={getCash} >
-                  <div style={{background: cash ? "white" : ""}}  className='basket--pay__block--cash__radus'></div>
-                  <h2 onClick={() => setCash2(!cash2)}>{t("basket.cash")}</h2>
+                <div className={cash ? "basket--pay__block--cash active" : "basket--pay__block--cash"} onClick={getCash} style={{
+                  border: btn ? (!cash && !terminal)  ? "2px solid red" : "" : ""
+                }}>
+                  <div style={{background: cash ? "white" : ""}}  className='basket--pay__block--cash__radus' ></div>
+                  <h2 onClick={() => setCash2(!cash2)} >{t("basket.cash")}</h2>
                 </div>
-                <div className={terminal ? "basket--pay__block--terminal active" : "basket--pay__block--terminal" } onClick={getTerm}>
-                  <div style={{background: terminal ? "white" : ""}}  className='basket--pay__block--terminal__radus'></div>
+                <div className={terminal ? "basket--pay__block--terminal active" : "basket--pay__block--terminal" } onClick={getTerm} style={{
+                  border: btn ? (!cash && !terminal)  ? "2px solid red" : "" : ''
+                }}>
+                  <div style={{background: terminal ? "white" : ""}}  className='basket--pay__block--terminal__radus' ></div>
                   <h2>{t("basket.term")}</h2>
                 </div>
               </div>
@@ -107,7 +113,7 @@ const Basket = () => {
 
             }}>
                 <button onClick={() => setBtn(true)} style={{
-                  background: btn ? (!here || !withT) || (!cash || !terminal)  ? "red" : "#004FC7" : "#004FC7"
+                  background: (here || withT) && (cash || terminal)  ? "#004FC7" : "red"
                 }}>{t("basket.cont")}</button>
             </div>
           </div>

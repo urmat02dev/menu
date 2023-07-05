@@ -27,11 +27,11 @@ const FoodCard = ({el}) => {
 
     function getDesc(el) {
         if (lang === "en") {
-            return el.description_en.slice(0,50)
+            return <p>{el.description_en.slice(0,20)}</p>
         } else if (lang === "ru") {
-            return el.description_ru.slice(0,50)
+            return <p>{el.description_ru.slice(0,20)}</p>
         } else if (lang === "kg") {
-            return el.description_kg.slice(0,50)
+            return  <p>{el.description_kg.slice(0,20)}</p>
         }
     }
 
@@ -58,7 +58,7 @@ const FoodCard = ({el}) => {
                     </div>
                     <div className="food--card__word">
                         <h2>{getTitle(el)}</h2>
-                        <p>{getDesc(el)}</p>
+                        {getDesc(el)}
                         <div className="food--card__word--order">
                             <h4>{el.price}c.</h4>
                             {
