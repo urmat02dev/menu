@@ -3,7 +3,7 @@ import './BurgerMenu.scss'
 import i18n from "i18next";
 import {useDispatch, useSelector} from "react-redux";
 import {BURGER_ACTIVE, BURGER_MENU, MODAL} from "../../redux/Reducer/ActionTypes";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import {BiBowlRice, BiDish, BiDrink, BiSushi} from "react-icons/bi";
 import {TbSalad} from "react-icons/tb";
@@ -22,17 +22,19 @@ const BurgerMenu = () => {
         i18n.changeLanguage(language);
     };
     const {t} = useTranslation()
+    const {id} = useParams()
 
     const getClose = async () => {
 
         dispatch({type:BURGER_MENU,payload:false})
+
     }
     console.log("Active", active)
     return (
         <>
             <div id={"blur"} hidden={!burgerMenu} style={{
                 zIndex:burgerMenu ? "99" : "",
-            }} onClick={() => getClose()}/>
+            }} onClick={() => getX()}/>
             <div style={{
                 left: burgerMenu ?  "" : "3000px",
                 zIndex:burgerMenu ? "99" : "",

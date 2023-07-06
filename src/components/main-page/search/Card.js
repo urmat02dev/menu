@@ -42,7 +42,6 @@ const Card = ({el}) => {
 
     function getWindow(el) {
             dispatch({type: MODAL, payload: true}) && dispatch({type: GET_DETAIL, payload: el})
-
     }
 
 

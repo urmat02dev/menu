@@ -10,6 +10,7 @@ import Modal from "../../modal/Modal";
 import ModalSearch from "../../modal/modalSearch";
 import {parametr} from "../../starts/random";
 import {useNavigate, useParams} from "react-router-dom";
+import BurgerMenu from "../../header/BurgerMenu";
 
 const SearchResult = () => {
     const {t} = useTranslation()
@@ -31,6 +32,7 @@ const SearchResult = () => {
       <Header/>
       <Search />
         <ModalSearch/>
+        <BurgerMenu/>
         <div className="container">
             {
                 res.length ?
