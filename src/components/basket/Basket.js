@@ -97,13 +97,13 @@ const Basket = () => {
               </div>
               <div className='basket--pay__block'>
                 <div className={cash ? "basket--pay__block--cash active" : "basket--pay__block--cash"} onClick={getCash} style={{
-                  border: btn ? (!cash && !terminal)  ? "2px solid red" : "" : ""
+                  border: btn ? (!cash && !terminal)  ? "1px solid red" : "" : ""
                 }}>
                   <div style={{background: cash ? "white" : ""}}  className='basket--pay__block--cash__radus' ></div>
                   <h2 onClick={() => setCash2(!cash2)} >{t("basket.cash")}</h2>
                 </div>
                 <div className={terminal ? "basket--pay__block--terminal active" : "basket--pay__block--terminal" } onClick={getTerm} style={{
-                  border: btn ? (!cash && !terminal)  ? "2px solid red" : "" : ''
+                  border: btn ? (!cash && !terminal)  ? "1px solid red" : "" : ''
                 }}>
                   <div style={{background: terminal ? "white" : ""}}  className='basket--pay__block--terminal__radus' ></div>
                   <h2>{t("basket.term")}</h2>
