@@ -26,6 +26,7 @@ const Starts = () => {
   useEffect(() => {
     dispatch({type:GET_PARAMS, payload:id})
   },[])
+  console.log("Id",id)
 
 
   return (

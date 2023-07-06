@@ -1,0 +1,462 @@
+.basket--card {
+  background: #FFFFFF;
+  display: flex;
+  width: 97%;
+  height: 260px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 20px;
+  margin: 20px 0;
+  animation: jan 1s ease-out;
+  padding: 20px 20px;
+    &__img {
+    margin-left: 2%;
+    width: 250px;
+    height: 230px;
+    border-radius: 10px;
+      @media (max-width: 768px) {
+        width: 200px;
+        height: 195px;
+      }
+      @media (max-width: 576px) {
+        width: 155px;
+        height: 150px;;
+      }
+      @media (max-width: 450px) {
+        width: 130px;
+        border-radius: 5px;
+        height: 125px;
+      }
+      @media (max-width: 428px) {
+        width: 110px;
+        height: 110px;
+      }
+      @media (max-width: 400px) {
+        width: 105px;
+        height: 105px;
+      }
+      @media (max-width: 360px) {
+        width: 97px;
+        height: 95px;
+      }
+  }
+    &__word {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    justify-content: space-around;
+      .desc {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom:10px;
+
+      .basket--desc--add {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 88%;
+        &--title{
+          .name{
+            font-family: 'Armin Grotesk', sans-serif;
+            font-size: 30px;
+            color: #0256d3;
+            font-weight: bold;
+          }
+          .gramm{
+            padding-top: 3px;
+            font-family: 'Armin Grotesk', sans-serif;
+            font-size: 28px;
+            color: #000000;
+          }
+          @media (max-width: 768px) {
+            .name{
+              font-size: 25px;
+            }
+            .gramm{
+              font-size: 24px;
+            }
+          }
+          @media (max-width: 576px) {
+            .name{
+              font-size: 20px;
+            }
+            .gramm{
+              font-size: 20px;
+            }
+          }
+          @media (max-width: 450px) {
+            .name{
+              font-size: 18px;
+            }
+            .gramm{
+              font-size: 18px;
+            }
+          }
+          @media (max-width: 428px) {
+            .name{
+              font-size: 16px;
+            }
+            .gramm{
+              font-size: 16px;
+            }
+          }
+          @media (max-width: 375px) {
+            .name{
+              font-size: 15px;
+            }
+            .gramm{
+              font-size: 15px;
+            }
+          }
+          @media (max-width: 320px) {
+            .name{
+              font-size: 14px;
+            }
+            .gramm{
+              font-size: 14px;
+            }
+          }
+        }
+
+      }
+
+      .close {
+        border-radius: 50%;
+        background: rgba(40, 49, 255, 0.3);
+        width: 35px;
+        height: 35px;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        .icon {
+          font-size: 25px;
+          color: white;
+
+        }
+        @media (max-width: 450px) {
+          width: 25px;
+          height: 25px;
+          .icon{
+            font-size: 20px;
+          }
+        }
+        @media (max-width: 390px) {
+          width: 20px;
+          height: 20px;
+          .icon{
+            font-size: 18px;
+          }
+        }
+      }
+
+
+    }
+
+    &--order {
+      margin-top: 30px;
+      width: 500px;
+      height: 80px;
+      background: #DFE2FF;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .price {
+        width: 200px;
+
+        h4 {
+          font-family: 'Armin Grotesk', sans-serif;
+          font-style: italic;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 22px;
+          color: #004FC7;
+          margin-left: 15px;
+        }
+      }
+
+      .count {
+        width: 170px;
+        height: 50px;
+        background: #004FC7;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 10px;
+        .quantity {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 22px;
+          width: 40px;
+          font-weight: 400;
+        }
+
+        span {
+          //width: 50px;
+          font-weight: 700;
+          color: white;
+          font-size: 22px;
+        }
+      }
+
+
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 260px;
+    &__word {
+      margin-left: 2%;
+      .desc {
+      }
+      &--order{
+        width: 100%;
+      }
+
+    }
+  }
+  @media (max-width: 576px) {
+    width: 92%;
+    height: 190px;
+    justify-content: space-between;
+    border-radius: 15px;
+      &__word {
+        width: 60%;
+        .desc{
+          margin-bottom: 15px;
+        }
+        &--order {
+          margin-top: 30px;
+          width: 100%;
+          height: 50px;
+          .price {
+            h4 {
+
+            }
+          }
+
+          .count {
+            width: 160px;
+            margin: 0 10px;
+            height: 40px;
+            .quantity {
+
+            }
+
+            span {
+
+            }
+          }
+
+
+        }
+      }
+    }
+  @media (max-width: 450px) {
+    height: 140px;
+    &__word {
+      width: 55%;
+        &--order {
+          margin-top: 10px;
+          width: 100%;
+          height: 40px;
+          border-radius: 7px;
+
+          .price {
+            h4 {
+              font-size: 17px;
+            }
+          }
+
+          .count {
+            width: 160px;
+            margin: 0 10px;
+            height: 30px;
+            border-radius: 3px;
+            .quantity{
+              font-size: 17px;
+            }
+            span{
+              font-size: 17px;
+            }
+          }
+
+
+        }
+      }
+  }
+  @media (max-width: 428px) {
+    height: 110px;
+      width: 90%;
+      &__word {
+        width: 60%;
+        .desc {
+          margin-bottom: 5px;
+        }
+        &--order {
+          border-radius: 5px;
+          .price {
+            h4 {
+              font-size: 16px;
+            }
+          }
+
+          .count {
+            width: 160px;
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+
+  @media (max-width: 414px) {
+      &__word {
+        width: 55%;
+        .desc {
+
+          .basket--desc--add {
+            .title {
+              width: 95%;
+              font-size: 18px;
+              line-height: 25px;
+            }
+            h2 {
+
+            }
+
+
+          }
+
+          p {
+
+            .basketAdded {
+            }
+          }
+
+          .close {
+
+            .icon {
+
+            }
+          }
+
+
+        }
+        &--order {
+          border-radius: 3px;
+          .count {
+            .quantity {
+              font-size: 16px;
+            }
+            span {
+              font-size: 16px;
+            }
+          }
+
+
+        }
+      }
+    }
+
+  @media (max-width: 400px) {
+    height: 100px;
+      &__word {
+        &--order {
+          height: 33px;
+          .count {
+            height: 24px;
+            span {
+              font-size: 16px;
+            }
+
+            .quantity {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+  }
+  @media (max-width: 390px) {
+      &__word {
+        &--order {
+          border-radius: 5px;
+          .price {
+            h4 {
+              font-size: 14px;
+            }
+          }
+          .count {
+            border-radius: 5px;
+            height: 26px;
+          }
+        }
+      }
+  }
+  @media (max-width: 375px) {
+    height: 93px;
+      &__word {
+        &--order {
+          .count {
+            height: 25px;
+            span {
+              font-size: 15px;
+            }
+
+            .quantity {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+
+  }
+  @media (max-width: 360px) {
+    height: 95px;
+      &__word {
+        &--order {
+          .count {
+            height: 26px;
+
+            span {
+              font-size: 14px;
+            }
+
+            .quantity {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+  }
+  @media (max-width: 320px) {
+    height: 80px;
+      &__word {
+        width: 53%;
+        &--order {
+          .price {
+            h4 {
+              font-size: 13px;
+            }
+          }
+          .count {
+            height: 22px;
+            .quantity {
+              font-size: 13px;
+            }
+            span {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+  }
+}
+
+
+

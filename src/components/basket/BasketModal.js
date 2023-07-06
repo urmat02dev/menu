@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import print from "../../assets/img/Vector.svg"
 import "./BasketModal.scss"
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import {BACKEND_GET_URL, ids, param, ran} from "../starts/random";
 import {useDispatch, useSelector} from "react-redux";
@@ -13,8 +13,9 @@ import {EMPTY_BASKET, GET_BASKET} from "../../redux/Reducer/ActionTypes";
 const BasketModal = () => {
     const nav = useNavigate()
     const {t} = useTranslation()
+    const {id} = useParams()
     const dispatch = useDispatch()
-    const {check,basket,add,params} = useSelector(state => state)
+    const {check,basket} = useSelector(state => state)
     const {here,withT,terminal,cash} = useSelector(s => s)
     const [items, setItems] = useState([])
     const [seconds, setSeconds] = useState(30);
@@ -34,14 +35,14 @@ const BasketModal = () => {
                 top:0,
                 behavior:"smooth"
             })
-            nav(`/${params}/basket`)
+            nav(`/${id}/basket`)
         }
 
     }
     const getSpeed = async () => {
-            nav(`/${params}/main/`)
+            nav(`/${id}/main/`)
             const data = {
-                table: params,
+                table: id,
                 is_takeaway:here ? 0 : 1,
                 payment:cash ? 0 : 1 ,
                 items: basket.map((el) => {
@@ -62,9 +63,9 @@ const BasketModal = () => {
         }
     const getBackend = async () => {
         if (seconds  === -2){
-            nav(`/${params}/main/`)
+            nav(`/${id}/main/`)
             await axios.post(`${BACKEND_GET_URL}/api/orders`,{
-                table: params,
+                table: id,
                 is_takeaway:here ? 0 : 1,
                 payment:cash ? 0 : 1 ,
                 items: basket.map   ((el) => {
@@ -86,7 +87,21 @@ const BasketModal = () => {
     const total = basket.reduce((acc,e) => {
         return acc + e.price * e.quantity
     },0)
+    const data = {
+        table: id,
+        is_takeaway:here ? 0 : 1,
+        payment:cash ? 0 : 1 ,
+        items: basket.map   ((el) => {
+            return {
+                "additives": el.add ?  el.add.map(item => item.id) : [],
+                "dish": el.id,
+                "quantity": el.quantity,
 
+            }
+
+        })
+    }
+    console.log("DATA",data)
 
     useEffect(() => {
         window.scroll({top:50, behavior:"smooth"})

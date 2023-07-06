@@ -1,0 +1,43 @@
+#tables{
+  h1{
+    margin-top: 2%;
+    text-align: center;
+    @media (max-width: 450px) {
+      font-size: 23px;
+    }
+  }
+  .table{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    .block{
+      margin: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 60px;
+      border-radius: 10px;
+      background: #0256d3;
+      color: white;
+      font-size: 25px;
+      @media (max-width: 576px) {
+        width: 200px;
+        height: 50px;
+      }
+      @media (max-width: 450px) {
+        width: 160px;
+        height: 40px;
+        font-size: 23px;
+      }
+      @media (max-width: 428px) {
+        width: 140px;
+        height: 35px;
+        font-size: 22px;
+      }
+    }
+
+  }
+}

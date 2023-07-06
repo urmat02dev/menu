@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "./Basket.scss"
 import Header from "../header/Header";
-import { useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import group from "../../assets/img/Group.svg"
 import {useTranslation} from "react-i18next";
 import BasketCard from "./BasketCard";
@@ -13,9 +13,10 @@ const Basket = () => {
 
   const nav = useNavigate()
   let item = []
+  const {id} = useParams()
   const {t} = useTranslation()
   const dispatch = useDispatch()
-  const {basket,params} = useSelector(s => s)
+  const {basket} = useSelector(s => s)
   const {here,withT,terminal,cash,order,pay} = useSelector(s => s)
   const [loader, setLoader] = useState(false)
   const [btn,setBtn] = useState(false)
@@ -36,7 +37,7 @@ const Basket = () => {
 
   const getModal = async () => {
     if ((here || withT)  && (cash || terminal) ) {
-      return nav(`/${params}/main/print`)
+      return nav(`/${id}/main/print`)
     }
   }
 
@@ -134,7 +135,7 @@ const Basket = () => {
             </div>
 
           </div>
-          <div className={"btn"} onClick={() => nav(`/${params}/main`) }>
+          <div className={"btn"} onClick={() => nav(`/${id}/main`) }>
             <button>{t("basket.btn")}</button>
           </div>
         </div>

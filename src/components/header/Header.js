@@ -4,7 +4,7 @@ import logos from "../../assets/img/logos.svg"
 import img from "../../assets/img/uluu_too_2.svg"
 import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
-import {NavLink, Route, Routes, useNavigate} from "react-router-dom";
+import {NavLink, Route, Routes, useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {BURGER_MENU} from "../../redux/Reducer/ActionTypes";
 
@@ -18,22 +18,23 @@ const Header = () => {
         i18n.changeLanguage(language);
     };
   const nav = useNavigate()
+    const {id} = useParams()
     const getNav = () => {
-      nav(`/${params}/basket`)
+      nav(`/${id}/basket`)
     }
     const getBurgerMenu = () => {
       dispatch({type:BURGER_MENU, payload:!burgerMenu})
     }
-    console.log("PArams",params)
+    console.log("PArams",id)
   return (
     <div id='header'>
         <div className="container">
           <div className="header">
-              <NavLink to={`/${params}/main`}>
+              <NavLink to={`/${id}/main`}>
                 <img src={img} alt=""/>
               </NavLink>
               <div className="header--end">
-                  <div className="header--end__one" onClick={() =>       nav(`/${params}/basket`)}>
+                  <div className="header--end__one" onClick={() => nav(`/${id}/basket`)}>
                     <div className={"sup"}
                          style={{
                            display: basket.length  ?  "flex" : "none"

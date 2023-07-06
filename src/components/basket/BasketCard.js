@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import "./Basket.scss"
+import "./BasketCard.scss"
 import {IoMdClose} from "react-icons/io";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {useDispatch, useSelector} from "react-redux";
@@ -76,17 +76,19 @@ const BasketCard = ({el}) => {
 
 
     const title = el.add && el.add.map(el => getAddTitle(el))
+
+    console.log("GRAN",el.add)
     return (
 
-        <div className="basket--card" key={el.id} style={{translateY: del ? '-400px' : ''}}>
+        <div className="basket--card" key={el.id}>
             <img className="basket--card__img" src={el.image} alt=""/>
             <div className="basket--card__word">
                 <div className={"desc"}>
-                    <div className="basket--desc--add">{
-                        el.add ? <p className={"title"}>{getTitle(el)}{add} <span
-                                className={"basketAdded"}> <br/> {title.length ? "+" : ""} {title}</span></p>
-                            : <p className={"title--dd"}>{getTitle(el)}{add}</p>
-                    }
+                    <div className="basket--desc--add">
+                            <div className={"basket--desc--add--title"}>
+                                <p className={"name"}>{getTitle(el)}</p>
+                                <p className={"gramm"}>{getGram(el)}</p>
+                            </div>
                     </div>
                     <div className="close" onClick={() => {
                         getDelete()
@@ -94,10 +96,8 @@ const BasketCard = ({el}) => {
                         <IoMdClose className={"icon"}/>
                     </div>
                 </div>
-                <p>{getGram(el)}
-                </p>
-                <div className="basket--card__word--order">
 
+                <div className="basket--card__word--order">
                     <div className={"price"}>
                         <h4>{el.price * el.quantity}{t("basket.s")}</h4>
                     </div>

@@ -5,11 +5,12 @@ import "./FoodCard.scss"
 import {useDispatch, useSelector} from "react-redux";
 import {GET_BASKET, GET_DETAIL, MODAL} from "../../../redux/Reducer/ActionTypes";
 import {BiBasket} from "react-icons/bi";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const FoodCard = ({el}) => {
     const {t} = useTranslation()
     const nav = useNavigate()
+    const {id} = useParams()
     const {basket, modal} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
     const dispatch = useDispatch()
@@ -38,7 +39,7 @@ const FoodCard = ({el}) => {
     function getWindow(el) {
         if (foundProduct){
             dispatch({type: MODAL, payload: false})
-            nav("/basket")
+            nav(`/${id}/basket`)
         }
         else dispatch({type: MODAL, payload: true}) && dispatch({type: GET_DETAIL, payload: el})
     }

@@ -28,7 +28,9 @@ const BurgerMenu = () => {
     console.log("Active", active)
     return (
         <>
-        <div id={"blur"} hidden={!burgerMenu} onClick={() => getClose()}/>
+        <div id={"blur"} hidden={!burgerMenu} style={{
+            zIndex:burgerMenu ? "99" : "",
+        }} onClick={() => getClose()}/>
             <div style={{
                 left: burgerMenu ?  "" : "3000px",
                 zIndex:burgerMenu ? "99" : "",

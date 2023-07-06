@@ -13,12 +13,12 @@ import axios from "axios";
 import Admin from "./components/admin/Admin";
 import SignUp from "./components/admin/signUp/SignUp";
 import {data} from "./components/fake-backend/backend";
+import Tables from "./components/tables/Tables";
 
 
 function App() {
     const dispatch = useDispatch()
     const {params} = useSelector(state => state)
-    const nav = useNavigate()
     async function getFoods() {
         const url = await axios.get(`${BACKEND_GET_URL}dishes`)
         const {data} = url
@@ -36,11 +36,12 @@ function App() {
     return (
         <>
             <Routes>
+                <Route path={"/"} element={<Tables/>}/>
                 <Route path={`/:id`} element={<Starts/>}/>
-                <Route path={`/${params}/main/`} element={<MainPage/>}/>
-                <Route path={`/${params}/basket`} element={<Basket/>}/>
-                <Route path={`/${params}/search`} element={<SearchResult/>}/>
-                <Route path={`/${params}/main/print`} element={<BasketModal/>}/>
+                <Route path={`/:id/main/`} element={<MainPage/>}/>
+                <Route path={`/:id/basket`} element={<Basket/>}/>
+                <Route path={`/:id/search`} element={<SearchResult/>}/>
+                <Route path={`/:id/main/print`} element={<BasketModal/>}/>
                 <Route path="/admin" element={<SignUp/>}/>
                 <Route path={`/orders`} element={<Admin/>}/>
             </Routes>

@@ -14,13 +14,13 @@ import {parametr, ran} from "../starts/random";
 const Modal = () => {
     const {modal} = useSelector(state => state)
     const {detail,params} =  useSelector(state => state)
-
+    const {id} = useParams()
     const nav = useNavigate()
     const dispatch = useDispatch()
     const lang = localStorage.getItem("i18nextLng")
     const getClose = async () => {
         dispatch({type:MODAL,payload:false})
-        nav(`/${params}/main`)
+        nav(`/${id}/main`)
     }
 
   return (

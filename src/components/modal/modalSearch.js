@@ -12,13 +12,13 @@ import ModalCard from "./ModalCard";
 const ModalSearch = () => {
     const {modal} = useSelector(state => state)
     const {detail} =  useSelector(state => state)
-
+    const {id} = useParams()
     const nav = useNavigate()
     const dispatch = useDispatch()
     const lang = localStorage.getItem("i18nextLng")
     const getClose = async () => {
         await dispatch({type:MODAL,payload:false})
-        nav(`/search`)
+        nav(`/${id}/search`)
     }
 
     return (

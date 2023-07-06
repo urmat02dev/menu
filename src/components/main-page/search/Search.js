@@ -4,22 +4,22 @@ import {AiOutlineSearch} from "react-icons/ai";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 import { SEARCH} from "../../../redux/Reducer/ActionTypes";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {HiOutlineSearch} from "react-icons/hi";
 const Search = ({setModal,modal}) => {
   const {t} = useTranslation()
   const lang = localStorage.getItem("i18nextLng")
-
+  const {id} = useParams()
   const dispatch = useDispatch()
   const nav = useNavigate()
-  const {foods,params} = useSelector(s => s)
+  const {foods} = useSelector(s => s)
   const [value , setValue] = useState("")
   function getSearch (e) {
     setValue(e.target.value.toLowerCase())
     if (value !== "") {
       if (e.key === "Enter") {
         dispatch({type: SEARCH, payload: value})
-        nav(`/${params}/search`)
+        nav(`/${id}/search`)
         e.target.value = ""
       }
     }
@@ -38,13 +38,11 @@ const Search = ({setModal,modal}) => {
   function getSearchClick () {
     if (value !== "") {
         dispatch({type: SEARCH, payload: value})
-      nav(`/${params}/search`)
+      nav(`/${id}/search`)
       }
   }
   const fifa = foods.find(el => el.name_ru.toLowerCase().includes(value))
 
-
-  console.log("params", params)
 
   return (
       <div id='search'>
@@ -64,7 +62,7 @@ const Search = ({setModal,modal}) => {
                       value !=="" &&  <div className={"search--block__modal"}>{el.name_kg.toLowerCase().includes(value) || el.name_ru.toLowerCase().includes(value) ||  el.name_en.toLowerCase().includes(value) ?
                             <p onClick={() =>  {
                           dispatch({type: SEARCH, payload: el.name_ru.toLowerCase() || el.name_kg.toLowerCase() || el.name_en.toLowerCase()})
-                              nav(`/${params}/search`)
+                              nav(`/${id}/search`)
                           setValue("")
                         }}> <HiOutlineSearch className="p-ic"/> {getTitle(el)}</p> : false}</div>
                     }
