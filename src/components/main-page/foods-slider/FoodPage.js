@@ -3,13 +3,14 @@ import {BiBasket} from "react-icons/bi";
 import {useTranslation} from "react-i18next";
 import {GET_BASKET, GET_DETAIL, MODAL} from "../../../redux/Reducer/ActionTypes";
 import {useDispatch, useSelector} from "react-redux";
-import { useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import "./FoodPage.scss"
 import {BsBasket3Fill} from "react-icons/bs";
 
 const FoodPage = ({el}) => {
     const {t } = useTranslation()
     const nav = useNavigate()
+    const {id} = useParams()
     const {basket} = useSelector(state => state)
     const lang = localStorage.getItem("i18nextLng")
     const foundProduct = basket.some(e => e.id === el.id)
@@ -26,13 +27,13 @@ const FoodPage = ({el}) => {
     }
     function getDesc(el) {
         if (lang === "en"){
-            return el.description_en.slice(0,30)
+            return el.description_en.slice(0,20)
         }
         else if (lang === "ru"){
-            return el.description_ru.slice(0,30)
+            return el.description_ru.slice(0,20)
         }
         else if (lang === "kg"){
-            return el.description_kg.slice(0,30)
+            return el.description_kg.slice(0,20)
         }
     }
     const dispatch = useDispatch()
@@ -41,7 +42,7 @@ const FoodPage = ({el}) => {
                     dispatch({type:MODAL,payload:true}) && dispatch({type: GET_DETAIL,payload:el})
                 }
                 else {
-                    nav('/basket')
+                    nav(`/${id}/basket`)
                 }
         }
 
@@ -66,7 +67,7 @@ const FoodPage = ({el}) => {
                 <h3>{el.price}c</h3>
                 {
                     foundProduct ?
-                        <div onClick={() => nav("/basket")} className="foods--one__basket--icon"><BsBasket3Fill/></div>
+                        <div onClick={() => nav(`/${id}/basket`)} className="foods--one__basket--icon"><BsBasket3Fill/></div>
                         :<div className="foods--one__basket--icon" onClick={() => getBasket(el)}>
                         <BiBasket className='icon'/>
                         </div>

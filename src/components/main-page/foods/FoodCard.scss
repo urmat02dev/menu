@@ -214,6 +214,7 @@
         h2 {
           font-size: 18px;
           padding-top: 10px;
+          width: 92%;
         }
         p {
           width: 230px;
@@ -252,7 +253,9 @@
         }
       }
       &__word {
-
+        p {
+          width: 218px;
+        }
       }
     }
   }
@@ -272,7 +275,7 @@
         margin-left: 10px;
         p {
           width: 180px;
-          font-size: 11px;
+          font-size: 15px;
           line-height: 20px;
         }
         &--order {

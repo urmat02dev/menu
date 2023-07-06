@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import FoodPage from "./FoodPage";
 import {useTranslation} from "react-i18next";
 import {useSelector} from "react-redux";
-const FoodsSlider = ({modal,setModal,best}) => {
+const FoodsSlider = () => {
     const {t} = useTranslation()
     const {foods} = useSelector(state => state)
     let settings = {
@@ -13,12 +13,13 @@ const FoodsSlider = ({modal,setModal,best}) => {
         slidesToShow: 3,
         slidesToScroll: 2,
         initialSlide: 0,
+        arrows:false,
         responsive: [
             {
                 breakpoint: 992,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 1,
+                    slidesToScroll: 4,
                     infinite: true,
                 }
             },
@@ -83,7 +84,6 @@ const FoodsSlider = ({modal,setModal,best}) => {
 
   return (
     <div id='foods' style={{
-        display:best ? "flex" : "none"
     }}>
       <div className="container">
           <h2 title="PLease Update Foods our restaurnat">{t('category.1')}</h2>
@@ -93,8 +93,7 @@ const FoodsSlider = ({modal,setModal,best}) => {
                     bests.map((el) => {
                         return <FoodPage el={el}
                                          key={el.id}
-                                         modal={modal}
-                                         setModal={setModal}/>
+                        />
                     })
                 }
             </Slider>

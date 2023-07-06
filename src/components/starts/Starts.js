@@ -10,6 +10,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {GET_PARAMS} from "../../redux/Reducer/ActionTypes";
 const Starts = () => {
   const nav = useNavigate()
+  const {params} = useSelector(state => state)
   const dispatch = useDispatch()
   const {id} = useParams()
   const settings = {
@@ -24,7 +25,9 @@ const Starts = () => {
   };
   useEffect(() => {
     dispatch({type:GET_PARAMS, payload:id})
-  },[id])
+  },[])
+  console.log("Id",id)
+
 
   return (
     <div id={"start"}  onClick={() => nav(`/${id}/main`)}>

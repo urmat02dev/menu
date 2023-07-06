@@ -11,7 +11,7 @@ export const data = [
         price: 480,
         gram: '',
         category_name: 'Вторые блюда из говядины',
-        image: 'http://192.168.0.160:8000/media/dishes/407e435b469e6882e7ff52a9effd9e0d---jpg_1000x_103c0_convert.jpg',
+        image: 'https://cdn.foodpicasso.com/assets/2021/08/25/407e435b469e6882e7ff52a9effd9e0d---jpg_1000x_103c0_convert.jpg',
         available_additives: []
     },
     {
@@ -25,7 +25,7 @@ export const data = [
         price: 750,
         gram: '',
         category_name: 'Вторые блюда из рыбы',
-        image: 'http://192.168.0.160:8000/media/dishes/bf6602b7_3M2PIXF.jpg',
+        image: 'https://www.gastronom.ru/binfiles/images/20211130/bf6602b7.jpg',
         available_additives: []
     },
     {
@@ -39,7 +39,7 @@ export const data = [
         price: 370,
         gram: '',
         category_name: 'Вторые блюда из курицы',
-        image: 'http://192.168.0.160:8000/media/dishes/7baada.jpg',
+        image: 'https://alimero.ru/uploads/images/20/74/56/2019/05/24/7baada.jpg',
         available_additives: []
     },
     {
@@ -53,7 +53,7 @@ export const data = [
         price: 370,
         gram: '',
         category_name: 'Вторые блюда из рыбы',
-        image: 'http://192.168.0.160:8000/media/dishes/recept-30469-620x413_w_GwyMxgj.jpg',
+        image: 'https://i.lefood.menu/wp-content/uploads/w_images/2022/01/recept-30469-620x413_w.jpg',
         available_additives: []
     },
     {
@@ -67,7 +67,7 @@ export const data = [
         price: 460,
         gram: '',
         category_name: 'Вторые блюда из рыбы',
-        image: 'http://192.168.0.160:8000/media/dishes/rainbow-trout-in-the-foil_2O2WkOY.jpg',
+        image: 'https://recipe-catalog.ru/wp-content/uploads/2017/11/rainbow-trout-in-the-foil.jpg',
         available_additives: []
     },
     {
@@ -81,7 +81,7 @@ export const data = [
         price: 400,
         gram: '',
         category_name: 'Вторые блюда из говядины',
-        image: 'http://192.168.0.160:8000/media/dishes/80452-ed4_wide.jpg',
+        image: 'https://recipe-catalog.ru/wp-content/uploads/2017/11/rainbow-trout-in-the-foil.jpg',
         available_additives: []
     },
     {
@@ -95,7 +95,7 @@ export const data = [
         price: 370,
         gram: '',
         category_name: 'Вторые блюда из баранины',
-        image: 'http://192.168.0.160:8000/media/dishes/u-1a8b0c34787e5e9ea0e70b41899cf66d.jpg',
+        image: 'https://img.iamcook.ru/old/upl/recipes/cat/u-1a8b0c34787e5e9ea0e70b41899cf66d.jpg',
         available_additives: []
     },
     {
@@ -109,7 +109,7 @@ export const data = [
         price: 480,
         gram: '',
         category_name: 'Вторые блюда из рыбы',
-        image: 'http://192.168.0.160:8000/media/dishes/893_0193br3_0853_1024.jpg',
+        image: 'https://ist.say7.info/img0008/93/893_0193br3_0853_1024.jpg',
         available_additives: []
     },
     {
@@ -123,7 +123,7 @@ export const data = [
         price: 550,
         gram: '',
         category_name: 'Вторые блюда из говядины',
-        image: 'http://192.168.0.160:8000/media/dishes/47581.jpg',
+        image: 'https://www.kulina.ru/images/art/47581.jpg',
         available_additives: []
     },
     {
@@ -137,7 +137,7 @@ export const data = [
         price: 450,
         gram: '',
         category_name: 'Вторые блюда из баранины',
-        image: 'http://192.168.0.160:8000/media/dishes/steik-iz-baraniny_1538226183_1_max.jpg',
+        image: 'https://static.1000.menu/img/content/28880/steik-iz-baraniny_1538226183_1_max.jpg',
         available_additives: []
     },
     {
@@ -151,7 +151,7 @@ export const data = [
         price: 550,
         gram: '',
         category_name: 'Вторые блюда из говядины',
-        image: 'http://192.168.0.160:8000/media/dishes/338ior.jpg',
+        image: 'https://www.steak.ee/338ior.jpg?key=330d35b84ebb42fa9d37e65f1c5bacc3',
         available_additives: []
     },
     {
@@ -165,7 +165,7 @@ export const data = [
         price: 400,
         gram: '',
         category_name: 'Вторые блюда из говядины',
-        image: 'http://192.168.0.160:8000/media/dishes/a6fc538f39d05e73b3985723f33e0784.jpg',
+        image: 'https://www.steakhome.ru/upload/iblock/a6f/a6fc538f39d05e73b3985723f33e0784.jpg',
         available_additives: []
     },
     {
@@ -179,7 +179,7 @@ export const data = [
         price: 830,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/zakuska-pogrebok.800x600w.jpg',
+        image: 'https://navat.kg/dostavka/files/products/zakuska-pogrebok.800x600w.jpg',
         available_additives: []
     },
     {
@@ -193,7 +193,7 @@ export const data = [
         price: 340,
         gram: '',
         category_name: 'Вторые блюда из курицы',
-        image: 'http://192.168.0.160:8000/media/dishes/kurinye-otbivnye-s-syrom-v-duxovke_1538302173_10_max.jpg',
+        image: 'https://static.1000.menu/img/content/28923/kurinye-otbivnye-s-syrom-v-duxovke_1538302173_10_max.jpg',
         available_additives: []
     },
     {
@@ -207,7 +207,7 @@ export const data = [
         price: 480,
         gram: '',
         category_name: 'Вторые блюда из баранины',
-        image: 'http://192.168.0.160:8000/media/dishes/15707100270049.jpg',
+        image: 'https://market.vseokoree.com/images/product/15707100270049.jpg',
         available_additives: []
     },
     {
@@ -221,7 +221,7 @@ export const data = [
         price: 450,
         gram: '',
         category_name: 'Вторые блюда из говядины',
-        image: 'http://192.168.0.160:8000/media/dishes/k-1618-00.jpg',
+        image: 'https://pojrem.ru/img2/k-1618-00.jpg',
         available_additives: []
     },
     {
@@ -235,7 +235,7 @@ export const data = [
         price: 900,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/5d5fdc9918144.jpg',
+        image: 'https://family-place.vn.ua/uploads/5d5fdc9918144.jpg',
         available_additives: []
     },
     {
@@ -249,7 +249,7 @@ export const data = [
         price: 390,
         gram: '',
         category_name: 'Вторые блюда из говядины',
-        image: 'http://192.168.0.160:8000/media/dishes/150329.png',
+        image: 'https://nambafood.kg/dish_image/150329.png',
         available_additives: []
     },
     {
@@ -263,7 +263,7 @@ export const data = [
         price: 350,
         gram: '',
         category_name: 'Вторые блюда из курицы',
-        image: 'http://192.168.0.160:8000/media/dishes/49_1636992483-scaled-e1636992539507-1280x640.jpg',
+        image: 'https://cdn.lifehacker.ru/wp-content/uploads/2021/11/49_1636992483-scaled-e1636992539507-1280x640.jpg',
         available_additives: []
     },
     {
@@ -277,7 +277,7 @@ export const data = [
         price: 380,
         gram: '',
         category_name: 'Вторые блюда из курицы',
-        image: 'http://192.168.0.160:8000/media/dishes/big_352829.jpg',
+        image: 'https://img1.russianfood.com/dycontent/images_upl/353/big_352829.jpg',
         available_additives: []
     },
     {
@@ -291,7 +291,7 @@ export const data = [
         price: 340,
         gram: '',
         category_name: 'Вторые блюда из курицы',
-        image: 'http://192.168.0.160:8000/media/dishes/5ea1ca7e3577c.jpg',
+        image: 'https://nyamkin.ru/images/recepts/medium/5ea1ca7e3577c.jpg',
         available_additives: []
     },
     {
@@ -305,7 +305,7 @@ export const data = [
         price: 300,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/Air-Fryer-Chicken-Nuggets-sq.jpg',
+        image: 'https://bakeitwithlove.com/wp-content/uploads/2021/05/Air-Fryer-Chicken-Nuggets-sq.jpg',
         available_additives: []
     },
     {
@@ -313,13 +313,13 @@ export const data = [
         name_en: 'Погребок',
         name_kg: 'Погребок',
         name_ru: 'Погребок',
-        description_en: '(Маррин,опята,помид,черри,патис,корниш,кукур,початки,грузди,лист.салата)',
-        description_kg: '(Маррин,опята,помид,черри,патис,корниш,кукур,початки,грузди,лист.салата)',
-        description_ru: '(Маррин,опята,помид,черри,патис,корниш,кукур,початки,грузди,лист.салата)',
+        description_en: 'Маррин,опята,помид,черри,патис,корниш,кукур,початки,грузди,лист.салата',
+        description_kg: 'Маррин,опята,помид,черри,патис,корниш,кукур,початки,грузди,лист.салата',
+        description_ru: 'Маррин,опята,помид,черри,патис,корниш,кукур,початки,грузди,лист.салата',
         price: 380,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/BABUSHKINY-SOLENYA.png',
+        image: 'https://bakeitwithlove.com/wp-content/uploads/2021/05/Air-Fryer-Chicken-Nuggets-sq.jpg',
         available_additives: []
     },
     {
@@ -327,13 +327,13 @@ export const data = [
         name_en: 'Сельдь по русски',
         name_kg: 'Сельдь по русски',
         name_ru: 'Сельдь по русски',
-        description_en: '(Сельдь,карт.,Корниш.,Лук репч., Черри помид)',
-        description_kg: '(Сельдь,карт.,Корниш.,Лук репч., Черри помид)',
-        description_ru: '(Сельдь,карт.,Корниш.,Лук репч., Черри помид)',
+        description_en: 'Сельдь,карт.,Корниш.,Лук репч., Черри помид',
+        description_kg: 'Сельдь,карт.,Корниш.,Лук репч., Черри помид',
+        description_ru: 'Сельдь,карт.,Корниш.,Лук репч., Черри помид',
         price: 350,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/D181D0B5D0BBD18CD0B4D18C-500x500.jpg',
+        image: 'https://butiksarov.ru/image/cache/catalog/6.%20%D0%97%D0%B0%D0%BA%D1%83%D1%81%D0%BA%D0%B8%20%D1%84%D1%80%D0%B8/%D0%A5%D0%BE%D0%BB%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5/%D1%81%D0%B5%D0%BB%D1%8C%D0%B4%D1%8C-500x500.jpg',
         available_additives: []
     },
     {
@@ -347,7 +347,7 @@ export const data = [
         price: 320,
         gram: '',
         category_name: 'Шашлыки',
-        image: 'http://192.168.0.160:8000/media/dishes/salat-tbilisi-s-govyadinoj-i-fasolyu.jpg',
+        image: 'https://2recepta.com/recept/salat-tbilisi-s-govyadinoj-i-fasolyu/salat-tbilisi-s-govyadinoj-i-fasolyu.jpg',
         available_additives: []
     },
     {
@@ -361,7 +361,7 @@ export const data = [
         price: 310,
         gram: '',
         category_name: 'Шашлыки',
-        image: 'http://192.168.0.160:8000/media/dishes/big_516241.jpg',
+        image: 'https://img1.russianfood.com/dycontent/images_upl/517/big_516241.jpg',
         available_additives: []
     },
     {
@@ -375,7 +375,7 @@ export const data = [
         price: 370,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/035c26a3b5.JPG',
+        image: 'https://rutxt.ru/files/6634/original/035c26a3b5.JPG',
         available_additives: []
     },
     {
@@ -389,7 +389,7 @@ export const data = [
         price: 1050,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/assorti-nacionalnoe.800x600w.png',
+        image: 'https://dostavka-navat.kz/files/products/assorti-nacionalnoe.800x600w.png',
         available_additives: []
     },
     {
@@ -403,7 +403,7 @@ export const data = [
         price: 370,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/rulet-iz-kabachkov-s-pomidorami_1539181411_2_max.jpg',
+        image: 'https://static.1000.menu/img/content/28996/rulet-iz-kabachkov-s-pomidorami_1539181411_2_max.jpg',
         available_additives: []
     },
     {
@@ -411,13 +411,13 @@ export const data = [
         name_en: 'Деревенский',
         name_kg: 'Деревенский',
         name_ru: 'Деревенский',
-        description_en: '(Курин,груд,,огурцы,сыр,тильз.,опята марин.,яйцо,кукуруза)',
-        description_kg: '(Курин,груд,,огурцы,сыр,тильз.,опята марин.,яйцо,кукуруза)',
-        description_ru: '(Курин,груд,,огурцы,сыр,тильз.,опята марин.,яйцо,кукуруза)',
+        description_en: 'Курин,груд,,огурцы,сыр,тильз.,опята марин,яйцо,кукуруза)',
+        description_kg: 'Курин,груд,,огурцы,сыр,тильз.,опята марин,яйцо,кукуруза)',
+        description_ru: 'Курин,груд,,огурцы,сыр,тильз.,опята марин,яйцо,кукуруза)',
         price: 360,
         gram: '250',
         category_name: 'Салаты с майонезом',
-        image: 'http://192.168.0.160:8000/media/dishes/maxresdefault.jpg',
+        image: 'https://i.ytimg.com/vi/1IwGOAUzDwE/maxresdefault.jpg',
         available_additives: []
     },
     {
@@ -431,7 +431,7 @@ export const data = [
         price: 1050,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/77948.png',
+        image: 'https://nambafood.kg/dish_image/77948.png',
         available_additives: []
     },
     {
@@ -445,7 +445,7 @@ export const data = [
         price: 360,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/shutterstock_1154255068_1577700632-e1578638356632-1280x640.jpg',
+        image: 'https://cdn.lifehacker.ru/wp-content/uploads/2019/12/shutterstock_1154255068_1577700632-e1578638356632-1280x640.jpg',
         available_additives: []
     },
     {
@@ -459,7 +459,7 @@ export const data = [
         price: 700,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/1582915043.jpg',
+        image: 'https://market.vseokoree.com/images/product/1582915043.jpg',
         available_additives: []
     },
     {
@@ -473,7 +473,7 @@ export const data = [
         price: 360,
         gram: '250',
         category_name: 'Салаты с майонезом',
-        image: 'http://192.168.0.160:8000/media/dishes/salat_lora_s_baklajanami-756594.JPG',
+        image: 'https://img.povar.ru/mobile/9e/ab/9f/3e/salat_lora_s_baklajanami-756594.JPG',
         available_additives: []
     },
     {
@@ -487,7 +487,7 @@ export const data = [
         price: 380,
         gram: '',
         category_name: 'Холодные закуски',
-        image: 'http://192.168.0.160:8000/media/dishes/k69a0347.jpg',
+        image: 'https://golpas.cafe/uploads/2018/10/k69a0347.jpg',
         available_additives: []
     },
     {
@@ -501,7 +501,7 @@ export const data = [
         price: 260,
         gram: '250',
         category_name: 'Салаты с майонезом',
-        image: 'http://192.168.0.160:8000/media/dishes/b9d2e6d3.jpeg',
+        image: 'https://www.gastronom.ru/binfiles/images/20201125/b9d2e6d3.jpeg',
         available_additives: []
     },
     {
@@ -515,7 +515,7 @@ export const data = [
         price: 340,
         gram: '250',
         category_name: 'Салаты с майонезом',
-        image: 'http://192.168.0.160:8000/media/dishes/7_1574415972-e1574415999301-630x315.jpg',
+        image: 'https://cdn.lifehacker.ru/wp-content/uploads/2019/11/7_1574415972-e1574415999301-630x315.jpg',
         available_additives: []
     },
     {
@@ -529,7 +529,7 @@ export const data = [
         price: 320,
         gram: '250',
         category_name: 'Салаты с майонезом',
-        image: 'http://192.168.0.160:8000/media/dishes/b41104385fba5e894902de571ef1e553.jpg',
+        image: 'https://gotovim-doma.ru/images/recipe/b/41/b41104385fba5e894902de571ef1e553.jpg',
         available_additives: []
     },
     {
@@ -543,7 +543,7 @@ export const data = [
         price: 340,
         gram: '250',
         category_name: 'Салаты с майонезом',
-        image: 'http://192.168.0.160:8000/media/dishes/fruktovyi-salat-001.jpg',
+        image: 'https://art-lunch.ru/content/uploads/2021/12/fruktovyi-salat-001.jpg',
         available_additives: []
     },
     {
@@ -557,7 +557,7 @@ export const data = [
         price: 350,
         gram: '250',
         category_name: 'Салаты с растительным маслом',
-        image: 'http://192.168.0.160:8000/media/dishes/2022-08-13-wj8b6i-salat-s-utinoy-grudkoy-chernoslivom-i-sirom-bri_756x0_62c.jpg',
+        image: 'https://topfood.club/assets/cache_image/uploads/recipes/2022-08-13-wj8b6i-salat-s-utinoy-grudkoy-chernoslivom-i-sirom-bri_756x0_62c.jpg',
         available_additives: []
     },
     {
@@ -571,7 +571,7 @@ export const data = [
         price: 395,
         gram: '250',
         category_name: 'Салаты с растительным маслом',
-        image: 'http://192.168.0.160:8000/media/dishes/108609.png',
+        image: 'https://nambafood.kg/dish_image/108609.png',
         available_additives: []
     },
     {
@@ -585,7 +585,7 @@ export const data = [
         price: 310,
         gram: '',
         category_name: 'Шашлыки',
-        image: 'http://192.168.0.160:8000/media/dishes/22909-ed4_wide.jpg',
+        image: 'https://e0.edimdoma.ru/data/posts/0002/2909/22909-ed4_wide.jpg?1631190287',
         available_additives: []
     },
     {
@@ -599,7 +599,7 @@ export const data = [
         price: 310,
         gram: '',
         category_name: 'Шашлыки',
-        image: 'http://192.168.0.160:8000/media/dishes/D0B3D0BED0BBD0B5D0BDD18C-min-600x400.jpg',
+        image: 'https://steprecept.ru/wp-content/uploads/2020/11/%D0%B3%D0%BE%D0%BB%D0%B5%D0%BD%D1%8C-min-600x400.jpg',
         available_additives: []
     },
     {
@@ -1481,7 +1481,7 @@ export const data = [
         price: 190,
         gram: '',
         category_name: 'Горячие напитки',
-        image: 'http://192.168.0.160:8000/media/dishes/recept_6752_mo3z.jpg',
+        image: 'https://www.maggi.ru/data/images/recept/img640x500/recept_6752_mo3z.jpg',
         available_additives: []
     },
     {
@@ -1509,7 +1509,7 @@ export const data = [
         price: 55,
         gram: '',
         category_name: 'Горячие напитки',
-        image: 'http://192.168.0.160:8000/media/dishes/1.jpg',
+        image: 'https://dachatea.ru/system/uploads/blog/file/81/1.jpg',
         available_additives: []
     },
     {
@@ -1565,7 +1565,7 @@ export const data = [
         price: 55,
         gram: '',
         category_name: 'Горячие напитки',
-        image: 'http://192.168.0.160:8000/media/dishes/4ece97c13b4e552f270aee345ec4ca1d.png',
+        image: 'https://www.rusteaco.ru/upload/medialibrary/4ec/4ece97c13b4e552f270aee345ec4ca1d.png',
         available_additives: []
     },
     {
@@ -1593,7 +1593,7 @@ export const data = [
         price: 55,
         gram: '',
         category_name: 'Горячие напитки',
-        image: 'http://192.168.0.160:8000/media/dishes/images_0y35gAT.jpg',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_ckRgQpGfsrI_34l5Xndg0psi1NBqgUlvTV0Nsuapt02BDTJXkIs9YNiAMieIMfaF79M&usqp=CAU ',
         available_additives: []
     },
     {
@@ -1803,7 +1803,7 @@ export const data = [
         price: 120,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/napitok-sierra-coca-cola-1-l-gazirovannyj-121-1.webp',
+        image: 'https://neman.kg/images/watermarked/detailed/34/napitok-sierra-coca-cola-1-l-gazirovannyj-121-1.webp',
         available_additives: []
     },
     {
@@ -1831,7 +1831,7 @@ export const data = [
         price: 120,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/Fanta-1L.jpeg',
+        image: 'https://sierra.madanur.com/wp-content/uploads/2020/08/Fanta-1L.jpeg',
         available_additives: []
     },
     {
@@ -1845,7 +1845,7 @@ export const data = [
         price: 120,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/20797-napitok_sprite_1_l.jpg',
+        image: 'https://arbuz.kz/image/s3/arbuz-kz-products/20797-napitok_sprite_1_l.jpg?w=1100&h=1100&_c=1686818566',
         available_additives: []
     },
     {
@@ -1873,7 +1873,7 @@ export const data = [
         price: 80,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/kompot-iz-chereshni_siteweb.jpg',
+        image: 'https://klopotenko.com/wp-content/uploads/2021/07/kompot-iz-chereshni_siteweb.jpg?v=1626355444',
         available_additives: []
     },
     {
@@ -1887,7 +1887,7 @@ export const data = [
         price: 40,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/6639447f16503569648ad733590451f1.jpg',
+        image: 'https://www.senegskaya.ru/upload/medialibrary/663/6639447f16503569648ad733590451f1.jpg',
         available_additives: []
     },
     {
@@ -1915,7 +1915,7 @@ export const data = [
         price: 40,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/6639447f16503569648ad733590451f1_Sb6BdHd.jpg',
+        image: 'https://www.senegskaya.ru/upload/medialibrary/663/6639447f16503569648ad733590451f1.jpg',
         available_additives: []
     },
     {
@@ -1929,7 +1929,7 @@ export const data = [
         price: 150,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/0eac80f2b3_500.jpg',
+        image: 'https://neman.kg/images/detailed/42/0eac80f2b3_500.jpg',
         available_additives: []
     },
     {

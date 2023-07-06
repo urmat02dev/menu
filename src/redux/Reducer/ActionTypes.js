@@ -21,4 +21,5 @@ export const CASH = "CASH"
 export const TERMINAL = "TERMINAL"
 
 export const BURGER_MENU = "BURGER_MENU"
+export const BURGER_ACTIVE = "BURGER_ACTIVE"
 

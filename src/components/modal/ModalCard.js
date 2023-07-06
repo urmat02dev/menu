@@ -9,7 +9,7 @@ import {
 } from "../../redux/Reducer/ActionTypes";
 import {useDispatch, useSelector} from "react-redux";
 import {BiBasket} from "react-icons/bi";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {BsBasket3Fill} from "react-icons/bs";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {useTranslation} from "react-i18next";
@@ -19,6 +19,7 @@ const ModalCard = ({el}) => {
     const dispatch = useDispatch()
     const nav = useNavigate()
     const {basket, add} = useSelector(state => state)
+    const {id} = useParams()
     const found = basket.some(e => e.id === el.id)
     const lang = localStorage.getItem("i18nextLng")
     const {t} = useTranslation()
@@ -71,13 +72,19 @@ const ModalCard = ({el}) => {
         }
     }
 
-    function getDesc(el) {
+    function  getDesc(el) {
         if (lang === "en") {
-            return el.description_en
+            return <p>{el.description_en && el.description_en.length >20 ? <p>{el.description_en.slice(0,el.description_en.length/2)} <br/>{el.description_en.slice(el.description_en.length/2, el.description_en.length)}
+            </p> : <p>{el.description_en && el.description_ru}</p> }
+            </p>
         } else if (lang === "ru") {
-            return el.description_ru
+            return  <p>{el.description_ru && el.description_ru.length >20 ? <p>{el.description_ru.slice(0,25)} <br/>{el.description_ru.slice(25, el.description_ru.length)}
+            </p> : <p>{el.description_ru && el.description_ru.slice(0,30)}</p> }
+            </p>
         } else if (lang === "kg") {
-            return el.description_kg
+            return  <p>{el.description_ru && el.description_kg.length >20 ? <p>{el.description_kg.slice(0,el.description_kg.length/2)} <br/>{el.description_kg.slice(el.description_kg.length/2, el.description_kg.length)}
+            </p> : <p>{el.description_kg && el.description_ru}</p> }
+            </p>
         }
     }
     const getGram = (el) => {
@@ -110,7 +117,7 @@ const ModalCard = ({el}) => {
                             : <p className={"title"}>{getTitle(el)}</p>
                     }
                 </div>
-                <h3 className='modal--desc__h3'>{getDesc(el)}</h3>
+                <div style={{width:"200px" , fontSize:"15px"}}>{getDesc(el)}</div>
                 <div className="modal--desc__price">
                     <h5>Цена:<span>{el.add && el.add.length ? total + el.price * el.quantity : el.price * el.quantity}c</span>
                     </h5>
@@ -140,7 +147,7 @@ const ModalCard = ({el}) => {
                 {
                     found ?
                         <div className="basket"
-                             onClick={() => nav("/basket") || dispatch({type: MODAL, payload: false})}>
+                             onClick={() => nav(`/${id}/basket`) || dispatch({type: MODAL, payload: false})}>
                             <h1 className='basket--were'>{t("detail.to_basket")}</h1>
                             <div className="icon-block">
                                 <div className="icon-block--icon"><BsBasket3Fill className='icon'/></div>
