@@ -30,7 +30,7 @@ function App() {
     }
 
     useEffect(() => {
-        getFakeFoods()
+        getFoods()
     }, [])
     console.log("pa",params)
     return (
