@@ -25,10 +25,7 @@ const BurgerMenu = () => {
     const {id} = useParams()
 
     const getClose = async () => {
-        nav(`/${id}/main`)
-        dispatch({type:BURGER_MENU,payload:false})
-    }
-    const getX = () => {
+
         dispatch({type:BURGER_MENU,payload:false})
 
     }
@@ -52,7 +49,7 @@ const BurgerMenu = () => {
                             <option  value={"en"}>ENG</option>
                         </select>
                     </div>
-                    <div className="burger-menu--top--close" onClick={() => getX()}>
+                    <div className="burger-menu--top--close" onClick={() => getClose()}>
                         &times;
                     </div>
 
