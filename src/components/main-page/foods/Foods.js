@@ -118,7 +118,10 @@ const Foods = () => {
   useEffect(() => {
     WindowClick()
   },[active])
-  console.log("Active",active)
+  console.log("tabsInMeal",tabsInMeal)
+  console.log("tabsInsalads",tabsInsalads)
+  console.log("tabsInDrinks",tabsInDrinks)
+  console.log("meals",tabsInsalads === 0 || tabsInMeal === 0 || tabsInDrinks === 0 && active === 2 )
   return (
     <div id="food">
       <div className="container">
@@ -186,7 +189,7 @@ const Foods = () => {
               }) : ""
           }
           {
-            (active === 2 && tabsInsalads === 0) ? WindowClick &&
+            ( active === 2 && tabsInsalads === 0 ) ? WindowClick &&
                 salads.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -202,7 +205,7 @@ const Foods = () => {
                 }) : ""
           }
             {
-              tabsInMeal === 1  &&
+              ((active === 0 || active ===1) && tabsInMeal === 1)  &&
                   firstMeal.map(el =>{
                 return <FoodCard el={el}
                                  key={el.id}
@@ -210,7 +213,7 @@ const Foods = () => {
               })
             }
           {
-            tabsInMeal === 2 ?
+            ((active === 0 || active ===1) && tabsInMeal === 2)  ?
                 generalDishes.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -219,7 +222,7 @@ const Foods = () => {
                 : false
           }
           {
-             tabsInMeal === 3 ?
+            ((active === 0 || active ===1) && tabsInMeal === 3)  ?
                 secondCoursesOfChicken.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -228,7 +231,7 @@ const Foods = () => {
                 : false
           }
           {
-            tabsInMeal === 4 ? WindowClick &&
+            ((active === 0 || active ===1) && tabsInMeal === 4)  ? WindowClick &&
                 secondCoursesOfBeef.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -237,7 +240,7 @@ const Foods = () => {
                 : false
           }
           {
-            tabsInMeal === 5 ? WindowClick &&
+            ((active === 0 || active ===1) && tabsInMeal === 5)  ? WindowClick &&
                 secondCoursesOfLamb.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -246,7 +249,7 @@ const Foods = () => {
                 : false
           }
           {
-            tabsInMeal === 6 ? WindowClick &&
+            ((active === 0 || active ===1) && tabsInMeal === 6)  ? WindowClick &&
                 secondCoursesOfFish.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -255,7 +258,7 @@ const Foods = () => {
                 : false
           }
           {
-            tabsInMeal === 7 ? WindowClick &&
+            ((active === 0 || active ===1) && tabsInMeal === 7)  ? WindowClick &&
                 banquetDishes.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -264,7 +267,7 @@ const Foods = () => {
                 : false
           }
           {
-            tabsInMeal === 8 ? WindowClick &&
+            ((active === 0 || active ===1) && tabsInMeal === 8)  ? WindowClick &&
                 sideDishes.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -273,7 +276,7 @@ const Foods = () => {
                 : false
            }
           {
-            tabsInsalads === 1 ? WindowClick &&
+            ((active ===2 ) && tabsInsalads === 1)  ? WindowClick &&
                 saladsMayonnaise.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -282,7 +285,7 @@ const Foods = () => {
                 : ""
           }
           {
-             tabsInsalads === 2 ? WindowClick &&
+             ((active ===2 ) && tabsInsalads === 2)  ? WindowClick &&
                 saladsVegetableOil.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -291,7 +294,7 @@ const Foods = () => {
                 : false
           }
           {
-            tabsInsalads === 3 ? WindowClick &&
+            ((active ===2 ) && tabsInsalads === 3)  ? WindowClick &&
                 spicySalads.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -300,7 +303,7 @@ const Foods = () => {
                 : false
           }
           {
-            tabsInDrinks === 1 ? WindowClick &&
+            ((active === 3 ) && tabsInDrinks === 1)  ? WindowClick &&
                 hotDrinks.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
@@ -309,7 +312,7 @@ const Foods = () => {
                 : false
           }
           {
-            tabsInDrinks === 2 ? WindowClick &&
+            ((active === 3 ) && tabsInDrinks === 2) ? WindowClick &&
                 coldDrinks.map(el =>{
                   return <FoodCard el={el}
                                    key={el.id}
