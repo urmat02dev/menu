@@ -20,7 +20,7 @@ const SearchResult = () => {
   const res = foods.filter(el  => el.name_ru.toLowerCase() === search.toLowerCase() || el.name_en.toLowerCase() === search.toLowerCase() || el.name_kg.toLowerCase() === search.toLowerCase() )
     function getNAv() {
         if (search === "") {
-            nav(`/${id}/search`)
+            nav(`/${id}/main`)
         }
     }
     useEffect(() => {

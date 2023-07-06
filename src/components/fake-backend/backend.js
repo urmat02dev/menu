@@ -1481,7 +1481,7 @@ export const data = [
         price: 190,
         gram: '',
         category_name: 'Горячие напитки',
-        image: 'http://192.168.0.160:8000/media/dishes/recept_6752_mo3z.jpg',
+        image: 'https://www.maggi.ru/data/images/recept/img640x500/recept_6752_mo3z.jpg',
         available_additives: []
     },
     {
@@ -1509,7 +1509,7 @@ export const data = [
         price: 55,
         gram: '',
         category_name: 'Горячие напитки',
-        image: 'http://192.168.0.160:8000/media/dishes/1.jpg',
+        image: 'https://dachatea.ru/system/uploads/blog/file/81/1.jpg',
         available_additives: []
     },
     {
@@ -1565,7 +1565,7 @@ export const data = [
         price: 55,
         gram: '',
         category_name: 'Горячие напитки',
-        image: 'http://192.168.0.160:8000/media/dishes/4ece97c13b4e552f270aee345ec4ca1d.png',
+        image: 'https://www.rusteaco.ru/upload/medialibrary/4ec/4ece97c13b4e552f270aee345ec4ca1d.png',
         available_additives: []
     },
     {
@@ -1593,7 +1593,7 @@ export const data = [
         price: 55,
         gram: '',
         category_name: 'Горячие напитки',
-        image: 'http://192.168.0.160:8000/media/dishes/images_0y35gAT.jpg',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_ckRgQpGfsrI_34l5Xndg0psi1NBqgUlvTV0Nsuapt02BDTJXkIs9YNiAMieIMfaF79M&usqp=CAU ',
         available_additives: []
     },
     {
@@ -1803,7 +1803,7 @@ export const data = [
         price: 120,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/napitok-sierra-coca-cola-1-l-gazirovannyj-121-1.webp',
+        image: 'https://neman.kg/images/watermarked/detailed/34/napitok-sierra-coca-cola-1-l-gazirovannyj-121-1.webp',
         available_additives: []
     },
     {
@@ -1831,7 +1831,7 @@ export const data = [
         price: 120,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/Fanta-1L.jpeg',
+        image: 'https://sierra.madanur.com/wp-content/uploads/2020/08/Fanta-1L.jpeg',
         available_additives: []
     },
     {
@@ -1845,7 +1845,7 @@ export const data = [
         price: 120,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/20797-napitok_sprite_1_l.jpg',
+        image: 'https://arbuz.kz/image/s3/arbuz-kz-products/20797-napitok_sprite_1_l.jpg?w=1100&h=1100&_c=1686818566',
         available_additives: []
     },
     {
@@ -1873,7 +1873,7 @@ export const data = [
         price: 80,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/kompot-iz-chereshni_siteweb.jpg',
+        image: 'https://klopotenko.com/wp-content/uploads/2021/07/kompot-iz-chereshni_siteweb.jpg?v=1626355444',
         available_additives: []
     },
     {
@@ -1887,7 +1887,7 @@ export const data = [
         price: 40,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/6639447f16503569648ad733590451f1.jpg',
+        image: 'https://www.senegskaya.ru/upload/medialibrary/663/6639447f16503569648ad733590451f1.jpg',
         available_additives: []
     },
     {
@@ -1915,7 +1915,7 @@ export const data = [
         price: 40,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/6639447f16503569648ad733590451f1_Sb6BdHd.jpg',
+        image: 'https://www.senegskaya.ru/upload/medialibrary/663/6639447f16503569648ad733590451f1.jpg',
         available_additives: []
     },
     {
@@ -1929,7 +1929,7 @@ export const data = [
         price: 150,
         gram: '1000',
         category_name: 'Холдные',
-        image: 'http://192.168.0.160:8000/media/dishes/0eac80f2b3_500.jpg',
+        image: 'https://neman.kg/images/detailed/42/0eac80f2b3_500.jpg',
         available_additives: []
     },
     {

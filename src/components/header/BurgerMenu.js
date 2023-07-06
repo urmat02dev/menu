@@ -4,7 +4,7 @@ import i18n from "i18next";
 import {useDispatch, useSelector} from "react-redux";
 import {IoMdClose} from "react-icons/io";
 import {BURGER_ACTIVE, BURGER_MENU, MODAL} from "../../redux/Reducer/ActionTypes";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import img from "../../assets/img/uluu_too_2.svg";
 import spoon from "../../assets/img/spoon.png";
 import knife from "../../assets/img/knife.png";
@@ -19,10 +19,15 @@ const BurgerMenu = () => {
     const changeLanguage = (language) => {
         i18n.changeLanguage(language);
     };
+    const {id} = useParams()
+
     const {t} = useTranslation()
 
     const getClose = async () => {
-
+        nav(`/${id}/main`)
+        dispatch({type:BURGER_MENU,payload:false})
+    }
+    const getX = () => {
         dispatch({type:BURGER_MENU,payload:false})
     }
     console.log("Active", active)
@@ -30,7 +35,7 @@ const BurgerMenu = () => {
         <>
         <div id={"blur"} hidden={!burgerMenu} style={{
             zIndex:burgerMenu ? "99" : "",
-        }} onClick={() => getClose()}/>
+        }} onClick={() => getX()}/>
             <div style={{
                 left: burgerMenu ?  "" : "3000px",
                 zIndex:burgerMenu ? "99" : "",
@@ -45,7 +50,7 @@ const BurgerMenu = () => {
                             <option  value={"en"}>ENG</option>
                         </select>
                     </div>
-                    <div className="burger-menu--top--close" onClick={() => getClose()}>
+                    <div className="burger-menu--top--close" onClick={() => getX()}>
                         &times;
                     </div>
 
