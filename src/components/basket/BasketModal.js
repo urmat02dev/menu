@@ -15,7 +15,7 @@ const BasketModal = () => {
     const {t} = useTranslation()
     const {id} = useParams()
     const dispatch = useDispatch()
-    const {check,basket} = useSelector(state => state)
+    const {check,basket,send} = useSelector(state => state)
     const {here,withT,terminal,cash} = useSelector(s => s)
     const [items, setItems] = useState([])
     const [seconds, setSeconds] = useState(30);
@@ -131,7 +131,7 @@ const BasketModal = () => {
                                         <div key={el.id}>
                                             <div className={'zak'}>{getTitle(el)}
                                                 <div className={'syz'}></div><span>{el.quantity * el.price}{t("basket.s")}</span> </div>
-
+                                            <div>{send}</div>
                                         </div>
 
                                     ))

@@ -22,7 +22,7 @@ import {
   PAY,
   ORDER,
   BURGER_MENU,
-  BURGER_ACTIVE,
+  BURGER_ACTIVE, KOMENT_INPUT, SEND_KOMENT, RESET_INPUT,
 } from "./ActionTypes";
 
 const initialState ={
@@ -42,6 +42,8 @@ const initialState ={
   terminal:false,
   cash:false,
   active:0,
+  koment: '',
+  send: [],
 }
 
 
@@ -139,6 +141,15 @@ export const MainReducer = (state = initialState, action) => {
     }
     case BURGER_ACTIVE: {
       return {...state, active: action.payload}
+    }
+    case KOMENT_INPUT: {
+      return {...state, koment: action.payload}
+    }
+    case SEND_KOMENT : {
+      return {...state,send: action.payload}
+    }
+    case RESET_INPUT: {
+      return {...state,koment: ""}
     }
     default :
       return state
