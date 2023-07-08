@@ -67,5 +67,10 @@
   "detail": {
     "add": "Add",
     "to_basket": "Added"
+  },
+  "comment": {
+    "want": "Is there anything else you want?",
+    "hereWrite": "Write here...",
+    "send": "Send"
   }
 }

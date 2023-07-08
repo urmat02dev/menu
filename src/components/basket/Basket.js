@@ -6,9 +6,12 @@ import group from "../../assets/img/Group.svg"
 import {useTranslation} from "react-i18next";
 import BasketCard from "./BasketCard";
 import {useDispatch, useSelector} from "react-redux";
-import { parametr} from "../starts/random";
-import {CASH, HERE, TERMINAL, WITH} from "../../redux/Reducer/ActionTypes";
+import {CASH, HERE, KOMENT_INPUT, RESET_INPUT, SEND_KOMENT, TERMINAL, WITH} from "../../redux/Reducer/ActionTypes";
 import BurgerMenu from "../header/BurgerMenu";
+import {BsPencilSquare} from "react-icons/bs";
+
+
+
 const Basket = () => {
 
   const nav = useNavigate()
@@ -17,11 +20,11 @@ const Basket = () => {
   const {t} = useTranslation()
   const dispatch = useDispatch()
   const {basket} = useSelector(s => s)
-  const {here,withT,terminal,cash,order,pay} = useSelector(s => s)
+  const {here,withT,terminal,cash,koment,send} = useSelector(s => s)
   const [loader, setLoader] = useState(false)
   const [btn,setBtn] = useState(false)
   const [cash2, setCash2]  = useState(false)
-
+  const [coment,setComent] = useState([])
   function getHere() {
     dispatch({type:HERE,payload:!here}) && dispatch({type:WITH,payload:false})
   }
@@ -41,6 +44,25 @@ const Basket = () => {
     }
   }
 
+  const HandleChange = (e) => {
+    dispatch({type: KOMENT_INPUT,payload: e.target.value})
+  }
+
+  const HandleDown = (e) => {
+    if (e.key === "Enter"){
+      dispatch({type: SEND_KOMENT,payload: koment})
+      dispatch({type:RESET_INPUT,payload: ''})
+    }
+  }
+
+  const HandleClick = () => {
+    dispatch({type:SEND_KOMENT,payload: koment})
+    dispatch({type:RESET_INPUT,payload: ''})
+  }
+
+  const ChangeValue = () => {
+    dispatch({type:KOMENT_INPUT,payload: send})
+  }
   const total = basket.reduce((acc,e) => {
     return acc + e.price * e.quantity
   },0)
@@ -52,6 +74,7 @@ const Basket = () => {
 
   },[basket.length])
   console.log("BTN",btn)
+  console.log("koment",koment)
 
   return basket.length ?
     <>
@@ -69,6 +92,19 @@ const Basket = () => {
                 <h2>{t("basket.sum")}:</h2>
                 <h1>{total}{t("basket.s")}</h1>
               </div>
+            </div>
+            <div className={"basket--koment"}>
+              <h2>{t("comment.want")}</h2>
+              <div className={"basket--koment__input"}>
+                  <input value={koment} onKeyDown={HandleDown} placeholder={t("comment.hereWrite")} onChange={event => HandleChange(event)} type="text"/>
+                  <button onClick={HandleClick}>{t("comment.send")}</button>
+                </div>
+              {
+                send.length ?  <div className={"basket--koment__list"}>
+                  <p>{send}</p>
+                  <BsPencilSquare onClick={ChangeValue} className={'basket--koment__list--icon'}/>
+                </div> : ""
+              }
             </div>
             <div className='basket--status'>
               <div className='basket--status__title'>

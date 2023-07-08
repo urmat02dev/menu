@@ -23,3 +23,7 @@ export const TERMINAL = "TERMINAL"
 export const BURGER_MENU = "BURGER_MENU"
 export const BURGER_ACTIVE = "BURGER_ACTIVE"
 
+export const KOMENT_INPUT = "KOMENT_INPUT"
+export const RESET_INPUT = "RESET_INPUT"
+export const SEND_KOMENT = "SEND_KOMENT"
+
